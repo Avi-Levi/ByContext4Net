@@ -1,0 +1,5 @@
+D:\work\NConfig\PlayingAround\NConfig\bin\Debug\NConfig.dll
+D:\work\NConfig\PlayingAround\NConfig\bin\Debug\NConfig.pdb
+D:\work\NConfig\PlayingAround\NConfig\obj\Debug\ResolveAssemblyReference.cache
+D:\work\NConfig\PlayingAround\NConfig\obj\Debug\NConfig.dll
+D:\work\NConfig\PlayingAround\NConfig\obj\Debug\NConfig.pdb
