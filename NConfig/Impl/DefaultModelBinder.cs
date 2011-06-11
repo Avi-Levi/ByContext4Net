@@ -18,6 +18,7 @@ namespace NConfig.Impl
                 pi.SetValue(result, value, null);
             }
 
+
             return result;
         }
     }
