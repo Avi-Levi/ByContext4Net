@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="bd7af447-02c1-416a-a76a-563876c62fa4" name="avi@NETBOOK 2011-05-28 19:43:59" runUser="netbook\avi" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="8ca21acd-1fe6-4269-b5af-3ea22afc0391">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="avi_NETBOOK 2011-05-28 19_43_59">
+      <DeploymentItem filename="D:\work\NConfig\PlayingAround\NConfig\bin\Debug\NConfig.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-05-28T19:43:59.0256934+02:00" queuing="2011-05-28T19:44:02.7159045+02:00" start="2011-05-28T19:44:03.2999379+02:00" finish="2011-05-28T19:44:07.6881889+02:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="Dev_online_client" storage="d:\work\nconfig\playingaround\testproject1\bin\debug\testproject1.dll" id="38612a57-8d91-ea2c-a41c-d4bdf81f68b5">
+      <Execution id="8d4cd828-2d09-4a84-8b31-5a786956a7e1" />
+      <TestMethod codeBase="D:/work/NConfig/PlayingAround/TestProject1/bin/Debug/TestProject1.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.FilterTest, TestProject1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Dev_online_client" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="38612a57-8d91-ea2c-a41c-d4bdf81f68b5" executionId="8d4cd828-2d09-4a84-8b31-5a786956a7e1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="8d4cd828-2d09-4a84-8b31-5a786956a7e1" testId="38612a57-8d91-ea2c-a41c-d4bdf81f68b5" testName="Dev_online_client" computerName="NETBOOK" duration="00:00:00.1378535" startTime="2011-05-28T19:44:03.5769538+02:00" endTime="2011-05-28T19:44:07.2501639+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8d4cd828-2d09-4a84-8b31-5a786956a7e1">
+      <Output>
+        <DebugTrace>start filtering for context: appType:onlineClient\env:dev\ and items: 
+.\logs
+env-ALL
+appType-ALL
+
+c:\logs\
+env-prod
+appType-applicationServer
+
+\someNetworDrive\integrationLogs\
+
+\\someNetworkDrive\enterpriseAuditData\
+appType-ALL
+
+start using rule: NConfig.Rules.WithSpecificOrALLRerefenceToSubjectRule
+start filtering by runtimeContextItem: appType\onlineClient
+items before: 
+.\logs
+env-ALL
+appType-ALL
+
+c:\logs\
+env-prod
+appType-applicationServer
+
+\someNetworDrive\integrationLogs\
+
+\\someNetworkDrive\enterpriseAuditData\
+appType-ALL
+
+items after: 
+.\logs
+env-ALL
+appType-ALL
+
+\\someNetworkDrive\enterpriseAuditData\
+appType-ALL
+
+start filtering by runtimeContextItem: env\dev
+items before: 
+.\logs
+env-ALL
+appType-ALL
+
+\\someNetworkDrive\enterpriseAuditData\
+appType-ALL
+
+items after: 
+.\logs
+env-ALL
+appType-ALL
+
+start using rule: NConfig.Rules.BestMatchRule
+start filtering by runtimeContextItem: appType\onlineClient
+items before: 
+.\logs
+env-ALL
+appType-ALL
+
+items after: 
+.\logs
+env-ALL
+appType-ALL
+
+start filtering by runtimeContextItem: env\dev
+items before: 
+.\logs
+env-ALL
+appType-ALL
+
+items after: 
+.\logs
+env-ALL
+appType-ALL
+
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

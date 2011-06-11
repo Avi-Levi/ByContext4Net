@@ -1,0 +1,14 @@
+D:\work\NConfig\PlayingAround\TestProject1\obj\Debug\ResolveAssemblyReference.cache
+D:\work\NConfig\PlayingAround\TestProject1\bin\Debug\TestProject1.dll
+D:\work\NConfig\PlayingAround\TestProject1\bin\Debug\TestProject1.pdb
+D:\work\NConfig\PlayingAround\TestProject1\obj\Debug\TestProject1.dll
+D:\work\NConfig\PlayingAround\TestProject1\obj\Debug\TestProject1.pdb
+D:\work\NConfig\PlayingAround\TestProject1\bin\Debug\NConfig.dll
+D:\work\NConfig\PlayingAround\TestProject1\bin\Debug\NConfig.pdb
+D:\work\NConfig\NConfig\TestProject1\bin\Debug\TestProject1.dll
+D:\work\NConfig\NConfig\TestProject1\bin\Debug\TestProject1.pdb
+D:\work\NConfig\NConfig\TestProject1\bin\Debug\NConfig.dll
+D:\work\NConfig\NConfig\TestProject1\bin\Debug\NConfig.pdb
+D:\work\NConfig\NConfig\TestProject1\obj\Debug\ResolveAssemblyReference.cache
+D:\work\NConfig\NConfig\TestProject1\obj\Debug\TestProject1.dll
+D:\work\NConfig\NConfig\TestProject1\obj\Debug\TestProject1.pdb

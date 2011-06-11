@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NConfig.Policy;
+using NConfig.ValueParser;
+using System.Reflection;
 
-namespace NConfig
+namespace NConfig.Model
 {
     /// <summary>
     /// Represents data item, which we want to have a different value
@@ -12,6 +14,13 @@ namespace NConfig
     /// </summary>
     public class Parameter
     {
-        public IList<IFilterPolicy> Policies { get; set; }
+        public Parameter()
+        {
+            this.Values = new List<ParameterValue>();
+        }
+        public string Name { get; set; }
+        public Func<IEnumerable<string>,object> Parse { get; set; }
+        public IList<ParameterValue> Values { get; set; }
+        public IFilterPolicy Policy { get; set; }
     }
 }

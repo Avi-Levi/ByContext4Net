@@ -12,8 +12,9 @@ namespace NConfig.Model
             return this.Value ?? string.Empty;
         }
 
-        public ParameterValue()
+        public ParameterValue(string value)
         {
+            this.Value = value;
             this.References = new List<ContextSubjectReference>();
         }
         public string Value { get; set; }

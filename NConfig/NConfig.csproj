@@ -40,7 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions.cs" />
+    <Compile Include="Abstractions\IConfigurationDataRepository.cs" />
+    <Compile Include="Builder.cs" />
+    <Compile Include="Extensions\BuilderExtensions.cs" />
+    <Compile Include="Extensions\Dictionary.cs" />
+    <Compile Include="Abstractions\IModelBinder.cs" />
+    <Compile Include="Extensions\ParameterExtensions.cs" />
+    <Compile Include="Extensions\ParameterValueExtensions.cs" />
+    <Compile Include="Extensions\SectionExtensions.cs" />
+    <Compile Include="Impl\ConfigurationDataRepository.cs" />
+    <Compile Include="Impl\ConfigurationService.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Abstractions\IConfigurationDataProvider.cs" />
+    <Compile Include="Abstractions\IConfigurationService.cs" />
+    <Compile Include="Impl\DefaultModelBinder.cs" />
+    <Compile Include="Abstractions\IRuntimeContextProvider.cs" />
+    <Compile Include="Model\Section.cs" />
     <Compile Include="Rules\BestMatchRule.cs" />
     <Compile Include="Policy\FilterPolicy.cs" />
     <Compile Include="Policy\IFilterPolicy.cs" />
@@ -50,8 +65,8 @@
     <Compile Include="Model\ParameterValue.cs" />
     <Compile Include="Rules\IFilterRule.cs" />
     <Compile Include="Rules\WithSpecificOrALLRerefenceToSubjectRule.cs" />
-    <Compile Include="ValueParser\IValueParser.cs" />
-    <Compile Include="ILoggerFacade.cs" />
+    <Compile Include="ValueParser\ITypeBinder.cs" />
+    <Compile Include="Abstractions\ILoggerFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

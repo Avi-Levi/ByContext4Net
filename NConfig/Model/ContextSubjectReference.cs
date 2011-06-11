@@ -17,7 +17,7 @@ namespace NConfig.Model
 
         public override string ToString()
         {
-            return this.SubjectName + "\\" + this.SubjectValue;
+            return this.SubjectName + ":" + this.SubjectValue;
         }
     }
 }

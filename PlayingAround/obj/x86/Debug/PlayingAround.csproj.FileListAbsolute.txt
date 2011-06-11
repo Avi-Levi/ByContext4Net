@@ -6,3 +6,11 @@ D:\work\NConfig\PlayingAround\PlayingAround\bin\Debug\PlayingAround.exe
 D:\work\NConfig\PlayingAround\PlayingAround\bin\Debug\PlayingAround.pdb
 D:\work\NConfig\PlayingAround\PlayingAround\obj\x86\Debug\PlayingAround.exe
 D:\work\NConfig\PlayingAround\PlayingAround\obj\x86\Debug\PlayingAround.pdb
+D:\work\NConfig\NConfig\PlayingAround\obj\x86\Debug\PlayingAround.exe
+D:\work\NConfig\NConfig\PlayingAround\obj\x86\Debug\PlayingAround.pdb
+D:\work\NConfig\NConfig\PlayingAround\bin\Debug\PlayingAround.exe
+D:\work\NConfig\NConfig\PlayingAround\bin\Debug\PlayingAround.pdb
+D:\work\NConfig\NConfig\PlayingAround\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\NConfig\NConfig\PlayingAround\obj\x86\Debug\PlayingAround.Properties.Resources.resources
+D:\work\NConfig\NConfig\PlayingAround\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\work\NConfig\NConfig\PlayingAround\obj\x86\Debug\GenerateResource.write.1.tlog

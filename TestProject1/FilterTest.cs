@@ -65,7 +65,7 @@ namespace TestProject1
         }
 
         /// <summary>
-        /// on dev environmentt, we use self hosting and want the log folder to be inside our bin folder.
+        /// on dev environment, we use self hosting and want the log folder to be inside our bin folder.
         /// .\logs.
         /// </summary>
         [TestMethod]

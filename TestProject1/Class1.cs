@@ -14,24 +14,24 @@ namespace TestProject1
         /// inside client installation folder.
         /// at development time, with self hosting.
         /// </summary>
-        public static ParameterValue ReletiveOneLevelDownPath = new ParameterValue { Value = @".\logs" };
+        public static ParameterValue ReletiveOneLevelDownPath = new ParameterValue(@".\logs" );
         /// <summary>
         /// must be absolute, because installation path is not known.
         /// </summary>
-        public static ParameterValue applicationServerPath = new ParameterValue { Value = @"c:\logs\" };
+        public static ParameterValue applicationServerPath = new ParameterValue (@"c:\logs\");
 
-        public static ParameterValue prodOnlineClient = new ParameterValue { Value = @"c:\UserData\ApplicationName\logs\" };
+        public static ParameterValue prodOnlineClient = new ParameterValue (@"c:\UserData\ApplicationName\logs\" );
         
 
         /// <summary>
         /// integration server logs to a different path?
         /// </summary>
-        public static ParameterValue IntegrationServerPath = new ParameterValue { Value = @"\someNetworDrive\integrationLogs\" };
+        public static ParameterValue IntegrationServerPath = new ParameterValue (@"\someNetworDrive\integrationLogs\");
 
         /// <summary>
         /// specific service logs to a specific path?
         /// </summary>
-        public static ParameterValue AuditServicePath = new ParameterValue { Value = @"\\someNetworkDrive\enterpriseAuditData\" };
+        public static ParameterValue AuditServicePath = new ParameterValue(@"\\someNetworkDrive\enterpriseAuditData\");
 
         public static ParameterValue[] All = new ParameterValue[] 
         { ReletiveOneLevelDownPath, applicationServerPath, prodOnlineClient, IntegrationServerPath, AuditServicePath };
