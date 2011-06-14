@@ -8,16 +8,14 @@ namespace NConfig.Impl
 {
     public class DefaultModelBinder : IModelBinder
     {
-        public object Bind(Type modelType, IEnumerable<Model.Parameter> parameters)
+        public object Bind(Type modelType, IDictionary<string, object> parametersInfo)
         {
             object result = Activator.CreateInstance(modelType);
-            foreach (var parameter in parameters)
-            {
-                PropertyInfo pi = modelType.GetProperty(parameter.Name);
-                object value = parameter.Parse(parameter.Values.Select(v => v.Value));
-                pi.SetValue(result, value, null);
-            }
 
+            foreach (var pi in modelType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
+            {
+                pi.SetValue(result, parametersInfo[pi.Name], null);
+            }
 
             return result;
         }

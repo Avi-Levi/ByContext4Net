@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using NConfig.Policy;
-using NConfig.ValueParser;
-using System.Reflection;
 
 namespace NConfig.Model
 {
@@ -22,5 +18,10 @@ namespace NConfig.Model
         public Func<IEnumerable<string>,object> Parse { get; set; }
         public IList<ParameterValue> Values { get; set; }
         public IFilterPolicy Policy { get; set; }
+
+        public IEnumerable<string> GetValuesByPolicy(IDictionary<string, string> runtimeContext)
+        {
+            return this.Policy.Apply(this.Values, runtimeContext).Select(v=>v.Value);
+        }
     }
 }

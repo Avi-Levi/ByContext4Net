@@ -8,6 +8,6 @@ namespace NConfig
 {
     public interface IModelBinder
     {
-        object Bind(Type modelType, IEnumerable<Parameter> parameters);
+        object Bind(Type modelType, IDictionary<string, object> parametersInfo);
     }
 }

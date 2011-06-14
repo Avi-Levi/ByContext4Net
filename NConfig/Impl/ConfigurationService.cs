@@ -42,7 +42,16 @@ namespace NConfig
         {
             Section section = this.Repository.Sections.Single(x => x.Name == (sectionType.FullName));
 
-            return this.ModelBinder.Bind(sectionType, section.Parameters);
+            IDictionary<string, object> parametersByPolicyInfo = new Dictionary<string, object>();
+
+            foreach (var parameter in section.Parameters)
+            {
+                var valuesByPolicy = parameter.GetValuesByPolicy(this.RuntimeContext);
+                object value = parameter.Parse(valuesByPolicy);
+                parametersByPolicyInfo.Add(parameter.Name, value);
+            }
+
+            return this.ModelBinder.Bind(sectionType, parametersByPolicyInfo);
         }
 
         public IConfigurationService WithReference(string subjectName, string subjectValue)

@@ -17,11 +17,10 @@ namespace NConfig
 
             return source;
         }
-        public static Parameter FromExpression<TSection>(this Parameter source, Expression<Func<TSection, object>> selector)
+        public static Parameter FromExpression<TSection,TProperty>(this Parameter source, Expression<Func<TSection, TProperty>> selector)
             where TSection : class
         {
-            MemberExpression s = ((MemberExpression)((UnaryExpression)selector.Body).Operand);
-            PropertyInfo pi = ((PropertyInfo)s.Member);
+            PropertyInfo pi = ((PropertyInfo)((MemberExpression)selector.Body).Member);
             source.FromPropertyInfo(pi);
             return source;
         }
@@ -29,6 +28,11 @@ namespace NConfig
         public static Parameter AddValue(this Parameter source, ParameterValue value)
         {
             source.Values.Add(value);
+            return source;
+        }
+        public static Parameter WithPolicy<TPolicy>(this Parameter source) where TPolicy : IFilterPolicy
+        {
+            source.Policy = Activator.CreateInstance<TPolicy>();
             return source;
         }
     }

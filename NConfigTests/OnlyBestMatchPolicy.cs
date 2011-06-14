@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NConfig.Policy;
-using NConfig.Model;
+﻿using NConfig;
+using NConfig.Impl;
 using NConfig.Rules;
 
 namespace TestProject1

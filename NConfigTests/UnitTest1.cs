@@ -71,29 +71,38 @@ namespace TestProject1
         {
             IConfigurationService svc = 
             ConfigurationServiceBuilder.Instance
-                .SetRuntimeContext(()=>
+                .SetRuntimeContext((context)=>
                     {
-                        return new Dictionary<string,string>
-                        {
-                            {"environment","development"},
-                            {"appType","onlineServer"}
-                        };
+                        context.Add("environment","development");
+                        context.Add("appType","onlineServer");
                     })
 
                 .AddConfigurationData(sec =>
                 {
                     sec.FromType<TestSection>()
-                        .AddParameter(new Parameter().FromExpression<TestSection>( x => x.Num)
+                        .AddParameter(new Parameter().FromExpression<TestSection,int>( x => x.Num)
+                            .WithPolicy<OnlyBestMatchPolicy>()
                             .AddValue(new ParameterValue("1")
                                 .WithReference("environment", "development")
                                 .WithReference("appType", "onlineServer"))
                             .AddValue(new ParameterValue("2")
                                 .WithReference("environment", "production")
                                 .WithReference("appType", "onlineClient")));
+                    
+                    sec.AddParameter(new Parameter().FromExpression<TestSection,string>( x => x.Name)
+                            .WithPolicy<OnlyBestMatchPolicy>()
+                            .AddValue(new ParameterValue("name 1")
+                                .WithReference("environment", "development")
+                                .WithReference("appType", "onlineServer"))
+                            .AddValue(new ParameterValue("name 2")
+                                .WithReference("environment", "production")
+                                .WithReference("appType", "onlineClient")));
                 }).Build();
 
             TestSection section=svc.GetSection<TestSection>();
             Assert.IsNotNull(section);
+            Assert.IsNotNull(section.Name);
+            Assert.IsNotNull(section.Num);
         }
     }
 }

@@ -7,7 +7,6 @@ using System.Reflection;
 using System.Diagnostics;
 using NConfig;
 using NConfig.Model;
-using NConfig.Policy;
 using NConfig.Rules;
 
 namespace TestProject1

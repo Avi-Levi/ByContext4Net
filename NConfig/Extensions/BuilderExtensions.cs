@@ -46,9 +46,13 @@ namespace NConfig
             return source;
         }
         public static ConfigurationServiceBuilder SetRuntimeContext(this ConfigurationServiceBuilder source, 
-            Func<IDictionary<string,string>> getRuntimeContext)
+            Action<IDictionary<string,string>> setRuntimeContext)
         {
-            source.RuntimeContext = getRuntimeContext();
+            if (source.RuntimeContext == null)
+            {
+                source.RuntimeContext = new Dictionary<string, string>();
+            }
+            setRuntimeContext(source.RuntimeContext);
             return source;
         }
     }
