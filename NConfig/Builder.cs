@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using NConfig.Impl;
+using NConfig.Rules;
 
 namespace NConfig
 {
@@ -10,25 +11,53 @@ namespace NConfig
     {
         private ConfigurationServiceBuilder()
         {
-            this.TypeBinders = new Dictionary<Type, Func<IEnumerable<string>, object>>();
-            this.TypeBinders.Add(typeof(Int32), input => Int32.Parse(input.Single()));
-            this.TypeBinders.Add(typeof(string), input => (string)input.Single());
+            this.SetTypeParsers();
 
-            this.Logger = new OutputLogger();
+            this.Logger = new DebugLogger();
             this.ModelBinder = new DefaultModelBinder();
             this.ConfigurationDataRepository = new ConfigurationDataRepository();
+
+            this.SetSingleValueDefaultFilterPolicy();
+            this.SetCollectionDefaultFilterPolicy();
         }
 
-        private static Lazy<ConfigurationServiceBuilder> _instance 
-            = new Lazy<ConfigurationServiceBuilder>(()=>new ConfigurationServiceBuilder());
+        #region private methods
+        private void SetTypeParsers()
+        {
+            this.TypeParsers = new Dictionary<Type, ITypeParser>();
+        }
+
+        private void SetCollectionDefaultFilterPolicy()
+        {
+            this.CollectionDefaultFilterPolicy = new FilterPolicy();
+            this.CollectionDefaultFilterPolicy.Rules.Add(new WithSpecificOrALLRerefenceToSubjectRule());
+        }
+
+        private void SetSingleValueDefaultFilterPolicy()
+        {
+            this.SingleValueDefaultFilterPolicy = new FilterPolicy();
+            this.SingleValueDefaultFilterPolicy.Rules.Add(new WithSpecificOrALLRerefenceToSubjectRule());
+            this.SingleValueDefaultFilterPolicy.Rules.Add(new BestMatchRule());
+        }
+        #endregion private methods
+
+        #region singletone
+        private static Lazy<ConfigurationServiceBuilder> _instance
+            = new Lazy<ConfigurationServiceBuilder>(() => new ConfigurationServiceBuilder());
 
         public static ConfigurationServiceBuilder Instance { get { return _instance.Value; } }
+        #endregion singleton
 
-        public IDictionary<string,string> RuntimeContext { get; set; }
+        #region configuration
+        public IDictionary<string, string> RuntimeContext { get; set; }
         public ILoggerFacade Logger { get; set; }
         public IConfigurationDataRepository ConfigurationDataRepository { get; set; }
         public IModelBinder ModelBinder { get; set; }
-        public IDictionary<Type, Func<IEnumerable<string>,object>> TypeBinders { get; private set; }
+        public IDictionary<Type, ITypeParser> TypeParsers { get; private set; }
+        public IFilterPolicy SingleValueDefaultFilterPolicy { get; set; }
+        public IFilterPolicy CollectionDefaultFilterPolicy { get; set; }
+        #endregion configuration
+
         public IConfigurationService Build()
         {
             return new ConfigurationService(

@@ -53,8 +53,10 @@
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Abstractions\IConfigurationDataProvider.cs" />
     <Compile Include="Abstractions\IConfigurationService.cs" />
+    <Compile Include="Impl\DebugLogger.cs" />
     <Compile Include="Impl\DefaultModelBinder.cs" />
     <Compile Include="Abstractions\IRuntimeContextProvider.cs" />
+    <Compile Include="Impl\TypeParsersRepository.cs" />
     <Compile Include="Model\Section.cs" />
     <Compile Include="Rules\BestMatchRule.cs" />
     <Compile Include="Impl\FilterPolicy.cs" />
@@ -65,10 +67,10 @@
     <Compile Include="Model\ParameterValue.cs" />
     <Compile Include="Abstractions\IFilterRule.cs" />
     <Compile Include="Rules\WithSpecificOrALLRerefenceToSubjectRule.cs" />
-    <Compile Include="TypeBinders\DictionaryBinder.cs" />
-    <Compile Include="TypeBinders\GenericListBinder.cs" />
-    <Compile Include="TypeBinders\Int32Binder.cs" />
-    <Compile Include="Abstractions\ITypeBinder.cs" />
+    <Compile Include="TypeParsers\DelegateWrapperTypeParser.cs" />
+    <Compile Include="TypeParsers\GenericDictionaryParser.cs" />
+    <Compile Include="TypeParsers\GenericListParser.cs" />
+    <Compile Include="Abstractions\ITypeParser.cs" />
     <Compile Include="Abstractions\ILoggerFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

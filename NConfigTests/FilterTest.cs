@@ -71,7 +71,6 @@ namespace TestProject1
         [RuntimeContextitemAttribute(env.Name, env.dev)]
         [RuntimeContextitemAttribute(appType.Name, appType.onlineClient)]
 
-        [FilterPolicyAttribute(typeof(OnlyBestMatchPolicy))]
         public void Dev_online_client()
         {
             IEnumerable<ParameterValue> result = this.FilterItems();
@@ -89,7 +88,6 @@ namespace TestProject1
         [RuntimeContextitemAttribute(appType.Name, appType.applicationServer)]
         [RuntimeContextitemAttribute(services.name, services.SomeService)]
 
-        [FilterPolicyAttribute(typeof(OnlyBestMatchPolicy))]
         public void dev_online_server()
         {
             IEnumerable<ParameterValue> result = this.FilterItems();
@@ -108,7 +106,6 @@ namespace TestProject1
         [RuntimeContextitemAttribute(appType.Name, appType.applicationServer)]
         [RuntimeContextitemAttribute(env.Name, env.prod)]
 
-        [FilterPolicyAttribute(typeof(OnlyBestMatchPolicy))]
         public void prod_online_server()
         {
             IEnumerable<ParameterValue> result = this.FilterItems();
@@ -127,7 +124,6 @@ namespace TestProject1
         [RuntimeContextitemAttribute(appType.Name, appType.onlineClient)]
         [RuntimeContextitemAttribute(env.Name, env.prod)]
 
-        [FilterPolicyAttribute(typeof(OnlyBestMatchPolicy))]
         public void prod_online_client()
         {
             IEnumerable<ParameterValue> result = this.FilterItems();
@@ -146,7 +142,6 @@ namespace TestProject1
         [RuntimeContextitemAttribute(appType.Name, appType.applicationServer)]
         [RuntimeContextitemAttribute(env.Name, env.prod)]
 
-        [FilterPolicyAttribute(typeof(OnlyBestMatchPolicy))]
         public void prod_onlineServer_auditService()
         {
             IEnumerable<ParameterValue> result = this.FilterItems();

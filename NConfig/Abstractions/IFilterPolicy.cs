@@ -8,6 +8,8 @@ namespace NConfig
 {
     public interface IFilterPolicy
     {
+        IList<IFilterRule> Rules { get; }
+
         IEnumerable<ParameterValue> Apply(IEnumerable<ParameterValue> items,
             IDictionary<string, string> runtimeContext);
     }

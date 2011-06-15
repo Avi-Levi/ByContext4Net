@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="a5ba3295-1d10-42fc-b99b-8d8256985538" name="avi@NETBOOK 2011-06-15 07:22:06" runUser="netbook\avi" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="8ca21acd-1fe6-4269-b5af-3ea22afc0391">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="avi_NETBOOK 2011-06-15 07_22_06">
+      <DeploymentItem filename="D:\work\NConfig\NConfig\NConfig\bin\Debug\NConfig.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-06-15T07:22:06.5037425+02:00" queuing="2011-06-15T07:22:15.7972740+02:00" start="2011-06-15T07:22:17.6693811+02:00" finish="2011-06-15T07:23:55.1449564+02:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="NETBOOK" outcome="Error" timestamp="2011-06-15T07:23:55.1269554+02:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="d:\work\nconfig\nconfig\nconfigtests\bin\debug\nconfigtests.dll" id="59863143-3238-122e-4d8a-637b491cc755">
+      <Execution id="878799f4-be8e-434b-b82a-a141caa3cb7a" />
+      <TestMethod codeBase="D:/work/NConfig/NConfig/NConfigTests/bin/Debug/NConfigTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.UnitTest1, NConfigTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="59863143-3238-122e-4d8a-637b491cc755" executionId="878799f4-be8e-434b-b82a-a141caa3cb7a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="878799f4-be8e-434b-b82a-a141caa3cb7a" testId="59863143-3238-122e-4d8a-637b491cc755" testName="TestMethod1" computerName="NETBOOK" duration="00:01:36.3095086" startTime="2011-06-15T07:22:18.8344477+02:00" endTime="2011-06-15T07:23:55.1439563+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="878799f4-be8e-434b-b82a-a141caa3cb7a">
+    </UnitTestResult>
+  </Results>
+</TestRun>

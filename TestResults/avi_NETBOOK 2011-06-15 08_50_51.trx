@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="5bf5b31c-bd4f-4742-bdb1-96e468489a1a" name="avi@NETBOOK 2011-06-15 08:50:51" runUser="netbook\avi" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="8ca21acd-1fe6-4269-b5af-3ea22afc0391">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="avi_NETBOOK 2011-06-15 08_50_51">
+      <DeploymentItem filename="D:\work\NConfig\NConfig\NConfig\bin\Debug\NConfig.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-06-15T08:50:51.4523121+02:00" queuing="2011-06-15T08:50:56.1385801+02:00" start="2011-06-15T08:50:56.7036125+02:00" finish="2011-06-15T08:51:01.1598673+02:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="d:\work\nconfig\nconfig\nconfigtests\bin\debug\nconfigtests.dll" id="59863143-3238-122e-4d8a-637b491cc755">
+      <Execution id="1fdb34fc-0f01-4f44-aac3-1e07e28d0e74" />
+      <TestMethod codeBase="D:/work/NConfig/NConfig/NConfigTests/bin/Debug/NConfigTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.UnitTest1, NConfigTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="59863143-3238-122e-4d8a-637b491cc755" executionId="1fdb34fc-0f01-4f44-aac3-1e07e28d0e74" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="1fdb34fc-0f01-4f44-aac3-1e07e28d0e74" testId="59863143-3238-122e-4d8a-637b491cc755" testName="TestMethod1" computerName="NETBOOK" duration="00:00:00.4211902" startTime="2011-06-15T08:50:56.9756280+02:00" endTime="2011-06-15T08:51:00.6378375+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1fdb34fc-0f01-4f44-aac3-1e07e28d0e74">
+      <Output>
+        <DebugTrace>start filtering for context: environment:development\appType:onlineServer\ and items: 
+1
+environment-development
+appType-onlineServer
+
+2
+environment-production
+appType-onlineClient
+
+start using rule: NConfig.Rules.WithSpecificOrALLRerefenceToSubjectRule
+start filtering by runtimeContextItem: environment\development
+items before: 
+1
+environment-development
+appType-onlineServer
+
+2
+environment-production
+appType-onlineClient
+
+items after: 
+1
+environment-development
+appType-onlineServer
+
+start filtering by runtimeContextItem: appType\onlineServer
+items before: 
+1
+environment-development
+appType-onlineServer
+
+items after: 
+1
+environment-development
+appType-onlineServer
+
+start using rule: NConfig.Rules.BestMatchRule
+start filtering by runtimeContextItem: environment\development
+items before: 
+1
+environment-development
+appType-onlineServer
+
+items after: 
+1
+environment-development
+appType-onlineServer
+
+start filtering by runtimeContextItem: appType\onlineServer
+items before: 
+1
+environment-development
+appType-onlineServer
+
+items after: 
+1
+environment-development
+appType-onlineServer
+
+start filtering for context: environment:development\appType:onlineServer\ and items: 
+name 1
+environment-development
+appType-onlineServer
+
+name 2
+environment-production
+appType-onlineClient
+
+start using rule: NConfig.Rules.WithSpecificOrALLRerefenceToSubjectRule
+start filtering by runtimeContextItem: environment\development
+items before: 
+name 1
+environment-development
+appType-onlineServer
+
+name 2
+environment-production
+appType-onlineClient
+
+items after: 
+name 1
+environment-development
+appType-onlineServer
+
+start filtering by runtimeContextItem: appType\onlineServer
+items before: 
+name 1
+environment-development
+appType-onlineServer
+
+items after: 
+name 1
+environment-development
+appType-onlineServer
+
+start using rule: NConfig.Rules.BestMatchRule
+start filtering by runtimeContextItem: environment\development
+items before: 
+name 1
+environment-development
+appType-onlineServer
+
+items after: 
+name 1
+environment-development
+appType-onlineServer
+
+start filtering by runtimeContextItem: appType\onlineServer
+items before: 
+name 1
+environment-development
+appType-onlineServer
+
+items after: 
+name 1
+environment-development
+appType-onlineServer
+
+start filtering for context: environment:development\appType:onlineServer\ and items: 
+1
+environment-development
+appType-onlineServer
+
+2
+environment-production
+appType-onlineClient
+
+1
+environment-development
+appType-onlineServer
+
+2
+environment-production
+appType-onlineClient
+
+start using rule: NConfig.Rules.WithSpecificOrALLRerefenceToSubjectRule
+start filtering by runtimeContextItem: environment\development
+items before: 
+1
+environment-development
+appType-onlineServer
+
+2
+environment-production
+appType-onlineClient
+
+1
+environment-development
+appType-onlineServer
+
+2
+environment-production
+appType-onlineClient
+
+items after: 
+1
+environment-development
+appType-onlineServer
+
+1
+environment-development
+appType-onlineServer
+
+start filtering by runtimeContextItem: appType\onlineServer
+items before: 
+1
+environment-development
+appType-onlineServer
+
+1
+environment-development
+appType-onlineServer
+
+items after: 
+1
+environment-development
+appType-onlineServer
+
+1
+environment-development
+appType-onlineServer
+
+start using rule: NConfig.Rules.BestMatchRule
+start filtering by runtimeContextItem: environment\development
+items before: 
+1
+environment-development
+appType-onlineServer
+
+1
+environment-development
+appType-onlineServer
+
+items after: 
+1
+environment-development
+appType-onlineServer
+
+1
+environment-development
+appType-onlineServer
+
+start filtering by runtimeContextItem: appType\onlineServer
+items before: 
+1
+environment-development
+appType-onlineServer
+
+1
+environment-development
+appType-onlineServer
+
+items after: 
+1
+environment-development
+appType-onlineServer
+
+1
+environment-development
+appType-onlineServer
+
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

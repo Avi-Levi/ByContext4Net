@@ -9,32 +9,31 @@ namespace NConfig.Impl
 {
     public class FilterPolicy : IFilterPolicy
     {
-        public FilterPolicy(IEnumerable<IFilterRule> rules)
+        public FilterPolicy()
         {
-            this._rules = rules;
-            this.Logger = new OutputLogger();
+            this.Rules = new List<IFilterRule>();
         }
-        private readonly IEnumerable<IFilterRule> _rules;
+        public IList<IFilterRule> Rules { get; private set; }
 
-        public ILoggerFacade Logger { get; set; }
         public IEnumerable<ParameterValue> Apply(IEnumerable<ParameterValue> items, IDictionary<string, string> runtimeContext)
         {
-            this.Logger.LogFormat("start filtering for context: {0} and items: {1}", runtimeContext.FormatString(), items.FormatString());
+            ILoggerFacade logger = ConfigurationServiceBuilder.Instance.Logger;
+            logger.LogFormat("start filtering for context: {0} and items: {1}", runtimeContext.FormatString(), items.FormatString());
 
             IEnumerable<ParameterValue> filteredItems = items;
-            foreach (IFilterRule rule in this._rules)
+            foreach (IFilterRule rule in this.Rules)
             {
-                this.Logger.LogFormat("start using rule: {0}", rule.GetType().FullName);
+                logger.LogFormat("start using rule: {0}", rule.GetType().FullName);
 
                 foreach (KeyValuePair<string, string> runtimeContextItem in runtimeContext)
                 {
-                    this.Logger.LogFormat("start filtering by runtimeContextItem: {0}", runtimeContextItem.FormatString());
+                    logger.LogFormat("start filtering by runtimeContextItem: {0}", runtimeContextItem.FormatString());
 
-                    this.Logger.LogFormat("items before: {0}", filteredItems.FormatString());
+                    logger.LogFormat("items before: {0}", filteredItems.FormatString());
 
                     filteredItems = rule.Apply(filteredItems, runtimeContext, runtimeContextItem);
 
-                    this.Logger.LogFormat("items after: {0}", filteredItems.FormatString());
+                    logger.LogFormat("items after: {0}", filteredItems.FormatString());
                 }
             }
 

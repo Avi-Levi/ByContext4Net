@@ -64,6 +64,8 @@ namespace TestProject1
         class TestSection
         {
             public int Num { get; set; }
+            public IList<int> Numbers { get; set; }
+            public IDictionary<int,string> Dictionary { get; set; }
             public string Name { get; set; }
         }
         [TestMethod]
@@ -76,33 +78,63 @@ namespace TestProject1
                         context.Add("environment","development");
                         context.Add("appType","onlineServer");
                     })
+                    .AddTypeParser<Int32>(input => Int32.Parse(input))
+                    .AddTypeParser<string>(input => (string)input)
 
                 .AddConfigurationData(sec =>
                 {
                     sec.FromType<TestSection>()
                         .AddParameter(new Parameter().FromExpression<TestSection,int>( x => x.Num)
-                            .WithPolicy<OnlyBestMatchPolicy>()
                             .AddValue(new ParameterValue("1")
                                 .WithReference("environment", "development")
                                 .WithReference("appType", "onlineServer"))
                             .AddValue(new ParameterValue("2")
                                 .WithReference("environment", "production")
                                 .WithReference("appType", "onlineClient")));
-                    
-                    sec.AddParameter(new Parameter().FromExpression<TestSection,string>( x => x.Name)
-                            .WithPolicy<OnlyBestMatchPolicy>()
+
+                    sec.AddParameter(new Parameter().FromExpression<TestSection, string>(x => x.Name)
                             .AddValue(new ParameterValue("name 1")
                                 .WithReference("environment", "development")
                                 .WithReference("appType", "onlineServer"))
                             .AddValue(new ParameterValue("name 2")
                                 .WithReference("environment", "production")
                                 .WithReference("appType", "onlineClient")));
-                }).Build();
+
+                    sec.AddParameter(new Parameter().FromExpression<TestSection, IList<int>>(x => x.Numbers)
+                            .AddValue(new ParameterValue("1")
+                                .WithReference("environment", "development")
+                                .WithReference("appType", "onlineServer"))
+                            .AddValue(new ParameterValue("2")
+                                .WithReference("environment", "production")
+                                .WithReference("appType", "onlineClient"))
+                            .AddValue(new ParameterValue("1")
+                                .WithReference("environment", "development")
+                                .WithReference("appType", "onlineServer"))
+                            .AddValue(new ParameterValue("2")
+                                .WithReference("environment", "production")
+                                .WithReference("appType", "onlineClient")));
+
+                    sec.AddParameter(new Parameter().FromExpression<TestSection, IDictionary<int,string>>(x => x.Dictionary)
+                        .AddValue(new ParameterValue("1:one")
+                            .WithReference("environment", "development")
+                            .WithReference("appType", "onlineServer"))
+                        .AddValue(new ParameterValue("2:two")
+                            .WithReference("environment", "production")
+                            .WithReference("appType", "onlineClient"))
+                        .AddValue(new ParameterValue("3:three")
+                            .WithReference("environment", "development")
+                            .WithReference("appType", "onlineServer"))
+                        .AddValue(new ParameterValue("4:four")
+                            .WithReference("environment", "production")
+                            .WithReference("appType", "onlineClient")));
+                                }).Build();
 
             TestSection section=svc.GetSection<TestSection>();
             Assert.IsNotNull(section);
             Assert.IsNotNull(section.Name);
             Assert.IsNotNull(section.Num);
+            Assert.IsNotNull(section.Numbers);
+            Assert.IsNotNull(section.Dictionary);
         }
     }
 }

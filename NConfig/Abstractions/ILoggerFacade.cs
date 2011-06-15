@@ -12,16 +12,4 @@ namespace NConfig
 
         void LogFormat(string message, params string[] args);
     }
-    internal class OutputLogger : ILoggerFacade
-    {
-        public void Log(string message)
-        {
-            Debug.WriteLine(message, "Filter");
-        }
-
-        public void LogFormat(string message, params string[] args)
-        {
-            Debug.WriteLine(string.Format(message,args));
-        }
-    }
 }
