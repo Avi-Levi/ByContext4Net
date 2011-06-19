@@ -4,7 +4,7 @@ namespace NConfig
 {
     public interface ICollectionTypeParser<T> : ITypeParser
     {
-        T Parse(IEnumerable<string> value);
+        T Parse(IEnumerable<string> values);
     }
 
     public interface ITypeParser<T> : ITypeParser

@@ -43,7 +43,7 @@
     <Compile Include="Abstractions\IConfigurationDataRepository.cs" />
     <Compile Include="Builder.cs" />
     <Compile Include="Extensions\BuilderExtensions.cs" />
-    <Compile Include="Extensions\Dictionary.cs" />
+    <Compile Include="Extensions\ContextSubjectReferenceExtensions.cs" />
     <Compile Include="Abstractions\IModelBinder.cs" />
     <Compile Include="Extensions\ParameterExtensions.cs" />
     <Compile Include="Extensions\ParameterValueExtensions.cs" />

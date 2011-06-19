@@ -19,6 +19,7 @@ namespace NConfig.TypeParsers
             return this.ParseMethod(value);
         }
     }
+
     public class DelegateWrapperCollectionTypeParser<T> : ITypeParser
     {
         public DelegateWrapperCollectionTypeParser(Func<IEnumerable<string>, T> parseMethod)

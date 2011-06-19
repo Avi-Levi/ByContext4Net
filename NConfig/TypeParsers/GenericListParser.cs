@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace NConfig.TypeParsers
 {
@@ -20,6 +21,21 @@ namespace NConfig.TypeParsers
             }
 
             return result;
+        }
+    }
+
+    public class GenericEnumerableParser<T> : ICollectionTypeParser<IEnumerable<T>>
+    {
+        public GenericEnumerableParser(ITypeParser<T> listItemBinder)
+        {
+            this.ListItemBinder = listItemBinder;
+        }
+
+        private ITypeParser<T> ListItemBinder { get; set; }
+
+        public IEnumerable<T> Parse(IEnumerable<string> values)
+        {
+            return values.Select(item => this.ListItemBinder.Parse(item));
         }
     }
 }

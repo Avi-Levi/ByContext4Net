@@ -60,6 +60,7 @@ namespace NConfig
             result.Add(subjectName, subjectValue);
             return new ConfigurationService(result, this.Logger, this.Repository, this.ModelBinder);
         }
+
         #endregion IConfigurationService members
     }
 }

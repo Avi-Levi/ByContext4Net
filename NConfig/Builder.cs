@@ -4,6 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 using NConfig.Impl;
 using NConfig.Rules;
+using NConfig.TypeParsers;
 
 namespace NConfig
 {
@@ -25,6 +26,14 @@ namespace NConfig
         private void SetTypeParsers()
         {
             this.TypeParsers = new Dictionary<Type, ITypeParser>();
+            
+            this.OpenGenericTypeParserTypes = new Dictionary<Type, Type>
+            { 
+                { typeof(IList<>), typeof(GenericListParser<>) },
+                { typeof(IDictionary<,>), typeof(GenericDictionaryParser<,>) },
+                { typeof(IEnumerable<>), typeof(GenericEnumerableParser<>) },
+                
+            };
         }
 
         private void SetCollectionDefaultFilterPolicy()
@@ -54,6 +63,7 @@ namespace NConfig
         public IConfigurationDataRepository ConfigurationDataRepository { get; set; }
         public IModelBinder ModelBinder { get; set; }
         public IDictionary<Type, ITypeParser> TypeParsers { get; private set; }
+        public IDictionary<Type, Type> OpenGenericTypeParserTypes { get; private set; }
         public IFilterPolicy SingleValueDefaultFilterPolicy { get; set; }
         public IFilterPolicy CollectionDefaultFilterPolicy { get; set; }
         #endregion configuration

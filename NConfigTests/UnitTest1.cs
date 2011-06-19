@@ -65,6 +65,7 @@ namespace TestProject1
         {
             public int Num { get; set; }
             public IList<int> Numbers { get; set; }
+            public IEnumerable<int> EnumerableNumbers { get; set; }
             public IDictionary<int,string> Dictionary { get; set; }
             public string Name { get; set; }
         }
@@ -114,7 +115,21 @@ namespace TestProject1
                                 .WithReference("environment", "production")
                                 .WithReference("appType", "onlineClient")));
 
-                    sec.AddParameter(new Parameter().FromExpression<TestSection, IDictionary<int,string>>(x => x.Dictionary)
+                    sec.AddParameter(new Parameter().FromExpression<TestSection, IEnumerable<int>>(x => x.EnumerableNumbers)
+                            .AddValue(new ParameterValue("1")
+                                .WithReference("environment", "development")
+                                .WithReference("appType", "onlineServer"))
+                            .AddValue(new ParameterValue("2")
+                                .WithReference("environment", "production")
+                                .WithReference("appType", "onlineClient"))
+                            .AddValue(new ParameterValue("1")
+                                .WithReference("environment", "development")
+                                .WithReference("appType", "onlineServer"))
+                            .AddValue(new ParameterValue("2")
+                                .WithReference("environment", "production")
+                                .WithReference("appType", "onlineClient")));
+
+                    sec.AddParameter(new Parameter().FromExpression<TestSection, IDictionary<int, string>>(x => x.Dictionary)
                         .AddValue(new ParameterValue("1:one")
                             .WithReference("environment", "development")
                             .WithReference("appType", "onlineServer"))
@@ -135,6 +150,8 @@ namespace TestProject1
             Assert.IsNotNull(section.Num);
             Assert.IsNotNull(section.Numbers);
             Assert.IsNotNull(section.Dictionary);
+            Assert.IsNotNull(section.EnumerableNumbers);
+            Assert.IsTrue(section.EnumerableNumbers.Any());
         }
     }
 }
