@@ -4,7 +4,8 @@ using System.Linq;
 using System.Collections.Generic;
 using NConfig.Impl;
 using NConfig.Rules;
-using NConfig.TypeParsers;
+using NConfig.ValueParsers;
+using NConfig.ValueParsers.Collection;
 
 namespace NConfig
 {
@@ -12,7 +13,7 @@ namespace NConfig
     {
         private ConfigurationServiceBuilder()
         {
-            this.SetTypeParsers();
+            this.SetValueParsers();
 
             this.Logger = new DebugLogger();
             this.ModelBinder = new DefaultModelBinder();
@@ -23,30 +24,30 @@ namespace NConfig
         }
 
         #region private methods
-        private void SetTypeParsers()
+        private void SetValueParsers()
         {
-            this.TypeParsers = new Dictionary<Type, ITypeParser>();
+            this.ValueParsers = new Dictionary<Type, IValueParser>();
             
-            this.OpenGenericTypeParserTypes = new Dictionary<Type, Type>
+            this.OpenGenericValueParserTypes = new Dictionary<Type, Type>
             { 
-                { typeof(IList<>), typeof(GenericListParser<>) },
-                { typeof(IDictionary<,>), typeof(GenericDictionaryParser<,>) },
-                { typeof(IEnumerable<>), typeof(GenericEnumerableParser<>) },
-                
+                { typeof(IList<>), typeof(ListParser<>) },
+                { typeof(IDictionary<,>), typeof(DictionaryParser<,>) },
+                { typeof(IEnumerable<>), typeof(EnumerableParser<>) },
+                { typeof(ICollection<>), typeof(CollectionParser<>) },
             };
         }
 
         private void SetCollectionDefaultFilterPolicy()
         {
-            this.CollectionDefaultFilterPolicy = new FilterPolicy();
-            this.CollectionDefaultFilterPolicy.Rules.Add(new WithSpecificOrALLRerefenceToSubjectRule());
+            this.DefaultCollectionFilterPolicy = new FilterPolicy();
+            this.DefaultCollectionFilterPolicy.Rules.Add(new WithSpecificOrALLRerefenceToSubjectRule());
         }
 
         private void SetSingleValueDefaultFilterPolicy()
         {
-            this.SingleValueDefaultFilterPolicy = new FilterPolicy();
-            this.SingleValueDefaultFilterPolicy.Rules.Add(new WithSpecificOrALLRerefenceToSubjectRule());
-            this.SingleValueDefaultFilterPolicy.Rules.Add(new BestMatchRule());
+            this.DefaultSingleValueFilterPolicy = new FilterPolicy();
+            this.DefaultSingleValueFilterPolicy.Rules.Add(new WithSpecificOrALLRerefenceToSubjectRule());
+            this.DefaultSingleValueFilterPolicy.Rules.Add(new BestMatchRule());
         }
         #endregion private methods
 
@@ -62,10 +63,10 @@ namespace NConfig
         public ILoggerFacade Logger { get; set; }
         public IConfigurationDataRepository ConfigurationDataRepository { get; set; }
         public IModelBinder ModelBinder { get; set; }
-        public IDictionary<Type, ITypeParser> TypeParsers { get; private set; }
-        public IDictionary<Type, Type> OpenGenericTypeParserTypes { get; private set; }
-        public IFilterPolicy SingleValueDefaultFilterPolicy { get; set; }
-        public IFilterPolicy CollectionDefaultFilterPolicy { get; set; }
+        public IDictionary<Type, IValueParser> ValueParsers { get; private set; }
+        public IDictionary<Type, Type> OpenGenericValueParserTypes { get; private set; }
+        public IFilterPolicy DefaultSingleValueFilterPolicy { get; set; }
+        public IFilterPolicy DefaultCollectionFilterPolicy { get; set; }
         #endregion configuration
 
         public IConfigurationService Build()

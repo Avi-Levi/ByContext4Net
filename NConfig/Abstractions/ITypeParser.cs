@@ -2,12 +2,12 @@
 
 namespace NConfig
 {
-    public interface ICollectionTypeParser<T> : ITypeParser
+    public interface ICollectionValueParser<T> : IValueParser
     {
         T Parse(IEnumerable<string> values);
     }
 
-    public interface ITypeParser<T> : ITypeParser
+    public interface IValueParser<T> : IValueParser
     {
         T Parse(string value);
     }
@@ -15,6 +15,6 @@ namespace NConfig
     /// <summary>
     /// A marker interface.
     /// </summary>
-    public interface ITypeParser
+    public interface IValueParser
     {}
 }

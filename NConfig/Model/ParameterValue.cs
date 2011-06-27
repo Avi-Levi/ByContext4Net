@@ -18,6 +18,6 @@ namespace NConfig.Model
             this.References = new List<ContextSubjectReference>();
         }
         public string Value { get; set; }
-        public IList<ContextSubjectReference> References { get; set; }
+        public IList<ContextSubjectReference> References { get; private set; }
     }
 }

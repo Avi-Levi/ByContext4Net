@@ -5,6 +5,7 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NConfig;
 using NConfig.Model;
+using NConfigTests;
 
 namespace TestProject1
 {
@@ -61,16 +62,8 @@ namespace TestProject1
         //
         #endregion
 
-        class TestSection
-        {
-            public int Num { get; set; }
-            public IList<int> Numbers { get; set; }
-            public IEnumerable<int> EnumerableNumbers { get; set; }
-            public IDictionary<int,string> Dictionary { get; set; }
-            public string Name { get; set; }
-        }
         [TestMethod]
-        public void TestMethod1()
+        public void TestObjectModelConfiguration()
         {
             IConfigurationService svc = 
             ConfigurationServiceBuilder.Instance
@@ -79,8 +72,8 @@ namespace TestProject1
                         context.Add("environment","development");
                         context.Add("appType","onlineServer");
                     })
-                    .AddTypeParser<Int32>(input => Int32.Parse(input))
-                    .AddTypeParser<string>(input => (string)input)
+                    .AddValueParser<Int32>(input => Int32.Parse(input))
+                    .AddValueParser<string>(input => (string)input)
 
                 .AddConfigurationData(sec =>
                 {
@@ -145,6 +138,31 @@ namespace TestProject1
                                 }).Build();
 
             TestSection section=svc.GetSection<TestSection>();
+            Assert.IsNotNull(section);
+            Assert.IsNotNull(section.Name);
+            Assert.IsNotNull(section.Num);
+            Assert.IsNotNull(section.Numbers);
+            Assert.IsNotNull(section.Dictionary);
+            Assert.IsNotNull(section.EnumerableNumbers);
+            Assert.IsTrue(section.EnumerableNumbers.Any());
+        }
+
+        [TestMethod]
+        public void TestXMLConfiguration()
+        {
+            IConfigurationService svc =
+            ConfigurationServiceBuilder.Instance
+                .SetRuntimeContext((context) =>
+                    {
+                        context.Add("environment", "development");
+                        context.Add("appType", "onlineServer");
+                    })
+                    .AddValueParser<Int32>(input => Int32.Parse(input))
+                    .AddValueParser<string>(input => (string)input)
+                    .AddFromXml("Configuration.xml")
+                    .Build();
+
+            TestSection section = svc.GetSection<TestSection>();
             Assert.IsNotNull(section);
             Assert.IsNotNull(section.Name);
             Assert.IsNotNull(section.Num);

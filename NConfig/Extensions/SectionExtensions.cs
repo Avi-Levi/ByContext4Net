@@ -19,9 +19,10 @@ namespace NConfig
             source.Name = type.FullName;
             return source;
         }
+
         public static Section AddParameter(this Section source, Parameter parameter)
         {
-            source.Parameters.Add(parameter);
+            source.Parameters.Add(parameter.Name,parameter);
             return source;
         }
     }

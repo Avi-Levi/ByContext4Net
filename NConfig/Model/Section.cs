@@ -9,9 +9,9 @@ namespace NConfig.Model
     {
         public Section()
         {
-            this.Parameters = new List<Parameter>();
+            this.Parameters = new Dictionary<string, Parameter>();
         }
         public string Name { get; set; }
-        public IList<Parameter> Parameters { get; set; }
+        public IDictionary<string,Parameter> Parameters { get; set; }
     }
 }

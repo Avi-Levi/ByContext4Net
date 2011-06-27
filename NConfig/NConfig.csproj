@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstractions\IConfigurationDataRepository.cs" />
+    <Compile Include="Abstractions\IConfigurationDataSource.cs" />
     <Compile Include="Builder.cs" />
     <Compile Include="Extensions\BuilderExtensions.cs" />
     <Compile Include="Extensions\ContextSubjectReferenceExtensions.cs" />
@@ -51,12 +52,10 @@
     <Compile Include="Impl\ConfigurationDataRepository.cs" />
     <Compile Include="Impl\ConfigurationService.cs" />
     <Compile Include="Extensions\Extensions.cs" />
-    <Compile Include="Abstractions\IConfigurationDataProvider.cs" />
     <Compile Include="Abstractions\IConfigurationService.cs" />
     <Compile Include="Impl\DebugLogger.cs" />
     <Compile Include="Impl\DefaultModelBinder.cs" />
     <Compile Include="Abstractions\IRuntimeContextProvider.cs" />
-    <Compile Include="Impl\TypeParsersRepository.cs" />
     <Compile Include="Model\Section.cs" />
     <Compile Include="Rules\BestMatchRule.cs" />
     <Compile Include="Impl\FilterPolicy.cs" />
@@ -67,12 +66,16 @@
     <Compile Include="Model\ParameterValue.cs" />
     <Compile Include="Abstractions\IFilterRule.cs" />
     <Compile Include="Rules\WithSpecificOrALLRerefenceToSubjectRule.cs" />
-    <Compile Include="TypeParsers\DelegateWrapperTypeParser.cs" />
-    <Compile Include="TypeParsers\GenericDictionaryParser.cs" />
-    <Compile Include="TypeParsers\GenericListParser.cs" />
+    <Compile Include="ValueParsers\Collection\CollectionParser.cs" />
+    <Compile Include="ValueParsers\Collection\CollectionValueParserBase.cs" />
+    <Compile Include="ValueParsers\DelegateWrapperTypeParser.cs" />
+    <Compile Include="ValueParsers\Collection\DictionaryParser.cs" />
+    <Compile Include="ValueParsers\Collection\EnumerableParser.cs" />
+    <Compile Include="ValueParsers\Collection\ListParser.cs" />
     <Compile Include="Abstractions\ITypeParser.cs" />
     <Compile Include="Abstractions\ILoggerFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueParsers\KeyValuePairValueParser.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

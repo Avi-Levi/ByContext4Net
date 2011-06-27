@@ -44,7 +44,7 @@ namespace NConfig
 
             IDictionary<string, object> parametersByPolicyInfo = new Dictionary<string, object>();
 
-            foreach (var parameter in section.Parameters)
+            foreach (var parameter in section.Parameters.Values)
             {
                 var valuesByPolicy = parameter.GetValuesByPolicy(this.RuntimeContext);
                 object value = parameter.Parse(valuesByPolicy);

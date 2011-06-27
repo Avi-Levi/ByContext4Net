@@ -11,15 +11,15 @@ namespace NConfig
         public static Parameter FromPropertyInfo(this Parameter source, PropertyInfo pi)
         {
             source.Name = pi.Name;
-            source.Parse = ConfigurationServiceBuilder.Instance.GetTypeParser(pi.PropertyType);
+            source.Parse = ConfigurationServiceBuilder.Instance.GetValueParser(pi.PropertyType);
 
             if (pi.PropertyType.IsAssignableFrom(typeof(IEnumerable)))
             {
-                source.Policy = ConfigurationServiceBuilder.Instance.CollectionDefaultFilterPolicy;
+                source.Policy = ConfigurationServiceBuilder.Instance.DefaultCollectionFilterPolicy;
             }
             else
             {
-                source.Policy = ConfigurationServiceBuilder.Instance.SingleValueDefaultFilterPolicy;
+                source.Policy = ConfigurationServiceBuilder.Instance.DefaultSingleValueFilterPolicy;
             }
 
             return source;

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Section name="NConfigTests.TestSection">
+    <Parameter name="Num">
+      <Values>
+        <value value="1">
+          <References subject="environment" value="development"/>
+          <References subject="appType" value="onlineServer"/>
+        </value>
+        <value value="2">
+          <References subject="environment" value="production"/>
+          <References subject="appType" value="onlineClient"/>
+        </value>
+      </Values>
+    </Parameter>
+    <Parameter name="Name">
+      <Values>
+        <value value="name-1">
+          <References subject="environment" value="development"/>
+          <References subject="appType" value="onlineServer"/>
+        </value>
+        <value value="name-2">
+          <References subject="environment" value="production"/>
+          <References subject="appType" value="onlineClient"/>
+        </value>
+      </Values>
+    </Parameter>
+    <Parameter name="Numbers">
+      <Values>
+        <value value="1">
+          <References subject="environment" value="development"/>
+          <References subject="appType" value="onlineServer"/>
+        </value>
+        <value value="2">
+          <References subject="environment" value="production"/>
+          <References subject="appType" value="onlineClient"/>
+        </value>
+        <value value="3">
+          <References subject="environment" value="development"/>
+          <References subject="appType" value="onlineServer"/>
+        </value>
+        <value value="4">
+          <References subject="environment" value="production"/>
+          <References subject="appType" value="onlineClient"/>
+        </value>
+      </Values>
+    </Parameter>
+    <Parameter name="EnumerableNumbers">
+      <Values>
+        <value value="1">
+          <References subject="environment" value="development"/>
+          <References subject="appType" value="onlineServer"/>
+        </value>
+        <value value="2">
+          <References subject="environment" value="production"/>
+          <References subject="appType" value="onlineClient"/>
+        </value>
+        <value value="3">
+          <References subject="environment" value="development"/>
+          <References subject="appType" value="onlineServer"/>
+        </value>
+        <value value="4">
+          <References subject="environment" value="production"/>
+          <References subject="appType" value="onlineClient"/>
+        </value>
+      </Values>
+    </Parameter>
+    <Parameter name="Dictionary">
+      <Values>
+        <value value="1:one">
+          <References subject="environment" value="development"/>
+          <References subject="appType" value="onlineServer"/>
+        </value>
+        <value value="2:two">
+          <References subject="environment" value="production"/>
+          <References subject="appType" value="onlineClient"/>
+        </value>
+        <value value="3:three">
+          <References subject="environment" value="development"/>
+          <References subject="appType" value="onlineServer"/>
+        </value>
+        <value value="4:four">
+          <References subject="environment" value="production"/>
+          <References subject="appType" value="onlineClient"/>
+        </value>
+      </Values>
+    </Parameter>
+  </Section>
+</Configuration>

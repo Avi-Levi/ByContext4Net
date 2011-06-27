@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NConfig.Model;
-using NConfig.TypeParsers;
+using NConfig.ValueParsers;
 using System.Reflection;
 using System.Collections;
 
@@ -14,12 +14,6 @@ namespace NConfig
         public static ConfigurationServiceBuilder SetLogger(this ConfigurationServiceBuilder source, ILoggerFacade logger)
         {
             source.Logger = logger;
-            return source;
-        }
-        public static ConfigurationServiceBuilder AddConfigurationData(this ConfigurationServiceBuilder source,
-            IConfigurationDataProvider provider)
-        {
-            source.ConfigurationDataRepository.Sections.AddRange(provider.GetSections());
             return source;
         }
         public static ConfigurationServiceBuilder AddConfigurationData(this ConfigurationServiceBuilder source,
@@ -58,53 +52,53 @@ namespace NConfig
             return source;
         }
 
-        public static ConfigurationServiceBuilder AddTypeParser<T>(this ConfigurationServiceBuilder source,
+        public static ConfigurationServiceBuilder AddValueParser<T>(this ConfigurationServiceBuilder source,
             Func<string, T> parseMethod)
         {
-            ITypeParser parser = new DelegateWrapperTypeParser<T>(parseMethod);
-            source.TypeParsers.Add(typeof(T), parser);
+            IValueParser parser = new DelegateWrapperValueParser<T>(parseMethod);
+            source.ValueParsers.Add(typeof(T), parser);
 
             return source;
         }
 
-        public static ConfigurationServiceBuilder AddCollectionTypeParser<T>(this ConfigurationServiceBuilder source,
+        public static ConfigurationServiceBuilder AddCollectionValueParser<T>(this ConfigurationServiceBuilder source,
             Func<IEnumerable<string>, T> parseMethod)
         {
-            ITypeParser parser = new DelegateWrapperCollectionTypeParser<T>(parseMethod);
-            source.TypeParsers.Add(typeof(T), parser);
+            IValueParser parser = new DelegateWrapperCollectionValueParser<T>(parseMethod);
+            source.ValueParsers.Add(typeof(T), parser);
 
             return source;
         }
 
-        public static Func<IEnumerable<string>, object> GetTypeParser(this ConfigurationServiceBuilder source, Type type)
+        public static Func<IEnumerable<string>, object> GetValueParser(this ConfigurationServiceBuilder source, Type type)
         {
-            if (!source.TypeParsers.ContainsKey(type))
+            if (!source.ValueParsers.ContainsKey(type))
             {
-                if (type.IsGenericType)
+                if (type.IsGenericType && source.OpenGenericValueParserTypes.ContainsKey(type.GetGenericTypeDefinition()))
                 {
-                    Type openGenericParserType = source.OpenGenericTypeParserTypes[type.GetGenericTypeDefinition()];
+                    Type openGenericParserType = source.OpenGenericValueParserTypes[type.GetGenericTypeDefinition()];
 
                     Type[] genericArguments = type.GetGenericArguments();
-                    
+
                     Type parserType = openGenericParserType.MakeGenericType(genericArguments);
 
-                    var argumentsParserTypes = genericArguments.Select(arg=>typeof(ITypeParser<>).MakeGenericType(arg)).ToArray();
-                    
+                    var argumentsParserTypes = genericArguments.Select(arg => typeof(IValueParser<>).MakeGenericType(arg)).ToArray();
+
                     ConstructorInfo ci = parserType.GetConstructor(argumentsParserTypes);
 
-                    IEnumerable<ITypeParser> genericArgumentsParsers = genericArguments.Select(arg => source.TypeParsers[arg]);
+                    IEnumerable<IValueParser> genericArgumentsParsers = genericArguments.Select(arg => source.ValueParsers[arg]);
 
-                    ITypeParser parser = (ITypeParser)ci.Invoke(genericArgumentsParsers.ToArray());
+                    IValueParser parser = (IValueParser)ci.Invoke(genericArgumentsParsers.ToArray());
 
-                    source.TypeParsers.Add(type, parser);     
+                    source.ValueParsers.Add(type, parser);
                 }
             }
 
             Func<IEnumerable<string>, object> result = input =>
             {
-                ITypeParser parser = source.TypeParsers[type];
+                IValueParser parser = source.ValueParsers[type];
                 MethodInfo parseMethodInfo = parser.GetType().GetMethod("Parse");
-                if (typeof(ICollectionTypeParser<>).MakeGenericType(type).IsAssignableFrom(parser.GetType()))
+                if (typeof(ICollectionValueParser<>).MakeGenericType(type).IsAssignableFrom(parser.GetType()))
                 {
                     return parseMethodInfo.Invoke(parser, new object[1] { input });
                 }
