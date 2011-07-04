@@ -17,7 +17,7 @@ namespace NConfig.Impl
 
         public IEnumerable<ParameterValue> Apply(IEnumerable<ParameterValue> items, IDictionary<string, string> runtimeContext)
         {
-            ILoggerFacade logger = ConfigurationServiceBuilder.Instance.Logger;
+            ILoggerFacade logger = Configure.Instance.Logger;
             logger.LogFormat("start filtering for context: {0} and items: {1}", runtimeContext.FormatString(), items.FormatString());
 
             IEnumerable<ParameterValue> filteredItems = items;

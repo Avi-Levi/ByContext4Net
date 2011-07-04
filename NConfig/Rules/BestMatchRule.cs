@@ -8,7 +8,8 @@ namespace NConfig.Rules
 {
     public class BestMatchRule : IFilterRule
     {
-        public IEnumerable<ParameterValue> Apply(IEnumerable<ParameterValue> items, IDictionary<string, string> runtimeContext,
+        public IEnumerable<ParameterValue> Apply(IEnumerable<ParameterValue> items, 
+            IDictionary<string, string> runtimeContext,
             KeyValuePair<string, string> currentRuntimeContextItem)
         {
             if(items.Any(currentRuntimeContextItem) && items.Any(currentRuntimeContextItem.Key))

@@ -3,6 +3,8 @@ using NConfig.Model;
 using System.Reflection;
 using System.Linq.Expressions;
 using System.Collections;
+using NConfig.Abstractions;
+using NConfig.Impl;
 
 namespace NConfig
 {
@@ -11,17 +13,8 @@ namespace NConfig
         public static Parameter FromPropertyInfo(this Parameter source, PropertyInfo pi)
         {
             source.Name = pi.Name;
-            source.Parse = ConfigurationServiceBuilder.Instance.GetValueParser(pi.PropertyType);
-
-            if (pi.PropertyType.IsAssignableFrom(typeof(IEnumerable)))
-            {
-                source.Policy = ConfigurationServiceBuilder.Instance.DefaultCollectionFilterPolicy;
-            }
-            else
-            {
-                source.Policy = ConfigurationServiceBuilder.Instance.DefaultSingleValueFilterPolicy;
-            }
-
+            source.TypeName = pi.PropertyType.AssemblyQualifiedName;
+            
             return source;
         }
         public static Parameter FromExpression<TSection,TProperty>(this Parameter source, Expression<Func<TSection, TProperty>> selector)
@@ -37,10 +30,31 @@ namespace NConfig
             source.Values.Add(value);
             return source;
         }
-        public static Parameter WithPolicy<TPolicy>(this Parameter source) where TPolicy : IFilterPolicy
+
+        public static IValueProvider ToValueProvider(this Parameter source)
         {
-            source.Policy = Activator.CreateInstance<TPolicy>();
-            return source;
+            Type parameterType = Type.GetType(source.TypeName,true);
+            var parseMethod = Configure.Instance.GetValueParser(parameterType);
+            IFilterPolicy policy = GetPolicyForParameter(source, parameterType);
+            IValueProvider provider = new ValueProvider(source, parseMethod, policy);
+
+            return provider;
+        }
+
+        private static IFilterPolicy GetPolicyForParameter(Parameter parameter,Type parameterType)
+        {
+            if (!string.IsNullOrEmpty(parameter.PolicyName))
+            {
+                return Configure.Instance.Policies[parameter.PolicyName];
+            }
+            else if (parameterType.IsAssignableFrom(typeof(IEnumerable)))
+            {
+                return Configure.Instance.Policies[Configure.DefaultCollectionFilterPolicyName];
+            }
+            else
+            {
+                return Configure.Instance.Policies[Configure.DefaultSingleValueFilterPolicyName];
+            }
         }
     }
 }

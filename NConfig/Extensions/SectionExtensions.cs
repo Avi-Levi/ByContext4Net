@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using NConfig.Model;
 using System.Linq.Expressions;
+using NConfig.Abstractions;
+using NConfig.Impl;
 
 namespace NConfig
 {
@@ -17,6 +19,7 @@ namespace NConfig
         public static Section FromType(this Section source, Type type)
         {
             source.Name = type.FullName;
+            source.TypeName = type.AssemblyQualifiedName;
             return source;
         }
 
@@ -24,6 +27,20 @@ namespace NConfig
         {
             source.Parameters.Add(parameter.Name,parameter);
             return source;
+        }
+
+        public static ISectionProvider ToSectionProvider(this Section source)
+        {
+            Type sectionType = Type.GetType(source.TypeName,true);
+
+            SectionProvider provider = 
+                new SectionProvider(sectionType){ModelBinder = Configure.Instance.ModelBinder};
+
+
+            source.Parameters.Values.ForEach
+                (p=>provider.ParameterValuesProviders.Add(p.Name, p.ToValueProvider()));
+
+            return provider;
         }
     }
 }

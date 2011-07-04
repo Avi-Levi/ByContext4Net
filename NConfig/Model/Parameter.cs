@@ -15,13 +15,9 @@ namespace NConfig.Model
             this.Values = new List<ParameterValue>();
         }
         public string Name { get; set; }
-        public Func<IEnumerable<string>,object> Parse { get; set; }
-        public IList<ParameterValue> Values { get; set; }
-        public IFilterPolicy Policy { get; set; }
+        public string TypeName { get; set; }
+        public string PolicyName { get; set; }
 
-        public IEnumerable<string> GetValuesByPolicy(IDictionary<string, string> runtimeContext)
-        {
-            return this.Policy.Apply(this.Values, runtimeContext).Select(v=>v.Value);
-        }
+        public IList<ParameterValue> Values { get; set; }
     }
 }
