@@ -5,6 +5,7 @@ using NConfig.Model;
 using System.Collections.Generic;
 using System.Reflection;
 using NConfig.Abstractions;
+using NConfig.Exceptions;
 
 namespace NConfig
 {
@@ -31,12 +32,30 @@ namespace NConfig
         #region IConfigurationService members
         public TSection GetSection<TSection>() where TSection : class
         {
-            return (TSection)this.GetSection(typeof(TSection));
+            try
+            {
+                return (TSection)this.GetSection(typeof(TSection));
+            }
+            catch (Exception ex)
+            {
+                throw new GetSectionException(typeof(TSection), ex);
+            }
         }
 
         public object GetSection(Type sectionType)
         {
-            return this.SectionsProviders[sectionType.FullName].Get(this.RuntimeContext);
+            try
+            {
+                if(!this.SectionsProviders.ContainsKey(sectionType.FullName))
+                {
+                    throw new InvalidOperationException("No configuration data was provider for section.");
+                }
+                return this.SectionsProviders[sectionType.FullName].Get(this.RuntimeContext);
+            }
+            catch (Exception ex)
+            {
+                throw new GetSectionException(sectionType, ex);
+            }
         }
 
         public IConfigurationService WithReference(string subjectName, string subjectValue)

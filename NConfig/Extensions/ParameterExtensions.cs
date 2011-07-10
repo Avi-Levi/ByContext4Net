@@ -5,6 +5,8 @@ using System.Linq.Expressions;
 using System.Collections;
 using NConfig.Abstractions;
 using NConfig.Impl;
+using NConfig.Filter;
+using NConfig.Filter.Rules;
 
 namespace NConfig
 {
@@ -31,29 +33,29 @@ namespace NConfig
             return source;
         }
 
-        public static IValueProvider ToValueProvider(this Parameter source)
+        public static IValueProvider ToValueProvider(this Parameter source, Configure config)
         {
             Type parameterType = Type.GetType(source.TypeName,true);
-            var parseMethod = Configure.Instance.GetValueParser(parameterType);
-            IFilterPolicy policy = GetPolicyForParameter(source, parameterType);
+            var parseMethod = config.GetValueParser(parameterType);
+            IFilterPolicy policy = GetFilterPolicyForParameter(source, parameterType, config);
             IValueProvider provider = new ValueProvider(source, parseMethod, policy);
 
             return provider;
         }
 
-        private static IFilterPolicy GetPolicyForParameter(Parameter parameter,Type parameterType)
+        private static IFilterPolicy GetFilterPolicyForParameter(Parameter parameter, Type parameterType, Configure config)
         {
             if (!string.IsNullOrEmpty(parameter.PolicyName))
             {
-                return Configure.Instance.Policies[parameter.PolicyName];
+                return config.FilterPolicies[parameter.PolicyName];
             }
             else if (parameterType.IsAssignableFrom(typeof(IEnumerable)))
             {
-                return Configure.Instance.Policies[Configure.DefaultCollectionFilterPolicyName];
+                return config.FilterPolicies[Configure.DefaultCollectionFilterPolicyName];
             }
             else
             {
-                return Configure.Instance.Policies[Configure.DefaultSingleValueFilterPolicyName];
+                return config.FilterPolicies[Configure.DefaultSingleValueFilterPolicyName];
             }
         }
     }

@@ -3,10 +3,11 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using NConfig.Impl;
-using NConfig.Rules;
+using NConfig.Filter;
 using NConfig.ValueParsers;
 using NConfig.ValueParsers.Collection;
 using NConfig.Abstractions;
+using NConfig.Filter.Rules;
 
 namespace NConfig
 {
@@ -19,7 +20,7 @@ namespace NConfig
             this.Logger = new DebugLogger();
             this.ModelBinder = new DefaultModelBinder();
 
-            this.Policies = new Dictionary<string, IFilterPolicy>();
+            this.FilterPolicies = new Dictionary<string, IFilterPolicy>();
             this.SectionsProviders = new Dictionary<string, ISectionProvider>();
             this.SetSingleValueDefaultFilterPolicy();
             this.SetCollectionDefaultFilterPolicy();
@@ -52,28 +53,21 @@ namespace NConfig
 
         private void SetCollectionDefaultFilterPolicy()
         {
-            FilterPolicy policy = new FilterPolicy();
-            policy.Rules.Add(new WithSpecificOrALLRerefenceToSubjectRule());
-
-            this.Policies.Add(DefaultCollectionFilterPolicyName, policy);
+            var ruleSet = new IFilterRule[1] { new WithSpecificOrALLRerefenceToSubjectRule()};
+            this.FilterPolicies.Add(DefaultCollectionFilterPolicyName, new FilterPolicy(ruleSet));
         }
 
         private void SetSingleValueDefaultFilterPolicy()
         {
-            FilterPolicy policy = new FilterPolicy();
-            policy.Rules.Add(new WithSpecificOrALLRerefenceToSubjectRule());
-            policy.Rules.Add(new BestMatchRule());
+            var ruleSet = new IFilterRule[2] 
+            { 
+                new WithSpecificOrALLRerefenceToSubjectRule(),
+                new BestMatchRule()
+            };
 
-            this.Policies.Add(DefaultSingleValueFilterPolicyName, policy);
+            this.FilterPolicies.Add(DefaultSingleValueFilterPolicyName, new FilterPolicy(ruleSet));
         }
         #endregion private methods
-
-        #region singletone
-        private static Lazy<Configure> _instance
-            = new Lazy<Configure>(() => new Configure());
-
-        public static Configure Instance { get { return _instance.Value; } }
-        #endregion singleton
 
         #region configuration
         public IDictionary<string, string> RuntimeContext { get; set; }
@@ -85,7 +79,7 @@ namespace NConfig
         public const string DefaultSingleValueFilterPolicyName = "DefaultSingleValueFilterPolicy";
         public const string DefaultCollectionFilterPolicyName = "DefaultCollectionFilterPolicy";
 
-        public IDictionary<string, IFilterPolicy> Policies { get; private set; }
+        public IDictionary<string, IFilterPolicy> FilterPolicies { get; private set; }
         
         #endregion configuration
 
@@ -95,6 +89,11 @@ namespace NConfig
                 this.RuntimeContext,
                 this.Logger,
                 this.SectionsProviders);
+        }
+
+        public static Configure With()
+        {
+            return new Configure();
         }
     }
 }

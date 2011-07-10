@@ -44,16 +44,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstractions\IHaveFilterReference.cs" />
     <Compile Include="Abstractions\ISectionProvider.cs" />
     <Compile Include="Abstractions\IValueProvider.cs" />
     <Compile Include="Configuration\Configure.cs" />
     <Compile Include="Configuration\ParameterConfiguration.cs" />
+    <Compile Include="Exceptions\GetSectionException.cs" />
     <Compile Include="Extensions\ConfigureExtensions.cs" />
     <Compile Include="Extensions\ContextSubjectReferenceExtensions.cs" />
     <Compile Include="Abstractions\IModelBinder.cs" />
     <Compile Include="Extensions\ParameterExtensions.cs" />
+    <Compile Include="Extensions\HaveFilterReferenceExtensions.cs" />
     <Compile Include="Extensions\ParameterValueExtensions.cs" />
     <Compile Include="Extensions\SectionExtensions.cs" />
+    <Compile Include="Exceptions\TypeNotSupportedException.cs" />
+    <Compile Include="Filter\FilterPolicy.cs" />
+    <Compile Include="Filter\IFilterPolicy.cs" />
     <Compile Include="Impl\ConfigurationService.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Abstractions\IConfigurationService.cs" />
@@ -63,15 +69,13 @@
     <Compile Include="Impl\SectionProvider.cs" />
     <Compile Include="Impl\ValueProvider.cs" />
     <Compile Include="Model\Section.cs" />
-    <Compile Include="Rules\BestMatchRule.cs" />
-    <Compile Include="Impl\FilterPolicy.cs" />
-    <Compile Include="Abstractions\IFilterPolicy.cs" />
+    <Compile Include="Filter\Rules\BestMatchRule.cs" />
     <Compile Include="Model\ContextSubject.cs" />
     <Compile Include="Model\ContextSubjectReference.cs" />
     <Compile Include="Model\Parameter.cs" />
     <Compile Include="Model\ParameterValue.cs" />
-    <Compile Include="Abstractions\IFilterRule.cs" />
-    <Compile Include="Rules\WithSpecificOrALLRerefenceToSubjectRule.cs" />
+    <Compile Include="Filter\Rules\IFilterRule.cs" />
+    <Compile Include="Filter\Rules\WithSpecificOrALLRerefenceToSubjectRule.cs" />
     <Compile Include="Configuration\SectionConfiguration.cs" />
     <Compile Include="ValueParsers\Collection\CollectionParser.cs" />
     <Compile Include="ValueParsers\Collection\CollectionValueParserBase.cs" />

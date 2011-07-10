@@ -9,11 +9,15 @@
     <ProjectGuid>{4EE3B279-D72F-479B-86CE-7FF270F0D9FD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NConfigTests</RootNamespace>
-    <AssemblyName>NConfigTests</AssemblyName>
+    <RootNamespace>NConfig.Tests</RootNamespace>
+    <AssemblyName>NConfig.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,6 +42,8 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Channels" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
@@ -45,10 +51,16 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Filter\BestMatchRuleTest.cs" />
+    <Compile Include="Helpers\Attributes.cs" />
+    <Compile Include="Helpers\Helper.cs" />
+    <Compile Include="Helpers\InterceptorTypeNamesParameterValues.cs" />
+    <Compile Include="Helpers\LoggingFolderPathParameterValues.cs" />
+    <Compile Include="Helpers\Subjects.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FilterTest.cs" />
+    <Compile Include="Filter\FilterPolicySingleValueTest.cs" />
     <Compile Include="TestSection.cs" />
+    <Compile Include="TestEnum.cs" />
     <Compile Include="UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>

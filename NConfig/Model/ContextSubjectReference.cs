@@ -8,16 +8,18 @@ namespace NConfig.Model
     public class ContextSubjectReference
     {
         public const string ALL = "ALL";
-        public ContextSubjectReference()
+        public ContextSubjectReference(string name, string value)
         {
-            this.SubjectValue = ALL;
+            this.Name = name;
+            this.Value = value;
         }
-        public string SubjectName { get; set; }
-        public string SubjectValue { get; set; }
+
+        public string Name { get; private set; }
+        public string Value { get; private set; }
 
         public override string ToString()
         {
-            return this.SubjectName + ":" + this.SubjectValue;
+            return this.Name + ":" + this.Value;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Configuration>
-  <Section TypeName="NConfigTests.TestSection,NConfigTests">
+  <Section TypeName="NConfig.Tests.TestSection,NConfig.Tests">
     <Parameter Name="Num">
       <Values>
         <Value Value="1">
@@ -8,6 +8,18 @@
           <Reference Subject="appType" Value="onlineServer"/>
         </Value>
         <Value Value="2">
+          <Reference Subject="environment" Value="production"/>
+          <Reference Subject="appType" Value="onlineClient"/>
+        </Value>
+      </Values>
+    </Parameter>
+    <Parameter Name="EnumValue">
+      <Values>
+        <Value Value="Value1">
+          <Reference Subject="environment" Value="development"/>
+          <Reference Subject="appType" Value="onlineServer"/>
+        </Value>
+        <Value Value="Value1">
           <Reference Subject="environment" Value="production"/>
           <Reference Subject="appType" Value="onlineClient"/>
         </Value>

@@ -47,4 +47,11 @@ namespace NConfig.ValueParsers
             return Char.Parse(value);
         }
     }
+    public class EnumParser<TEnum> : IValueParser<TEnum> where TEnum : struct
+    {
+        public TEnum Parse(string value)
+        {
+            return (TEnum)Enum.Parse(typeof(TEnum), value, true);
+        }
+    }
 }

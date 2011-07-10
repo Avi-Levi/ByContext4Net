@@ -9,13 +9,12 @@ namespace NConfig.Impl
 {
     public class SectionProvider : ISectionProvider
     {
-        public SectionProvider(Type sectionType)
+        public SectionProvider()
         {
             this.ParameterValuesProviders = new Dictionary<string, IValueProvider>();
-            this.SectionType = sectionType;
         }
 
-        private Type SectionType { get; set; }
+        public Type SectionType { get; set; }
         public IModelBinder ModelBinder { get; set; }
         public IDictionary<string, IValueProvider> ParameterValuesProviders { get; private set; }
 

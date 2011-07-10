@@ -5,9 +5,8 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NConfig;
 using NConfig.Model;
-using NConfigTests;
 
-namespace TestProject1
+namespace NConfig.Tests
 {
     /// <summary>
     /// Summary description for UnitTest1
@@ -66,81 +65,82 @@ namespace TestProject1
         public void TestObjectModelConfiguration()
         {
             IConfigurationService svc = 
-            ConfigurationServiceBuilder.Instance
-                .SetRuntimeContext((context)=>
+            Configure.With()
+                .RuntimeContext((context)=>
                     {
                         context.Add("environment","development");
                         context.Add("appType","onlineServer");
                     })
-                    .AddValueParser<Int32>(input => Int32.Parse(input))
-                    .AddValueParser<string>(input => (string)input)
 
-                .AddConfigurationData(sec =>
+                .AddSection(sec =>
                 {
                     sec.FromType<TestSection>()
                         .AddParameter(new Parameter().FromExpression<TestSection,int>( x => x.Num)
                             .AddValue(new ParameterValue("1")
-                                .WithReference("environment", "development")
-                                .WithReference("appType", "onlineServer"))
+                                .AddReference("environment", "development")
+                                .AddReference("appType", "onlineServer"))
                             .AddValue(new ParameterValue("2")
-                                .WithReference("environment", "production")
-                                .WithReference("appType", "onlineClient")));
-
-                    sec.AddParameter(new Parameter().FromExpression<TestSection, string>(x => x.Name)
+                                .AddReference("environment", "production")
+                                .AddReference("appType", "onlineClient")))
+                        .AddParameter(new Parameter().FromExpression<TestSection, string>(x => x.Name)
                             .AddValue(new ParameterValue("name 1")
-                                .WithReference("environment", "development")
-                                .WithReference("appType", "onlineServer"))
+                                .AddReference("environment", "development")
+                                .AddReference("appType", "onlineServer"))
                             .AddValue(new ParameterValue("name 2")
-                                .WithReference("environment", "production")
-                                .WithReference("appType", "onlineClient")));
-
-                    sec.AddParameter(new Parameter().FromExpression<TestSection, IList<int>>(x => x.Numbers)
+                                .AddReference("environment", "production")
+                                .AddReference("appType", "onlineClient")))
+                        .AddParameter(new Parameter().FromExpression<TestSection, IList<int>>(x => x.Numbers)
                             .AddValue(new ParameterValue("1")
-                                .WithReference("environment", "development")
-                                .WithReference("appType", "onlineServer"))
+                                .AddReference("environment", "development")
+                                .AddReference("appType", "onlineServer"))
                             .AddValue(new ParameterValue("2")
-                                .WithReference("environment", "production")
-                                .WithReference("appType", "onlineClient"))
+                                .AddReference("environment", "production")
+                                .AddReference("appType", "onlineClient"))
                             .AddValue(new ParameterValue("1")
-                                .WithReference("environment", "development")
-                                .WithReference("appType", "onlineServer"))
+                                .AddReference("environment", "development")
+                                .AddReference("appType", "onlineServer"))
                             .AddValue(new ParameterValue("2")
-                                .WithReference("environment", "production")
-                                .WithReference("appType", "onlineClient")));
-
-                    sec.AddParameter(new Parameter().FromExpression<TestSection, IEnumerable<int>>(x => x.EnumerableNumbers)
+                                .AddReference("environment", "production")
+                                .AddReference("appType", "onlineClient")))
+                        .AddParameter(new Parameter().FromExpression<TestSection, IEnumerable<int>>(x => x.EnumerableNumbers)
                             .AddValue(new ParameterValue("1")
-                                .WithReference("environment", "development")
-                                .WithReference("appType", "onlineServer"))
+                                .AddReference("environment", "development")
+                                .AddReference("appType", "onlineServer"))
                             .AddValue(new ParameterValue("2")
-                                .WithReference("environment", "production")
-                                .WithReference("appType", "onlineClient"))
+                                .AddReference("environment", "production")
+                                .AddReference("appType", "onlineClient"))
                             .AddValue(new ParameterValue("1")
-                                .WithReference("environment", "development")
-                                .WithReference("appType", "onlineServer"))
+                                .AddReference("environment", "development")
+                                .AddReference("appType", "onlineServer"))
                             .AddValue(new ParameterValue("2")
-                                .WithReference("environment", "production")
-                                .WithReference("appType", "onlineClient")));
+                                .AddReference("environment", "production")
+                                .AddReference("appType", "onlineClient")))
+                        .AddParameter(new Parameter().FromExpression<TestSection,TestEnum>(x=>x.EnumValue)
+                            .AddValue(new ParameterValue("Value1")
+                                .AddReference("environment", "development")
+                                .AddReference("appType", "onlineServer")))
+                                ;
 
                     sec.AddParameter(new Parameter().FromExpression<TestSection, IDictionary<int, string>>(x => x.Dictionary)
                         .AddValue(new ParameterValue("1:one")
-                            .WithReference("environment", "development")
-                            .WithReference("appType", "onlineServer"))
+                            .AddReference("environment", "development")
+                            .AddReference("appType", "onlineServer"))
                         .AddValue(new ParameterValue("2:two")
-                            .WithReference("environment", "production")
-                            .WithReference("appType", "onlineClient"))
+                            .AddReference("environment", "production")
+                            .AddReference("appType", "onlineClient"))
                         .AddValue(new ParameterValue("3:three")
-                            .WithReference("environment", "development")
-                            .WithReference("appType", "onlineServer"))
+                            .AddReference("environment", "development")
+                            .AddReference("appType", "onlineServer"))
                         .AddValue(new ParameterValue("4:four")
-                            .WithReference("environment", "production")
-                            .WithReference("appType", "onlineClient")));
+                            .AddReference("environment", "production")
+                            .AddReference("appType", "onlineClient")));
                                 }).Build();
 
             TestSection section=svc.GetSection<TestSection>();
             Assert.IsNotNull(section);
             Assert.IsNotNull(section.Name);
             Assert.IsNotNull(section.Num);
+            Assert.AreEqual(TestEnum.Value1, section.EnumValue);
             Assert.IsNotNull(section.Numbers);
             Assert.IsNotNull(section.Dictionary);
             Assert.IsNotNull(section.EnumerableNumbers);
@@ -148,17 +148,15 @@ namespace TestProject1
         }
 
         [TestMethod]
-        public void TestXMLConfiguration()
+        public void TestXMLConfiguration_load_from_file()
         {
             IConfigurationService svc =
-            ConfigurationServiceBuilder.Instance
-                .SetRuntimeContext((context) =>
+            Configure.With()
+                .RuntimeContext((context) =>
                     {
                         context.Add("environment", "development");
                         context.Add("appType", "onlineServer");
                     })
-                    .AddValueParser<Int32>(input => Int32.Parse(input))
-                    .AddValueParser<string>(input => (string)input)
                     .AddFromXml("Configuration.xml")
                     .Build();
 
@@ -166,6 +164,7 @@ namespace TestProject1
             Assert.IsNotNull(section);
             Assert.IsNotNull(section.Name);
             Assert.IsNotNull(section.Num);
+            Assert.AreEqual(TestEnum.Value1, section.EnumValue);
             Assert.IsNotNull(section.Numbers);
             Assert.IsNotNull(section.Dictionary);
             Assert.IsNotNull(section.EnumerableNumbers);

@@ -18,6 +18,19 @@ Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = NConfig.vsmdi
 	EndGlobalSection
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = NConfig.XML\\NConfig.XML.csproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = NConfig.XML\\
+		SccProjectUniqueName2 = NConfig\\NConfig.csproj
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = NConfig\\
+		SccProjectUniqueName3 = NConfigTests\\NConfigTests.csproj
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = NConfigTests\\
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms

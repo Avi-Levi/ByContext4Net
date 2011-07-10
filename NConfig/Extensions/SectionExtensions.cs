@@ -29,16 +29,16 @@ namespace NConfig
             return source;
         }
 
-        public static ISectionProvider ToSectionProvider(this Section source)
+        public static ISectionProvider ToSectionProvider(this Section source, Configure config)
         {
             Type sectionType = Type.GetType(source.TypeName,true);
 
-            SectionProvider provider = 
-                new SectionProvider(sectionType){ModelBinder = Configure.Instance.ModelBinder};
+            SectionProvider provider =
+                new SectionProvider{SectionType = sectionType, ModelBinder = config.ModelBinder };
 
 
             source.Parameters.Values.ForEach
-                (p=>provider.ParameterValuesProviders.Add(p.Name, p.ToValueProvider()));
+                (p => provider.ParameterValuesProviders.Add(p.Name, p.ToValueProvider(config)));
 
             return provider;
         }
