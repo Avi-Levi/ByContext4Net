@@ -8,10 +8,15 @@ namespace NConfig.Model
     public class ContextSubjectReference
     {
         public const string ALL = "ALL";
-        public ContextSubjectReference(string name, string value)
+        private ContextSubjectReference(string name, string value)
         {
             this.Name = name;
             this.Value = value;
+        }
+
+        public static ContextSubjectReference Create(string name, string value)
+        {
+            return new ContextSubjectReference(name, value);
         }
 
         public string Name { get; private set; }

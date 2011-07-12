@@ -18,10 +18,8 @@ namespace NConfig
             return source;
         }
         public static Configure AddSection(this Configure source,
-            Action<Section> buildSection)
+            Section section)
         {
-            Section section = new Section();
-            buildSection(section);
             source.SectionsProviders.Add(section.Name, section.ToSectionProvider(source));
             return source;
         }

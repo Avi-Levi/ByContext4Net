@@ -48,7 +48,6 @@
     <Compile Include="Abstractions\ISectionProvider.cs" />
     <Compile Include="Abstractions\IValueProvider.cs" />
     <Compile Include="Configuration\Configure.cs" />
-    <Compile Include="Configuration\ParameterConfiguration.cs" />
     <Compile Include="Exceptions\GetSectionException.cs" />
     <Compile Include="Extensions\ConfigureExtensions.cs" />
     <Compile Include="Extensions\ContextSubjectReferenceExtensions.cs" />
@@ -70,13 +69,11 @@
     <Compile Include="Impl\ValueProvider.cs" />
     <Compile Include="Model\Section.cs" />
     <Compile Include="Filter\Rules\BestMatchRule.cs" />
-    <Compile Include="Model\ContextSubject.cs" />
     <Compile Include="Model\ContextSubjectReference.cs" />
     <Compile Include="Model\Parameter.cs" />
     <Compile Include="Model\ParameterValue.cs" />
     <Compile Include="Filter\Rules\IFilterRule.cs" />
     <Compile Include="Filter\Rules\WithSpecificOrALLRerefenceToSubjectRule.cs" />
-    <Compile Include="Configuration\SectionConfiguration.cs" />
     <Compile Include="ValueParsers\Collection\CollectionParser.cs" />
     <Compile Include="ValueParsers\Collection\CollectionValueParserBase.cs" />
     <Compile Include="ValueParsers\DelegateWrapperTypeParser.cs" />

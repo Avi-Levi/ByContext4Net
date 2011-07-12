@@ -10,12 +10,12 @@ namespace NConfig
     {
         public static ParameterValue AddReference(this ParameterValue source, string subjectName, string subjectValue)
         {
-            source.References.Add(new ContextSubjectReference(subjectName, subjectValue));
+            source.References.Add(ContextSubjectReference.Create(subjectName, subjectValue));
             return source;
         }
         public static ParameterValue AddAllReferenceToSubject(this ParameterValue source, string subjectName)
         {
-            source.References.Add(new ContextSubjectReference(subjectName, ContextSubjectReference.ALL));
+            source.References.Add(ContextSubjectReference.Create(subjectName, ContextSubjectReference.ALL));
             return source;
         }
     }

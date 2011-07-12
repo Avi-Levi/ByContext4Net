@@ -50,10 +50,8 @@ namespace NConfig.XML
         }
         private Section BuildSectionFromNode(XElement sectionNode)
         {
-            Section section = new Section();
-
             Type sectionType = Type.GetType(sectionNode.Attribute("TypeName").Value, true);
-            section.FromType(sectionType);
+            Section section = Section.Create().FromType(sectionType);
 
             foreach (var pi in sectionType.GetProperties())
             {
@@ -67,7 +65,7 @@ namespace NConfig.XML
         }
         private Parameter BuildParameterFromNode(XElement parameterNode, PropertyInfo parameterPropertyInfo)
         {
-            Parameter parameter = new Parameter().FromPropertyInfo(parameterPropertyInfo);
+            Parameter parameter = Parameter.Create().FromPropertyInfo(parameterPropertyInfo);
             parameter.Values = this.BuildValuesFromNode(parameterNode.Element("Values"));
 
             return parameter;
@@ -86,7 +84,7 @@ namespace NConfig.XML
         }
         private ParameterValue BuildParameterValueFromNode(XElement valueNode)
         {
-            ParameterValue parameterValue = new ParameterValue(valueNode.Attribute("Value").Value);
+            ParameterValue parameterValue = ParameterValue.Create(valueNode.Attribute("Value").Value);
 
             foreach (var referenceNode in valueNode.Elements("Reference"))
             {

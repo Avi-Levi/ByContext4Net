@@ -50,8 +50,8 @@ namespace NConfig.Tests
         [TestInitialize]
         public void Init()
         {
-            Values.v1 = new ParameterValue("1");
-            Values.v2 = new ParameterValue("2");
+            Values.v1 = ParameterValue.Create("1");
+            Values.v2 = ParameterValue.Create("2");
         }
         private IEnumerable<ParameterValue> Filter()
         {

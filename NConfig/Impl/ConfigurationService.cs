@@ -46,11 +46,12 @@ namespace NConfig
         {
             try
             {
-                if(!this.SectionsProviders.ContainsKey(sectionType.FullName))
+                ISectionProvider provider = null;
+                if(!this.SectionsProviders.TryGetValue(sectionType.FullName, out provider))
                 {
                     throw new InvalidOperationException("No configuration data was provider for section.");
                 }
-                return this.SectionsProviders[sectionType.FullName].Get(this.RuntimeContext);
+                return provider.Get(this.RuntimeContext);
             }
             catch (Exception ex)
             {

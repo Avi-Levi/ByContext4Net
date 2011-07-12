@@ -11,16 +11,16 @@ namespace NConfig.Tests.Helpers
         /// <summary>
         /// At dev env we want to trace method calls, input\output data etc...
         /// </summary>
-        public static ParameterValue TracingInterceptor = new ParameterValue("namespace.TracingInterceptor,assembly");
+        public static ParameterValue TracingInterceptor = ParameterValue.Create("namespace.TracingInterceptor,assembly");
 
         /// <summary>
         /// We want to handle transactions for some methods.
         /// </summary>
-        public static ParameterValue TransactionInterceptor = new ParameterValue("namespace.TransactionInterceptor,assembly");
+        public static ParameterValue TransactionInterceptor = ParameterValue.Create("namespace.TransactionInterceptor,assembly");
 
         /// <summary>
         /// we want to handle errors for all service methods.
         /// </summary>
-        public static ParameterValue ExceptionHandlingInterceptor = new ParameterValue("namespace.ExceptionHandlingInterceptor,assembly");
+        public static ParameterValue ExceptionHandlingInterceptor = ParameterValue.Create("namespace.ExceptionHandlingInterceptor,assembly");
     }
 }

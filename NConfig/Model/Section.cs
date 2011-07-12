@@ -7,10 +7,16 @@ namespace NConfig.Model
 {
     public class Section
     {
-        public Section()
+        private Section()
         {
             this.Parameters = new Dictionary<string, Parameter>();
         }
+
+        public static Section Create()
+        {
+            return new Section();
+        }
+
         public string Name { get; set; }
         public string TypeName { get; set; }
         public IDictionary<string,Parameter> Parameters { get; set; }

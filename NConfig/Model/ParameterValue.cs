@@ -20,15 +20,30 @@ namespace NConfig.Model
                 return this.Value.Equals(other.Value);
             }
         }
+        public override int GetHashCode()
+        {
+            if (this.Value == null)
+            {
+                return 0;
+            }
+            else
+            {
+                return this.Value.GetHashCode();
+            }
+        }
         public override string ToString()
         {
             return this.Value ?? string.Empty;
         }
 
-        public ParameterValue(string value)
+        private ParameterValue(string value)
         {
             this.Value = value;
             this.References = new List<ContextSubjectReference>();
+        }
+        public static ParameterValue Create(string value)
+        {
+            return new ParameterValue(value);
         }
         public string Value { get; private set; }
         public IList<ContextSubjectReference> References { get; private set; }

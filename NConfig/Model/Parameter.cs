@@ -10,7 +10,7 @@ namespace NConfig.Model
     /// </summary>
     public class Parameter
     {
-        public Parameter()
+        private Parameter()
         {
             this.Values = new List<ParameterValue>();
         }
@@ -19,5 +19,10 @@ namespace NConfig.Model
         public string PolicyName { get; set; }
 
         public IList<ParameterValue> Values { get; set; }
+
+        public static Parameter Create()
+        {
+            return new Parameter();
+        }
     }
 }
