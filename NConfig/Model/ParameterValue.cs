@@ -20,17 +20,6 @@ namespace NConfig.Model
                 return this.Value.Equals(other.Value);
             }
         }
-        public override int GetHashCode()
-        {
-            if (this.Value == null)
-            {
-                return 0;
-            }
-            else
-            {
-                return this.Value.GetHashCode();
-            }
-        }
         public override string ToString()
         {
             return this.Value ?? string.Empty;

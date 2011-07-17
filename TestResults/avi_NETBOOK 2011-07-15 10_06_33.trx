@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="694e30b1-83ee-4d2b-b58a-2661f5801540" name="avi@NETBOOK 2011-07-15 10:06:33" runUser="netbook\avi" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="8ca21acd-1fe6-4269-b5af-3ea22afc0391">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment runDeploymentRoot="avi_NETBOOK 2011-07-15 10_06_33">
+      <DeploymentItem filename="D:\work\NConfig\NConfig\NConfig.Windsor\bin\Debug\NConfig.Windsor.dll" />
+      <DeploymentItem filename="D:\work\NConfig\NConfig\NConfig.Windsor\Castle.Windsor.dll" />
+      <DeploymentItem filename="D:\work\NConfig\NConfig\NConfig.Windsor\Castle.Core.dll" />
+      <DeploymentItem filename="D:\work\NConfig\NConfig\NConfig\bin\Debug\NConfig.dll" />
+      <DeploymentItem filename="D:\work\NConfig\NConfig\NConfig.XML\bin\Debug\NConfig.XML.dll" />
+      <DeploymentItem filename="NConfigTests\bin\Debug\Configuration.xml" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific>
+        <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+          <AssemblyResolution>
+            <TestDirectory useLoadContext="true" />
+          </AssemblyResolution>
+        </UnitTestRunConfig>
+        <WebTestRunConfiguration testTypeId="4e7599fa-5ecb-43e9-a887-cd63cf72d207">
+          <Browser name="Internet Explorer 7.0">
+            <Headers>
+              <Header name="User-Agent" value="Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)" />
+              <Header name="Accept" value="*/*" />
+              <Header name="Accept-Language" value="{{$IEAcceptLanguage}}" />
+              <Header name="Accept-Encoding" value="GZIP" />
+            </Headers>
+          </Browser>
+        </WebTestRunConfiguration>
+      </TestTypeSpecific>
+      <AgentRule name="LocalMachineDefaultRole">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-07-15T10:06:33.4664040+02:00" queuing="2011-07-15T10:06:38.9667186+02:00" start="2011-07-15T10:06:39.8407685+02:00" finish="2011-07-15T10:07:03.4021162+02:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestObjectModelConfiguration" storage="d:\work\nconfig\nconfig\nconfigtests\bin\debug\nconfig.tests.dll" id="5d8e5a36-2169-9cd5-a3e6-85587870e8f6">
+      <Execution id="345a1002-82f7-4a97-87ea-28a6d91f2981" />
+      <TestMethod codeBase="D:/work/NConfig/NConfig/NConfigTests/bin/Debug/NConfig.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="NConfig.Tests.UnitTest1, NConfig.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestObjectModelConfiguration" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="5d8e5a36-2169-9cd5-a3e6-85587870e8f6" executionId="345a1002-82f7-4a97-87ea-28a6d91f2981" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="345a1002-82f7-4a97-87ea-28a6d91f2981" testId="5d8e5a36-2169-9cd5-a3e6-85587870e8f6" testName="TestObjectModelConfiguration" computerName="NETBOOK" duration="00:00:18.9899003" startTime="2011-07-15T10:06:40.0867826+02:00" endTime="2011-07-15T10:07:03.0540963+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="345a1002-82f7-4a97-87ea-28a6d91f2981">
+    </UnitTestResult>
+  </Results>
+</TestRun>

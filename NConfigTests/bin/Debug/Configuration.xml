@@ -97,5 +97,25 @@
         </Value>
       </Values>
     </Parameter>
+    <Parameter Name="SVC" Translator="Windsor">
+      <Values>
+        <Value Value="">
+          <Reference Subject="environment" Value="development"/>
+          <Reference Subject="appType" Value="onlineServer"/>
+        </Value>
+      </Values>
+    </Parameter>
+    <Parameter Name="SVCs" Translator="Windsor">
+      <Values>
+        <Value Value="1">
+          <Reference Subject="environment" Value="development"/>
+          <Reference Subject="appType" Value="onlineServer"/>
+        </Value>
+        <Value Value="2">
+          <Reference Subject="environment" Value="development"/>
+          <Reference Subject="appType" Value="onlineServer"/>
+        </Value>
+      </Values>
+    </Parameter>
   </Section>
 </Configuration>

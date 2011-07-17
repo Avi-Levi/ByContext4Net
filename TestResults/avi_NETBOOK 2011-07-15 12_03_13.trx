@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="cb1d8ba5-e260-4f7a-aa22-961b1b1987be" name="avi@NETBOOK 2011-07-15 12:03:13" runUser="netbook\avi" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="8ca21acd-1fe6-4269-b5af-3ea22afc0391">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment runDeploymentRoot="avi_NETBOOK 2011-07-15 12_03_13">
+      <DeploymentItem filename="D:\work\NConfig\NConfig\NConfig.Windsor\bin\Debug\NConfig.Windsor.dll" />
+      <DeploymentItem filename="D:\work\NConfig\NConfig\NConfig.Windsor\Castle.Windsor.dll" />
+      <DeploymentItem filename="D:\work\NConfig\NConfig\NConfig.Windsor\Castle.Core.dll" />
+      <DeploymentItem filename="D:\work\NConfig\NConfig\NConfig\bin\Debug\NConfig.dll" />
+      <DeploymentItem filename="D:\work\NConfig\NConfig\NConfig.XML\bin\Debug\NConfig.XML.dll" />
+      <DeploymentItem filename="NConfigTests\bin\Debug\Configuration.xml" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific>
+        <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+          <AssemblyResolution>
+            <TestDirectory useLoadContext="true" />
+          </AssemblyResolution>
+        </UnitTestRunConfig>
+        <WebTestRunConfiguration testTypeId="4e7599fa-5ecb-43e9-a887-cd63cf72d207">
+          <Browser name="Internet Explorer 7.0">
+            <Headers>
+              <Header name="User-Agent" value="Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)" />
+              <Header name="Accept" value="*/*" />
+              <Header name="Accept-Language" value="{{$IEAcceptLanguage}}" />
+              <Header name="Accept-Encoding" value="GZIP" />
+            </Headers>
+          </Browser>
+        </WebTestRunConfiguration>
+      </TestTypeSpecific>
+      <AgentRule name="LocalMachineDefaultRole">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-07-15T12:03:13.6257902+02:00" queuing="2011-07-15T12:03:19.3881198+02:00" start="2011-07-15T12:03:20.2491690+02:00" finish="2011-07-15T12:03:27.2535696+02:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="18" executed="18" passed="18" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="prod_online_client" storage="d:\work\nconfig\nconfig\nconfigtests\bin\debug\nconfig.tests.dll" id="88cb2420-bab5-c625-adf5-b51416e15f3c">
+      <Execution id="22fc8e8a-7c28-461f-89b5-babb708bf41f" />
+      <TestMethod codeBase="D:/work/NConfig/NConfig/NConfigTests/bin/Debug/NConfig.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="NConfig.Tests.FilterPolicySingleValueTest, NConfig.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="prod_online_client" />
+    </UnitTest>
+    <UnitTest name="aaa" storage="d:\work\nconfig\nconfig\nconfigtests\bin\debug\nconfig.tests.dll" id="5aa4e3a8-5df8-954e-6c99-969563df9fc3">
+      <Execution id="b32ad5be-d858-4883-8d06-9d44c33f361e" />
+      <TestMethod codeBase="D:/work/NConfig/NConfig/NConfigTests/bin/Debug/NConfig.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="NConfig.Tests.BestMatchRuleTest, NConfig.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="aaa" />
+    </UnitTest>
+    <UnitTest name="auditService_appServer_Dev_GetAllCustomers" storage="d:\work\nconfig\nconfig\nconfigtests\bin\debug\nconfig.tests.dll" id="86988aa3-e245-8763-5002-7aa6b57926c1">
+      <Execution id="97f69698-886b-4116-b0b0-9e4f1cd9f5b5" />
+      <TestMethod codeBase="D:/work/NConfig/NConfig/NConfigTests/bin/Debug/NConfig.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="NConfig.Tests.FilterPolicySingleValueTest, NConfig.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="auditService_appServer_Dev_GetAllCustomers" />
+    </UnitTest>
+    <UnitTest name="auditService_appServer_prod_GetAllCustomers" storage="d:\work\nconfig\nconfig\nconfigtests\bin\debug\nconfig.tests.dll" id="c83e054a-d14a-a089-eb54-fbcccf928366">
+      <Execution id="b509f358-efbf-4150-8a99-952a050d1475" />
+      <TestMethod codeBase="D:/work/NConfig/NConfig/NConfigTests/bin/Debug/NConfig.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="NConfig.Tests.FilterPolicySingleValueTest, NConfig.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="auditService_appServer_prod_GetAllCustomers" />
+    </UnitTest>
+    <UnitTest name="Dev_online_client" storage="d:\work\nconfig\nconfig\nconfigtests\bin\debug\nconfig.tests.dll" id="81612c84-9e67-6bb3-5fdd-f6e1c0aaee54">
+      <Execution id="797ed2fa-f85b-41f2-a151-2ad581a55aa2" />
+      <TestMethod codeBase="D:/work/NConfig/NConfig/NConfigTests/bin/Debug/NConfig.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="NConfig.Tests.FilterPolicySingleValueTest, NConfig.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Dev_online_client" />
+    </UnitTest>
+    <UnitTest name="prod_onlineServer_auditService" storage="d:\work\nconfig\nconfig\nconfigtests\bin\debug\nconfig.tests.dll" id="357c4318-c11f-93f7-f252-98bfca53e32a">
+      <Execution id="c1baad93-52b3-4b39-b068-a5aaab49d678" />
+      <TestMethod codeBase="D:/work/NConfig/NConfig/NConfigTests/bin/Debug/NConfig.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="NConfig.Tests.FilterPolicySingleValueTest, NConfig.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="prod_onlineServer_auditService" />
+    </UnitTest>
+    <UnitTest name="prod_online_server" storage="d:\work\nconfig\nconfig\nconfigtests\bin\debug\nconfig.tests.dll" id="0cce0639-31ca-e8e3-4d39-75679771d958">
+      <Execution id="c0b6b2ea-44d6-45d4-8306-f34cf44e3720" />
+      <TestMethod codeBase="D:/work/NConfig/NConfig/NConfigTests/bin/Debug/NConfig.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="NConfig.Tests.FilterPolicySingleValueTest, NConfig.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="prod_online_server" />
+    </UnitTest>
+    <UnitTest name="dev_online_server" storage="d:\work\nconfig\nconfig\nconfigtests\bin\debug\nconfig.tests.dll" id="ea2e3f01-2781-85d2-a937-3707125cbc23">
+      <Execution id="498c9c14-a0c0-470e-8074-00ecad63fafc" />
+      <TestMethod codeBase="D:/work/NConfig/NConfig/NConfigTests/bin/Debug/NConfig.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="NConfig.Tests.FilterPolicySingleValueTest, NConfig.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="dev_online_server" />
+    </UnitTest>
+    <UnitTest name="Test1" storage="d:\work\nconfig\nconfig\nconfigtests\bin\debug\nconfig.tests.dll" id="68eb0417-dab8-6b25-a0a9-0a7a95c92efe">
+      <Execution id="c347b62e-fe63-4296-a946-2226d4ecf7f7" />
+      <TestMethod codeBase="D:/work/NConfig/NConfig/NConfigTests/bin/Debug/NConfig.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="NConfig.Tests.BestMatchRuleTest, NConfig.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Test1" />
+    </UnitTest>
+    <UnitTest name="auditService_appServer_prod_UpdateCustomer" storage="d:\work\nconfig\nconfig\nconfigtests\bin\debug\nconfig.tests.dll" id="31ad7b39-df69-4841-24c6-23bb75f0e170">
+      <Execution id="898e04c6-7736-4e27-9c8c-69d66b115e8d" />
+      <TestMethod codeBase="D:/work/NConfig/NConfig/NConfigTests/bin/Debug/NConfig.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="NConfig.Tests.FilterPolicySingleValueTest, NConfig.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="auditService_appServer_prod_UpdateCustomer" />
+    </UnitTest>
+    <UnitTest name="one_value_with_specific_reference_and_one_with_ALL_reference" storage="d:\work\nconfig\nconfig\nconfigtests\bin\debug\nconfig.tests.dll" id="73586542-bb33-746b-6934-aa3f28ab2f57">
+      <Execution id="f1d0a929-c2b4-4f54-be73-fa3fe1bf03e3" />
+      <TestMethod codeBase="D:/work/NConfig/NConfig/NConfigTests/bin/Debug/NConfig.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="NConfig.Tests.BestMatchRuleTest, NConfig.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="one_value_with_specific_reference_and_one_with_ALL_reference" />
+    </UnitTest>
+    <UnitTest name="TestObjectModelConfiguration" storage="d:\work\nconfig\nconfig\nconfigtests\bin\debug\nconfig.tests.dll" id="5d8e5a36-2169-9cd5-a3e6-85587870e8f6">
+      <Execution id="6ccbcc8b-a949-41eb-9708-2d355183675f" />
+      <TestMethod codeBase="D:/work/NConfig/NConfig/NConfigTests/bin/Debug/NConfig.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="NConfig.Tests.UnitTest1, NConfig.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestObjectModelConfiguration" />
+    </UnitTest>
+    <UnitTest name="all_values_with_specific_references" storage="d:\work\nconfig\nconfig\nconfigtests\bin\debug\nconfig.tests.dll" id="1d783d32-0124-474a-5fb9-3ad630219c07">
+      <Execution id="e2cae269-6fde-4b49-9494-a806a688256e" />
+      <TestMethod codeBase="D:/work/NConfig/NConfig/NConfigTests/bin/Debug/NConfig.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="NConfig.Tests.BestMatchRuleTest, NConfig.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="all_values_with_specific_references" />
+    </UnitTest>
+    <UnitTest name="auditService_appServer_Dev_updateCustomer" storage="d:\work\nconfig\nconfig\nconfigtests\bin\debug\nconfig.tests.dll" id="1848f59f-dcde-d8ba-f776-0b25437d84b6">
+      <Execution id="6a2ba83f-be5c-47de-8b25-e557ad1067a1" />
+      <TestMethod codeBase="D:/work/NConfig/NConfig/NConfigTests/bin/Debug/NConfig.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="NConfig.Tests.FilterPolicySingleValueTest, NConfig.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="auditService_appServer_Dev_updateCustomer" />
+    </UnitTest>
+    <UnitTest name="TestXMLConfiguration_load_from_file" storage="d:\work\nconfig\nconfig\nconfigtests\bin\debug\nconfig.tests.dll" id="ebac121c-774c-7382-9e07-eec0877ee019">
+      <Execution id="7752dbfd-23f9-4141-91d9-8f78af9e16b7" />
+      <TestMethod codeBase="D:/work/NConfig/NConfig/NConfigTests/bin/Debug/NConfig.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="NConfig.Tests.UnitTest1, NConfig.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestXMLConfiguration_load_from_file" />
+    </UnitTest>
+    <UnitTest name="aa" storage="d:\work\nconfig\nconfig\nconfigtests\bin\debug\nconfig.tests.dll" id="b6ab9756-cf95-b5eb-7319-df0d1ac2108b">
+      <Execution id="dc72eae0-c074-4707-ba95-e043e14dbe31" />
+      <TestMethod codeBase="D:/work/NConfig/NConfig/NConfigTests/bin/Debug/NConfig.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="NConfig.Tests.BestMatchRuleTest, NConfig.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="aa" />
+    </UnitTest>
+    <UnitTest name="test2" storage="d:\work\nconfig\nconfig\nconfigtests\bin\debug\nconfig.tests.dll" id="d9af1d75-68cd-824c-5313-177c87cf728b">
+      <Execution id="81875869-afbd-4ccd-a725-13400940fd32" />
+      <TestMethod codeBase="D:/work/NConfig/NConfig/NConfigTests/bin/Debug/NConfig.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="NConfig.Tests.BestMatchRuleTest, NConfig.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="test2" />
+    </UnitTest>
+    <UnitTest name="TestWindsorTranslator" storage="d:\work\nconfig\nconfig\nconfigtests\bin\debug\nconfig.tests.dll" id="36e17ec2-da0e-65a3-8ecd-ee3aba08bb59">
+      <Execution id="29d894bf-2823-422f-a4f8-59a4881f3073" />
+      <TestMethod codeBase="D:/work/NConfig/NConfig/NConfigTests/bin/Debug/NConfig.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="NConfig.Tests.UnitTest1, NConfig.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestWindsorTranslator" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0cce0639-31ca-e8e3-4d39-75679771d958" executionId="c0b6b2ea-44d6-45d4-8306-f34cf44e3720" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1848f59f-dcde-d8ba-f776-0b25437d84b6" executionId="6a2ba83f-be5c-47de-8b25-e557ad1067a1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1d783d32-0124-474a-5fb9-3ad630219c07" executionId="e2cae269-6fde-4b49-9494-a806a688256e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="31ad7b39-df69-4841-24c6-23bb75f0e170" executionId="898e04c6-7736-4e27-9c8c-69d66b115e8d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="357c4318-c11f-93f7-f252-98bfca53e32a" executionId="c1baad93-52b3-4b39-b068-a5aaab49d678" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="36e17ec2-da0e-65a3-8ecd-ee3aba08bb59" executionId="29d894bf-2823-422f-a4f8-59a4881f3073" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5aa4e3a8-5df8-954e-6c99-969563df9fc3" executionId="b32ad5be-d858-4883-8d06-9d44c33f361e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5d8e5a36-2169-9cd5-a3e6-85587870e8f6" executionId="6ccbcc8b-a949-41eb-9708-2d355183675f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="68eb0417-dab8-6b25-a0a9-0a7a95c92efe" executionId="c347b62e-fe63-4296-a946-2226d4ecf7f7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="73586542-bb33-746b-6934-aa3f28ab2f57" executionId="f1d0a929-c2b4-4f54-be73-fa3fe1bf03e3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="81612c84-9e67-6bb3-5fdd-f6e1c0aaee54" executionId="797ed2fa-f85b-41f2-a151-2ad581a55aa2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="86988aa3-e245-8763-5002-7aa6b57926c1" executionId="97f69698-886b-4116-b0b0-9e4f1cd9f5b5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="88cb2420-bab5-c625-adf5-b51416e15f3c" executionId="22fc8e8a-7c28-461f-89b5-babb708bf41f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b6ab9756-cf95-b5eb-7319-df0d1ac2108b" executionId="dc72eae0-c074-4707-ba95-e043e14dbe31" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c83e054a-d14a-a089-eb54-fbcccf928366" executionId="b509f358-efbf-4150-8a99-952a050d1475" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d9af1d75-68cd-824c-5313-177c87cf728b" executionId="81875869-afbd-4ccd-a725-13400940fd32" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ea2e3f01-2781-85d2-a937-3707125cbc23" executionId="498c9c14-a0c0-470e-8074-00ecad63fafc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ebac121c-774c-7382-9e07-eec0877ee019" executionId="7752dbfd-23f9-4141-91d9-8f78af9e16b7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="c0b6b2ea-44d6-45d4-8306-f34cf44e3720" testId="0cce0639-31ca-e8e3-4d39-75679771d958" testName="prod_online_server" computerName="NETBOOK" duration="00:00:00.1603460" startTime="2011-07-15T12:03:20.5671872+02:00" endTime="2011-07-15T12:03:23.8323740+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c0b6b2ea-44d6-45d4-8306-f34cf44e3720">
+    </UnitTestResult>
+    <UnitTestResult executionId="6a2ba83f-be5c-47de-8b25-e557ad1067a1" testId="1848f59f-dcde-d8ba-f776-0b25437d84b6" testName="auditService_appServer_Dev_updateCustomer" computerName="NETBOOK" duration="00:00:00.0025923" startTime="2011-07-15T12:03:23.9653816+02:00" endTime="2011-07-15T12:03:24.0103841+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6a2ba83f-be5c-47de-8b25-e557ad1067a1">
+    </UnitTestResult>
+    <UnitTestResult executionId="e2cae269-6fde-4b49-9494-a806a688256e" testId="1d783d32-0124-474a-5fb9-3ad630219c07" testName="all_values_with_specific_references" computerName="NETBOOK" duration="00:00:00.0106940" startTime="2011-07-15T12:03:24.0523865+02:00" endTime="2011-07-15T12:03:24.0983892+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e2cae269-6fde-4b49-9494-a806a688256e">
+    </UnitTestResult>
+    <UnitTestResult executionId="898e04c6-7736-4e27-9c8c-69d66b115e8d" testId="31ad7b39-df69-4841-24c6-23bb75f0e170" testName="auditService_appServer_prod_UpdateCustomer" computerName="NETBOOK" duration="00:00:00.0022683" startTime="2011-07-15T12:03:24.1553924+02:00" endTime="2011-07-15T12:03:24.2093955+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="898e04c6-7736-4e27-9c8c-69d66b115e8d">
+    </UnitTestResult>
+    <UnitTestResult executionId="c1baad93-52b3-4b39-b068-a5aaab49d678" testId="357c4318-c11f-93f7-f252-98bfca53e32a" testName="prod_onlineServer_auditService" computerName="NETBOOK" duration="00:00:00.0024580" startTime="2011-07-15T12:03:24.2423974+02:00" endTime="2011-07-15T12:03:24.2803996+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c1baad93-52b3-4b39-b068-a5aaab49d678">
+    </UnitTestResult>
+    <UnitTestResult executionId="29d894bf-2823-422f-a4f8-59a4881f3073" testId="36e17ec2-da0e-65a3-8ecd-ee3aba08bb59" testName="TestWindsorTranslator" computerName="NETBOOK" duration="00:00:00.0017128" startTime="2011-07-15T12:03:24.3124014+02:00" endTime="2011-07-15T12:03:24.3724048+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="29d894bf-2823-422f-a4f8-59a4881f3073">
+    </UnitTestResult>
+    <UnitTestResult executionId="b32ad5be-d858-4883-8d06-9d44c33f361e" testId="5aa4e3a8-5df8-954e-6c99-969563df9fc3" testName="aaa" computerName="NETBOOK" duration="00:00:00.0022123" startTime="2011-07-15T12:03:24.3974063+02:00" endTime="2011-07-15T12:03:24.4674103+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b32ad5be-d858-4883-8d06-9d44c33f361e">
+    </UnitTestResult>
+    <UnitTestResult executionId="6ccbcc8b-a949-41eb-9708-2d355183675f" testId="5d8e5a36-2169-9cd5-a3e6-85587870e8f6" testName="TestObjectModelConfiguration" computerName="NETBOOK" duration="00:00:00.9999026" startTime="2011-07-15T12:03:24.5184132+02:00" endTime="2011-07-15T12:03:25.5764737+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6ccbcc8b-a949-41eb-9708-2d355183675f">
+    </UnitTestResult>
+    <UnitTestResult executionId="c347b62e-fe63-4296-a946-2226d4ecf7f7" testId="68eb0417-dab8-6b25-a0a9-0a7a95c92efe" testName="Test1" computerName="NETBOOK" duration="00:00:00.0030204" startTime="2011-07-15T12:03:25.7194819+02:00" endTime="2011-07-15T12:03:25.7904860+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c347b62e-fe63-4296-a946-2226d4ecf7f7">
+    </UnitTestResult>
+    <UnitTestResult executionId="f1d0a929-c2b4-4f54-be73-fa3fe1bf03e3" testId="73586542-bb33-746b-6934-aa3f28ab2f57" testName="one_value_with_specific_reference_and_one_with_ALL_reference" computerName="NETBOOK" duration="00:00:00.0023213" startTime="2011-07-15T12:03:25.8724906+02:00" endTime="2011-07-15T12:03:25.9464949+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f1d0a929-c2b4-4f54-be73-fa3fe1bf03e3">
+    </UnitTestResult>
+    <UnitTestResult executionId="797ed2fa-f85b-41f2-a151-2ad581a55aa2" testId="81612c84-9e67-6bb3-5fdd-f6e1c0aaee54" testName="Dev_online_client" computerName="NETBOOK" duration="00:00:00.0038709" startTime="2011-07-15T12:03:26.0274995+02:00" endTime="2011-07-15T12:03:26.0895031+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="797ed2fa-f85b-41f2-a151-2ad581a55aa2">
+    </UnitTestResult>
+    <UnitTestResult executionId="97f69698-886b-4116-b0b0-9e4f1cd9f5b5" testId="86988aa3-e245-8763-5002-7aa6b57926c1" testName="auditService_appServer_Dev_GetAllCustomers" computerName="NETBOOK" duration="00:00:00.0021975" startTime="2011-07-15T12:03:26.1455063+02:00" endTime="2011-07-15T12:03:26.1835084+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="97f69698-886b-4116-b0b0-9e4f1cd9f5b5">
+    </UnitTestResult>
+    <UnitTestResult executionId="22fc8e8a-7c28-461f-89b5-babb708bf41f" testId="88cb2420-bab5-c625-adf5-b51416e15f3c" testName="prod_online_client" computerName="NETBOOK" duration="00:00:00.0022283" startTime="2011-07-15T12:03:26.2205105+02:00" endTime="2011-07-15T12:03:26.2665132+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="22fc8e8a-7c28-461f-89b5-babb708bf41f">
+    </UnitTestResult>
+    <UnitTestResult executionId="dc72eae0-c074-4707-ba95-e043e14dbe31" testId="b6ab9756-cf95-b5eb-7319-df0d1ac2108b" testName="aa" computerName="NETBOOK" duration="00:00:00.0018107" startTime="2011-07-15T12:03:26.3095156+02:00" endTime="2011-07-15T12:03:26.3625187+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dc72eae0-c074-4707-ba95-e043e14dbe31">
+    </UnitTestResult>
+    <UnitTestResult executionId="b509f358-efbf-4150-8a99-952a050d1475" testId="c83e054a-d14a-a089-eb54-fbcccf928366" testName="auditService_appServer_prod_GetAllCustomers" computerName="NETBOOK" duration="00:00:00.0023971" startTime="2011-07-15T12:03:26.4145216+02:00" endTime="2011-07-15T12:03:26.4625244+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b509f358-efbf-4150-8a99-952a050d1475">
+    </UnitTestResult>
+    <UnitTestResult executionId="81875869-afbd-4ccd-a725-13400940fd32" testId="d9af1d75-68cd-824c-5313-177c87cf728b" testName="test2" computerName="NETBOOK" duration="00:00:00.0016481" startTime="2011-07-15T12:03:26.4985264+02:00" endTime="2011-07-15T12:03:26.5385287+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="81875869-afbd-4ccd-a725-13400940fd32">
+    </UnitTestResult>
+    <UnitTestResult executionId="498c9c14-a0c0-470e-8074-00ecad63fafc" testId="ea2e3f01-2781-85d2-a937-3707125cbc23" testName="dev_online_server" computerName="NETBOOK" duration="00:00:00.0024827" startTime="2011-07-15T12:03:26.5835313+02:00" endTime="2011-07-15T12:03:26.6345342+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="498c9c14-a0c0-470e-8074-00ecad63fafc">
+    </UnitTestResult>
+    <UnitTestResult executionId="7752dbfd-23f9-4141-91d9-8f78af9e16b7" testId="ebac121c-774c-7382-9e07-eec0877ee019" testName="TestXMLConfiguration_load_from_file" computerName="NETBOOK" duration="00:00:00.1254978" startTime="2011-07-15T12:03:26.6725364+02:00" endTime="2011-07-15T12:03:26.8395460+02:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7752dbfd-23f9-4141-91d9-8f78af9e16b7">
+    </UnitTestResult>
+  </Results>
+</TestRun>

@@ -14,12 +14,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NConfigTests", "NConfigTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NConfig.XML", "NConfig.XML\NConfig.XML.csproj", "{C44ACC8C-5434-4663-A1F5-20FB4CBE2E69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NConfig.Windsor", "NConfig.Windsor\NConfig.Windsor.csproj", "{51955F6C-3613-402D-B130-97EB2003E362}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = NConfig.vsmdi
 	EndGlobalSection
 	GlobalSection(SourceCodeControl) = preSolution
-		SccNumberOfProjects = 4
+		SccNumberOfProjects = 5
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = NConfig.XML\\NConfig.XML.csproj
 		SccLocalPath1 = .
@@ -30,6 +32,9 @@ Global
 		SccProjectUniqueName3 = NConfigTests\\NConfigTests.csproj
 		SccLocalPath3 = .
 		SccProjectFilePathRelativizedFromConnection3 = NConfigTests\\
+		SccProjectUniqueName4 = NConfig.Windsor\\NConfig.Windsor.csproj
+		SccLocalPath4 = .
+		SccProjectFilePathRelativizedFromConnection4 = NConfig.Windsor\\
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +75,16 @@ Global
 		{C44ACC8C-5434-4663-A1F5-20FB4CBE2E69}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{C44ACC8C-5434-4663-A1F5-20FB4CBE2E69}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C44ACC8C-5434-4663-A1F5-20FB4CBE2E69}.Release|x86.ActiveCfg = Release|Any CPU
+		{51955F6C-3613-402D-B130-97EB2003E362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51955F6C-3613-402D-B130-97EB2003E362}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51955F6C-3613-402D-B130-97EB2003E362}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{51955F6C-3613-402D-B130-97EB2003E362}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{51955F6C-3613-402D-B130-97EB2003E362}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{51955F6C-3613-402D-B130-97EB2003E362}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51955F6C-3613-402D-B130-97EB2003E362}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51955F6C-3613-402D-B130-97EB2003E362}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{51955F6C-3613-402D-B130-97EB2003E362}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{51955F6C-3613-402D-B130-97EB2003E362}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

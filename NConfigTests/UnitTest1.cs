@@ -5,6 +5,8 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NConfig;
 using NConfig.Model;
+using Castle.Windsor;
+
 
 namespace NConfig.Tests
 {
@@ -64,6 +66,11 @@ namespace NConfig.Tests
         [TestMethod]
         public void TestObjectModelConfiguration()
         {
+            IWindsorContainer container = new WindsorContainer()
+                .Register(Castle.MicroKernel.Registration.Component.For<IService>().Instance(new ServiceImpl(2)))
+                .Register(Castle.MicroKernel.Registration.Component.For<IService>().Instance(new ServiceImpl(1)).Named("1"))
+                .Register(Castle.MicroKernel.Registration.Component.For<IService>().Instance(new ServiceImpl(2)).Named("2"));
+
             Section section = Section.Create().FromType<TestSection>()
                 .AddParameter(Parameter.Create().FromExpression<TestSection, int>(x => x.Num)
                     .AddValue(ParameterValue.Create("1")
@@ -121,7 +128,18 @@ namespace NConfig.Tests
                         .AddReference("appType", "onlineServer"))
                     .AddValue(ParameterValue.Create("4:four")
                         .AddReference("environment", "production")
-                        .AddReference("appType", "onlineClient"))
+                        .AddReference("appType", "onlineClient")))
+                .AddParameter(Parameter.Create().FromExpression<TestSection, IService>(x => x.SVC).WithTranslator("Windsor")
+                    .AddValue(ParameterValue.Create(string.Empty)
+                        .AddReference("environment", "development")
+                        .AddReference("appType", "onlineServer")))
+                .AddParameter(Parameter.Create().FromExpression<TestSection, IEnumerable<IService>>(x => x.SVCs).WithTranslator("Windsor")
+                    .AddValue(ParameterValue.Create("1")
+                        .AddReference("environment", "development")
+                        .AddReference("appType", "onlineServer"))
+                    .AddValue(ParameterValue.Create("2")
+                        .AddReference("environment", "development")
+                        .AddReference("appType", "onlineServer"))
                         );
 
                 IConfigurationService svc = Configure.With()
@@ -130,7 +148,7 @@ namespace NConfig.Tests
                         context.Add("environment","development");
                         context.Add("appType","onlineServer");
                     })
-
+                    .AddWindsorTranslatorProvider(container)
                 .AddSection(section).Build();
 
             TestSection testSection=svc.GetSection<TestSection>();
@@ -142,11 +160,20 @@ namespace NConfig.Tests
             Assert.IsNotNull(testSection.Dictionary);
             Assert.IsNotNull(testSection.EnumerableNumbers);
             Assert.IsTrue(testSection.EnumerableNumbers.Any());
+            Assert.IsTrue(testSection.SVCs.Any());
+            Assert.AreEqual(2, testSection.SVCs.Count());
+            Assert.AreEqual(2, testSection.SVC.Get());
+            Assert.AreEqual(1, testSection.SVCs.First().Get());
         }
 
         [TestMethod]
         public void TestXMLConfiguration_load_from_file()
         {
+            IWindsorContainer container = new WindsorContainer()
+                .Register(Castle.MicroKernel.Registration.Component.For<IService>().Instance(new ServiceImpl(2)))
+                .Register(Castle.MicroKernel.Registration.Component.For<IService>().Instance(new ServiceImpl(1)).Named("1"))
+                .Register(Castle.MicroKernel.Registration.Component.For<IService>().Instance(new ServiceImpl(2)).Named("2"));
+
             IConfigurationService svc =
             Configure.With()
                 .RuntimeContext((context) =>
@@ -154,8 +181,10 @@ namespace NConfig.Tests
                         context.Add("environment", "development");
                         context.Add("appType", "onlineServer");
                     })
+                    .AddWindsorTranslatorProvider(container)
                     .AddFromXml("Configuration.xml")
                     .Build();
+
 
             TestSection section = svc.GetSection<TestSection>();
             Assert.IsNotNull(section);
@@ -165,7 +194,19 @@ namespace NConfig.Tests
             Assert.IsNotNull(section.Numbers);
             Assert.IsNotNull(section.Dictionary);
             Assert.IsNotNull(section.EnumerableNumbers);
+            Assert.IsNotNull(section.SVC);
+            Assert.IsNotNull(section.SVCs);
+            Assert.IsTrue(section.SVCs.Any());
+            Assert.AreEqual(2, section.SVCs.Count());
             Assert.IsTrue(section.EnumerableNumbers.Any());
+            Assert.AreEqual(2, section.SVC.Get());
+            Assert.AreEqual(1, section.SVCs.First().Get());
+        }
+
+        [TestMethod]
+        public void TestWindsorTranslator()
+        {
+
         }
     }
 }

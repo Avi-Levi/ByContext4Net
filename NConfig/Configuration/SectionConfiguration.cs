@@ -4,19 +4,25 @@ using System.Linq;
 using System.Text;
 using NConfig.Abstractions;
 
-namespace NConfig
+namespace NConfig.Configuration
 {
-    public class SectionConfiguration
+    public class SectionConfiguration : ISectionProvider
     {
         private SectionConfiguration()
         {}
 
-        public ISectionProvider SectionProvider { get; set; }
-        public IList<IValueProvider> ValueProviders { get; set; }
+        public string Name { get; private set; }
+        public string TypeName { get; private set; }
 
-        public static SectionConfiguration From()
+        public static SectionConfiguration FromType<TSection>() where TSection : class
         {
-            return new SectionConfiguration();
+            return FromType(typeof(TSection));
         }
+
+        public static SectionConfiguration FromType(Type type)
+        {
+            return new SectionConfiguration{Name = type.FullName, TypeName= type.AssemblyQualifiedName};
+        }
+        public abstract object Get(IDictionary<string, string> runtimeContext);
     }
 }

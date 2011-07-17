@@ -1,0 +1,13 @@
+D:\work\NConfig\NConfig\NConfig.Windsor\bin\Debug\Castle.Core.dll
+D:\work\NConfig\NConfig\NConfig.Windsor\bin\Debug\Castle.Core.pdb
+D:\work\NConfig\NConfig\NConfig.Windsor\bin\Debug\Castle.Core.xml
+D:\work\NConfig\NConfig\NConfig.Windsor\bin\Debug\Castle.Windsor.dll
+D:\work\NConfig\NConfig\NConfig.Windsor\bin\Debug\Castle.Windsor.pdb
+D:\work\NConfig\NConfig\NConfig.Windsor\bin\Debug\Castle.Windsor.xml
+D:\work\NConfig\NConfig\NConfig.Windsor\bin\Debug\NConfig.Windsor.dll
+D:\work\NConfig\NConfig\NConfig.Windsor\bin\Debug\NConfig.Windsor.pdb
+D:\work\NConfig\NConfig\NConfig.Windsor\bin\Debug\NConfig.dll
+D:\work\NConfig\NConfig\NConfig.Windsor\bin\Debug\NConfig.pdb
+D:\work\NConfig\NConfig\NConfig.Windsor\obj\Debug\ResolveAssemblyReference.cache
+D:\work\NConfig\NConfig\NConfig.Windsor\obj\Debug\NConfig.Windsor.dll
+D:\work\NConfig\NConfig\NConfig.Windsor\obj\Debug\NConfig.Windsor.pdb

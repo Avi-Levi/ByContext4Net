@@ -3,19 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NConfig.Abstractions;
+using System.Reflection;
+using System.Linq.Expressions;
 
 namespace NConfig.Configuration
 {
     public class ParameterConfiguration
     {
-        private ParameterConfiguration()
-        {}
+        public SectionConfiguration ParentSection { get; set; }
+        public string Name { get; set; }
+        public string TypeName { get; set; }
 
-        public IValueProvider ValueProvider { get; set; }
-
-        public static ParameterConfiguration From()
+        public ParameterConfiguration FromPropertyInfo(PropertyInfo pi)
         {
-            return new ParameterConfiguration();
+            this.Name = pi.Name;
+            this.TypeName = pi.PropertyType.AssemblyQualifiedName;
+
+            return this;
+        }
+        public ParameterConfiguration FromExpression<TSection, TProperty>(Expression<Func<TSection, TProperty>> selector)
+            where TSection : class
+        {
+            PropertyInfo pi = ((PropertyInfo)((MemberExpression)selector.Body).Member);
+            this.FromPropertyInfo(pi);
+            return this;
         }
     }
 }

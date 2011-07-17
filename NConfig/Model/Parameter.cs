@@ -14,6 +14,8 @@ namespace NConfig.Model
         {
             this.Values = new List<ParameterValue>();
         }
+
+        public string Translator { get; set; }
         public string Name { get; set; }
         public string TypeName { get; set; }
         public string PolicyName { get; set; }

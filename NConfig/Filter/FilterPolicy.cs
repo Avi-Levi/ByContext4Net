@@ -16,7 +16,7 @@ namespace NConfig.Filter
 
         private IFilterRule[] Rules { get; set; }
 
-        public IEnumerable<Abstractions.IHaveFilterReference> Filter(IDictionary<string, string> runtimeContext, IEnumerable<Abstractions.IHaveFilterReference> items)
+        public IEnumerable<IHaveFilterReference> Filter(IDictionary<string, string> runtimeContext, IEnumerable<IHaveFilterReference> items)
         {
             IEnumerable<IHaveFilterReference> filteredItems = items;
 

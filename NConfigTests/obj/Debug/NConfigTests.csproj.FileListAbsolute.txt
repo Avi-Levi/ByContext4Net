@@ -8,3 +8,11 @@ D:\work\NConfig\NConfig\NConfigTests\bin\Debug\NConfig.Tests.dll
 D:\work\NConfig\NConfig\NConfigTests\bin\Debug\NConfig.Tests.pdb
 D:\work\NConfig\NConfig\NConfigTests\obj\Debug\NConfig.Tests.dll
 D:\work\NConfig\NConfig\NConfigTests\obj\Debug\NConfig.Tests.pdb
+D:\work\NConfig\NConfig\NConfigTests\bin\Debug\Castle.Core.dll
+D:\work\NConfig\NConfig\NConfigTests\bin\Debug\Castle.Core.pdb
+D:\work\NConfig\NConfig\NConfigTests\bin\Debug\Castle.Core.xml
+D:\work\NConfig\NConfig\NConfigTests\bin\Debug\Castle.Windsor.dll
+D:\work\NConfig\NConfig\NConfigTests\bin\Debug\Castle.Windsor.pdb
+D:\work\NConfig\NConfig\NConfigTests\bin\Debug\Castle.Windsor.xml
+D:\work\NConfig\NConfig\NConfigTests\bin\Debug\NConfig.Windsor.dll
+D:\work\NConfig\NConfig\NConfigTests\bin\Debug\NConfig.Windsor.pdb

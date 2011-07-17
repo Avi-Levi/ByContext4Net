@@ -37,6 +37,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\NConfig.Windsor\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\NConfig.Windsor\Castle.Windsor.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -67,6 +73,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NConfig.Windsor\NConfig.Windsor.csproj">
+      <Project>{51955F6C-3613-402D-B130-97EB2003E362}</Project>
+      <Name>NConfig.Windsor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NConfig.XML\NConfig.XML.csproj">
       <Project>{C44ACC8C-5434-4663-A1F5-20FB4CBE2E69}</Project>
       <Name>NConfig.XML</Name>

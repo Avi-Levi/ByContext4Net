@@ -66,9 +66,22 @@ namespace NConfig.XML
         private Parameter BuildParameterFromNode(XElement parameterNode, PropertyInfo parameterPropertyInfo)
         {
             Parameter parameter = Parameter.Create().FromPropertyInfo(parameterPropertyInfo);
+            parameter.Translator = this.GetAttributeValueOrNull(parameterNode, "Translator");
             parameter.Values = this.BuildValuesFromNode(parameterNode.Element("Values"));
 
             return parameter;
+        }
+
+        private string GetAttributeValueOrNull(XElement node, string attributeName)
+        {
+            if (node.Attribute(attributeName) != null)
+            {
+                return node.Attribute(attributeName).Value;
+            }
+            else
+            {
+                return null;
+            }
         }
         private IList<ParameterValue> BuildValuesFromNode(XElement valuesNode)
         {
