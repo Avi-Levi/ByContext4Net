@@ -49,7 +49,7 @@ namespace NConfig
                 ISectionProvider provider = null;
                 if(!this.SectionsProviders.TryGetValue(sectionType.FullName, out provider))
                 {
-                    throw new InvalidOperationException("No configuration data was provider for section.");
+                    throw new InvalidOperationException("No configuration data was provided for section.");
                 }
                 return provider.Get(this.RuntimeContext);
             }

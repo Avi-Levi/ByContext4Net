@@ -70,10 +70,10 @@ namespace NConfig.Tests
         public void Test1()
         {
             Values.v1
-                .AddReference(SubjectA.Name, SubjectA.A);
+                .WithReference(SubjectA.Name, SubjectA.A);
 
             Values.v2
-                .AddReference(SubjectA.Name, SubjectA.B);
+                .WithReference(SubjectA.Name, SubjectA.B);
 
             var result = this.Filter();
 
@@ -87,11 +87,11 @@ namespace NConfig.Tests
         public void test2()
         {
             Values.v1
-                .AddReference(SubjectA.Name, SubjectA.A)
-                .AddReference(SubjectA.Name, SubjectA.A);
+                .WithReference(SubjectA.Name, SubjectA.A)
+                .WithReference(SubjectA.Name, SubjectA.A);
 
             Values.v2
-                .AddReference(SubjectA.Name, SubjectA.B);
+                .WithReference(SubjectA.Name, SubjectA.B);
 
             var result = this.Filter();
 
@@ -105,10 +105,10 @@ namespace NConfig.Tests
         public void all_values_with_specific_references()
         {
             Values.v1
-                .AddReference(SubjectA.Name, SubjectA.A);
+                .WithReference(SubjectA.Name, SubjectA.A);
 
             Values.v2
-                .AddReference(SubjectA.Name, SubjectA.A);
+                .WithReference(SubjectA.Name, SubjectA.A);
 
             var result = this.Filter();
 
@@ -121,10 +121,10 @@ namespace NConfig.Tests
         public void one_value_with_specific_reference_and_one_with_ALL_reference()
         {
             Values.v1
-               .AddReference(SubjectA.Name, SubjectA.A);
+               .WithReference(SubjectA.Name, SubjectA.A);
 
             Values.v2
-                .AddAllReferenceToSubject(SubjectA.Name);
+                .WithAllReferenceToSubject(SubjectA.Name);
 
             var result = this.Filter();
 
@@ -138,14 +138,14 @@ namespace NConfig.Tests
         public void aa()
         {
             Values.v1
-                 .AddReference(SubjectA.Name, SubjectA.A)
-                 .AddAllReferenceToSubject(SubjectB.Name)
-                 .AddAllReferenceToSubject(SubjectA.Name);
+                 .WithReference(SubjectA.Name, SubjectA.A)
+                 .WithAllReferenceToSubject(SubjectB.Name)
+                 .WithAllReferenceToSubject(SubjectA.Name);
 
             Values.v2
-                 .AddReference(SubjectB.Name, SubjectA.B)
-                 .AddAllReferenceToSubject(SubjectB.Name)
-                 .AddAllReferenceToSubject(SubjectA.Name);
+                 .WithReference(SubjectB.Name, SubjectA.B)
+                 .WithAllReferenceToSubject(SubjectB.Name)
+                 .WithAllReferenceToSubject(SubjectA.Name);
 
             var result = this.Filter();
 
@@ -159,12 +159,12 @@ namespace NConfig.Tests
         public void aaa()
         {
             Values.v1
-                 .AddAllReferenceToSubject(SubjectB.Name)
-                 .AddAllReferenceToSubject(SubjectA.Name);
+                 .WithAllReferenceToSubject(SubjectB.Name)
+                 .WithAllReferenceToSubject(SubjectA.Name);
 
             Values.v2
-                 .AddAllReferenceToSubject(SubjectB.Name)
-                 .AddAllReferenceToSubject(SubjectA.Name);
+                 .WithAllReferenceToSubject(SubjectB.Name)
+                 .WithAllReferenceToSubject(SubjectA.Name);
 
             var result = this.Filter();
 

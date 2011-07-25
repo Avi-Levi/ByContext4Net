@@ -38,49 +38,49 @@ namespace NConfig.Tests
         {
             // allways selected.
             InterceptorTypeNamesParameterValues.ExceptionHandlingInterceptor
-                 .AddAllReferenceToSubject(servicesSubject.Name)
-                 .AddAllReferenceToSubject(environmentSubject.Name)
-                 .AddAllReferenceToSubject(appTypeSubject.Name)
-                 .AddAllReferenceToSubject(methodNameSubject.Name)
+                 .WithAllReferenceToSubject(servicesSubject.Name)
+                 .WithAllReferenceToSubject(environmentSubject.Name)
+                 .WithAllReferenceToSubject(appTypeSubject.Name)
+                 .WithAllReferenceToSubject(methodNameSubject.Name)
                  ;
 
             // selected only for dev environment.
             InterceptorTypeNamesParameterValues.TracingInterceptor
-                .AddAllReferenceToSubject(servicesSubject.Name)
-                .AddAllReferenceToSubject(appTypeSubject.Name)
-                .AddAllReferenceToSubject(methodNameSubject.Name)
-                .AddReference(environmentSubject.Name, environmentSubject.dev)
+                .WithAllReferenceToSubject(servicesSubject.Name)
+                .WithAllReferenceToSubject(appTypeSubject.Name)
+                .WithAllReferenceToSubject(methodNameSubject.Name)
+                .WithReference(environmentSubject.Name, environmentSubject.dev)
                 ;
 
             // selected only for UpdateCustomer method.
              InterceptorTypeNamesParameterValues.TransactionInterceptor
-                .AddAllReferenceToSubject(environmentSubject.Name)
-                .AddAllReferenceToSubject(appTypeSubject.Name)
-                .AddAllReferenceToSubject(servicesSubject.Name)
-                .AddReference(methodNameSubject.Name, methodNameSubject.UpdateCustomer)
+                .WithAllReferenceToSubject(environmentSubject.Name)
+                .WithAllReferenceToSubject(appTypeSubject.Name)
+                .WithAllReferenceToSubject(servicesSubject.Name)
+                .WithReference(methodNameSubject.Name, methodNameSubject.UpdateCustomer)
                 ;
         }
 
         private void InitLoggingFolderParameterValues()
         {
             LoggingFolderPathParameterValues.ReletiveOneLevelDownPath
-                .AddAllReferenceToSubject(environmentSubject.Name)
-                .AddAllReferenceToSubject(appTypeSubject.Name)
-                .AddAllReferenceToSubject(servicesSubject.Name);
+                .WithAllReferenceToSubject(environmentSubject.Name)
+                .WithAllReferenceToSubject(appTypeSubject.Name)
+                .WithAllReferenceToSubject(servicesSubject.Name);
 
             LoggingFolderPathParameterValues.ApplicationServerPath
-                .AddReference(environmentSubject.Name, environmentSubject.prod)
-                .AddReference(appTypeSubject.Name, appTypeSubject.applicationServer)
-                .AddAllReferenceToSubject(servicesSubject.Name);
+                .WithReference(environmentSubject.Name, environmentSubject.prod)
+                .WithReference(appTypeSubject.Name, appTypeSubject.applicationServer)
+                .WithAllReferenceToSubject(servicesSubject.Name);
 
             LoggingFolderPathParameterValues.ProdOnlineClient
-                .AddReference(environmentSubject.Name, environmentSubject.prod)
-                .AddReference(appTypeSubject.Name, appTypeSubject.onlineClient);
+                .WithReference(environmentSubject.Name, environmentSubject.prod)
+                .WithReference(appTypeSubject.Name, appTypeSubject.onlineClient);
 
             LoggingFolderPathParameterValues.AuditServicePath
-                .AddReference(appTypeSubject.Name, appTypeSubject.applicationServer)
-                .AddReference(environmentSubject.Name, environmentSubject.prod)
-                .AddReference(servicesSubject.Name, servicesSubject.AuditService);
+                .WithReference(appTypeSubject.Name, appTypeSubject.applicationServer)
+                .WithReference(environmentSubject.Name, environmentSubject.prod)
+                .WithReference(servicesSubject.Name, servicesSubject.AuditService);
         }
 
         #region LoggingFolderPath

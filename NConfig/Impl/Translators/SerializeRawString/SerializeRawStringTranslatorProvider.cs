@@ -49,6 +49,8 @@ namespace NConfig.Impl.Translators.SerializeRawString
             this.Translators.Add(typeof(bool), new BooleanTranslator());
             this.Translators.Add(typeof(double), new DoubleTranslator());
             this.Translators.Add(typeof(char), new CharTranslator());
+            this.Translators.Add(typeof(Type), new TypeTranslator());
+            this.Translators.Add(typeof(Uri), new UriTranslator());
         }
     }
 }

@@ -1,0 +1,12 @@
+D:\work\NConfig\NConfig\Client\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\NConfig\NConfig\Client\obj\x86\Debug\Client.Views.Login.LoginView.resources
+D:\work\NConfig\NConfig\Client\obj\x86\Debug\Client.Properties.Resources.resources
+D:\work\NConfig\NConfig\Client\obj\x86\Debug\Client.Shell.resources
+D:\work\NConfig\NConfig\Client\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\work\NConfig\NConfig\Client\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\work\NConfig\NConfig\bin\Client.exe
+D:\work\NConfig\NConfig\bin\Client.pdb
+D:\work\NConfig\NConfig\Client\obj\x86\Debug\Client.exe
+D:\work\NConfig\NConfig\Client\obj\x86\Debug\Client.pdb
+D:\work\NConfig\NConfig\bin\Configuration.xml
+D:\work\NConfig\NConfig\Client\obj\x86\Debug\Client.Views.Product.ProductView.resources

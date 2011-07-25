@@ -101,7 +101,17 @@ namespace NConfig.XML
 
             foreach (var referenceNode in valueNode.Elements("Reference"))
             {
-                parameterValue.AddReference(referenceNode.Attribute("Subject").Value, referenceNode.Attribute("Value").Value);
+                string subject = referenceNode.Attribute("Subject").Value;
+                string value = this.GetAttributeValueOrNull(referenceNode,"Value");
+
+                if (!string.IsNullOrEmpty(value))
+                {
+                    parameterValue.WithReference(subject, value);
+                }
+                else
+                {
+                    parameterValue.WithAllReferenceToSubject(subject);
+                }
             }
 
             return parameterValue;

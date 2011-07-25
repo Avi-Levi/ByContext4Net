@@ -1,0 +1,11 @@
+D:\work\NConfig\NConfig\Server\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\NConfig\NConfig\Server\obj\x86\Debug\Server.Host.resources
+D:\work\NConfig\NConfig\Server\obj\x86\Debug\Server.Properties.Resources.resources
+D:\work\NConfig\NConfig\Server\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\work\NConfig\NConfig\Server\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\work\NConfig\NConfig\bin\Server.exe.config
+D:\work\NConfig\NConfig\bin\Server.exe
+D:\work\NConfig\NConfig\bin\Server.pdb
+D:\work\NConfig\NConfig\Server\obj\x86\Debug\Server.exe
+D:\work\NConfig\NConfig\Server\obj\x86\Debug\Server.pdb
+D:\work\NConfig\NConfig\bin\Configuration.xml

@@ -47,11 +47,27 @@ namespace NConfig.Impl.Translators.SerializeRawString
             return Char.Parse(value);
         }
     }
+    public class TypeTranslator : IValueTranslator<Type>
+    {
+        public Type Translate(string value)
+        {
+            return Type.GetType(value, true);
+        }
+    }
+
     public class EnumTranslator<TEnum> : IValueTranslator<TEnum> where TEnum : struct
     {
         public TEnum Translate(string value)
         {
             return (TEnum)Enum.Parse(typeof(TEnum), value, true);
+        }
+    }
+
+    public class UriTranslator : IValueTranslator<Uri>
+    {
+        public Uri Translate(string value)
+        {
+            return new Uri(value);
         }
     }
 }

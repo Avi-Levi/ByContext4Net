@@ -1,0 +1,6 @@
+D:\work\NConfig\NConfig\bin\Common.dll
+D:\work\NConfig\NConfig\bin\Common.pdb
+D:\work\NConfig\NConfig\Common\obj\Debug\ResolveAssemblyReference.cache
+D:\work\NConfig\NConfig\Common\obj\Debug\Common.dll
+D:\work\NConfig\NConfig\Common\obj\Debug\Common.pdb
+D:\work\NConfig\NConfig\bin\Configuration.xml
