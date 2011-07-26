@@ -11,6 +11,7 @@ using System.ServiceModel.Activation;
 using System.ServiceModel;
 using System.ServiceModel.Dispatcher;
 using Castle.Windsor;
+using NConfig.WCF;
 
 namespace Server
 {
@@ -24,6 +25,11 @@ namespace Server
         public IWindsorContainer Windsor { get; set; }
         private void Host_Load(object sender, EventArgs e)
         {
+            ServiceHost configurationDataServiceHost = new ServiceHost(typeof(ConfigurationDataService));
+            configurationDataServiceHost.Open();
+
+            this.TraceHostOpen(configurationDataServiceHost);
+
             IInstanceProvider instanceProvider = new DI_InstanceProvider(this.Windsor);
 
             var configService = this.Windsor.Resolve<IConfigurationService>();
@@ -37,9 +43,13 @@ namespace Server
 
                 host.Open();
 
-                this.listView1.Items.Add(host.Description.Endpoints.First().Address + "  " +
-                    host.Description.Endpoints.First().Binding.GetType().FullName);
+                this.TraceHostOpen(host);
             }
+        }
+        private void TraceHostOpen(ServiceHost host)
+        {
+            this.listBox1.Items.Add(host.Description.Endpoints.First().Address + "  " +
+                    host.Description.Endpoints.First().Binding.GetType().FullName);
         }
     }
 }

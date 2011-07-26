@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\ConfigConstants.cs" />
+    <Compile Include="Configuration\ConfigurationServiceExtensions.cs" />
     <Compile Include="Contracts\ILoginService.cs" />
     <Compile Include="Contracts\IProductsService.cs" />
     <Compile Include="Logger.cs" />
@@ -62,12 +63,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Configuration\ServiceContractConfig.cs" />
     <Compile Include="UserDetails.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Configuration.xml">
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NConfig\NConfig.csproj">

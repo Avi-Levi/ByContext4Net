@@ -37,7 +37,7 @@ namespace Server
                     ctx.Add(ConfigConstants.Subjects.AppType.Name, ConfigConstants.Subjects.AppType.ApplicationServer);
                     ctx.Add(ConfigConstants.Subjects.MachineName.Name, Environment.MachineName);
                 })
-                .AddFromXml("Configuration.xml")
+                .AddFromXmlFile("Configuration.xml")
                 .Build();
             ;
             return configSvc;

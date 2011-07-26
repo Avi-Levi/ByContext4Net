@@ -21,7 +21,7 @@ namespace Client
         public TContract Get<TContract>() where TContract : class
         {
             ServiceContractConfig contractConfig =
-                this.ConfigService.WithReference(ConfigConstants.Subjects.ServiceContract.Name, typeof(TContract).FullName).GetSection<ServiceContractConfig>();
+                this.ConfigService.WithServiceContractRef(typeof(TContract).FullName).GetSection<ServiceContractConfig>();
 
             Binding binding = (Binding)Activator.CreateInstance(contractConfig.BindingType);
 

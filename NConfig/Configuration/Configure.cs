@@ -39,17 +39,12 @@ namespace NConfig
 
         private void SetCollectionDefaultFilterPolicy()
         {
-            var ruleSet = new IFilterRule[1] { new WithSpecificOrALLRerefenceToSubjectRule()};
+            var ruleSet = new IFilterRule[1] { new WithSpecificOrNoReferenceToSubjectRule() };
             this.FilterPolicies.Add(DefaultCollectionFilterPolicyName, new FilterPolicy(ruleSet));
         }
         private void SetSingleValueDefaultFilterPolicy()
         {
-            var ruleSet = new IFilterRule[2] 
-            { 
-                new WithSpecificOrALLRerefenceToSubjectRule(),
-                new BestMatchRule()
-            };
-
+            var ruleSet = new IFilterRule[1] { new WithSpecificOrNoReferenceToSubjectRule()};
             this.FilterPolicies.Add(DefaultSingleValueFilterPolicyName, new FilterPolicy(ruleSet));
         }
 

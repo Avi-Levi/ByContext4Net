@@ -58,7 +58,7 @@ namespace Client
                     ctx.Add(ConfigConstants.Subjects.AppType.Name, ConfigConstants.Subjects.AppType.OnlineClient);
                     ctx.Add(ConfigConstants.Subjects.MachineName.Name, ConfigConstants.Subjects.MachineName.SomeMachine1);
                 })
-                .AddFromXml("Configuration.xml")
+                .AddFromRemoteWCFService()
                 .Build();
 
             return configSvc;

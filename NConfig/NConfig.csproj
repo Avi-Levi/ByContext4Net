@@ -65,9 +65,10 @@
     <Compile Include="Exceptions\TypeNotSupportedException.cs" />
     <Compile Include="Filter\FilterPolicy.cs" />
     <Compile Include="Filter\IFilterPolicy.cs" />
+    <Compile Include="Filter\Rules\WithSpecificOrNoReferenceToSubjectRule.cs" />
     <Compile Include="Impl\ConfigurationService.cs" />
     <Compile Include="Extensions\Extensions.cs" />
-    <Compile Include="Abstractions\IConfigurationService.cs" />
+    <Compile Include="IConfigurationService.cs" />
     <Compile Include="Impl\DebugLogger.cs" />
     <Compile Include="Impl\DefaultModelBinder.cs" />
     <Compile Include="Abstractions\IRuntimeContextProvider.cs" />

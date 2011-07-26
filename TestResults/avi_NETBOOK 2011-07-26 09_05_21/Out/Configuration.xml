@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Section TypeName="Common.LoggingConfiguration,Common">
+    <Parameter Name="LogLevel">
+      <Values>
+        <Value Value="Trace">
+          <Reference Subject="Environment"/>
+          <Reference Subject="AppType"/>
+          <Reference Subject="ServiceContract"/>
+          <Reference Subject="LogOwner"/>
+          <Reference Subject="MachineName" Value="SomeMachine1"/>
+        </Value>
+        <Value Value="Error">
+          <Reference Subject="Environment"/>
+          <Reference Subject="AppType"/>
+          <Reference Subject="ServiceContract"/>
+          <Reference Subject="LogOwner"/>
+          <Reference Subject="MachineName"/>
+        </Value>
+      </Values>
+    </Parameter>
+    <Parameter Name="LogFilePath">
+      <Values>
+        <Value Value="D:\work\NConfig\NConfig\bin\logs\all.txt">
+          <Reference Subject="Environment"/>
+          <Reference Subject="AppType"/>
+          <Reference Subject="ServiceContract"/>
+          <Reference Subject="LogOwner"/>
+          <Reference Subject="MachineName"/>
+        </Value>
+        <Value Value="D:\work\NConfig\NConfig\bin\logs\login.txt">
+          <Reference Subject="Environment"/>
+          <Reference Subject="AppType"/>
+          <Reference Subject="ServiceContract"/>
+          <Reference Subject="LogOwner" Value="Server.Services.LoginService"/>
+          <Reference Subject="MachineName"/>
+        </Value>
+      </Values>
+    </Parameter>
+  </Section>
+  <Section TypeName="Server.ServicesConfig,Server">
+    <Parameter Name="ServiceTypesToLoad">
+      <Values>
+        <Value Value="Server.Services.LoginService,Server">
+          <Reference Subject="Environment"/>
+          <Reference Subject="AppType"/>
+          <Reference Subject="MachineName"/>
+        </Value>
+        <Value Value="Server.Services.ProductsService,Server">
+          <Reference Subject="Environment"/>
+          <Reference Subject="AppType"/>
+          <Reference Subject="MachineName"/>
+        </Value>
+      </Values>
+    </Parameter>
+  </Section>
+  <Section TypeName="Common.ServiceContractConfig,Common">
+    <Parameter Name="Address">
+      <Values>
+        <Value Value="net.tcp://localhost:20/login">
+          <Reference Subject="Environment"/>
+          <Reference Subject="AppType"/>
+          <Reference Subject="ServiceContract" Value="Common.ILoginService"/>
+          <Reference Subject="MachineName"/>
+        </Value>
+        <Value Value="net.tcp://localhost:21/products">
+          <Reference Subject="Environment"/>
+          <Reference Subject="AppType"/>
+          <Reference Subject="ServiceContract" Value="Common.IProductsService"/>
+          <Reference Subject="MachineName"/>
+        </Value>
+      </Values>
+    </Parameter>
+    <Parameter Name="BindingType">
+      <Values>
+        <Value Value="System.ServiceModel.NetTcpBinding, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <Reference Subject="Environment"/>
+          <Reference Subject="AppType"/>
+          <Reference Subject="ServiceContract"/>
+          <Reference Subject="MachineName"/>
+        </Value>
+      </Values>
+    </Parameter>
+  </Section>
+</Configuration>

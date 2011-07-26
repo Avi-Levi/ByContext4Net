@@ -8,5 +8,5 @@ D:\work\NConfig\NConfig\bin\Client.exe
 D:\work\NConfig\NConfig\bin\Client.pdb
 D:\work\NConfig\NConfig\Client\obj\x86\Debug\Client.exe
 D:\work\NConfig\NConfig\Client\obj\x86\Debug\Client.pdb
-D:\work\NConfig\NConfig\bin\Configuration.xml
 D:\work\NConfig\NConfig\Client\obj\x86\Debug\Client.Views.Product.ProductView.resources
+D:\work\NConfig\NConfig\bin\Client.exe.config

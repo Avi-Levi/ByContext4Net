@@ -6,6 +6,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NConfig;
 using NConfig.Model;
 using Castle.Windsor;
+using NConfig.Filter;
+using NConfig.Filter.Rules;
 
 
 namespace NConfig.Tests
@@ -40,28 +42,6 @@ namespace NConfig.Tests
                 testContextInstance = value;
             }
         }
-
-        #region Additional test attributes
-        //
-        // You can use the following additional attributes as you write your tests:
-        //
-        // Use ClassInitialize to run code before running the first test in the class
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // Use ClassCleanup to run code after all tests in a class have run
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // Use TestInitialize to run code before running each test 
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // Use TestCleanup to run code after each test has run
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
 
         [TestMethod]
         public void TestObjectModelConfiguration()
@@ -182,7 +162,7 @@ namespace NConfig.Tests
                         context.Add("appType", "onlineServer");
                     })
                     .AddWindsorTranslatorProvider(container)
-                    .AddFromXml("Configuration.xml")
+                    .AddFromXmlFile("TestConfiguration.xml")
                     .Build();
 
 
@@ -201,12 +181,6 @@ namespace NConfig.Tests
             Assert.IsTrue(section.EnumerableNumbers.Any());
             Assert.AreEqual(2, section.SVC.Get());
             Assert.AreEqual(1, section.SVCs.First().Get());
-        }
-
-        [TestMethod]
-        public void TestWindsorTranslator()
-        {
-
         }
     }
 }

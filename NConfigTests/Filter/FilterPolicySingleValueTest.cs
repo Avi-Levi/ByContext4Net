@@ -14,6 +14,17 @@ using NConfig.Impl;
 
 namespace NConfig.Tests
 {
+    [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+    public class ParameterValuesTypeAttribute : Attribute
+    {
+        public ParameterValuesTypeAttribute(Type containerClassType)
+        {
+            this.ContainerClassType = containerClassType;
+        }
+
+        public Type ContainerClassType { get; set; }
+    }
+
     [TestClass]
     public class FilterPolicySingleValueTest
     {

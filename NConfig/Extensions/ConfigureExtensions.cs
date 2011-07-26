@@ -59,5 +59,13 @@ namespace NConfig
                 return (TProvider)provider;
             }
         }
+
+        public static Configure SingleValueDefaultFilterPolicy(this Configure source, IFilterPolicy policy)
+        {
+            source.FilterPolicies.Remove(Configure.DefaultSingleValueFilterPolicyName);
+            source.FilterPolicies.Add(Configure.DefaultSingleValueFilterPolicyName, policy);
+
+            return source;
+        }
     }
 }

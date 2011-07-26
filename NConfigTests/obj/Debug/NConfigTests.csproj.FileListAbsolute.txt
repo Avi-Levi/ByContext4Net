@@ -1,7 +1,6 @@
 D:\work\NConfig\NConfig\NConfigTests\bin\Debug\NConfig.dll
 D:\work\NConfig\NConfig\NConfigTests\bin\Debug\NConfig.pdb
 D:\work\NConfig\NConfig\NConfigTests\obj\Debug\ResolveAssemblyReference.cache
-D:\work\NConfig\NConfig\NConfigTests\bin\Debug\Configuration.xml
 D:\work\NConfig\NConfig\NConfigTests\bin\Debug\NConfig.XML.dll
 D:\work\NConfig\NConfig\NConfigTests\bin\Debug\NConfig.XML.pdb
 D:\work\NConfig\NConfig\NConfigTests\bin\Debug\NConfig.Tests.dll
@@ -16,3 +15,4 @@ D:\work\NConfig\NConfig\NConfigTests\bin\Debug\Castle.Windsor.pdb
 D:\work\NConfig\NConfig\NConfigTests\bin\Debug\Castle.Windsor.xml
 D:\work\NConfig\NConfig\NConfigTests\bin\Debug\NConfig.Windsor.dll
 D:\work\NConfig\NConfig\NConfigTests\bin\Debug\NConfig.Windsor.pdb
+D:\work\NConfig\NConfig\NConfigTests\bin\Debug\TestConfiguration.xml

@@ -34,8 +34,8 @@ namespace Server
 
         private void AddEndpointForContract(Type contractType)
         {
-            ServiceContractConfig contractConfig = 
-                this.ConfigService.WithReference(ConfigConstants.Subjects.ServiceContract.Name, contractType.FullName)
+            ServiceContractConfig contractConfig =
+                this.ConfigService.WithServiceContractRef(contractType.FullName)
                 .GetSection<ServiceContractConfig>();
             
             Binding binding = (Binding)Activator.CreateInstance(contractConfig.BindingType);

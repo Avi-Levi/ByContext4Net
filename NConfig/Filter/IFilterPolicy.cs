@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using NConfig.Abstractions;
 
-namespace NConfig.Filter
+namespace NConfig
 {
     public interface IFilterPolicy
     {

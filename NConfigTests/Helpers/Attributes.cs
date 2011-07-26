@@ -17,6 +17,7 @@ namespace NConfig.Tests.Helpers
         public string Name { get; set; }
         public string Value { get; set; }
     }
+
     [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
     public class RuntimeContextItemToFilterByAttribute : Attribute
     {
@@ -27,6 +28,7 @@ namespace NConfig.Tests.Helpers
 
         public KeyValuePair<string,string> Item { get; set; }
     }
+
     [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
     public class FilterPolicyAttribute : Attribute
     {
@@ -37,16 +39,4 @@ namespace NConfig.Tests.Helpers
 
         public Type[] Rules { get; set; }
     }
-    [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-    public class ParameterValuesTypeAttribute : Attribute
-    {
-        public ParameterValuesTypeAttribute(Type containerClassType)
-        {
-            this.ContainerClassType = containerClassType;
-        }
-
-        public Type ContainerClassType { get; set; }
-    }
-
-
 }

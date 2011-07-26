@@ -18,6 +18,17 @@ namespace NConfig
             return query;
         }
 
+        public static IEnumerable<IHaveFilterReference> SelectItemsWithNoSpecificReferenceToOtherSubjectValue
+            (this IEnumerable<IHaveFilterReference> source, KeyValuePair<string, string> contextItem)
+        {
+            var query = from item in source
+                        where !item.References.Any(x => x.Name == contextItem.Key && x.Value != contextItem.Value)
+                        select item;
+
+            return query;
+        }
+        
+
         public static IEnumerable<IHaveFilterReference> SelectItemsWithAllReference(this IEnumerable<IHaveFilterReference> source, string subjectName)
         {
             var query = from item in source

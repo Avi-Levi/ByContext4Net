@@ -109,6 +109,7 @@
     <EmbeddedResource Include="Views\Shell\Shell.resx">
       <DependentUpon>Shell.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -125,9 +126,9 @@
       <Project>{02EBB01A-DE5E-4940-8A06-F600B0A4778B}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NConfig.XML\NConfig.XML.csproj">
-      <Project>{C44ACC8C-5434-4663-A1F5-20FB4CBE2E69}</Project>
-      <Name>NConfig.XML</Name>
+    <ProjectReference Include="..\NConfig.WCF\NConfig.WCF.csproj">
+      <Project>{366E0B67-A944-492E-9464-9EAE4C670083}</Project>
+      <Name>NConfig.WCF</Name>
     </ProjectReference>
     <ProjectReference Include="..\NConfig\NConfig.csproj">
       <Project>{E03FCBFB-4EE1-4A86-9703-8871AB2BE179}</Project>

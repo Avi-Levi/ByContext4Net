@@ -30,7 +30,7 @@ namespace Common
         {
             if ((int)level >= (int)this._config.LogLevel)
             {
-                File.AppendAllText(this._config.LogFilePath, DateTime.Now.ToString() + " - " + message);
+                File.AppendAllText(this._config.LogFilePath, DateTime.Now.ToString() + " - " + message + Environment.NewLine);
             }
         }
     }
@@ -47,7 +47,7 @@ namespace Common
         public ILogger Create(Type owner)
         {
             var config = this.ConfigurationService.
-                WithReference(ConfigConstants.Subjects.LogOwner.Name,owner.FullName).GetSection<LoggingConfiguration>();
+                WithLogOwnerRef(owner.FullName).GetSection<LoggingConfiguration>();
 
             return new FlatFileLogger(config);
         }

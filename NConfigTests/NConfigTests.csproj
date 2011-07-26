@@ -64,7 +64,7 @@
     <Compile Include="Filter\BestMatchRuleTest.cs" />
     <Compile Include="Helpers\Attributes.cs" />
     <Compile Include="Helpers\Helper.cs" />
-    <Compile Include="Helpers\InterceptorTypeNamesParameterValues.cs" />
+    <Compile Include="Filter\InterceptorTypeNamesParameterValues.cs" />
     <Compile Include="Helpers\LoggingFolderPathParameterValues.cs" />
     <Compile Include="Helpers\Subjects.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,7 +91,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Configuration.xml">
+    <Content Include="TestConfiguration.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
