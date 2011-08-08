@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NConfig.Model;
+using NConfig.Configuration;
 using System.Reflection;
 
 namespace NConfig.Tests.Helpers

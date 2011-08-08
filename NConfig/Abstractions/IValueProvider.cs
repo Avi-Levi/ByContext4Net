@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace NConfig.Abstractions
+﻿namespace NConfig.Abstractions
 {
-    public interface IValueProvider
+    public interface IValueProvider : IHaveFilterReference
     {
-        object Get(IDictionary<string, string> runtimeContext);
+        object Get();
     }
 }

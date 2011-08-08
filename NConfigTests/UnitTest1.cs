@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NConfig;
-using NConfig.Model;
+using NConfig.Configuration;
 using Castle.Windsor;
 using NConfig.Filter;
 using NConfig.Filter.Rules;
+using NConfig.Impl;
 
 
 namespace NConfig.Tests
@@ -129,7 +130,8 @@ namespace NConfig.Tests
                         context.Add("appType","onlineServer");
                     })
                     .AddWindsorTranslatorProvider(container)
-                .AddSection(section).Build();
+                    .AddSection(section)
+                    .Build();
 
             TestSection testSection=svc.GetSection<TestSection>();
             Assert.IsNotNull(testSection);

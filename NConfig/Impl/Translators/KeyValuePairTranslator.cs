@@ -5,22 +5,22 @@ using System.Text;
 
 namespace NConfig.Impl.Translators
 {
-    public class KeyValuePairTranslator<TKey, TValue> : IValueTranslator<KeyValuePair<TKey, TValue>>
+    public class KeyValuePairTranslator<TKey, TValue> : BaseValueTranslator<KeyValuePair<TKey, TValue>>
     {
-        public KeyValuePairTranslator(IValueTranslator<TKey> keyBinder, IValueTranslator<TValue> valueBinder)
+        public KeyValuePairTranslator(BaseValueTranslator<TKey> keyTranslator, BaseValueTranslator<TValue> valueTranslator)
         {
-            this.KeyBinder = keyBinder;
-            this.ValueBinder = valueBinder;
+            this.KeyTranslator = keyTranslator;
+            this.ValueTranslator = valueTranslator;
         }
 
-        private IValueTranslator<TKey> KeyBinder { get; set; }
-        private IValueTranslator<TValue> ValueBinder { get; set; }
+        private BaseValueTranslator<TKey> KeyTranslator { get; set; }
+        private BaseValueTranslator<TValue> ValueTranslator { get; set; }
 
-        public KeyValuePair<TKey, TValue> Translate(string value)
+        public override KeyValuePair<TKey, TValue> TranslateFromString(string value)
         {
             string[] splitted = value.Split(':');
 
-            return new KeyValuePair<TKey, TValue>(this.KeyBinder.Translate(splitted[0]), this.ValueBinder.Translate(splitted[1]));
+            return new KeyValuePair<TKey, TValue>(this.KeyTranslator.TranslateFromString(splitted[0]), this.ValueTranslator.TranslateFromString(splitted[1]));
         }
     }
 

@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Xml.Linq;
 using System.IO;
+using NConfig.Configuration;
+using NConfig.XML;
 
 namespace NConfig.WCF
 {
     public class ConfigurationDataService : IConfigurationDataService 
     {
-        public string GetConfigurationData()
+        public Section[] GetConfigurationData()
         {
-            return File.ReadAllText("Configuration.xml");
+            return new XmlLoader().LoadFile("Configuration.xml").ToArray();
         }
     }
 }

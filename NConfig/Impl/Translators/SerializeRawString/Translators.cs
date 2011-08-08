@@ -5,67 +5,67 @@ using System.Text;
 
 namespace NConfig.Impl.Translators.SerializeRawString
 {
-    public class Int32Translator : IValueTranslator<Int32>
+    public class Int32Translator : BaseValueTranslator<Int32>
     {
-        public int Translate(string value)
+        public override int TranslateFromString(string value)
         {
             return Int32.Parse(value);
         }
     }
-    public class LongTranslator : IValueTranslator<long>
+    public class LongTranslator : BaseValueTranslator<long>
     {
-        public long Translate(string value)
+        public override long TranslateFromString(string value)
         {
             return long.Parse(value);
         }
     }
-    public class StringTranslator : IValueTranslator<String>
+    public class StringTranslator : BaseValueTranslator<String>
     {
-        public String Translate(string value)
+        public override String TranslateFromString(string value)
         {
             return (String)value;
         }
     }
-    public class BooleanTranslator : IValueTranslator<bool>
+    public class BooleanTranslator : BaseValueTranslator<bool>
     {
-        public bool Translate(string value)
+        public override bool TranslateFromString(string value)
         {
             return bool.Parse(value);
         }
     }
-    public class DoubleTranslator : IValueTranslator<double>
+    public class DoubleTranslator : BaseValueTranslator<double>
     {
-        public double Translate(string value)
+        public override double TranslateFromString(string value)
         {
             return double.Parse(value);
         }
     }
-    public class CharTranslator : IValueTranslator<Char>
+    public class CharTranslator : BaseValueTranslator<Char>
     {
-        public Char Translate(string value)
+        public override Char TranslateFromString(string value)
         {
             return Char.Parse(value);
         }
     }
-    public class TypeTranslator : IValueTranslator<Type>
+    public class TypeTranslator : BaseValueTranslator<Type>
     {
-        public Type Translate(string value)
+        public override Type TranslateFromString(string value)
         {
             return Type.GetType(value, true);
         }
     }
 
-    public class EnumTranslator<TEnum> : IValueTranslator<TEnum> where TEnum : struct
+    public class EnumTranslator<TEnum> : BaseValueTranslator<TEnum> where TEnum : struct
     {
-        public TEnum Translate(string value)
+        public override TEnum TranslateFromString(string value)
         {
             return (TEnum)Enum.Parse(typeof(TEnum), value, true);
         }
     }
 
-    public class UriTranslator : IValueTranslator<Uri>
+    public class UriTranslator : BaseValueTranslator<Uri>
     {
-        public Uri Translate(string value)
+        public override Uri TranslateFromString(string value)
         {
             return new Uri(value);
         }

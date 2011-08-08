@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NConfig.Model;
+using NConfig.Configuration;
+using System.Reflection;
+using System.Linq.Expressions;
 
 namespace NConfig
 {
@@ -62,6 +64,12 @@ namespace NConfig
             }
 
             return result;
+        }
+
+        public static PropertyInfo ToPropertyInfo<TClass, TProperty>(this Expression<Func<TClass, TProperty>> source) where TClass : class
+        {
+            PropertyInfo pi = ((PropertyInfo)((MemberExpression)source.Body).Member);
+            return pi;
         }
     }
 }

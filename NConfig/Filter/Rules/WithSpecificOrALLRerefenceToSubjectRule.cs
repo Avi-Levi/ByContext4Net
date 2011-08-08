@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NConfig.Model;
+using NConfig.Configuration;
 using NConfig;
 using NConfig.Abstractions;
 
@@ -18,9 +18,9 @@ namespace NConfig.Filter.Rules
         {
             var query = from item in items
                         where
-                        item.References.HasSpecificReference(currentRuntimeContextItem)
+                        item.HasSpecificReference(currentRuntimeContextItem)
                         ||
-                        item.References.HasAllReference(currentRuntimeContextItem.Key)
+                        item.HasAllReference(currentRuntimeContextItem.Key)
                         select item;
             return query;
         }

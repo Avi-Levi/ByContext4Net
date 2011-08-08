@@ -14,21 +14,17 @@
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>
-    </SccProjectName>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccProvider>
-    </SccProvider>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -65,7 +61,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfigServiceHost.cs" />
+    <Compile Include="Configuration\SingleServiceConfig.cs" />
+    <Compile Include="WCF\ConfigServiceHost.cs" />
     <Compile Include="Data\ProductsDAL.cs" />
     <Compile Include="Data\UsersDal.cs" />
     <Compile Include="Host.cs">
@@ -79,6 +76,7 @@
     <Compile Include="Configuration\ServicesConfig.cs" />
     <Compile Include="Services\LoginService.cs" />
     <Compile Include="Services\ProductsService.cs" />
+    <Compile Include="WCF\DI_InstanceProviderExtension.cs" />
     <EmbeddedResource Include="Host.resx">
       <DependentUpon>Host.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +109,10 @@
     <ProjectReference Include="..\NConfig.WCF\NConfig.WCF.csproj">
       <Project>{366E0B67-A944-492E-9464-9EAE4C670083}</Project>
       <Name>NConfig.WCF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NConfig.Windsor\NConfig.Windsor.csproj">
+      <Project>{51955F6C-3613-402D-B130-97EB2003E362}</Project>
+      <Name>NConfig.Windsor</Name>
     </ProjectReference>
     <ProjectReference Include="..\NConfig.XML\NConfig.XML.csproj">
       <Project>{C44ACC8C-5434-4663-A1F5-20FB4CBE2E69}</Project>

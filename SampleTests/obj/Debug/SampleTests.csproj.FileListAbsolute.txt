@@ -22,3 +22,7 @@ D:\work\NConfig\NConfig\SampleTests\bin\Debug\Castle.Core.pdb
 D:\work\NConfig\NConfig\SampleTests\bin\Debug\Castle.Core.xml
 D:\work\NConfig\NConfig\SampleTests\bin\Debug\Client.exe
 D:\work\NConfig\NConfig\SampleTests\bin\Debug\Client.pdb
+D:\work\NConfig\NConfig\SampleTests\bin\Debug\NConfig.Testing.dll
+D:\work\NConfig\NConfig\SampleTests\bin\Debug\NConfig.Testing.pdb
+D:\work\NConfig\NConfig\SampleTests\bin\Debug\NConfig.Windsor.dll
+D:\work\NConfig\NConfig\SampleTests\bin\Debug\NConfig.Windsor.pdb

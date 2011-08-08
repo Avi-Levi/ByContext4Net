@@ -14,7 +14,7 @@ namespace NConfig.Filter
             this.Rules = rules;
         }
 
-        private IFilterRule[] Rules { get; set; }
+        private IFilterRule[] Rules { get; set; } 
 
         public IEnumerable<IHaveFilterReference> Filter(IDictionary<string, string> runtimeContext, IEnumerable<IHaveFilterReference> items)
         {

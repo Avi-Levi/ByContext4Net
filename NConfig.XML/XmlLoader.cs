@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NConfig.Model;
+using NConfig.Configuration;
 using System.IO;
 using System.Xml.Linq;
 using System.Reflection;
@@ -26,7 +26,6 @@ namespace NConfig.XML
             XDocument doc = XDocument.Load(fileName, LoadOptions.None);
 
             return this.LoadSectionsFromDocument(doc);
-
         }
         public IEnumerable<Section> ReadXml(string xml)
         {
@@ -44,45 +43,37 @@ namespace NConfig.XML
         #region private methods
         private IEnumerable<Section> LoadSectionsFromDocument(XDocument doc)
         {
-            var result = doc.Root.Elements("Section").Select(node => this.BuildSectionFromNode(node));
-
-            return result;
+            foreach (var sectionNode in doc.Root.Elements("Section"))
+            {
+                yield return this.BuildSectionFromNode(sectionNode);
+            }
         }
         private Section BuildSectionFromNode(XElement sectionNode)
         {
-            Type sectionType = Type.GetType(sectionNode.Attribute("TypeName").Value, true);
-            Section section = Section.Create().FromType(sectionType);
+            Section section = Section.Create();
+            section.TypeName = sectionNode.GetAttributeValueOrThrow("TypeName");
 
-            foreach (var pi in sectionType.GetProperties())
+            foreach(var parameterNode in sectionNode.Elements("Parameter"))
             {
-                var parameterNode = sectionNode.Elements("Parameter").
-                    Single(node => node.Attribute("Name").Value == pi.Name);
-
-                Parameter parameter = this.BuildParameterFromNode(parameterNode, pi);
-                section.AddParameter(parameter);
+                Parameter parameter = this.BuildParameterFromNode(parameterNode);
+                section.Parameters.Add(parameter.Name, parameter);
             }
+
             return section;
         }
-        private Parameter BuildParameterFromNode(XElement parameterNode, PropertyInfo parameterPropertyInfo)
+        private Parameter BuildParameterFromNode(XElement parameterNode)
         {
-            Parameter parameter = Parameter.Create().FromPropertyInfo(parameterPropertyInfo);
-            parameter.Translator = this.GetAttributeValueOrNull(parameterNode, "Translator");
+            Parameter parameter = Parameter.Create();
+
+            parameter.Name = parameterNode.GetAttributeValueOrThrow("Name");
+            parameter.TypeName = parameterNode.GetAttributeValueOrNull("TypeName");
+            parameter.Translator = parameterNode.GetAttributeValueOrNull("Translator");
+            parameter.Required = parameterNode.GetAttributeValueOrNull("Required");
             parameter.Values = this.BuildValuesFromNode(parameterNode.Element("Values"));
 
             return parameter;
         }
 
-        private string GetAttributeValueOrNull(XElement node, string attributeName)
-        {
-            if (node.Attribute(attributeName) != null)
-            {
-                return node.Attribute(attributeName).Value;
-            }
-            else
-            {
-                return null;
-            }
-        }
         private IList<ParameterValue> BuildValuesFromNode(XElement valuesNode)
         {
             List<ParameterValue> result = new List<ParameterValue>();
@@ -102,15 +93,15 @@ namespace NConfig.XML
             foreach (var referenceNode in valueNode.Elements("Reference"))
             {
                 string subject = referenceNode.Attribute("Subject").Value;
-                string value = this.GetAttributeValueOrNull(referenceNode,"Value");
+                string value = referenceNode.GetAttributeValueOrNull("Value");
 
                 if (!string.IsNullOrEmpty(value))
                 {
-                    parameterValue.WithReference(subject, value);
+                    parameterValue.References.Add(ContextSubjectReference.Create(subject, value));
                 }
                 else
                 {
-                    parameterValue.WithAllReferenceToSubject(subject);
+                    parameterValue.References.Add(ContextSubjectReference.Create(subject, ContextSubjectReference.ALL));
                 }
             }
 

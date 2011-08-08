@@ -16,3 +16,5 @@ D:\work\NConfig\NConfig\NConfigTests\bin\Debug\Castle.Windsor.xml
 D:\work\NConfig\NConfig\NConfigTests\bin\Debug\NConfig.Windsor.dll
 D:\work\NConfig\NConfig\NConfigTests\bin\Debug\NConfig.Windsor.pdb
 D:\work\NConfig\NConfig\NConfigTests\bin\Debug\TestConfiguration.xml
+D:\work\NConfig\NConfig\NConfigTests\bin\Debug\NConfig.Testing.dll
+D:\work\NConfig\NConfig\NConfigTests\bin\Debug\NConfig.Testing.pdb

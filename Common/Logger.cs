@@ -47,7 +47,7 @@ namespace Common
         public ILogger Create(Type owner)
         {
             var config = this.ConfigurationService.
-                WithLogOwnerRef(owner.FullName).GetSection<LoggingConfiguration>();
+                WithLogOwnerRef(owner).GetSection<LoggingConfiguration>();
 
             return new FlatFileLogger(config);
         }

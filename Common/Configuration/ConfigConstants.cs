@@ -44,8 +44,11 @@ namespace Common
             {
                 public const string Name = "MachineName";
 
-                public const string SomeMachine1 = "SomeMachine1";
-                public const string SomeMachine2 = "SomeMachine2";
+                public const string ClientMachine1 = "ClientMachine1";
+                public const string ClientMachine2 = "ClientMachine2";
+
+                public const string ServerMachine = "ServerMachine";
+                
             }
         }
     }

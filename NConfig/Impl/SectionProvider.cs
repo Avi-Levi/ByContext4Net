@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NConfig.Abstractions;
-using NConfig.Model;
+using NConfig.Configuration;
 
 namespace NConfig.Impl
 {
@@ -11,23 +11,22 @@ namespace NConfig.Impl
     {
         public SectionProvider()
         {
-            this.ParameterValuesProviders = new Dictionary<string, IValueProvider>();
+            this.ParameterValuesProviders = new Dictionary<string, IParameterValueProvider>();
         }
 
         public Type SectionType { get; set; }
         public IModelBinder ModelBinder { get; set; }
-        public IDictionary<string, IValueProvider> ParameterValuesProviders { get; private set; }
+        public IDictionary<string, IParameterValueProvider> ParameterValuesProviders { get; private set; }
 
         public object Get(IDictionary<string, string> runtimeContext)
         {
-            IDictionary<string, object> values = new Dictionary<string, object>();
+            var values = this.ParameterValuesProviders
+                .Select(x => new { name = x.Key, value = x.Value.Get(runtimeContext) })
+                .Where(x => x.value != null);
+                
+            IDictionary<string, object> valuesDictionary = values.ToDictionary(x => x.name, x => x.value);
 
-            foreach (var provider in this.ParameterValuesProviders)
-            {
-                values.Add(provider.Key,provider.Value.Get(runtimeContext));
-            }
-
-            return this.ModelBinder.Bind(this.SectionType, values);
+            return this.ModelBinder.Bind(this.SectionType, valuesDictionary);
         }
     }
 }

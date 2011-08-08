@@ -12,14 +12,10 @@
     <AssemblyName>NConfig</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>
-    </SccProjectName>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccProvider>
-    </SccProvider>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,50 +45,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstractions\IConfigurationDataProvider.cs" />
     <Compile Include="Abstractions\IHaveFilterReference.cs" />
+    <Compile Include="Abstractions\IParameterValueProvider.cs" />
+    <Compile Include="Abstractions\IResultBuilder.cs" />
+    <Compile Include="Abstractions\IValueProvider.cs" />
     <Compile Include="Abstractions\IValueTranslatorProvider.cs" />
     <Compile Include="Abstractions\ISectionProvider.cs" />
-    <Compile Include="Abstractions\IValueProvider.cs" />
-    <Compile Include="Configuration\Configure.cs" />
+    <Compile Include="Configure.cs" />
     <Compile Include="Exceptions\GetSectionException.cs" />
-    <Compile Include="Exceptions\RawValueTranslatorConfigurationException.cs" />
+    <Compile Include="Exceptions\ConfigurationPropertyException.cs" />
     <Compile Include="Extensions\ConfigureExtensions.cs" />
-    <Compile Include="Extensions\ContextSubjectReferenceExtensions.cs" />
     <Compile Include="Abstractions\IModelBinder.cs" />
-    <Compile Include="Extensions\ParameterExtensions.cs" />
     <Compile Include="Extensions\HaveFilterReferenceExtensions.cs" />
-    <Compile Include="Extensions\ParameterValueExtensions.cs" />
-    <Compile Include="Extensions\SectionExtensions.cs" />
     <Compile Include="Exceptions\TypeNotSupportedException.cs" />
     <Compile Include="Filter\FilterPolicy.cs" />
     <Compile Include="Filter\IFilterPolicy.cs" />
     <Compile Include="Filter\Rules\WithSpecificOrNoReferenceToSubjectRule.cs" />
+    <Compile Include="Configuration\ConfigurationHelper.cs" />
+    <Compile Include="Impl\ConvertFromSectionProvider.cs" />
     <Compile Include="Impl\ConfigurationService.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="IConfigurationService.cs" />
-    <Compile Include="Impl\DebugLogger.cs" />
     <Compile Include="Impl\DefaultModelBinder.cs" />
     <Compile Include="Abstractions\IRuntimeContextProvider.cs" />
-    <Compile Include="Impl\Translators\OpenGenericDecoratorProvider.cs" />
+    <Compile Include="Configuration\ParameterToParameterValueProviderConverter.cs" />
+    <Compile Include="Impl\ParameterValueProvider.cs" />
+    <Compile Include="Impl\ResultBuilder\BaseCollectionResultBuilder.cs" />
+    <Compile Include="Impl\ResultBuilder\CollectionResultBuilder.cs" />
+    <Compile Include="Impl\ResultBuilder\DictionaryResultBuilder.cs" />
+    <Compile Include="Impl\ResultBuilder\EnumerableResultBuilder.cs" />
+    <Compile Include="Impl\ResultBuilder\ListResultBuilder.cs" />
+    <Compile Include="Impl\ResultBuilder\ResultBuilderProvider.cs" />
+    <Compile Include="Impl\ResultBuilder\SingleValueResultBuilder.cs" />
+    <Compile Include="Configuration\SectionToProviderConverter.cs" />
+    <Compile Include="Impl\Translators\OpenGenericTranslatorProviderDecorator.cs" />
     <Compile Include="Impl\Translators\SerializeRawString\SerializeRawStringExtensions.cs" />
     <Compile Include="Impl\Translators\SerializeRawString\SerializeRawStringTranslatorProvider.cs" />
     <Compile Include="Impl\SectionProvider.cs" />
-    <Compile Include="Impl\ValueProvider.cs" />
-    <Compile Include="Model\Section.cs" />
+    <Compile Include="Impl\TranslateFromStringValueProvider.cs" />
+    <Compile Include="Configuration\Section.cs" />
     <Compile Include="Filter\Rules\BestMatchRule.cs" />
-    <Compile Include="Model\ContextSubjectReference.cs" />
-    <Compile Include="Model\Parameter.cs" />
-    <Compile Include="Model\ParameterValue.cs" />
+    <Compile Include="Configuration\ContextSubjectReference.cs" />
+    <Compile Include="Configuration\Parameter.cs" />
+    <Compile Include="Configuration\ParameterValue.cs" />
     <Compile Include="Filter\Rules\IFilterRule.cs" />
     <Compile Include="Filter\Rules\WithSpecificOrALLRerefenceToSubjectRule.cs" />
-    <Compile Include="Impl\Translators\Collection\CollectionTranslators.cs" />
-    <Compile Include="Impl\Translators\Collection\CollectionTranslatorBase.cs" />
     <Compile Include="Impl\Translators\DelegateWrapperTranslator.cs" />
-    <Compile Include="Impl\Translators\Collection\DictionaryTranslator.cs" />
-    <Compile Include="Impl\Translators\Collection\EnumerableTranslator.cs" />
-    <Compile Include="Impl\Translators\Collection\ListTranslator.cs" />
     <Compile Include="Abstractions\IValueTranslator.cs" />
-    <Compile Include="Abstractions\ILoggerFacade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Impl\Translators\KeyValuePairTranslator.cs" />
     <Compile Include="Impl\Translators\SerializeRawString\Translators.cs" />

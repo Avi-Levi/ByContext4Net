@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NConfig.Model;
+using NConfig.Configuration;
 
-namespace NConfig
+namespace NConfig.Abstractions
 {
     public interface IConfigurationDataProvider
     {
-        IEnumerable<Section> GetSections();
+        IDictionary<string, ISectionProvider> Get();
     }
 }

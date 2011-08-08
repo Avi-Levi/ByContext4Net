@@ -14,14 +14,10 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <SccProjectName>
-    </SccProjectName>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccProvider>
-    </SccProvider>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,6 +37,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Castle.Windsor.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -54,8 +58,10 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LoggingConfigurationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ConfigurationTest.cs" />
+    <Compile Include="ServiceSubjectTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Client\Client.csproj">
@@ -65,6 +71,14 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{02EBB01A-DE5E-4940-8A06-F600B0A4778B}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NConfig.Testing\NConfig.Testing.csproj">
+      <Project>{508E7531-7F1F-4D8E-977B-78C10D5E9D2E}</Project>
+      <Name>NConfig.Testing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NConfig.Windsor\NConfig.Windsor.csproj">
+      <Project>{51955F6C-3613-402D-B130-97EB2003E362}</Project>
+      <Name>NConfig.Windsor</Name>
     </ProjectReference>
     <ProjectReference Include="..\NConfig.XML\NConfig.XML.csproj">
       <Project>{C44ACC8C-5434-4663-A1F5-20FB4CBE2E69}</Project>

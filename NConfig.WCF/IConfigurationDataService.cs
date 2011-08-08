@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ServiceModel;
+using NConfig.Configuration;
 
 namespace NConfig.WCF
 {
@@ -10,6 +11,6 @@ namespace NConfig.WCF
     public interface IConfigurationDataService
     {
         [OperationContract]
-        string GetConfigurationData();
+        Section[] GetConfigurationData();
     }
 }

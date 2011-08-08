@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-using NConfig.Model;
+using NConfig.Configuration;
 using NConfig.Abstractions;
 
 namespace NConfig.Filter.Rules

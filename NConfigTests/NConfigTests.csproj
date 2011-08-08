@@ -14,14 +14,10 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <SccProjectName>
-    </SccProjectName>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccProvider>
-    </SccProvider>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -66,6 +62,9 @@
     <Compile Include="Helpers\Helper.cs" />
     <Compile Include="Filter\InterceptorTypeNamesParameterValues.cs" />
     <Compile Include="Helpers\LoggingFolderPathParameterValues.cs" />
+    <Compile Include="Helpers\ParameterExtensions.cs" />
+    <Compile Include="Helpers\ParameterValueExtensions.cs" />
+    <Compile Include="Helpers\SectionExtensions.cs" />
     <Compile Include="Helpers\Subjects.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Filter\FilterPolicySingleValueTest.cs" />
@@ -77,6 +76,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NConfig.Testing\NConfig.Testing.csproj">
+      <Project>{508E7531-7F1F-4D8E-977B-78C10D5E9D2E}</Project>
+      <Name>NConfig.Testing</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NConfig.Windsor\NConfig.Windsor.csproj">
       <Project>{51955F6C-3613-402D-B130-97EB2003E362}</Project>
       <Name>NConfig.Windsor</Name>

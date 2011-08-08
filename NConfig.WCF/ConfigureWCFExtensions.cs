@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.ServiceModel;
 using NConfig.WCF;
+using NConfig.Impl;
 
 namespace NConfig
 {
@@ -11,11 +12,13 @@ namespace NConfig
     {
         public static Configure AddFromRemoteWCFService(this Configure source)
         {
-            IConfigurationDataService channel = new ChannelFactory<IConfigurationDataService>("ConfigurationData").CreateChannel();
-
-            string data = channel.GetConfigurationData();
-
-            source.AddFromRawXml(data);
+            source.AddConfigurationDataProvider(new ConvertFromSectionProvider(() =>
+                {
+                    IConfigurationDataService channel = 
+                        new ChannelFactory<IConfigurationDataService>("ConfigurationData").CreateChannel();
+                    return channel.GetConfigurationData();
+                },source)
+                );
 
             return source;
         }

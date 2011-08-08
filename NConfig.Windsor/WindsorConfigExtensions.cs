@@ -11,7 +11,7 @@ namespace NConfig
     {
         public static Configure AddWindsorTranslatorProvider(this Configure source, IWindsorContainer container)
         {
-            source.TranslatorProvider(WindsorTranslatorProvider.ProviderKey, new WindsorTranslatorProvider(container));
+            source.AddTranslatorProvider(WindsorTranslatorProvider.ProviderKey, new WindsorTranslatorProvider(container));
             return source;
         }
         public static Configure AddWindsorTranslatorProvider(this Configure source)

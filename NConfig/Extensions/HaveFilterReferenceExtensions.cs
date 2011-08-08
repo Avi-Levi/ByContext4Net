@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NConfig.Model;
+using NConfig.Configuration;
 using NConfig.Abstractions;
 
 namespace NConfig
@@ -12,12 +12,11 @@ namespace NConfig
         public static IEnumerable<IHaveFilterReference> SelectItemsWithSpecificReference(this IEnumerable<IHaveFilterReference> source, KeyValuePair<string, string> contextItem)
         {
             var query = from item in source
-                        where item.References.HasSpecificReference(contextItem)
+                        where item.References.Any(x => x.Name == contextItem.Key && x.Value == contextItem.Value)
                         select item;
 
             return query;
         }
-
         public static IEnumerable<IHaveFilterReference> SelectItemsWithNoSpecificReferenceToOtherSubjectValue
             (this IEnumerable<IHaveFilterReference> source, KeyValuePair<string, string> contextItem)
         {
@@ -27,27 +26,26 @@ namespace NConfig
 
             return query;
         }
-        
-
         public static IEnumerable<IHaveFilterReference> SelectItemsWithAllReference(this IEnumerable<IHaveFilterReference> source, string subjectName)
         {
             var query = from item in source
-                        where item.References.HasAllReference(subjectName)
+                        where item.HasAllReference(subjectName)
                         select item;
 
             return query;
         }
-
+        public static bool HasAllReference(this IHaveFilterReference source, string subjectName)
+        {
+            return source.References.Any(x => x.Name == subjectName && x.Value == ContextSubjectReference.ALL);
+        }
+        public static bool HasSpecificReference(this IHaveFilterReference source, KeyValuePair<string, string> reference)
+        {
+            return source.References.Any(x => x.Name == reference.Key && x.Value == reference.Value);
+        }
         public static bool AnySpecificReference(this IEnumerable<IHaveFilterReference> source, KeyValuePair<string, string> contextItem)
         {
             return source.SelectItemsWithSpecificReference(contextItem).Any();
         }
-
-        public static bool AnyItemsWithAllReference(this IEnumerable<IHaveFilterReference> source, string subjectName)
-        {
-            return source.SelectItemsWithAllReference(subjectName).Any();
-        }
-
         public static string FormatString(this IEnumerable<IHaveFilterReference> source)
         {
             if (source != null && source.Any())

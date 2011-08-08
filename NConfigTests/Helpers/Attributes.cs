@@ -6,19 +6,6 @@ using System.Text;
 namespace NConfig.Tests.Helpers
 {
     [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
-    public class RuntimeContextItemAttribute : Attribute
-    {
-        public RuntimeContextItemAttribute(string name, string value)
-        {
-            this.Name = name;
-            this.Value = value;
-        }
-
-        public string Name { get; set; }
-        public string Value { get; set; }
-    }
-
-    [AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
     public class RuntimeContextItemToFilterByAttribute : Attribute
     {
         public RuntimeContextItemToFilterByAttribute(string name, string value)

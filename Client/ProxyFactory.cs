@@ -20,10 +20,11 @@ namespace Client
 
         public TContract Get<TContract>() where TContract : class
         {
-            ServiceContractConfig contractConfig =
-                this.ConfigService.WithServiceContractRef(typeof(TContract).FullName).GetSection<ServiceContractConfig>();
+            var configSvcWithContractRef = this.ConfigService.WithServiceContractRef(typeof(TContract));
 
-            Binding binding = (Binding)Activator.CreateInstance(contractConfig.BindingType);
+            ServiceContractConfig contractConfig = configSvcWithContractRef.GetSection<ServiceContractConfig>();
+
+            Binding binding = configSvcWithContractRef.GetSection<Binding>(contractConfig.BindingType);
 
             TContract proxy =
                 ChannelFactory<TContract>.CreateChannel(binding, new EndpointAddress(contractConfig.Address));

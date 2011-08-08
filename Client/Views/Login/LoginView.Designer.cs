@@ -61,6 +61,7 @@
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(100, 20);
             this.txt_name.TabIndex = 2;
+            this.txt_name.Text = "greg";
             // 
             // txt_password
             // 
@@ -68,6 +69,7 @@
             this.txt_password.Name = "txt_password";
             this.txt_password.Size = new System.Drawing.Size(100, 20);
             this.txt_password.TabIndex = 4;
+            this.txt_password.Text = "123456";
             // 
             // lbl_password
             // 
@@ -82,14 +84,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(202, 204);
             this.Controls.Add(this.txt_password);
             this.Controls.Add(this.lbl_password);
             this.Controls.Add(this.txt_name);
             this.Controls.Add(this.lbl_name);
             this.Controls.Add(this.btn_login);
             this.Name = "LoginView";
-            this.Text = "LoginView";
+            this.Size = new System.Drawing.Size(202, 204);
             this.ResumeLayout(false);
             this.PerformLayout();
 

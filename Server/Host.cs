@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
+using System.ServiceModel;
+using System.ServiceModel.Activation;
 using System.Windows.Forms;
 using NConfig;
-using System.ServiceModel.Activation;
-using System.ServiceModel;
-using System.ServiceModel.Dispatcher;
-using Castle.Windsor;
 using NConfig.WCF;
+using Server.Configuration;
 
 namespace Server
 {
@@ -22,7 +16,8 @@ namespace Server
             InitializeComponent();
         }
 
-        public IWindsorContainer Windsor { get; set; }
+        public IConfigurationService ConfigService { get; set; }
+
         private void Host_Load(object sender, EventArgs e)
         {
             ServiceHost configurationDataServiceHost = new ServiceHost(typeof(ConfigurationDataService));
@@ -30,16 +25,14 @@ namespace Server
 
             this.TraceHostOpen(configurationDataServiceHost);
 
-            IInstanceProvider instanceProvider = new DI_InstanceProvider(this.Windsor);
+            ServicesConfig servicesConfig = this.ConfigService.GetSection<ServicesConfig>();
 
-            var configService = this.Windsor.Resolve<IConfigurationService>();
-            ServicesConfig config = configService.GetSection<ServicesConfig>();
-
-            foreach (Type serviceType in config.ServiceTypesToLoad)
+            foreach (Type serviceType in servicesConfig.ServiceTypesToLoad)
             {
+                SingleServiceConfig singleServiceConfig = this.ConfigService.WithServiceRef(serviceType).GetSection<SingleServiceConfig>();
                 ServiceHostFactory factory = new ServiceHostFactory();
-                ServiceHost host = new ConfigServiceHost(serviceType, configService);
-                host.Description.Behaviors.Add(new InstanceProviderServiceBehavior(instanceProvider));
+                ServiceHost host = new ConfigServiceHost(serviceType, this.ConfigService);
+                host.Description.Behaviors.AddRange(singleServiceConfig.ServiceBehaviors);
 
                 host.Open();
 
@@ -49,7 +42,8 @@ namespace Server
         private void TraceHostOpen(ServiceHost host)
         {
             this.listBox1.Items.Add(host.Description.Endpoints.First().Address + "  " +
-                    host.Description.Endpoints.First().Binding.GetType().FullName);
+                    host.Description.Endpoints.First().Binding.GetType().FullName
+                    );
         }
     }
 }

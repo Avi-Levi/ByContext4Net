@@ -12,9 +12,10 @@ namespace NConfig.Impl
         {
             object result = Activator.CreateInstance(modelType);
 
-            foreach (var pi in modelType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
+            foreach (var param in parametersInfo)
             {
-                pi.SetValue(result, parametersInfo[pi.Name], null);
+                var paramPI = modelType.GetProperty(param.Key, BindingFlags.Public | BindingFlags.Instance);
+                paramPI.SetValue(result, param.Value, null);
             }
 
             return result;

@@ -2,19 +2,21 @@
 
 namespace NConfig
 {
-    public interface ICollectionValueTranslator<T> : IValueTranslator
+    public abstract class BaseValueTranslator<T> : IValueTranslator
     {
-        T Translate(IEnumerable<string> values);
-    }
+        public abstract T TranslateFromString(string value);
 
-    public interface IValueTranslator<T> : IValueTranslator
-    {
-        T Translate(string value);
+        public object Translate(string value)
+        {
+            return this.TranslateFromString(value);
+        }
     }
     
     /// <summary>
     /// A marker interface.
     /// </summary>
     public interface IValueTranslator
-    {}
+    {
+        object Translate(string value);
+    }
 }

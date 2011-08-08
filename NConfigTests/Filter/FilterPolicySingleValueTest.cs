@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics;
-using NConfig.Model;
+using NConfig.Configuration;
 using NConfig;
 using NConfig.Abstractions;
 using NConfig.Filter;
@@ -11,6 +11,7 @@ using NConfig.Tests.Helpers;
 using System.Reflection;
 using NConfig.Filter.Rules;
 using NConfig.Impl;
+using NConfig.Testing;
 
 namespace NConfig.Tests
 {
@@ -32,7 +33,7 @@ namespace NConfig.Tests
         {
             MethodBase callingMethod = new StackFrame(1).GetMethod();
 
-            IDictionary<string, string> runtimeContext = Helper.ExtractRuntimeContextFromMethod(callingMethod);
+            IDictionary<string, string> runtimeContext = TestlHelper.ExtractRuntimeContextFromMethod(callingMethod);
             IFilterPolicy policy = Helper.ExtractFilterPolicyFromMethod(callingMethod);
 
             return policy.Filter(runtimeContext, Helper.ExtractValuesFromMethod(callingMethod)).OfType<ParameterValue>();

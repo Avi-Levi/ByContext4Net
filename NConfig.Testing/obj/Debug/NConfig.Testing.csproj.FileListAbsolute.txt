@@ -1,0 +1,7 @@
+D:\work\NConfig\NConfig\NConfig.Testing\bin\Debug\NConfig.Testing.dll
+D:\work\NConfig\NConfig\NConfig.Testing\bin\Debug\NConfig.Testing.pdb
+D:\work\NConfig\NConfig\NConfig.Testing\bin\Debug\NConfig.dll
+D:\work\NConfig\NConfig\NConfig.Testing\bin\Debug\NConfig.pdb
+D:\work\NConfig\NConfig\NConfig.Testing\obj\Debug\ResolveAssemblyReference.cache
+D:\work\NConfig\NConfig\NConfig.Testing\obj\Debug\NConfig.Testing.dll
+D:\work\NConfig\NConfig\NConfig.Testing\obj\Debug\NConfig.Testing.pdb

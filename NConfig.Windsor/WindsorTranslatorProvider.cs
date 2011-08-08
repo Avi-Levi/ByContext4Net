@@ -27,7 +27,7 @@ namespace NConfig.Windsor
         }
     }
 
-    public class WindsorValueTranslator<T> : IValueTranslator<T>
+    public class WindsorValueTranslator<T> : BaseValueTranslator<T>
     {
         public WindsorValueTranslator(IWindsorContainer windsor)
         {
@@ -36,8 +36,7 @@ namespace NConfig.Windsor
 
         private IWindsorContainer Windsor { get; set; }
 
-
-        public T Translate(string value)
+        public override T TranslateFromString(string value)
         {
             if (string.IsNullOrEmpty(value))
             {
@@ -47,7 +46,6 @@ namespace NConfig.Windsor
             {
                 return this.Windsor.Resolve<T>(value);
             }
-
         }
     }
 }
