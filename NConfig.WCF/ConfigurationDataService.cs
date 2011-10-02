@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Linq;
-using System.IO;
-using NConfig.Configuration;
+﻿using System.Linq;
+using NConfig.Model;
 using NConfig.XML;
 
 namespace NConfig.WCF

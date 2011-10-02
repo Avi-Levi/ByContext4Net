@@ -1,13 +1,12 @@
-﻿
-using System;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Collections.Generic;
-using NConfig.Impl;
-using NConfig.Filter;
-using NConfig.Abstractions;
-using NConfig.Filter.Rules;
-using NConfig.Impl.Translators;
-using NConfig.Impl.Translators.SerializeRawString;
+using NConfig.ConfigurationDataProviders;
+using NConfig.Filters;
+using NConfig.Filters.Rules;
+using NConfig.ModelBinders;
+using NConfig.SectionProviders;
+using NConfig.StringToValueTranslator;
+using NConfig.StringToValueTranslator.SerializeStringToValueTranslator;
 
 namespace NConfig
 {
@@ -32,8 +31,8 @@ namespace NConfig
 
         private void InitTranslatorProviders()
         {
-            this.TranslatorProviders = new Dictionary<string, IValueTranslatorProvider>();
-            this.AddTranslatorProvider(SerializeRawStringTranslatorProvider.ProviderKey, new SerializeRawStringTranslatorProvider());
+            this.TranslatorProviders = new Dictionary<string, IStringToValueTranslatorProvider>();
+            this.AddTranslatorProvider(SerializeStringToValueTranslatorProvider.ProviderKey, new SerializeStringToValueTranslatorProvider());
         }
 
         private void SetCollectionDefaultFilterPolicy()
@@ -49,7 +48,7 @@ namespace NConfig
 
         private void SetDefaultRawValueTranslatorName()
         {
-            this.DefaultRawValueTranslatorName = SerializeRawStringTranslatorProvider.ProviderKey;
+            this.DefaultRawValueTranslatorName = SerializeStringToValueTranslatorProvider.ProviderKey;
         }
 
         #endregion private methods
@@ -57,7 +56,7 @@ namespace NConfig
         #region configuration
         public IDictionary<string, string> RuntimeContext { get; internal set; }
         public IList<IConfigurationDataProvider> ConfigurationDataProviders { get; private set; }
-        public IDictionary<string, IValueTranslatorProvider> TranslatorProviders { get; private set; }
+        public IDictionary<string, IStringToValueTranslatorProvider> TranslatorProviders { get; private set; }
         public string DefaultRawValueTranslatorName { get; set; }
         public IModelBinder ModelBinder { get; set; }
 

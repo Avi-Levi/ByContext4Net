@@ -10,8 +10,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NConfig", "NConfig\NConfig.csproj", "{E03FCBFB-4EE1-4A86-9703-8871AB2BE179}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NConfigTests", "NConfigTests\NConfigTests.csproj", "{4EE3B279-D72F-479B-86CE-7FF270F0D9FD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NConfig.XML", "NConfig.XML\NConfig.XML.csproj", "{C44ACC8C-5434-4663-A1F5-20FB4CBE2E69}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NConfig.Windsor", "NConfig.Windsor\NConfig.Windsor.csproj", "{51955F6C-3613-402D-B130-97EB2003E362}"
@@ -30,47 +28,46 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleTests", "SampleTests\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NConfig.Testing", "NConfig.Testing\NConfig.Testing.csproj", "{508E7531-7F1F-4D8E-977B-78C10D5E9D2E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NConfig.Tests", "NConfig.Tests\NConfig.Tests.csproj", "{214DC7EA-BC3B-41A7-A03A-2F6033B416A7}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = NConfig.vsmdi
 	EndGlobalSection
 	GlobalSection(SourceCodeControl) = preSolution
-		SccNumberOfProjects = 11
+		SccNumberOfProjects = 10
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = NConfig\\NConfig.csproj
 		SccLocalPath1 = .
 		SccProjectFilePathRelativizedFromConnection1 = NConfig\\
-		SccProjectUniqueName2 = NConfigTests\\NConfigTests.csproj
+		SccProjectUniqueName2 = NConfig.XML\\NConfig.XML.csproj
 		SccLocalPath2 = .
-		SccProjectFilePathRelativizedFromConnection2 = NConfigTests\\
-		SccProjectUniqueName3 = NConfig.XML\\NConfig.XML.csproj
+		SccProjectFilePathRelativizedFromConnection2 = NConfig.XML\\
+		SccProjectUniqueName3 = NConfig.Windsor\\NConfig.Windsor.csproj
 		SccLocalPath3 = .
-		SccProjectFilePathRelativizedFromConnection3 = NConfig.XML\\
-		SccProjectUniqueName4 = NConfig.Windsor\\NConfig.Windsor.csproj
+		SccProjectFilePathRelativizedFromConnection3 = NConfig.Windsor\\
+		SccProjectUniqueName4 = Client\\Client.csproj
+		SccProjectTopLevelParentUniqueName4 = NConfig.sln
 		SccLocalPath4 = .
-		SccProjectFilePathRelativizedFromConnection4 = NConfig.Windsor\\
-		SccProjectUniqueName5 = Client\\Client.csproj
+		SccProjectFilePathRelativizedFromConnection4 = Client\\
+		SccProjectUniqueName5 = Common\\Common.csproj
 		SccProjectTopLevelParentUniqueName5 = NConfig.sln
 		SccLocalPath5 = .
-		SccProjectFilePathRelativizedFromConnection5 = Client\\
-		SccProjectUniqueName6 = Common\\Common.csproj
+		SccProjectFilePathRelativizedFromConnection5 = Common\\
+		SccProjectUniqueName6 = Server\\Server.csproj
 		SccProjectTopLevelParentUniqueName6 = NConfig.sln
 		SccLocalPath6 = .
-		SccProjectFilePathRelativizedFromConnection6 = Common\\
-		SccProjectUniqueName7 = Server\\Server.csproj
-		SccProjectTopLevelParentUniqueName7 = NConfig.sln
+		SccProjectFilePathRelativizedFromConnection6 = Server\\
+		SccProjectUniqueName7 = NConfig.WCF\\NConfig.WCF.csproj
 		SccLocalPath7 = .
-		SccProjectFilePathRelativizedFromConnection7 = Server\\
-		SccProjectUniqueName8 = NConfig.WCF\\NConfig.WCF.csproj
+		SccProjectFilePathRelativizedFromConnection7 = NConfig.WCF\\
+		SccProjectUniqueName8 = SampleTests\\SampleTests.csproj
+		SccProjectTopLevelParentUniqueName8 = NConfig.sln
 		SccLocalPath8 = .
-		SccProjectFilePathRelativizedFromConnection8 = NConfig.WCF\\
-		SccProjectUniqueName9 = SampleTests\\SampleTests.csproj
-		SccProjectTopLevelParentUniqueName9 = NConfig.sln
+		SccProjectFilePathRelativizedFromConnection8 = SampleTests\\
+		SccProjectUniqueName9 = NConfig.Testing\\NConfig.Testing.csproj
 		SccLocalPath9 = .
-		SccProjectFilePathRelativizedFromConnection9 = SampleTests\\
-		SccProjectUniqueName10 = NConfig.Testing\\NConfig.Testing.csproj
-		SccLocalPath10 = .
-		SccProjectFilePathRelativizedFromConnection10 = NConfig.Testing\\
+		SccProjectFilePathRelativizedFromConnection9 = NConfig.Testing\\
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,16 +88,6 @@ Global
 		{E03FCBFB-4EE1-4A86-9703-8871AB2BE179}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{E03FCBFB-4EE1-4A86-9703-8871AB2BE179}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{E03FCBFB-4EE1-4A86-9703-8871AB2BE179}.Release|x86.ActiveCfg = Release|Any CPU
-		{4EE3B279-D72F-479B-86CE-7FF270F0D9FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4EE3B279-D72F-479B-86CE-7FF270F0D9FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4EE3B279-D72F-479B-86CE-7FF270F0D9FD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{4EE3B279-D72F-479B-86CE-7FF270F0D9FD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{4EE3B279-D72F-479B-86CE-7FF270F0D9FD}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{4EE3B279-D72F-479B-86CE-7FF270F0D9FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4EE3B279-D72F-479B-86CE-7FF270F0D9FD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4EE3B279-D72F-479B-86CE-7FF270F0D9FD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{4EE3B279-D72F-479B-86CE-7FF270F0D9FD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{4EE3B279-D72F-479B-86CE-7FF270F0D9FD}.Release|x86.ActiveCfg = Release|Any CPU
 		{C44ACC8C-5434-4663-A1F5-20FB4CBE2E69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C44ACC8C-5434-4663-A1F5-20FB4CBE2E69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C44ACC8C-5434-4663-A1F5-20FB4CBE2E69}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -181,6 +168,16 @@ Global
 		{508E7531-7F1F-4D8E-977B-78C10D5E9D2E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{508E7531-7F1F-4D8E-977B-78C10D5E9D2E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{508E7531-7F1F-4D8E-977B-78C10D5E9D2E}.Release|x86.ActiveCfg = Release|Any CPU
+		{214DC7EA-BC3B-41A7-A03A-2F6033B416A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{214DC7EA-BC3B-41A7-A03A-2F6033B416A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{214DC7EA-BC3B-41A7-A03A-2F6033B416A7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{214DC7EA-BC3B-41A7-A03A-2F6033B416A7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{214DC7EA-BC3B-41A7-A03A-2F6033B416A7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{214DC7EA-BC3B-41A7-A03A-2F6033B416A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{214DC7EA-BC3B-41A7-A03A-2F6033B416A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{214DC7EA-BC3B-41A7-A03A-2F6033B416A7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{214DC7EA-BC3B-41A7-A03A-2F6033B416A7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{214DC7EA-BC3B-41A7-A03A-2F6033B416A7}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.ServiceModel;
-using NConfig.WCF;
-using NConfig.Impl;
+﻿using System.ServiceModel;
+using NConfig.ConfigurationDataProviders;
 
-namespace NConfig
+namespace NConfig.WCF
 {
     public static class ConfigureWCFExtensions
     {
         public static Configure AddFromRemoteWCFService(this Configure source)
         {
-            source.AddConfigurationDataProvider(new ConvertFromSectionProvider(() =>
+            source.AddConfigurationDataProvider(new ConvertFromSectionDataProvider(() =>
                 {
                     IConfigurationDataService channel = 
                         new ChannelFactory<IConfigurationDataService>("ConfigurationData").CreateChannel();

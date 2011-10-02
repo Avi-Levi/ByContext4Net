@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NConfig;
 using Common;
 using Client;
+using NUnit.Framework;
 using Server.Services;
 using NConfig.Testing;
 
 namespace SampleTests
 {
-    [TestClass]
+    [TestFixture]
     public class LoggingConfigurationTest
     {
-        [TestMethod]
-
+        [Test]
         [RuntimeContextItem(ConfigConstants.Subjects.Environment.Name, ConfigConstants.Subjects.Environment.Dev)]
         [RuntimeContextItem(ConfigConstants.Subjects.AppType.Name, ConfigConstants.Subjects.AppType.OnlineClient)]
         [RuntimeContextItem(ConfigConstants.Subjects.MachineName.Name, ConfigConstants.Subjects.MachineName.ClientMachine2)]
@@ -25,11 +21,11 @@ namespace SampleTests
             var cfg = Configure.With().AddWindsorTranslatorProvider().ContextFromCallingMethod().AddFromXmlFile("Configuration.xml").Build()
                 .GetSection<LoggingConfiguration>();
 
-            Assert.AreEqual<string>(@"D:\work\NConfig\NConfig\Client\bin\Debug\logs\log.txt", cfg.LogFilePath);
-            Assert.AreEqual<LogLevelOption>(LogLevelOption.Error, cfg.LogLevel);
+            Assert.AreEqual(@"D:\work\NConfig\NConfig\Client\bin\Debug\logs\log.txt", cfg.LogFilePath);
+            Assert.AreEqual(LogLevelOption.Error, cfg.LogLevel);
         }
 
-        [TestMethod]
+        [Test]
         [RuntimeContextItem(ConfigConstants.Subjects.Environment.Name, ConfigConstants.Subjects.Environment.Dev)]
         [RuntimeContextItem(ConfigConstants.Subjects.AppType.Name, ConfigConstants.Subjects.AppType.OnlineClient)]
         [RuntimeContextItem(ConfigConstants.Subjects.MachineName.Name, ConfigConstants.Subjects.MachineName.ClientMachine2)]
@@ -39,15 +35,15 @@ namespace SampleTests
             var cfg = Configure.With().AddWindsorTranslatorProvider().ContextFromCallingMethod().AddFromXmlFile("Configuration.xml").Build()
                 .GetSection<LoggingConfiguration>();
 
-            Assert.AreEqual<string>(@"D:\work\NConfig\NConfig\Client\bin\Debug\logs\log.txt", cfg.LogFilePath);
-            Assert.AreEqual<LogLevelOption>(LogLevelOption.Error,cfg.LogLevel);
+            Assert.AreEqual(@"D:\work\NConfig\NConfig\Client\bin\Debug\logs\log.txt", cfg.LogFilePath);
+            Assert.AreEqual(LogLevelOption.Error,cfg.LogLevel);
         }
 
         private IConfigurationService ConfigurationService()
         {
             throw new NotImplementedException();
         }
-        [TestMethod]
+        [Test]
         [RuntimeContextItem(ConfigConstants.Subjects.Environment.Name, ConfigConstants.Subjects.Environment.Dev)]
         [RuntimeContextItem(ConfigConstants.Subjects.AppType.Name, ConfigConstants.Subjects.AppType.ApplicationServer)]
         [RuntimeContextItem(ConfigConstants.Subjects.MachineName.Name, ConfigConstants.Subjects.MachineName.ServerMachine)]
@@ -57,10 +53,10 @@ namespace SampleTests
             var cfg = Configure.With().AddWindsorTranslatorProvider().ContextFromCallingMethod().AddFromXmlFile("Configuration.xml").Build()
                 .GetSection<LoggingConfiguration>();
 
-            Assert.AreEqual<string>(@"D:\work\NConfig\NConfig\Server\bin\Debug\logs\all.txt", cfg.LogFilePath);
-            Assert.AreEqual<LogLevelOption>(LogLevelOption.Error, cfg.LogLevel);
+            Assert.AreEqual(@"D:\work\NConfig\NConfig\Server\bin\Debug\logs\all.txt", cfg.LogFilePath);
+            Assert.AreEqual(LogLevelOption.Error, cfg.LogLevel);
         }
-        [TestMethod]
+        [Test]
         [RuntimeContextItem(ConfigConstants.Subjects.Environment.Name, ConfigConstants.Subjects.Environment.Dev)]
         [RuntimeContextItem(ConfigConstants.Subjects.AppType.Name, ConfigConstants.Subjects.AppType.ApplicationServer)]
         [RuntimeContextItem(ConfigConstants.Subjects.MachineName.Name, ConfigConstants.Subjects.MachineName.ServerMachine)]
@@ -70,11 +66,11 @@ namespace SampleTests
             var cfg = Configure.With().AddWindsorTranslatorProvider().ContextFromCallingMethod().AddFromXmlFile("Configuration.xml").Build()
                 .GetSection<LoggingConfiguration>();
 
-            Assert.AreEqual<string>(@"D:\work\NConfig\NConfig\Server\bin\Debug\logs\login.txt", cfg.LogFilePath);
-            Assert.AreEqual<LogLevelOption>(LogLevelOption.Error, cfg.LogLevel);
+            Assert.AreEqual(@"D:\work\NConfig\NConfig\Server\bin\Debug\logs\login.txt", cfg.LogFilePath);
+            Assert.AreEqual(LogLevelOption.Error, cfg.LogLevel);
         }
 
-        [TestMethod]
+        [Test]
         [RuntimeContextItem(ConfigConstants.Subjects.Environment.Name, ConfigConstants.Subjects.Environment.Dev)]
         [RuntimeContextItem(ConfigConstants.Subjects.AppType.Name, ConfigConstants.Subjects.AppType.ApplicationServer)]
         [RuntimeContextItem(ConfigConstants.Subjects.MachineName.Name, ConfigConstants.Subjects.MachineName.ClientMachine1)]
@@ -84,11 +80,11 @@ namespace SampleTests
             var cfg = Configure.With().AddWindsorTranslatorProvider().ContextFromCallingMethod().AddFromXmlFile("Configuration.xml").Build()
                 .GetSection<LoggingConfiguration>();
 
-            Assert.AreEqual<string>(@"D:\work\NConfig\NConfig\Server\bin\Debug\logs\login.txt", cfg.LogFilePath);
-            Assert.AreEqual<LogLevelOption>(LogLevelOption.Trace,cfg.LogLevel);
+            Assert.AreEqual(@"D:\work\NConfig\NConfig\Server\bin\Debug\logs\login.txt", cfg.LogFilePath);
+            Assert.AreEqual(LogLevelOption.Trace,cfg.LogLevel);
         }
 
-        [TestMethod]
+        [Test]
         [RuntimeContextItem(ConfigConstants.Subjects.Environment.Name, ConfigConstants.Subjects.Environment.Prod)]
         [RuntimeContextItem(ConfigConstants.Subjects.AppType.Name, ConfigConstants.Subjects.AppType.OnlineClient)]
         [RuntimeContextItem(ConfigConstants.Subjects.MachineName.Name, ConfigConstants.Subjects.MachineName.ClientMachine1)]
@@ -97,11 +93,11 @@ namespace SampleTests
             var cfg = Configure.With().AddWindsorTranslatorProvider().ContextFromCallingMethod().AddFromXmlFile("Configuration.xml").Build()
                 .GetSection<LoggingConfiguration>();
 
-            Assert.AreEqual<string>(@"D:\work\NConfig\NConfig\Client\bin\Debug\logs\SomeSecuredPath\log.txt", cfg.LogFilePath);
-            Assert.AreEqual<LogLevelOption>(LogLevelOption.Trace, cfg.LogLevel);
+            Assert.AreEqual(@"D:\work\NConfig\NConfig\Client\bin\Debug\logs\SomeSecuredPath\log.txt", cfg.LogFilePath);
+            Assert.AreEqual(LogLevelOption.Trace, cfg.LogLevel);
         }
 
-        [TestMethod]
+        [Test]
         [RuntimeContextItem(ConfigConstants.Subjects.Environment.Name, ConfigConstants.Subjects.Environment.Prod)]
         [RuntimeContextItem(ConfigConstants.Subjects.AppType.Name, ConfigConstants.Subjects.AppType.OnlineClient)]
         [RuntimeContextItem(ConfigConstants.Subjects.MachineName.Name, ConfigConstants.Subjects.MachineName.ClientMachine1)]
@@ -111,8 +107,8 @@ namespace SampleTests
             var cfg = Configure.With().AddWindsorTranslatorProvider().ContextFromCallingMethod().AddFromXmlFile("Configuration.xml").Build()
                 .GetSection<LoggingConfiguration>();
 
-            Assert.AreEqual<string>(@"D:\work\NConfig\NConfig\Client\bin\Debug\logs\SomeSecuredPath\log.txt", cfg.LogFilePath);
-            Assert.AreEqual<LogLevelOption>(LogLevelOption.Trace, cfg.LogLevel);
+            Assert.AreEqual(@"D:\work\NConfig\NConfig\Client\bin\Debug\logs\SomeSecuredPath\log.txt", cfg.LogFilePath);
+            Assert.AreEqual(LogLevelOption.Trace, cfg.LogLevel);
         }
 
     }

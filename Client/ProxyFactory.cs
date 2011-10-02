@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Common.Configuration;
 using NConfig;
-using Common;
 using System.ServiceModel.Channels;
 using System.ServiceModel;
 

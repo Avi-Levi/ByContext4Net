@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using NConfig.Configuration;
 using System.Xml.Linq;
-using System.Reflection;
+using NConfig.ConfigurationDataProviders;
 using NConfig.XML;
-using NConfig.Impl;
 
 namespace NConfig
 {
@@ -15,14 +9,14 @@ namespace NConfig
     {
         public static Configure AddFromXmlFile(this Configure source, string fileName)
         {
-            source.AddConfigurationDataProvider(new ConvertFromSectionProvider(()=>
+            source.AddConfigurationDataProvider(new ConvertFromSectionDataProvider(()=>
                 new XmlLoader().LoadFile(fileName), source));
 
             return source;
         }
         public static Configure AddFromRawXml(this Configure source, string rawXml)
         {
-            source.AddConfigurationDataProvider(new ConvertFromSectionProvider(()=>
+            source.AddConfigurationDataProvider(new ConvertFromSectionDataProvider(()=>
                 new XmlLoader().ReadXml(rawXml), source));
             return source;
         }

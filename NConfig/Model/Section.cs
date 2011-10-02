@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.Runtime.Serialization;
+using NConfig.Configuration;
 
 namespace NConfig.Model
 {
+    [DataContract]
     public class Section
     {
         private Section()
@@ -17,8 +17,11 @@ namespace NConfig.Model
             return new Section();
         }
 
-        public string Name { get; set; }
+        [DataMember]
         public string TypeName { get; set; }
-        public IDictionary<string,Parameter> Parameters { get; set; }
+        [DataMember]
+        public string ModelBinder { get; set; }
+        [DataMember]
+        public IDictionary<string, Parameter> Parameters { get; set; }
     }
 }

@@ -24,7 +24,7 @@
 //            var cfg = Configure.With().ContextFromCallingMethod().AddFromXmlFile("Configuration.xml").Build()
 //                .GetSection<LoggingConfiguration>();
 
-//            Assert.AreEqual<string>(@"D:\work\NConfig\NConfig\Client\bin\Debug\logs\log.txt", cfg.LogFilePath);
+//            Assert.AreEqual(@"D:\work\NConfig\NConfig\Client\bin\Debug\logs\log.txt", cfg.LogFilePath);
 //            Assert.AreEqual<LogLevelOption>(LogLevelOption.Error, cfg.LogLevel);
 //        }
 //    }

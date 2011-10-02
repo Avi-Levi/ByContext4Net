@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NConfig.Configuration;
-using NConfig.Abstractions;
+﻿using NConfig.Configuration;
+using NConfig.Model;
 
-namespace NConfig.Tests
+namespace NConfig.Tests.Helpers
 {
     public static class ParameterValueExtensions
     {

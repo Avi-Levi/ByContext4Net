@@ -4,7 +4,7 @@ using System.ServiceModel.Channels;
 using Common;
 using NConfig;
 
-namespace Server
+namespace Server.WCF
 {
     public class ConfigServiceHost : ServiceHost
     {
@@ -28,9 +28,9 @@ namespace Server
         private void AddEndpointForContract(Type contractType)
         {
             var configSvcWithContractRef = this.ConfigService.WithServiceContractRef(contractType);
-            ServiceContractConfig contractConfig = configSvcWithContractRef.GetSection<ServiceContractConfig>();
+            var contractConfig = configSvcWithContractRef.GetSection<ServiceContractConfig>();
 
-            Binding binding = configSvcWithContractRef.GetSection<Binding>(contractConfig.BindingType);
+            var binding = configSvcWithContractRef.GetSection<Binding>(contractConfig.BindingType);
             
             this.AddServiceEndpoint(contractType, binding, contractConfig.Address);
         }

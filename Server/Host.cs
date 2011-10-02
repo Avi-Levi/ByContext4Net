@@ -4,8 +4,10 @@ using System.ServiceModel;
 using System.ServiceModel.Activation;
 using System.Windows.Forms;
 using NConfig;
+using NConfig.Extensions;
 using NConfig.WCF;
 using Server.Configuration;
+using Server.WCF;
 
 namespace Server
 {

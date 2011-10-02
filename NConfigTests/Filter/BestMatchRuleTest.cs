@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
-using NConfig.Configuration;
-using NConfig;
-using NConfig.Abstractions;
-using NConfig.Filter;
-using NConfig.Tests.Helpers;
+using System.Linq;
 using System.Reflection;
-using NConfig.Filter.Rules;
-using NConfig.Impl;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NConfig.Filters.Rules;
+using NConfig.Model;
 using NConfig.Testing;
+using NConfig.Tests.Helpers;
 
-namespace NConfig.Tests
+namespace NConfig.Tests.Filter
 {
     [TestClass]
     public class BestMatchRuleTest

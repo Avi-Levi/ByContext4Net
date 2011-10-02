@@ -9,6 +9,7 @@ using Client.Views.Shell;
 using NConfig;
 using Common;
 using Client.Views.Product;
+using NConfig.WCF;
 
 namespace Client
 {

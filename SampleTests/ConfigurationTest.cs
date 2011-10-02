@@ -1,16 +1,11 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Linq;
+using Common.Configuration;
 using NConfig;
 using Common;
 using System.ServiceModel;
+using NUnit.Framework;
 using Server.Services;
-using Client;
 using Server;
-using NConfig.Filter;
-using NConfig.Filter.Rules;
 using NConfig.Testing;
 using Server.Configuration;
 using Server.WCF;
@@ -21,11 +16,10 @@ using System.ServiceModel.Channels;
 
 namespace SampleTests
 {
-    [TestClass]
+    [TestFixture]
     public class ConfigurationTest
     {
-        [TestMethod]
-
+        [Test]
         [RuntimeContextItem(ConfigConstants.Subjects.Environment.Name, ConfigConstants.Subjects.Environment.Dev)]
         [RuntimeContextItem(ConfigConstants.Subjects.AppType.Name, ConfigConstants.Subjects.AppType.OnlineClient)]
         [RuntimeContextItem(ConfigConstants.Subjects.MachineName.Name, ConfigConstants.Subjects.MachineName.ClientMachine1)]
@@ -38,15 +32,15 @@ namespace SampleTests
             var cfg = configSvc.GetSection<ServiceContractConfig>();
             var binding = configSvc.GetSection<Binding>(cfg.BindingType);
 
-            Assert.AreEqual<string>(cfg.Address.AbsoluteUri, "net.tcp://localhost:20/login");
-            Assert.AreEqual<Type>(typeof(NetTcpBinding), cfg.BindingType);
+            Assert.AreEqual(cfg.Address.AbsoluteUri, "net.tcp://localhost:20/login");
+            Assert.AreEqual(typeof(NetTcpBinding), cfg.BindingType);
             Assert.IsTrue(typeof(NetTcpBinding).IsInstanceOfType(binding));
 
             NetTcpBinding tcpBinding = (NetTcpBinding)binding;
-            Assert.AreEqual<long>(new NetTcpBinding().MaxReceivedMessageSize, tcpBinding.MaxReceivedMessageSize);
+            Assert.AreEqual(new NetTcpBinding().MaxReceivedMessageSize, tcpBinding.MaxReceivedMessageSize);
         }
 
-        [TestMethod]
+        [Test]
         [RuntimeContextItem(ConfigConstants.Subjects.Environment.Name, ConfigConstants.Subjects.Environment.Dev)]
         [RuntimeContextItem(ConfigConstants.Subjects.AppType.Name, ConfigConstants.Subjects.AppType.OnlineClient)]
         [RuntimeContextItem(ConfigConstants.Subjects.MachineName.Name, ConfigConstants.Subjects.MachineName.ClientMachine1)]
@@ -59,15 +53,15 @@ namespace SampleTests
             var cfg = configSvc.GetSection<ServiceContractConfig>();
             var binding = configSvc.GetSection<Binding>(cfg.BindingType);
 
-            Assert.AreEqual<string>("net.tcp://localhost:21/products", cfg.Address.AbsoluteUri);
-            Assert.AreEqual<Type>(typeof(NetTcpBinding), cfg.BindingType);
+            Assert.AreEqual("net.tcp://localhost:21/products", cfg.Address.AbsoluteUri);
+            Assert.AreEqual(typeof(NetTcpBinding), cfg.BindingType);
             Assert.IsTrue(typeof(NetTcpBinding).IsInstanceOfType(binding));
 
             NetTcpBinding tcpBinding = (NetTcpBinding)binding;
-            Assert.AreEqual<long>(3145728, tcpBinding.MaxReceivedMessageSize);
+            Assert.AreEqual(3145728, tcpBinding.MaxReceivedMessageSize);
         }
 
-        [TestMethod]
+        [Test]
         [RuntimeContextItem(ConfigConstants.Subjects.Environment.Name, ConfigConstants.Subjects.Environment.Dev)]
         [RuntimeContextItem(ConfigConstants.Subjects.AppType.Name, ConfigConstants.Subjects.AppType.OnlineClient)]
         [RuntimeContextItem(ConfigConstants.Subjects.MachineName.Name, ConfigConstants.Subjects.MachineName.ClientMachine1)]
@@ -77,12 +71,12 @@ namespace SampleTests
                 .GetSection<ServicesConfig>();
 
             Assert.IsNotNull(cfg.ServiceTypesToLoad);
-            Assert.AreEqual<int>(cfg.ServiceTypesToLoad.Count(), 2);
+            Assert.AreEqual(cfg.ServiceTypesToLoad.Count(), 2);
             Assert.IsTrue(cfg.ServiceTypesToLoad.Contains(typeof(LoginService)));
             Assert.IsTrue(cfg.ServiceTypesToLoad.Contains(typeof(ProductsService)));
         }
 
-        [TestMethod]
+        [Test]
         [RuntimeContextItem(ConfigConstants.Subjects.Environment.Name, ConfigConstants.Subjects.Environment.Dev)]
         [RuntimeContextItem(ConfigConstants.Subjects.AppType.Name, ConfigConstants.Subjects.AppType.ApplicationServer)]
         [RuntimeContextItem(ConfigConstants.Subjects.MachineName.Name, ConfigConstants.Subjects.MachineName.ServerMachine)]
@@ -97,7 +91,7 @@ namespace SampleTests
                 .GetSection<SingleServiceConfig>();
 
             Assert.IsNotNull(cfg.ServiceBehaviors);
-            Assert.AreEqual<int>(1, cfg.ServiceBehaviors.Count());
+            Assert.AreEqual(1, cfg.ServiceBehaviors.Count());
             Assert.IsTrue(cfg.ServiceBehaviors.Any(x=>typeof(DI_InstanceProviderExtension).IsInstanceOfType(x)));
         }
     }

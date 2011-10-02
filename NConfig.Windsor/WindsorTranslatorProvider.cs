@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NConfig.Abstractions;
 using Castle.Windsor;
+using NConfig.StringToValueTranslator;
 
 namespace NConfig.Windsor
 {
-    public class WindsorTranslatorProvider : IValueTranslatorProvider
+    public class WindsorTranslatorProvider : IStringToValueTranslatorProvider
     {
         public WindsorTranslatorProvider(IWindsorContainer windsor)
         {
@@ -19,15 +16,15 @@ namespace NConfig.Windsor
 
         public const string ProviderKey = "Windsor";
 
-        public IValueTranslator Get(Type type)
+        public IStringToValueTranslator Get(Type type)
         {
             Type translatorType = typeof(WindsorValueTranslator<>).MakeGenericType(type);
 
-            return (IValueTranslator)translatorType.GetConstructor(new Type[1] { typeof(IWindsorContainer) }).Invoke(new object[1] { this.Windsor });
+            return (IStringToValueTranslator)translatorType.GetConstructor(new Type[1] { typeof(IWindsorContainer) }).Invoke(new object[1] { this.Windsor });
         }
     }
 
-    public class WindsorValueTranslator<T> : BaseValueTranslator<T>
+    public class WindsorValueTranslator<T> : BaseStringToValueTranslator<T>
     {
         public WindsorValueTranslator(IWindsorContainer windsor)
         {

@@ -1,16 +1,11 @@
 ﻿using System;
-using NConfig.Configuration;
-using System.Reflection;
 using System.Linq.Expressions;
-using System.Collections;
-using NConfig.Abstractions;
-using NConfig.Impl;
-using NConfig.Filter;
-using NConfig.Filter.Rules;
-using NConfig.Exceptions;
-using NConfig;
+using System.Reflection;
+using NConfig.Configuration;
+using NConfig.Extensions;
+using NConfig.Model;
 
-namespace NConfig.Tests
+namespace NConfig.Tests.Helpers
 {
     public static class ParameterExtensions
     {

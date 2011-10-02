@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 using NConfig;
-using NConfig.Configuration;
 using Common;
 using Castle.Windsor;
 using Castle.MicroKernel.Registration;
+using NConfig.XML;
 using Server.Services;
 using Server.Data;
 using System.ServiceModel.Description;

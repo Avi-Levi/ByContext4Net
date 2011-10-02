@@ -28,7 +28,7 @@
       </Values>
     </Parameter>
   </Section>
-  <Section TypeName="Server.ServicesConfig,Server">
+  <Section TypeName="Server.Configuration.ServicesConfig,Server">
     <Parameter Name="ServiceTypesToLoad">
       <Values>
         <Value Value="Server.Services.LoginService,Server"/>

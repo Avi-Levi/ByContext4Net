@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using NConfig.Configuration;
-using NConfig.Abstractions;
-using NConfig.Impl.Translators;
-using NConfig.Impl;
-using System.Collections;
+using NConfig.ConfigurationDataProviders;
+using NConfig.Filters;
+using NConfig.Model;
+using NConfig.ModelBinders;
+using NConfig.RuntimeContextProviders;
+using NConfig.StringToValueTranslator;
 
 namespace NConfig
 {
@@ -17,7 +18,7 @@ namespace NConfig
         }
         public static Configure AddSection(this Configure source, Section section)
         {
-            source.ConfigurationDataProviders.Add(new ConvertFromSectionProvider(() => new Section[1] { section },source));
+            source.ConfigurationDataProviders.Add(new ConvertFromSectionDataProvider(() => new Section[1] { section },source));
             return source;
         }
         public static Configure ModelBinder(this Configure source, IModelBinder binder)
@@ -52,18 +53,18 @@ namespace NConfig
         }
         
         #region TranslatorProvider
-        public static Configure AddTranslatorProvider(this Configure source, string name, IValueTranslatorProvider provider)
+        public static Configure AddTranslatorProvider(this Configure source, string name, IStringToValueTranslatorProvider provider)
         {
-            source.TranslatorProviders.Add(name, new OpenGenericTranslatorProviderDecorator(provider));
+            source.TranslatorProviders.Add(name, new OpenGenericStringToValueTranslatorProviderDecorator(provider));
 
             return source;
         }
         public static TProvider GetTranslatorProvider<TProvider>(this Configure source, string name)
-            where TProvider : IValueTranslatorProvider
+            where TProvider : IStringToValueTranslatorProvider
         {
             var provider = source.TranslatorProviders[name];
 
-            var decorator = provider as OpenGenericTranslatorProviderDecorator;
+            var decorator = provider as OpenGenericStringToValueTranslatorProviderDecorator;
             if (decorator != null)
             {
                 return (TProvider)decorator.Inner;

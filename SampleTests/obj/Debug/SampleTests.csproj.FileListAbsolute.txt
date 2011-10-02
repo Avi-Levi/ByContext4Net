@@ -26,3 +26,5 @@ D:\work\NConfig\NConfig\SampleTests\bin\Debug\NConfig.Testing.dll
 D:\work\NConfig\NConfig\SampleTests\bin\Debug\NConfig.Testing.pdb
 D:\work\NConfig\NConfig\SampleTests\bin\Debug\NConfig.Windsor.dll
 D:\work\NConfig\NConfig\SampleTests\bin\Debug\NConfig.Windsor.pdb
+D:\work\NConfig\NConfig\SampleTests\bin\Debug\nunit.framework.dll
+D:\work\NConfig\NConfig\SampleTests\bin\Debug\nunit.framework.xml

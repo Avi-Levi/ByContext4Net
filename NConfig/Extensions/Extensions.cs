@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NConfig.Configuration;
 using System.Reflection;
 using System.Linq.Expressions;
 
-namespace NConfig
+namespace NConfig.Extensions
 {
     public static class Extensions
     {

@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Runtime.Serialization;
 
 namespace NConfig.Model
 {
+    [DataContract]
     public class ContextSubjectReference
     {
         public const string ALL = "ALL";
@@ -19,7 +17,9 @@ namespace NConfig.Model
             return new ContextSubjectReference(name, value);
         }
 
+        [DataMember]
         public string Name { get; private set; }
+        [DataMember]
         public string Value { get; private set; }
 
         public override string ToString()

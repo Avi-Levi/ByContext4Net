@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Common;
+﻿using Common;
+using Common.Contracts;
 using Server.Data;
 
 namespace Server.Services

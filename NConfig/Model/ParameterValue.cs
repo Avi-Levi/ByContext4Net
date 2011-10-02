@@ -1,24 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NConfig.Abstractions;
+﻿using System.Collections.Generic;
+using System.Runtime.Serialization;
+using NConfig.Configuration;
 
 namespace NConfig.Model
 {
+    [DataContract]
     public class ParameterValue : IHaveFilterReference
     {
         public override bool Equals(object obj)
         {
-            ParameterValue other = obj as ParameterValue;
+            var other = obj as ParameterValue;
             if (other == null)
             {
                 return false;
             }
-            else
-            {
-                return this.Value.Equals(other.Value);
-            }
+            return this.GetHashCode().Equals(other.GetHashCode());
+        }
+        public override int GetHashCode()
+        {
+            return this.Value.GetHashCode();
         }
         public override string ToString()
         {
@@ -34,7 +34,9 @@ namespace NConfig.Model
         {
             return new ParameterValue(value);
         }
+        [DataMember]
         public string Value { get; private set; }
+        [DataMember]
         public IList<ContextSubjectReference> References { get; private set; }
     }
 }

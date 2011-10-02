@@ -1,14 +1,11 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NConfig;
 using NConfig.Configuration;
 using Castle.Windsor;
-using NConfig.Filter;
-using NConfig.Filter.Rules;
-using NConfig.Impl;
+using NConfig.Model;
+using NConfig.Tests.Helpers;
+using NConfig.XML;
 
 
 namespace NConfig.Tests
