@@ -1,4 +1,4 @@
-﻿using Common.Configuration;
+﻿using Common;
 using NConfig;
 using System.ServiceModel.Channels;
 using System.ServiceModel;

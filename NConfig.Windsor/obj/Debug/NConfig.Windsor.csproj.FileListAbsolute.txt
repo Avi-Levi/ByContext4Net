@@ -11,3 +11,16 @@ D:\work\NConfig\NConfig\NConfig.Windsor\bin\Debug\NConfig.pdb
 D:\work\NConfig\NConfig\NConfig.Windsor\obj\Debug\ResolveAssemblyReference.cache
 D:\work\NConfig\NConfig\NConfig.Windsor\obj\Debug\NConfig.Windsor.dll
 D:\work\NConfig\NConfig\NConfig.Windsor\obj\Debug\NConfig.Windsor.pdb
+D:\nconfigSrc\NConfig.Windsor\bin\Debug\Castle.Core.dll
+D:\nconfigSrc\NConfig.Windsor\bin\Debug\Castle.Core.pdb
+D:\nconfigSrc\NConfig.Windsor\bin\Debug\Castle.Core.xml
+D:\nconfigSrc\NConfig.Windsor\bin\Debug\Castle.Windsor.dll
+D:\nconfigSrc\NConfig.Windsor\bin\Debug\Castle.Windsor.pdb
+D:\nconfigSrc\NConfig.Windsor\bin\Debug\Castle.Windsor.xml
+D:\nconfigSrc\NConfig.Windsor\bin\Debug\NConfig.Windsor.dll
+D:\nconfigSrc\NConfig.Windsor\bin\Debug\NConfig.Windsor.pdb
+D:\nconfigSrc\NConfig.Windsor\bin\Debug\NConfig.dll
+D:\nconfigSrc\NConfig.Windsor\bin\Debug\NConfig.pdb
+D:\nconfigSrc\NConfig.Windsor\obj\Debug\ResolveAssemblyReference.cache
+D:\nconfigSrc\NConfig.Windsor\obj\Debug\NConfig.Windsor.dll
+D:\nconfigSrc\NConfig.Windsor\obj\Debug\NConfig.Windsor.pdb

@@ -1,7 +1,6 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="4D00B710-D131-4008-9365-7285AE99FB84/f:LoggingConfigurationTest.cs" caret="6815" fromTop="19" />
       <File id="3D1FF3BB-8997-4684-9CAA-6C37374A570F/d:Views/d:Shell/f:Shell.cs" caret="13" fromTop="0" />
       <File id="3D1FF3BB-8997-4684-9CAA-6C37374A570F/d:Views/d:Product/f:ProductView.cs" caret="0" fromTop="0" />
       <File id="3D1FF3BB-8997-4684-9CAA-6C37374A570F/d:Views/d:Login/f:LoginView.cs" caret="13" fromTop="0" />
@@ -12,8 +11,6 @@
       <File id="3D1FF3BB-8997-4684-9CAA-6C37374A570F/f:LoginServiceAdapter.cs" caret="70" fromTop="4" />
       <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/d:Services/f:LoginService.cs" caret="62" fromTop="4" />
       <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/f:Host.cs" caret="223" fromTop="9" />
-      <File id="4D00B710-D131-4008-9365-7285AE99FB84/f:ConfigurationTest.cs" caret="385" fromTop="16" />
-      <File id="3D1FF3BB-8997-4684-9CAA-6C37374A570F/f:ProxyFactory.cs" caret="82" fromTop="3" />
       <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/f:UserDetails.cs" caret="0" fromTop="0" />
       <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/f:ProductPreviewDetails.cs" caret="0" fromTop="0" />
       <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/f:ProductFullDetails.cs" caret="0" fromTop="0" />
@@ -31,10 +28,12 @@
       <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/d:WCF/f:ConfigServiceHost.cs" caret="1082" fromTop="24" />
       <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/f:Configuration.xml" caret="1992" fromTop="12" />
       <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ParameterValueProviders/f:ParameterValueProvider.cs" caret="649" fromTop="12" />
+      <File id="3D1FF3BB-8997-4684-9CAA-6C37374A570F/f:ProxyFactory.cs" caret="28" fromTop="1" />
+      <File id="4D00B710-D131-4008-9365-7285AE99FB84/f:ConfigurationTest.cs" caret="439" fromTop="19" />
     </RecentFiles>
     <RecentEdits>
-      <File id="4D00B710-D131-4008-9365-7285AE99FB84/f:ConfigurationTest.cs" caret="3715" fromTop="17" />
-      <File id="4D00B710-D131-4008-9365-7285AE99FB84/f:ConfigurationTest.cs" caret="4928" fromTop="18" />
+      <File id="4D00B710-D131-4008-9365-7285AE99FB84/f:ConfigurationTest.cs" caret="3671" fromTop="17" />
+      <File id="4D00B710-D131-4008-9365-7285AE99FB84/f:ConfigurationTest.cs" caret="4884" fromTop="18" />
       <File id="3D1FF3BB-8997-4684-9CAA-6C37374A570F/d:Views/d:Login/f:LoginView.cs" caret="13" fromTop="0" />
       <File id="3D1FF3BB-8997-4684-9CAA-6C37374A570F/d:Views/d:Product/f:ProductView.cs" caret="0" fromTop="0" />
       <File id="3D1FF3BB-8997-4684-9CAA-6C37374A570F/d:Views/d:Shell/f:Shell.cs" caret="13" fromTop="0" />
@@ -45,8 +44,6 @@
       <File id="3D1FF3BB-8997-4684-9CAA-6C37374A570F/f:LoginServiceAdapter.cs" caret="13" fromTop="0" />
       <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/d:Services/f:LoginService.cs" caret="0" fromTop="0" />
       <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/d:WCF/f:ConfigServiceHost.cs" caret="1288" fromTop="38" />
-      <File id="4D00B710-D131-4008-9365-7285AE99FB84/f:ConfigurationTest.cs" caret="0" fromTop="0" />
-      <File id="3D1FF3BB-8997-4684-9CAA-6C37374A570F/f:ProxyFactory.cs" caret="0" fromTop="0" />
       <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/d:Configuration/f:ConfigurationServiceExtensions.cs" caret="15" fromTop="1" />
       <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/d:Configuration/f:ConfigConstants.cs" caret="0" fromTop="0" />
       <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/f:UserDetails.cs" caret="0" fromTop="0" />
@@ -63,6 +60,8 @@
       <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/d:Configuration/f:ServiceContractConfig.cs" caret="33" fromTop="2" />
       <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/d:WCF/f:ConfigServiceHost.cs" caret="80" fromTop="3" />
       <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/d:WCF/f:ConfigServiceHost.cs" caret="1082" fromTop="27" />
+      <File id="4D00B710-D131-4008-9365-7285AE99FB84/f:ConfigurationTest.cs" caret="18" fromTop="0" />
+      <File id="3D1FF3BB-8997-4684-9CAA-6C37374A570F/f:ProxyFactory.cs" caret="13" fromTop="0" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -86,23 +85,59 @@
     <Session>
       <Name>Session #1</Name>
       <Elements>
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.BestMatchRuleTest" type="NUnitTestFixtureElement" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.FilterPolicySingleValueTest" type="NUnitTestFixtureElement" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
         <UnitTestElement Provider="nUnit" Id="NConfig.Tests.LoadConfigurationTest" type="NUnitTestFixtureElement" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
-        <UnitTestElement Provider="MSTest" Id="SampleTests.ConfigurationTest" type="MsTestTestClassElement" TypeName="SampleTests.ConfigurationTest" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
-        <UnitTestElement Provider="MSTest" Id="SampleTests.LoggingConfigurationTest.login_folder_path_for_login_service_and_applicationServer_check_with_other_references" ParentId="SampleTests.LoggingConfigurationTest" type="MsTestTestMethodElement" MethodName="login_folder_path_for_login_service_and_applicationServer_check_with_other_references" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.BestMatchRuleTest.aa" ParentId="NConfig.Tests.Filter.BestMatchRuleTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.BestMatchRuleTest" MethodName="aa" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
         <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.BestMatchRuleTest.aaa" ParentId="NConfig.Tests.Filter.BestMatchRuleTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.BestMatchRuleTest" MethodName="aaa" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
-        <UnitTestElement Provider="MSTest" Id="SampleTests.LoggingConfigurationTest.LoginServiceAdapter_and_machine2" ParentId="SampleTests.LoggingConfigurationTest" type="MsTestTestMethodElement" MethodName="LoginServiceAdapter_and_machine2" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.BestMatchRuleTest.all_values_with_specific_references" ParentId="NConfig.Tests.Filter.BestMatchRuleTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.BestMatchRuleTest" MethodName="all_values_with_specific_references" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.FilterPolicySingleValueTest.auditService_appServer_Dev_GetAllCustomers" ParentId="NConfig.Tests.Filter.FilterPolicySingleValueTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.FilterPolicySingleValueTest" MethodName="auditService_appServer_Dev_GetAllCustomers" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.FilterPolicySingleValueTest.auditService_appServer_Dev_updateCustomer" ParentId="NConfig.Tests.Filter.FilterPolicySingleValueTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.FilterPolicySingleValueTest" MethodName="auditService_appServer_Dev_updateCustomer" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.FilterPolicySingleValueTest.auditService_appServer_prod_GetAllCustomers" ParentId="NConfig.Tests.Filter.FilterPolicySingleValueTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.FilterPolicySingleValueTest" MethodName="auditService_appServer_prod_GetAllCustomers" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.FilterPolicySingleValueTest.auditService_appServer_prod_UpdateCustomer" ParentId="NConfig.Tests.Filter.FilterPolicySingleValueTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.FilterPolicySingleValueTest" MethodName="auditService_appServer_prod_UpdateCustomer" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.FilterPolicySingleValueTest.dev_online_server" ParentId="NConfig.Tests.Filter.FilterPolicySingleValueTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.FilterPolicySingleValueTest" MethodName="dev_online_server" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.BestMatchRuleTest.one_value_with_specific_reference_and_one_with_ALL_reference" ParentId="NConfig.Tests.Filter.BestMatchRuleTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.BestMatchRuleTest" MethodName="one_value_with_specific_reference_and_one_with_ALL_reference" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.FilterPolicySingleValueTest.Dev_online_client" ParentId="NConfig.Tests.Filter.FilterPolicySingleValueTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.FilterPolicySingleValueTest" MethodName="Dev_online_client" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+        <UnitTestElement Provider="MSTest" Id="SampleTests.ConfigurationTest" type="MsTestTestClassElement" TypeName="SampleTests.ConfigurationTest" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.FilterPolicySingleValueTest.prod_online_client" ParentId="NConfig.Tests.Filter.FilterPolicySingleValueTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.FilterPolicySingleValueTest" MethodName="prod_online_client" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.FilterPolicySingleValueTest.prod_online_server" ParentId="NConfig.Tests.Filter.FilterPolicySingleValueTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.FilterPolicySingleValueTest" MethodName="prod_online_server" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.FilterPolicySingleValueTest.prod_onlineServer_auditService" ParentId="NConfig.Tests.Filter.FilterPolicySingleValueTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.FilterPolicySingleValueTest" MethodName="prod_onlineServer_auditService" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.BestMatchRuleTest.Test1" ParentId="NConfig.Tests.Filter.BestMatchRuleTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.BestMatchRuleTest" MethodName="Test1" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.BestMatchRuleTest.test2" ParentId="NConfig.Tests.Filter.BestMatchRuleTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.BestMatchRuleTest" MethodName="test2" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
         <UnitTestElement Provider="MSTest" Id="SampleTests.LoggingConfigurationTest" type="MsTestTestClassElement" TypeName="SampleTests.LoggingConfigurationTest" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
-        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.LoadConfigurationTest.TestXMLConfiguration_load_from_file" ParentId="NConfig.Tests.LoadConfigurationTest" type="NUnitTestElement" TypeName="NConfig.Tests.LoadConfigurationTest" MethodName="TestXMLConfiguration_load_from_file" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
         <UnitTestElement Provider="MSTest" Id="SampleTests.LoggingConfigurationTest.login_folder_path_for_login_service_and_applicationServer" ParentId="SampleTests.LoggingConfigurationTest" type="MsTestTestMethodElement" MethodName="login_folder_path_for_login_service_and_applicationServer" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
         <UnitTestElement Provider="MSTest" Id="SampleTests.LoggingConfigurationTest.ProductsService_and_machine2" ParentId="SampleTests.LoggingConfigurationTest" type="MsTestTestMethodElement" MethodName="ProductsService_and_machine2" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
-        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.FilterPolicySingleValueTest" type="NUnitTestFixtureElement" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+        <UnitTestElement Provider="MSTest" Id="SampleTests.LoggingConfigurationTest.ProductsServiceAdapter_and_machine2" ParentId="SampleTests.LoggingConfigurationTest" type="MsTestTestMethodElement" MethodName="ProductsServiceAdapter_and_machine2" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.LoadConfigurationTest.TestObjectModelConfiguration" ParentId="NConfig.Tests.LoadConfigurationTest" type="NUnitTestElement" TypeName="NConfig.Tests.LoadConfigurationTest" MethodName="TestObjectModelConfiguration" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
         <UnitTestElement Provider="MSTest" Id="SampleTests.ConfigurationTest.ServiceContractConfig_for_ILoginService" ParentId="SampleTests.ConfigurationTest" type="MsTestTestMethodElement" MethodName="ServiceContractConfig_for_ILoginService" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
         <UnitTestElement Provider="MSTest" Id="SampleTests.ConfigurationTest.ServiceContractConfig_for_IProductsService" ParentId="SampleTests.ConfigurationTest" type="MsTestTestMethodElement" MethodName="ServiceContractConfig_for_IProductsService" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
         <UnitTestElement Provider="MSTest" Id="SampleTests.ConfigurationTest.ServicesConfig" ParentId="SampleTests.ConfigurationTest" type="MsTestTestMethodElement" MethodName="ServicesConfig" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
-        <UnitTestElement Provider="MSTest" Id="SampleTests.LoggingConfigurationTest.some_secure_path_on_production_client_machine" ParentId="SampleTests.LoggingConfigurationTest" type="MsTestTestMethodElement" MethodName="some_secure_path_on_production_client_machine" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
         <UnitTestElement Provider="MSTest" Id="SampleTests.ConfigurationTest.SingleServiceConfig" ParentId="SampleTests.ConfigurationTest" type="MsTestTestMethodElement" MethodName="SingleServiceConfig" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
-        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.BestMatchRuleTest" type="NUnitTestFixtureElement" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+        <UnitTestElement Provider="MSTest" Id="SampleTests.LoggingConfigurationTest.some_secure_path_on_production_client_machine_with_some_log_owner" ParentId="SampleTests.LoggingConfigurationTest" type="MsTestTestMethodElement" MethodName="some_secure_path_on_production_client_machine_with_some_log_owner" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
+        <UnitTestElement Provider="MSTest" Id="SampleTests.LoggingConfigurationTest.some_secure_path_on_production_client_machine" ParentId="SampleTests.LoggingConfigurationTest" type="MsTestTestMethodElement" MethodName="some_secure_path_on_production_client_machine" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.LoadConfigurationTest.TestXMLConfiguration_load_from_file" ParentId="NConfig.Tests.LoadConfigurationTest" type="NUnitTestElement" TypeName="NConfig.Tests.LoadConfigurationTest" MethodName="TestXMLConfiguration_load_from_file" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+      </Elements>
+    </Session>
+    <Session>
+      <Name>Session #2</Name>
+      <Elements>
+        <UnitTestElement Provider="MSTest" Id="SampleTests.ConfigurationTest" type="MsTestTestClassElement" TypeName="SampleTests.ConfigurationTest" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
+        <UnitTestElement Provider="MSTest" Id="SampleTests.ConfigurationTest.ServiceContractConfig_for_ILoginService" ParentId="SampleTests.ConfigurationTest" type="MsTestTestMethodElement" MethodName="ServiceContractConfig_for_ILoginService" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
+      </Elements>
+    </Session>
+    <Session>
+      <Name>Session #3</Name>
+      <Elements>
+        <UnitTestElement Provider="MSTest" Id="SampleTests.ConfigurationTest" type="MsTestTestClassElement" TypeName="SampleTests.ConfigurationTest" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
+        <UnitTestElement Provider="MSTest" Id="SampleTests.LoggingConfigurationTest" type="MsTestTestClassElement" TypeName="SampleTests.LoggingConfigurationTest" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
+        <UnitTestElement Provider="MSTest" Id="SampleTests.LoggingConfigurationTest.login_folder_path_for_login_service_and_applicationServer" ParentId="SampleTests.LoggingConfigurationTest" type="MsTestTestMethodElement" MethodName="login_folder_path_for_login_service_and_applicationServer" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
+        <UnitTestElement Provider="MSTest" Id="SampleTests.LoggingConfigurationTest.ProductsService_and_machine2" ParentId="SampleTests.LoggingConfigurationTest" type="MsTestTestMethodElement" MethodName="ProductsService_and_machine2" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
         <UnitTestElement Provider="MSTest" Id="SampleTests.LoggingConfigurationTest.ProductsServiceAdapter_and_machine2" ParentId="SampleTests.LoggingConfigurationTest" type="MsTestTestMethodElement" MethodName="ProductsServiceAdapter_and_machine2" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
+        <UnitTestElement Provider="MSTest" Id="SampleTests.ConfigurationTest.ServiceContractConfig_for_ILoginService" ParentId="SampleTests.ConfigurationTest" type="MsTestTestMethodElement" MethodName="ServiceContractConfig_for_ILoginService" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
+        <UnitTestElement Provider="MSTest" Id="SampleTests.ConfigurationTest.ServiceContractConfig_for_IProductsService" ParentId="SampleTests.ConfigurationTest" type="MsTestTestMethodElement" MethodName="ServiceContractConfig_for_IProductsService" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
+        <UnitTestElement Provider="MSTest" Id="SampleTests.ConfigurationTest.ServicesConfig" ParentId="SampleTests.ConfigurationTest" type="MsTestTestMethodElement" MethodName="ServicesConfig" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
+        <UnitTestElement Provider="MSTest" Id="SampleTests.ConfigurationTest.SingleServiceConfig" ParentId="SampleTests.ConfigurationTest" type="MsTestTestMethodElement" MethodName="SingleServiceConfig" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
+        <UnitTestElement Provider="MSTest" Id="SampleTests.LoggingConfigurationTest.some_secure_path_on_production_client_machine" ParentId="SampleTests.LoggingConfigurationTest" type="MsTestTestMethodElement" MethodName="some_secure_path_on_production_client_machine" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
         <UnitTestElement Provider="MSTest" Id="SampleTests.LoggingConfigurationTest.some_secure_path_on_production_client_machine_with_some_log_owner" ParentId="SampleTests.LoggingConfigurationTest" type="MsTestTestMethodElement" MethodName="some_secure_path_on_production_client_machine_with_some_log_owner" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
       </Elements>
     </Session>

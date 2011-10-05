@@ -1,11 +1,9 @@
 ﻿using System.Linq;
-using Common.Configuration;
 using NConfig;
 using Common;
 using System.ServiceModel;
 using NUnit.Framework;
 using Server.Services;
-using Server;
 using NConfig.Testing;
 using Server.Configuration;
 using Server.WCF;

@@ -5,3 +5,10 @@ D:\work\NConfig\NConfig\NConfig.XML\bin\Debug\NConfig.dll
 D:\work\NConfig\NConfig\NConfig.XML\bin\Debug\NConfig.pdb
 D:\work\NConfig\NConfig\NConfig.XML\obj\Debug\NConfig.XML.dll
 D:\work\NConfig\NConfig\NConfig.XML\obj\Debug\NConfig.XML.pdb
+D:\nconfigSrc\NConfig.XML\bin\Debug\NConfig.XML.dll
+D:\nconfigSrc\NConfig.XML\bin\Debug\NConfig.XML.pdb
+D:\nconfigSrc\NConfig.XML\bin\Debug\NConfig.dll
+D:\nconfigSrc\NConfig.XML\bin\Debug\NConfig.pdb
+D:\nconfigSrc\NConfig.XML\obj\Debug\ResolveAssemblyReference.cache
+D:\nconfigSrc\NConfig.XML\obj\Debug\NConfig.XML.dll
+D:\nconfigSrc\NConfig.XML\obj\Debug\NConfig.XML.pdb

@@ -8,3 +8,8 @@ D:\work\NConfig\NConfig\NConfig\obj\Debug\NConfig.dll
 D:\work\NConfig\NConfig\NConfig\obj\Debug\NConfig.pdb
 D:\work\NConfig\NConfig\NConfig\bin\Debug\NConfig.dll
 D:\work\NConfig\NConfig\NConfig\bin\Debug\NConfig.pdb
+D:\nconfigSrc\NConfig\bin\Debug\NConfig.dll
+D:\nconfigSrc\NConfig\bin\Debug\NConfig.pdb
+D:\nconfigSrc\NConfig\obj\Debug\ResolveAssemblyReference.cache
+D:\nconfigSrc\NConfig\obj\Debug\NConfig.dll
+D:\nconfigSrc\NConfig\obj\Debug\NConfig.pdb

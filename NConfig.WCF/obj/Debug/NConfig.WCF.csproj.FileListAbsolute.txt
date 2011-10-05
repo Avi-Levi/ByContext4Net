@@ -9,3 +9,8 @@ D:\work\NConfig\NConfig\NConfig.WCF\obj\Debug\NConfig.WCF.dll
 D:\work\NConfig\NConfig\NConfig.WCF\obj\Debug\NConfig.WCF.pdb
 D:\work\NConfig\NConfig\bin\NConfig.WCF.dll
 D:\work\NConfig\NConfig\bin\NConfig.WCF.pdb
+D:\nconfigSrc\bin\NConfig.WCF.dll
+D:\nconfigSrc\bin\NConfig.WCF.pdb
+D:\nconfigSrc\NConfig.WCF\obj\Debug\ResolveAssemblyReference.cache
+D:\nconfigSrc\NConfig.WCF\obj\Debug\NConfig.WCF.dll
+D:\nconfigSrc\NConfig.WCF\obj\Debug\NConfig.WCF.pdb
