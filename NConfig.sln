@@ -1,13 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3680D653-ADA1-402E-A40D-B00969BF56A9}"
-	ProjectSection(SolutionItems) = preProject
-		Local.testsettings = Local.testsettings
-		NConfig.vsmdi = NConfig.vsmdi
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NConfig", "NConfig\NConfig.csproj", "{E03FCBFB-4EE1-4A86-9703-8871AB2BE179}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NConfig.XML", "NConfig.XML\NConfig.XML.csproj", "{C44ACC8C-5434-4663-A1F5-20FB4CBE2E69}"
@@ -31,9 +24,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NConfig.Tests", "NConfig.Tests\NConfig.Tests.csproj", "{214DC7EA-BC3B-41A7-A03A-2F6033B416A7}"
 EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = NConfig.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms

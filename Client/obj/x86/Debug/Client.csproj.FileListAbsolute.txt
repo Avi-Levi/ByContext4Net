@@ -55,3 +55,6 @@ D:\nconfigSrc\Client\bin\Debug\Castle.Core.xml
 D:\nconfigSrc\Client\bin\Debug\Castle.Windsor.pdb
 D:\nconfigSrc\Client\bin\Debug\Castle.Windsor.xml
 D:\nconfigSrc\Client\bin\Debug\NConfig.XML.pdb
+E:\Work\Sources\nconfig\Client\bin\Debug\Client.exe.config
+E:\Work\Sources\nconfig\Client\obj\x86\Debug\Client.exe
+E:\Work\Sources\nconfig\Client\obj\x86\Debug\Client.pdb

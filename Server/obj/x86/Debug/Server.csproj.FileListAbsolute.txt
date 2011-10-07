@@ -58,3 +58,6 @@ D:\nconfigSrc\Server\obj\x86\Debug\Server.Host.resources
 D:\nconfigSrc\Server\obj\x86\Debug\Server.Properties.Resources.resources
 D:\nconfigSrc\Server\obj\x86\Debug\GenerateResource.read.1.tlog
 D:\nconfigSrc\Server\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\Work\Sources\nconfig\Server\bin\Debug\Server.exe.config
+E:\Work\Sources\nconfig\Server\obj\x86\Debug\Server.exe
+E:\Work\Sources\nconfig\Server\obj\x86\Debug\Server.pdb
