@@ -12,3 +12,10 @@ D:\nconfigSrc\NConfig.XML\bin\Debug\NConfig.pdb
 D:\nconfigSrc\NConfig.XML\obj\Debug\ResolveAssemblyReference.cache
 D:\nconfigSrc\NConfig.XML\obj\Debug\NConfig.XML.dll
 D:\nconfigSrc\NConfig.XML\obj\Debug\NConfig.XML.pdb
+E:\Work\Sources\nconfig\NConfig.XML\bin\Debug\NConfig.XML.dll
+E:\Work\Sources\nconfig\NConfig.XML\bin\Debug\NConfig.XML.pdb
+E:\Work\Sources\nconfig\NConfig.XML\bin\Debug\NConfig.dll
+E:\Work\Sources\nconfig\NConfig.XML\bin\Debug\NConfig.pdb
+E:\Work\Sources\nconfig\NConfig.XML\obj\Debug\ResolveAssemblyReference.cache
+E:\Work\Sources\nconfig\NConfig.XML\obj\Debug\NConfig.XML.dll
+E:\Work\Sources\nconfig\NConfig.XML\obj\Debug\NConfig.XML.pdb

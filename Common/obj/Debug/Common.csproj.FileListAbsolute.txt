@@ -14,3 +14,10 @@ D:\nconfigSrc\Common\bin\Debug\NConfig.pdb
 D:\nconfigSrc\Common\obj\Debug\ResolveAssemblyReference.cache
 D:\nconfigSrc\Common\obj\Debug\Common.dll
 D:\nconfigSrc\Common\obj\Debug\Common.pdb
+E:\Work\Sources\nconfig\Common\bin\Debug\Common.dll
+E:\Work\Sources\nconfig\Common\bin\Debug\Common.pdb
+E:\Work\Sources\nconfig\Common\bin\Debug\NConfig.dll
+E:\Work\Sources\nconfig\Common\bin\Debug\NConfig.pdb
+E:\Work\Sources\nconfig\Common\obj\Debug\ResolveAssemblyReference.cache
+E:\Work\Sources\nconfig\Common\obj\Debug\Common.dll
+E:\Work\Sources\nconfig\Common\obj\Debug\Common.pdb

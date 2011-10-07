@@ -12,7 +12,7 @@ namespace Server.Data
             new Dictionary<Tuple<string, string>, UserDetails>()
         {
             {new Tuple<string,string>("johan","111111"),new UserDetails { Id = 0, FirstName = "Johan", LastName = "Smith" }},
-            {new Tuple<string,string>("greg","123456"),new UserDetails { Id = 1, FirstName = "Greg", LastName = "Yung" }},
+            {new Tuple<string,string>("greg","123456"),new UserDetails { Id = 1, FirstName = "Greg", LastName = "Jackson" }},
             {new Tuple<string,string>("Barak","222222"),new UserDetails { Id = 2, FirstName = "Barak", LastName = "Obama" }},
         };
 

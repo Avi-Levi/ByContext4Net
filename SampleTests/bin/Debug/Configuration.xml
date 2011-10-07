@@ -11,18 +11,18 @@
     </Parameter>
     <Parameter Name="LogFilePath">
       <Values>
-        <Value Value="D:\work\NConfig\NConfig\Client\bin\Debug\logs\log.txt">
+        <Value Value=".\logs\log.txt">
           <Reference Subject="AppType" Value="onlineClient"/>
         </Value>
-        <Value Value="D:\work\NConfig\NConfig\Client\bin\Debug\logs\SomeSecuredPath\log.txt">
+        <Value Value=".\logs\SomeSecuredPath\log.txt">
           <Reference Subject="AppType" Value="onlineClient"/>
           <Reference Subject="Environment" Value="prod"/>
         </Value>
-        <Value Value="D:\work\NConfig\NConfig\Server\bin\Debug\logs\login.txt">
+        <Value Value=".\logs\login.txt">
           <Reference Subject="LogOwner" Value="Server.Services.LoginService"/>
           <Reference Subject="AppType" Value="applicationServer"/>
         </Value>
-        <Value Value="D:\work\NConfig\NConfig\Server\bin\Debug\logs\all.txt">
+        <Value Value=".\logs\all.txt">
           <Reference Subject="AppType" Value="applicationServer"/>
         </Value>
       </Values>
@@ -40,10 +40,10 @@
     <Parameter Name="Address">
       <Values>
         <Value Value="net.tcp://localhost:20/login">
-          <Reference Subject="ServiceContract" Value="Common.ILoginService"/>
+          <Reference Subject="ServiceContract" Value="Common.Contracts.ILoginService"/>
         </Value>
         <Value Value="net.tcp://localhost:21/products">
-          <Reference Subject="ServiceContract" Value="Common.IProductsService"/>
+          <Reference Subject="ServiceContract" Value="Common.Contracts.IProductsService"/>
         </Value>
       </Values>
     </Parameter>

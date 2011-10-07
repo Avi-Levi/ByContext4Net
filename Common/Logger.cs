@@ -14,13 +14,16 @@ namespace Common
         {
             this._config = config;
 
-            string dirName = Path.GetDirectoryName(config.LogFilePath);
-            if (!Directory.Exists(dirName))
+            this._absolutePath = Path.GetFullPath(config.LogFilePath);
+            var directoryPath = Path.GetDirectoryName(this._absolutePath);
+
+            if (!Directory.Exists(directoryPath))
             {
-                Directory.CreateDirectory(dirName);
+                Directory.CreateDirectory(directoryPath);
             }
         }
 
+        private string _absolutePath;
         private LoggingConfiguration _config;
 
         public void Write(string message, LogLevelOption level)

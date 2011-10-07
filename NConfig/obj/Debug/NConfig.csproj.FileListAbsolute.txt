@@ -13,3 +13,8 @@ D:\nconfigSrc\NConfig\bin\Debug\NConfig.pdb
 D:\nconfigSrc\NConfig\obj\Debug\ResolveAssemblyReference.cache
 D:\nconfigSrc\NConfig\obj\Debug\NConfig.dll
 D:\nconfigSrc\NConfig\obj\Debug\NConfig.pdb
+E:\Work\Sources\nconfig\NConfig\bin\Debug\NConfig.dll
+E:\Work\Sources\nconfig\NConfig\bin\Debug\NConfig.pdb
+E:\Work\Sources\nconfig\NConfig\obj\Debug\ResolveAssemblyReference.cache
+E:\Work\Sources\nconfig\NConfig\obj\Debug\NConfig.dll
+E:\Work\Sources\nconfig\NConfig\obj\Debug\NConfig.pdb

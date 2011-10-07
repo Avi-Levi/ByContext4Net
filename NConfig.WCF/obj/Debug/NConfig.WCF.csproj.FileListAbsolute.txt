@@ -14,3 +14,8 @@ D:\nconfigSrc\bin\NConfig.WCF.pdb
 D:\nconfigSrc\NConfig.WCF\obj\Debug\ResolveAssemblyReference.cache
 D:\nconfigSrc\NConfig.WCF\obj\Debug\NConfig.WCF.dll
 D:\nconfigSrc\NConfig.WCF\obj\Debug\NConfig.WCF.pdb
+E:\Work\Sources\nconfig\bin\NConfig.WCF.dll
+E:\Work\Sources\nconfig\bin\NConfig.WCF.pdb
+E:\Work\Sources\nconfig\NConfig.WCF\obj\Debug\ResolveAssemblyReference.cache
+E:\Work\Sources\nconfig\NConfig.WCF\obj\Debug\NConfig.WCF.dll
+E:\Work\Sources\nconfig\NConfig.WCF\obj\Debug\NConfig.WCF.pdb
