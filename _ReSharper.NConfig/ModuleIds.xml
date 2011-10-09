@@ -10,4 +10,6 @@
   <Module PersistentId="4D00B710-D131-4008-9365-7285AE99FB84" ModuleId="SampleTests" />
   <Module PersistentId="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" ModuleId="NConfig.Tests" />
   <Module PersistentId="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="mscorlib" />
+  <Module PersistentId="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B" ModuleId="GetStartedSample" />
+  <Module PersistentId="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="mscorlib_1" />
 </Modules>

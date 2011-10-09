@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Section TypeName="GetStartedSample.SampleSection,GetStartedSample">
+    <Parameter Name="List">
+      <Values>
+        <Value Value="1">
+          <Reference Subject="SampleSubject" Value="Value1"/>
+        </Value>
+        <Value Value="2">
+          <Reference Subject="SampleSubject" Value="Value1"/>
+        </Value>
+        <Value Value="3">
+          <Reference Subject="SampleSubject" Value="Value2"/>
+        </Value>
+        <Value Value="4">
+          <Reference Subject="SampleSubject" Value="Value2"/>
+        </Value>
+      </Values>
+    </Parameter>
+    <Parameter Name="SomeString">
+      <Values>
+        <Value Value="SomeString1">
+          <Reference Subject="SampleSubject" Value="Value1"/>
+        </Value>
+        <Value Value="SomeString2">
+          <Reference Subject="SampleSubject" Value="Value2"/>
+        </Value>
+      </Values>
+    </Parameter>
+    </Section>
+</Configuration>
