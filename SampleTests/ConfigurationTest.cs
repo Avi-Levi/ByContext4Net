@@ -25,13 +25,14 @@ namespace SampleTests
 
         public void ServiceContractConfig_for_ILoginService()
         {
-            var configSvc = Configure.With().AddWindsorTranslatorProvider().
-                ContextFromCallingMethod().AddFromXmlFile("Configuration.xml").Build();
-            var cfg = configSvc.GetSection<ServiceContractConfig>();
-            var binding = configSvc.GetSection<Binding>(cfg.BindingType);
+            var configSvc = Configure.With(cfg=>cfg.AddWindsorTranslatorProvider().
+                ContextFromCallingMethod().AddFromXmlFile("Configuration.xml"));
 
-            Assert.AreEqual(cfg.Address.AbsoluteUri, "net.tcp://localhost:20/login");
-            Assert.AreEqual(typeof(NetTcpBinding), cfg.BindingType);
+            var section = configSvc.GetSection<ServiceContractConfig>();
+            var binding = configSvc.GetSection<Binding>(section.BindingType);
+
+            Assert.AreEqual(section.Address.AbsoluteUri, "net.tcp://localhost:20/login");
+            Assert.AreEqual(typeof(NetTcpBinding), section.BindingType);
             Assert.IsTrue(typeof(NetTcpBinding).IsInstanceOfType(binding));
 
             NetTcpBinding tcpBinding = (NetTcpBinding)binding;
@@ -45,14 +46,14 @@ namespace SampleTests
         [RuntimeContextItem(ConfigConstants.Subjects.ServiceContract.Name, "Common.IProductsService")]
         public void ServiceContractConfig_for_IProductsService()
         {
-            var configSvc = Configure.With().AddWindsorTranslatorProvider().
-                ContextFromCallingMethod().AddFromXmlFile("Configuration.xml").Build();
+            var configSvc = Configure.With(cfg=>cfg.AddWindsorTranslatorProvider().
+                ContextFromCallingMethod().AddFromXmlFile("Configuration.xml"));
 
-            var cfg = configSvc.GetSection<ServiceContractConfig>();
-            var binding = configSvc.GetSection<Binding>(cfg.BindingType);
+            var section = configSvc.GetSection<ServiceContractConfig>();
+            var binding = configSvc.GetSection<Binding>(section.BindingType);
 
-            Assert.AreEqual("net.tcp://localhost:21/products", cfg.Address.AbsoluteUri);
-            Assert.AreEqual(typeof(NetTcpBinding), cfg.BindingType);
+            Assert.AreEqual("net.tcp://localhost:21/products", section.Address.AbsoluteUri);
+            Assert.AreEqual(typeof(NetTcpBinding), section.BindingType);
             Assert.IsTrue(typeof(NetTcpBinding).IsInstanceOfType(binding));
 
             NetTcpBinding tcpBinding = (NetTcpBinding)binding;
@@ -65,13 +66,13 @@ namespace SampleTests
         [RuntimeContextItem(ConfigConstants.Subjects.MachineName.Name, ConfigConstants.Subjects.MachineName.ClientMachine1)]
         public void ServicesConfig()
         {
-            var cfg = Configure.With().AddWindsorTranslatorProvider().ContextFromCallingMethod().AddFromXmlFile("Configuration.xml").Build()
+            var section = Configure.With(cfg=>cfg.AddWindsorTranslatorProvider().ContextFromCallingMethod().AddFromXmlFile("Configuration.xml"))
                 .GetSection<ServicesConfig>();
 
-            Assert.IsNotNull(cfg.ServiceTypesToLoad);
-            Assert.AreEqual(cfg.ServiceTypesToLoad.Count(), 2);
-            Assert.IsTrue(cfg.ServiceTypesToLoad.Contains(typeof(LoginService)));
-            Assert.IsTrue(cfg.ServiceTypesToLoad.Contains(typeof(ProductsService)));
+            Assert.IsNotNull(section.ServiceTypesToLoad);
+            Assert.AreEqual(section.ServiceTypesToLoad.Count(), 2);
+            Assert.IsTrue(section.ServiceTypesToLoad.Contains(typeof(LoginService)));
+            Assert.IsTrue(section.ServiceTypesToLoad.Contains(typeof(ProductsService)));
         }
 
         [Test]
@@ -85,12 +86,12 @@ namespace SampleTests
 
             container.Register(Component.For<IWindsorContainer>().Instance(container));
 
-            var cfg = Configure.With().AddWindsorTranslatorProvider(container).ContextFromCallingMethod().AddFromXmlFile("Configuration.xml").Build()
+            var section = Configure.With(cfg=>cfg.AddWindsorTranslatorProvider(container).ContextFromCallingMethod().AddFromXmlFile("Configuration.xml"))
                 .GetSection<SingleServiceConfig>();
 
-            Assert.IsNotNull(cfg.ServiceBehaviors);
-            Assert.AreEqual(1, cfg.ServiceBehaviors.Count());
-            Assert.IsTrue(cfg.ServiceBehaviors.Any(x=>typeof(DI_InstanceProviderExtension).IsInstanceOfType(x)));
+            Assert.IsNotNull(section.ServiceBehaviors);
+            Assert.AreEqual(1, section.ServiceBehaviors.Count());
+            Assert.IsTrue(section.ServiceBehaviors.Any(x=>typeof(DI_InstanceProviderExtension).IsInstanceOfType(x)));
         }
     }
 }

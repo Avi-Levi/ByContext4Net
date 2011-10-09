@@ -89,15 +89,15 @@ namespace NConfig.Tests
                         .WithReference("appType", "onlineServer"))
                         );
 
-            IConfigurationService svc = Configure.With()
-            .RuntimeContext((context) =>
-            {
-                context.Add("environment", "development");
-                context.Add("appType", "onlineServer");
-            })
+            IConfigurationService svc = Configure.With(cfg=>
+                cfg.RuntimeContext((context) =>
+                {
+                    context.Add("environment", "development");
+                    context.Add("appType", "onlineServer");
+                })
                 .AddWindsorTranslatorProvider(container)
                 .AddSection(section)
-                .Build();
+            );
 
             var testSection = svc.GetSection<TestSection>();
             Assert.IsNotNull(testSection);
@@ -123,15 +123,15 @@ namespace NConfig.Tests
                 .Register(Castle.MicroKernel.Registration.Component.For<IService>().Instance(new ServiceImpl(2)).Named("2"));
 
             IConfigurationService svc =
-            Configure.With()
-                .RuntimeContext((context) =>
+            Configure.With(cfg=>
+                cfg.RuntimeContext((context) =>
                 {
                     context.Add("environment", "development");
                     context.Add("appType", "onlineServer");
                 })
-                    .AddWindsorTranslatorProvider(container)
-                    .AddFromXmlFile("TestConfiguration.xml")
-                    .Build();
+                .AddWindsorTranslatorProvider(container)
+                .AddFromXmlFile("TestConfiguration.xml")
+                );
 
 
             var section = svc.GetSection<TestSection>();

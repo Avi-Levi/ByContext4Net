@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using NConfig.ConfigurationDataProviders;
 using NConfig.Filters;
@@ -67,18 +68,16 @@ namespace NConfig
         
         #endregion configuration
 
-        public IConfigurationService Build()
+        public static IConfigurationService With(Action<Configure> configureAction)
         {
-            IDictionary<string,ISectionProvider> providers = this.ConfigurationDataProviders.SelectMany(x=>x.Get()).ToDictionary(x=>x.Key,x=>x.Value);
+            var cfg = new Configure();
+            cfg.Init();
 
-            return new ConfigurationService(this.RuntimeContext, providers);
-        }
+            configureAction(cfg);
 
-        public static Configure With()
-        {
-            var configure = new Configure();
-            configure.Init();
-            return configure;
+            IDictionary<string, ISectionProvider> providers = cfg.ConfigurationDataProviders.SelectMany(x => x.Get()).ToDictionary(x => x.Key, x => x.Value);
+
+            return new ConfigurationService(cfg.RuntimeContext, providers);
         }
     }
 }

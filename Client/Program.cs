@@ -52,15 +52,15 @@ namespace Client
         }
         private static IConfigurationService BuildConfigurationService()
         {
-            IConfigurationService configSvc = Configure.With()
-                .RuntimeContext(ctx =>
+            IConfigurationService configSvc = Configure.With(cfg=>
+                cfg.RuntimeContext(ctx =>
                 {
                     ctx.Add(ConfigConstants.Subjects.Environment.Name, ConfigConstants.Subjects.Environment.Dev);
                     ctx.Add(ConfigConstants.Subjects.AppType.Name, ConfigConstants.Subjects.AppType.OnlineClient);
                     ctx.Add(ConfigConstants.Subjects.MachineName.Name, ConfigConstants.Subjects.MachineName.ClientMachine1);
                 })
                 .AddFromRemoteWCFService()
-                .Build();
+                );
 
             return configSvc;
         }

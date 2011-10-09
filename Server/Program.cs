@@ -30,8 +30,8 @@ namespace Server
 
         private static IConfigurationService BuildConfigService(WindsorContainer container)
         {
-            IConfigurationService configSvc = Configure.With()
-                .RuntimeContext(ctx =>
+            IConfigurationService configSvc = Configure.With(cfg=>
+                cfg.RuntimeContext(ctx =>
                 {
                     ctx.Add(ConfigConstants.Subjects.Environment.Name, ConfigConstants.Subjects.Environment.Dev);
                     ctx.Add(ConfigConstants.Subjects.AppType.Name, ConfigConstants.Subjects.AppType.ApplicationServer);
@@ -39,7 +39,7 @@ namespace Server
                 })
                 .AddWindsorTranslatorProvider(container)
                 .AddFromXmlFile("Configuration.xml")
-                .Build();
+                );
             ;
             return configSvc;
         }
