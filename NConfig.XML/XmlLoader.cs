@@ -51,7 +51,7 @@ namespace NConfig.XML
             Section section = Section.Create();
             section.TypeName = sectionNode.GetAttributeValueOrThrow("TypeName");
 
-            foreach(var parameterNode in sectionNode.Elements("Parameter"))
+            foreach (var parameterNode in sectionNode.Elements("Parameter"))
             {
                 Parameter parameter = this.BuildParameterFromNode(parameterNode);
                 section.Parameters.Add(parameter.Name, parameter);
@@ -91,16 +91,9 @@ namespace NConfig.XML
             foreach (var referenceNode in valueNode.Elements("Reference"))
             {
                 string subject = referenceNode.Attribute("Subject").Value;
-                string value = referenceNode.GetAttributeValueOrNull("Value");
+                string value = referenceNode.Attribute("Value").Value;
 
-                if (!string.IsNullOrEmpty(value))
-                {
-                    parameterValue.References.Add(ContextSubjectReference.Create(subject, value));
-                }
-                else
-                {
-                    parameterValue.References.Add(ContextSubjectReference.Create(subject, ContextSubjectReference.ALL));
-                }
+                parameterValue.References.Add(ContextSubjectReference.Create(subject, value)); 
             }
 
             return parameterValue;

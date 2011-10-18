@@ -43,26 +43,13 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Filter\BestMatchRuleTest.cs" />
-    <Compile Include="Filter\FilterPolicySingleValueTest.cs" />
-    <Compile Include="Filter\InterceptorTypeNamesParameterValues.cs" />
-    <Compile Include="Helpers\Attributes.cs" />
-    <Compile Include="Helpers\Helper.cs" />
-    <Compile Include="Helpers\LoggingFolderPathParameterValues.cs" />
-    <Compile Include="Helpers\ParameterExtensions.cs" />
-    <Compile Include="Helpers\ParameterValueExtensions.cs" />
-    <Compile Include="Helpers\SectionExtensions.cs" />
-    <Compile Include="Helpers\Subjects.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="LoadConfigurationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestEnum.cs" />
     <Compile Include="TestSection.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NConfig.Testing\NConfig.Testing.csproj">
-      <Project>{508E7531-7F1F-4D8E-977B-78C10D5E9D2E}</Project>
-      <Name>NConfig.Testing</Name>
-    </ProjectReference>
     <ProjectReference Include="..\NConfig.Windsor\NConfig.Windsor.csproj">
       <Project>{51955F6C-3613-402D-B130-97EB2003E362}</Project>
       <Name>NConfig.Windsor</Name>

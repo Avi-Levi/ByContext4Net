@@ -5,7 +5,7 @@ namespace NConfig.Filters
 {
     public class FilterPolicy : IFilterPolicy
     {
-        public FilterPolicy(IFilterRule[] rules)
+        public FilterPolicy(params IFilterRule[] rules)
         {
             this.Rules = rules;
         }

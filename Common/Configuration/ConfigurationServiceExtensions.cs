@@ -7,15 +7,15 @@ namespace NConfig
     {
         public static IConfigurationService WithServiceContractRef(this IConfigurationService source, Type contractType)
         {
-            return source.WithReference(ConfigConstants.Subjects.ServiceContract.Name, contractType.FullName);
+            return source.WithReference(Subjects.ServiceContract.Name, contractType.FullName);
         }
         public static IConfigurationService WithLogOwnerRef(this IConfigurationService source, Type ownerType)
         {
-            return source.WithReference(ConfigConstants.Subjects.LogOwner.Name, ownerType.FullName);
+            return source.WithReference(Subjects.LogOwner.Name, ownerType.FullName);
         }
         public static IConfigurationService WithServiceRef(this IConfigurationService source, Type serviceType)
         {
-            return source.WithReference(ConfigConstants.Subjects.Service.Name, serviceType.FullName);
+            return source.WithReference(Subjects.Service.Name, serviceType.FullName);
         }
     }
 }

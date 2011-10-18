@@ -37,16 +37,17 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(0, 0);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1054, 513);
+            this.listBox1.Size = new System.Drawing.Size(662, 333);
             this.listBox1.TabIndex = 0;
             // 
             // Host
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1054, 513);
+            this.ClientSize = new System.Drawing.Size(662, 333);
             this.Controls.Add(this.listBox1);
             this.Name = "Host";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Host_Load);
             this.ResumeLayout(false);

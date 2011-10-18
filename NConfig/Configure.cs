@@ -13,11 +13,7 @@ namespace NConfig
 {
     public class Configure
     {
-        private Configure(){}
-
-        #region private methods
-
-        private void Init()
+        private Configure()
         {
             this.ModelBinder = new DefaultModelBinder();
 
@@ -29,6 +25,8 @@ namespace NConfig
             this.SetCollectionDefaultFilterPolicy();
             this.SetDefaultRawValueTranslatorName();
         }
+    
+        #region private methods
 
         private void InitTranslatorProviders()
         {
@@ -38,13 +36,11 @@ namespace NConfig
 
         private void SetCollectionDefaultFilterPolicy()
         {
-            var ruleSet = new IFilterRule[1] { new WithSpecificOrNoReferenceToSubjectRule() };
-            this.FilterPolicies.Add(DefaultCollectionFilterPolicyName, new FilterPolicy(ruleSet));
+            this.FilterPolicies.Add(DefaultCollectionFilterPolicyName, new FilterPolicy(new WithSpecificOrNoReferenceToSubjectRule()));
         }
         private void SetSingleValueDefaultFilterPolicy()
         {
-            var ruleSet = new IFilterRule[1] { new WithSpecificOrNoReferenceToSubjectRule()};
-            this.FilterPolicies.Add(DefaultSingleValueFilterPolicyName, new FilterPolicy(ruleSet));
+            this.FilterPolicies.Add(DefaultSingleValueFilterPolicyName, new FilterPolicy(new WithSpecificOrNoReferenceToSubjectRule()));
         }
 
         private void SetDefaultRawValueTranslatorName()
@@ -71,7 +67,6 @@ namespace NConfig
         public static IConfigurationService With(Action<Configure> configureAction)
         {
             var cfg = new Configure();
-            cfg.Init();
 
             configureAction(cfg);
 

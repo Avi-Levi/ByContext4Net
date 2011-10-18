@@ -2,7 +2,7 @@
 
 namespace NConfig.Exceptions
 {
-    public class GetSectionException : ApplicationException
+    public class GetSectionException : NConfigException
     {
         public GetSectionException(Type sectionType, Exception inner): 
             base(string.Format("Failed providing section: {0}, see inner exception for more detailes.", sectionType.FullName), inner)

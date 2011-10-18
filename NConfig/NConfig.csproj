@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigurationDataProviders\IConfigurationDataProvider.cs" />
+    <Compile Include="Exceptions\NConfigException.cs" />
     <Compile Include="IHaveFilterReference.cs" />
     <Compile Include="ParameterValueProviders\IParameterValueProvider.cs" />
     <Compile Include="ResultBuilder\IResultBuilder.cs" />
@@ -86,12 +87,10 @@
     <Compile Include="SectionProviders\SectionProvider.cs" />
     <Compile Include="ValueProviders\TranslateFromStringValueProvider.cs" />
     <Compile Include="Model\Section.cs" />
-    <Compile Include="Filters\Rules\BestMatchRule.cs" />
     <Compile Include="Model\ContextSubjectReference.cs" />
     <Compile Include="Model\Parameter.cs" />
     <Compile Include="Model\ParameterValue.cs" />
     <Compile Include="Filters\Rules\IFilterRule.cs" />
-    <Compile Include="Filters\Rules\WithSpecificOrALLRerefenceToSubjectRule.cs" />
     <Compile Include="StringToValueTranslator\DelegateWrapperTranslator.cs" />
     <Compile Include="StringToValueTranslator\IStringToValueTranslator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

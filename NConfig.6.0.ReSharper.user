@@ -1,68 +1,68 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/f:ProductPreviewDetails.cs" caret="0" fromTop="0" />
-      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/f:ProductFullDetails.cs" caret="0" fromTop="0" />
-      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/f:LoginResponse.cs" caret="0" fromTop="0" />
-      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/f:LoginRequest.cs" caret="0" fromTop="0" />
-      <File id="366E0B67-A944-492E-9464-9EAE4C670083/f:ConfigurationDataService.cs" caret="327" fromTop="11" />
-      <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:ConfigureXmlExtensions.cs" caret="15" fromTop="1" />
-      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/d:Configuration/f:SingleServiceConfig.cs" caret="148" fromTop="5" />
-      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/d:Configuration/f:ServicesConfig.cs" caret="82" fromTop="3" />
-      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/d:Configuration/f:ServiceContractConfig.cs" caret="33" fromTop="2" />
-      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/d:Configuration/f:ConfigurationServiceExtensions.cs" caret="49" fromTop="3" />
-      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/d:WCF/f:ConfigServiceHost.cs" caret="1082" fromTop="24" />
-      <File id="3D1FF3BB-8997-4684-9CAA-6C37374A570F/f:ProxyFactory.cs" caret="28" fromTop="1" />
-      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/d:Configuration/f:ConfigConstants.cs" caret="0" fromTop="0" />
-      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:ConfigurationService.cs" caret="1760" fromTop="25" />
-      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Extensions/f:HaveFilterReferenceExtensions.cs" caret="513" fromTop="12" />
-      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Rules/f:WithSpecificOrNoReferenceToSubjectRule.cs" caret="657" fromTop="16" />
-      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ParameterValueProviders/f:ParameterValueProvider.cs" caret="1059" fromTop="12" />
-      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:ConfigurationHelper.cs" caret="187" fromTop="8" />
-      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/d:Contracts/f:IProductsService.cs" caret="56" fromTop="2" />
-      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/f:app.config" caret="0" fromTop="0" />
-      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/f:Configuration.xml" caret="951" fromTop="22" />
-      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/f:Program.cs" caret="476" fromTop="16" />
-      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/f:Logger.cs" caret="495" fromTop="14" />
-      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/f:FilterPolicy.cs" caret="462" fromTop="15" />
-      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/d:Data/f:UsersDal.cs" caret="779" fromTop="18" />
       <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/d:Services/f:LoginService.cs" caret="883" fromTop="24" />
       <File id="3D1FF3BB-8997-4684-9CAA-6C37374A570F/d:Views/d:Shell/f:ShellController.cs" caret="127" fromTop="0" />
       <File id="51955F6C-3613-402D-B130-97EB2003E362/f:WindsorConfigExtensions.cs" caret="579" fromTop="14" />
-      <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/f:LoadConfigurationTest.cs" caret="141" fromTop="5" />
-      <File id="4D00B710-D131-4008-9365-7285AE99FB84/f:ConfigurationTest.cs" caret="337" fromTop="12" />
+      <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/f:TestSection.cs" caret="140" fromTop="0" />
+      <File id="3D1FF3BB-8997-4684-9CAA-6C37374A570F/f:Program.cs" caret="2387" fromTop="22" />
+      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/f:Program.cs" caret="1426" fromTop="21" />
+      <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/d:Helpers/f:SectionExtensions.cs" caret="155" fromTop="7" />
+      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/f:Configuration.xml" caret="2236" fromTop="17" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Configuration.xml" caret="130" fromTop="3" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:SampleSection.cs" caret="123" fromTop="6" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Program.cs" caret="717" fromTop="16" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/f:FilterPolicy.cs" caret="124" fromTop="5" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:StringToValueTranslator/f:BaseStringToValueTranslator.cs" caret="0" fromTop="0" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ValueProviders/f:IValueProvider.cs" caret="0" fromTop="0" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:StringToValueTranslator/d:SerializeStringToValueTranslator/f:SerializeStringToValueExtensions.cs" caret="0" fromTop="0" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:ConfigurationHelper.cs" caret="0" fromTop="0" />
+      <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/f:LoadConfigurationTest.cs" caret="0" fromTop="0" />
+      <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/d:Filter/f:BestMatchRuleTest.cs" caret="2258" fromTop="22" />
+      <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/d:Helpers/f:Attributes.cs" caret="769" fromTop="24" />
+      <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/d:Helpers/f:Helper.cs" caret="369" fromTop="14" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:ConfigurationService.cs" caret="1140" fromTop="17" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:Configure.cs" caret="1455" fromTop="22" />
+      <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/d:Filter/f:FilterPolicySingleValueTest.cs" caret="10007" fromTop="27" />
+      <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/d:Filter/f:InterceptorTypeNamesParameterValues.cs" caret="0" fromTop="0" />
+      <File id="4D00B710-D131-4008-9365-7285AE99FB84/f:LoggingConfigurationTest.cs" caret="623" fromTop="15" />
+      <File id="508E7531-7F1F-4D8E-977B-78C10D5E9D2E/f:RuntimeContextItemAttribute.cs" caret="682" fromTop="25" />
+      <File id="508E7531-7F1F-4D8E-977B-78C10D5E9D2E/f:TestHelperExtensions.cs" caret="0" fromTop="0" />
+      <File id="508E7531-7F1F-4D8E-977B-78C10D5E9D2E/f:TestlHelper.cs" caret="0" fromTop="0" />
+      <File id="4D00B710-D131-4008-9365-7285AE99FB84/f:ConfigurationTest.cs" caret="475" fromTop="8" />
+      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/d:Configuration/f:ConfigConstants.cs" caret="1612" fromTop="31" />
     </RecentFiles>
     <RecentEdits>
-      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/d:Services/f:ProductsService.cs" caret="0" fromTop="0" />
-      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/d:Contracts/f:ILoginService.cs" caret="56" fromTop="2" />
-      <File id="3D1FF3BB-8997-4684-9CAA-6C37374A570F/f:LoginServiceAdapter.cs" caret="13" fromTop="0" />
-      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/d:Services/f:LoginService.cs" caret="0" fromTop="0" />
-      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/d:WCF/f:ConfigServiceHost.cs" caret="1288" fromTop="38" />
-      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/d:Configuration/f:ConfigurationServiceExtensions.cs" caret="15" fromTop="1" />
-      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/d:Configuration/f:ConfigConstants.cs" caret="0" fromTop="0" />
-      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/f:UserDetails.cs" caret="0" fromTop="0" />
-      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/f:ProductPreviewDetails.cs" caret="0" fromTop="0" />
-      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/f:ProductFullDetails.cs" caret="0" fromTop="0" />
-      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/f:LoginResponse.cs" caret="0" fromTop="0" />
-      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/f:LoginRequest.cs" caret="0" fromTop="0" />
-      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/f:Logger.cs" caret="15" fromTop="1" />
-      <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:ConfigureXmlExtensions.cs" caret="820" fromTop="24" />
-      <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:ConfigureXmlExtensions.cs" caret="15" fromTop="1" />
-      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/d:Configuration/f:SingleServiceConfig.cs" caret="33" fromTop="0" />
-      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/d:Configuration/f:ServicesConfig.cs" caret="82" fromTop="3" />
-      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/f:Configuration.xml" caret="1144" fromTop="3" />
-      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/d:Configuration/f:ServiceContractConfig.cs" caret="33" fromTop="2" />
-      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/d:WCF/f:ConfigServiceHost.cs" caret="80" fromTop="3" />
-      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/d:WCF/f:ConfigServiceHost.cs" caret="1082" fromTop="27" />
-      <File id="4D00B710-D131-4008-9365-7285AE99FB84/f:ConfigurationTest.cs" caret="18" fromTop="0" />
-      <File id="3D1FF3BB-8997-4684-9CAA-6C37374A570F/f:ProxyFactory.cs" caret="13" fromTop="0" />
-      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/f:Configuration.xml" caret="1801" fromTop="11" />
-      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/f:Configuration.xml" caret="547" fromTop="14" />
-      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/f:Configuration.xml" caret="743" fromTop="18" />
-      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/f:Configuration.xml" caret="951" fromTop="22" />
-      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/f:Logger.cs" caret="676" fromTop="19" />
-      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/f:Logger.cs" caret="607" fromTop="16" />
-      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/d:Data/f:UsersDal.cs" caret="585" fromTop="14" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Configuration.xml" caret="843" fromTop="30" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Program.cs" caret="1310" fromTop="18" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Configuration.xml" caret="130" fromTop="3" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Program.cs" caret="1295" fromTop="26" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:SampleSection.cs" caret="123" fromTop="6" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Program.cs" caret="1915" fromTop="31" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Program.cs" caret="1310" fromTop="16" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Program.cs" caret="1268" fromTop="22" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Program.cs" caret="1002" fromTop="22" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Program.cs" caret="1307" fromTop="31" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Program.cs" caret="887" fromTop="19" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Program.cs" caret="703" fromTop="16" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:Configure.cs" caret="874" fromTop="17" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:Configure.cs" caret="889" fromTop="15" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/f:FilterPolicy.cs" caret="186" fromTop="7" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:Configure.cs" caret="1441" fromTop="15" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:Configure.cs" caret="1524" fromTop="13" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:Configure.cs" caret="2818" fromTop="20" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:ConfigurationService.cs" caret="1140" fromTop="11" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:ConfigurationService.cs" caret="1740" fromTop="12" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:ConfigurationService.cs" caret="231" fromTop="5" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:ConfigurationService.cs" caret="2241" fromTop="16" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:ConfigurationService.cs" caret="536" fromTop="9" />
+      <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/d:Filter/f:FilterPolicySingleValueTest.cs" caret="668" fromTop="13" />
+      <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/d:Helpers/f:Attributes.cs" caret="769" fromTop="24" />
+      <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/d:Filter/f:FilterPolicySingleValueTest.cs" caret="12454" fromTop="16" />
+      <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/d:Filter/f:FilterPolicySingleValueTest.cs" caret="4494" fromTop="17" />
+      <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/d:Helpers/f:Helper.cs" caret="657" fromTop="20" />
+      <File id="508E7531-7F1F-4D8E-977B-78C10D5E9D2E/f:RuntimeContextItemAttribute.cs" caret="682" fromTop="25" />
+      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/d:Configuration/f:ConfigConstants.cs" caret="1612" fromTop="31" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -137,9 +137,9 @@
         <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.BestMatchRuleTest.aaa" ParentId="NConfig.Tests.Filter.BestMatchRuleTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.BestMatchRuleTest" MethodName="aaa" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
         <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.BestMatchRuleTest.all_values_with_specific_references" ParentId="NConfig.Tests.Filter.BestMatchRuleTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.BestMatchRuleTest" MethodName="all_values_with_specific_references" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
         <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.FilterPolicySingleValueTest.auditService_appServer_Dev_GetAllCustomers" ParentId="NConfig.Tests.Filter.FilterPolicySingleValueTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.FilterPolicySingleValueTest" MethodName="auditService_appServer_Dev_GetAllCustomers" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+        <UnitTestElement Provider="MSTest" Id="SampleTests.LoggingConfigurationTest.some_secure_path_on_production_client_machine_with_some_log_owner" ParentId="SampleTests.LoggingConfigurationTest" type="MsTestTestMethodElement" MethodName="some_secure_path_on_production_client_machine_with_some_log_owner" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
         <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.FilterPolicySingleValueTest.auditService_appServer_Dev_updateCustomer" ParentId="NConfig.Tests.Filter.FilterPolicySingleValueTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.FilterPolicySingleValueTest" MethodName="auditService_appServer_Dev_updateCustomer" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
         <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.FilterPolicySingleValueTest.auditService_appServer_prod_GetAllCustomers" ParentId="NConfig.Tests.Filter.FilterPolicySingleValueTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.FilterPolicySingleValueTest" MethodName="auditService_appServer_prod_GetAllCustomers" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
-        <UnitTestElement Provider="MSTest" Id="SampleTests.LoggingConfigurationTest.some_secure_path_on_production_client_machine_with_some_log_owner" ParentId="SampleTests.LoggingConfigurationTest" type="MsTestTestMethodElement" MethodName="some_secure_path_on_production_client_machine_with_some_log_owner" Project="4D00B710-D131-4008-9365-7285AE99FB84" />
         <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.FilterPolicySingleValueTest.auditService_appServer_prod_UpdateCustomer" ParentId="NConfig.Tests.Filter.FilterPolicySingleValueTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.FilterPolicySingleValueTest" MethodName="auditService_appServer_prod_UpdateCustomer" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
         <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.FilterPolicySingleValueTest.Dev_online_client" ParentId="NConfig.Tests.Filter.FilterPolicySingleValueTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.FilterPolicySingleValueTest" MethodName="Dev_online_client" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
         <UnitTestElement Provider="nUnit" Id="NConfig.Tests.Filter.FilterPolicySingleValueTest.dev_online_server" ParentId="NConfig.Tests.Filter.FilterPolicySingleValueTest" type="NUnitTestElement" TypeName="NConfig.Tests.Filter.FilterPolicySingleValueTest" MethodName="dev_online_server" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
@@ -159,10 +159,34 @@
       <Item value="TestFixture" priority="26" />
       <Item value="Xml" priority="27" />
       <Item value="private" priority="31" />
-      <Item value="string" priority="31" />
+      <Item value="string" priority="126" />
       <Item value="this" priority="31" />
-      <Item value="var" priority="31" />
+      <Item value="var" priority="159" />
       <Item value="Path`0" priority="31" />
+      <Item value="configureAction" priority="31" />
+      <Item value="ctx" priority="31" />
+      <Item value="ISomeService`0" priority="63" />
+      <Item value="return" priority="31" />
+      <Item value="public" priority="31" />
+      <Item value="prop" priority="95" />
+      <Item value="IEnumerable" priority="30" />
+      <Item value="int" priority="30" />
+      <Item value="SampleSection`0" priority="63" />
+      <Item value="Console`0" priority="95" />
+      <Item value="if" priority="31" />
+      <Item value="keyInfo" priority="31" />
+      <Item value="switch" priority="63" />
+      <Item value="case" priority="31" />
+      <Item value="break" priority="31" />
+      <Item value="default" priority="31" />
+      <Item value="configService" priority="31" />
+      <Item value="section" priority="31" />
+      <Item value="foreach" priority="26" />
+      <Item value="item" priority="31" />
+      <Item value="Environment`0" priority="31" />
+      <Item value="while" priority="31" />
+      <Item value="Queryable`0" priority="31" />
+      <Item value="WithSpecificOrNoReferenceToSubjectRule" priority="28" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.IO.Directory">
       <Item value="Exists`0" priority="22" />
@@ -173,6 +197,40 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:Common.FlatFileLogger">
       <Item value="_absolutePath" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NConfig.Configure">
+      <Item value="With`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NConfig.Configure">
+      <Item value="RuntimeContext`0" priority="26" />
+      <Item value="AddFromXmlFile`0" priority="22" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IDictionary`2">
+      <Item value="Add`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NConfig.Model.Section">
+      <Item value="Create`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine`0" priority="53" />
+      <Item value="ReadKey`0" priority="26" />
+      <Item value="ReadLine`0" priority="22" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NConfig.IConfigurationService">
+      <Item value="GetSection`1" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:GetStartedSample.SampleSection">
+      <Item value="SomeString" priority="53" />
+      <Item value="List" priority="22" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="ToList`1" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Environment">
+      <Item value="NewLine" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Empty" priority="26" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

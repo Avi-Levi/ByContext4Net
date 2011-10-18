@@ -64,7 +64,7 @@
     <Parameter Name="MaxReceivedMessageSize" Required="False">
       <Values>
         <Value Value="3145728">
-          <Reference Subject="ServiceContract" Value="Common.IProductsService"/>
+          <Reference Subject="ServiceContract" Value="Common.Contracts.IProductsService"/>
         </Value>
       </Values>
     </Parameter>

@@ -14,6 +14,7 @@ namespace NConfig
 
             return source;
         }
+
         public static Configure AddFromRawXml(this Configure source, string rawXml)
         {
             source.AddConfigurationDataProvider(new ConvertFromSectionDataProvider(()=>
@@ -27,10 +28,8 @@ namespace NConfig
             {
                 return source.Attribute(attributeName).Value;
             }
-            else
-            {
-                return null;
-            }
+
+            return null;
         }
 
         public static string GetAttributeValueOrThrow(this XElement source, string attributeName)

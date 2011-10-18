@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lb_products = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnl_mainWorkspace = new System.Windows.Forms.Panel();
-            this.lb_products = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,8 +49,18 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.14458F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.85542F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1024, 664);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(731, 385);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // lb_products
+            // 
+            this.lb_products.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb_products.FormattingEnabled = true;
+            this.lb_products.Location = new System.Drawing.Point(3, 45);
+            this.lb_products.Name = "lb_products";
+            this.lb_products.Size = new System.Drawing.Size(73, 337);
+            this.lb_products.TabIndex = 3;
+            this.lb_products.SelectedIndexChanged += new System.EventHandler(this.lb_products_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -64,28 +74,19 @@
             // pnl_mainWorkspace
             // 
             this.pnl_mainWorkspace.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_mainWorkspace.Location = new System.Drawing.Point(114, 76);
+            this.pnl_mainWorkspace.Location = new System.Drawing.Point(82, 45);
             this.pnl_mainWorkspace.Name = "pnl_mainWorkspace";
-            this.pnl_mainWorkspace.Size = new System.Drawing.Size(907, 585);
+            this.pnl_mainWorkspace.Size = new System.Drawing.Size(646, 337);
             this.pnl_mainWorkspace.TabIndex = 2;
-            // 
-            // lb_products
-            // 
-            this.lb_products.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb_products.FormattingEnabled = true;
-            this.lb_products.Location = new System.Drawing.Point(3, 76);
-            this.lb_products.Name = "lb_products";
-            this.lb_products.Size = new System.Drawing.Size(105, 585);
-            this.lb_products.TabIndex = 3;
-            this.lb_products.SelectedIndexChanged += new System.EventHandler(this.lb_products_SelectedIndexChanged);
             // 
             // Shell
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 664);
+            this.ClientSize = new System.Drawing.Size(731, 385);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Shell";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Shell";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

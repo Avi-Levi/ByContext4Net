@@ -2,7 +2,7 @@
 
 namespace NConfig.Exceptions
 {
-    public class TypeNotSupportedException : ApplicationException
+    public class TypeNotSupportedException : NConfigException
     {
         public TypeNotSupportedException(string message):base(message)
         {}

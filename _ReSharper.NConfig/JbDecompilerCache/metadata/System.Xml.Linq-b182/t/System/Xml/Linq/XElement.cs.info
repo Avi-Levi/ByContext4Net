@@ -1,0 +1,12 @@
+﻿Code version: 6.0.2202.688
+Assembly name System.Xml.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 mvid {d8819a54-ad44-4037-83b2-633a741408e3}
+* ref System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {e04f7b31-1547-4b53-a83d-8704c8566261}
+* ref mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {98bd4ed7-7337-4018-9551-ee0825ada7ba}
+* ref System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {241c00c5-b6e7-479a-b45f-038d12d280c5}
+* ref System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {1193b448-be78-4857-897b-6ad1c4aa565c}
+* ref System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {6a0990e5-0f86-4577-86dd-edcf8a53a0e2}

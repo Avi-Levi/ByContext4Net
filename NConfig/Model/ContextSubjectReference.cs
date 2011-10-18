@@ -5,7 +5,9 @@ namespace NConfig.Model
     [DataContract]
     public class ContextSubjectReference
     {
+/*
         public const string ALL = "ALL";
+*/
         private ContextSubjectReference(string name, string value)
         {
             this.Name = name;

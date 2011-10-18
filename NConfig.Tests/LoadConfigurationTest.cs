@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using NConfig.Model;
-using NConfig.Tests.Helpers;
 using NUnit.Framework;
+using Parameter = NConfig.Model.Parameter;
 
 namespace NConfig.Tests
 {
@@ -14,9 +15,10 @@ namespace NConfig.Tests
         public void TestObjectModelConfiguration()
         {
             IWindsorContainer container = new WindsorContainer()
-                .Register(Castle.MicroKernel.Registration.Component.For<IService>().Instance(new ServiceImpl(2)))
-                .Register(Castle.MicroKernel.Registration.Component.For<IService>().Instance(new ServiceImpl(1)).Named("1"))
-                .Register(Castle.MicroKernel.Registration.Component.For<IService>().Instance(new ServiceImpl(2)).Named("2"));
+                .Register(Component.For<IService>().Instance(new ServiceImpl(2)))
+                .Register(Component.For<IService>().Instance(new ServiceImpl(1)).Named("1"))
+                .Register(Component.For<IService>().Instance(new ServiceImpl(2)).Named("2"));
+            
 
             Section section = Section.Create().FromType<TestSection>()
                 .AddParameter(Parameter.Create().FromExpression<TestSection, int>(x => x.Num)

@@ -8,7 +8,6 @@ namespace NConfig
 {
     public class ConfigurationService : IConfigurationService
     {
-        #region ctor
         public ConfigurationService(
             IDictionary<string, string> runtimeContext,
             IDictionary<string, ISectionProvider> sectionsProviders)
@@ -16,7 +15,6 @@ namespace NConfig
             this.RuntimeContext = runtimeContext;
             this.SectionsProviders = sectionsProviders;
         }
-        #endregion ctor
 
         #region properties
         private IDictionary<string, string> RuntimeContext { get; set; }
@@ -35,7 +33,6 @@ namespace NConfig
                 throw new GetSectionException(typeof(TSection), ex);
             }
         }
-
         public object GetSection(Type sectionType)
         {
             try
@@ -52,7 +49,6 @@ namespace NConfig
                 throw new GetSectionException(sectionType, ex);
             }
         }
-
         public TSection GetSection<TSection>(Type sectionType) where TSection : class
         {
             return (TSection)this.GetSection(sectionType);
@@ -63,7 +59,6 @@ namespace NConfig
             result.Add(subjectName, subjectValue);
             return new ConfigurationService(result, this.SectionsProviders);
         }
-
         #endregion IConfigurationService members
     }
 }

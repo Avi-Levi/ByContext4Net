@@ -22,18 +22,18 @@ namespace Server
 
         private void Host_Load(object sender, EventArgs e)
         {
-            ServiceHost configurationDataServiceHost = new ServiceHost(typeof(ConfigurationDataService));
+            var configurationDataServiceHost = new ServiceHost(typeof(ConfigurationDataService));
             configurationDataServiceHost.Open();
 
             this.TraceHostOpen(configurationDataServiceHost);
 
-            ServicesConfig servicesConfig = this.ConfigService.GetSection<ServicesConfig>();
+            var servicesConfig = this.ConfigService.GetSection<ServicesConfig>();
 
             foreach (Type serviceType in servicesConfig.ServiceTypesToLoad)
             {
-                SingleServiceConfig singleServiceConfig = this.ConfigService.WithServiceRef(serviceType).GetSection<SingleServiceConfig>();
-                ServiceHostFactory factory = new ServiceHostFactory();
-                ServiceHost host = new ConfigServiceHost(serviceType, this.ConfigService);
+                var singleServiceConfig = this.ConfigService.WithServiceRef(serviceType).GetSection<SingleServiceConfig>();
+                
+                var host = new ConfigServiceHost(serviceType, this.ConfigService);
                 host.Description.Behaviors.AddRange(singleServiceConfig.ServiceBehaviors);
 
                 host.Open();

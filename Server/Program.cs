@@ -33,9 +33,9 @@ namespace Server
             IConfigurationService configSvc = Configure.With(cfg=>
                 cfg.RuntimeContext(ctx =>
                 {
-                    ctx.Add(ConfigConstants.Subjects.Environment.Name, ConfigConstants.Subjects.Environment.Dev);
-                    ctx.Add(ConfigConstants.Subjects.AppType.Name, ConfigConstants.Subjects.AppType.ApplicationServer);
-                    ctx.Add(ConfigConstants.Subjects.MachineName.Name, Environment.MachineName);
+                    ctx.Add(Subjects.Environment.Name, Subjects.Environment.Dev);
+                    ctx.Add(Subjects.AppType.Name, Subjects.AppType.ApplicationServer);
+                    ctx.Add(Subjects.MachineName.Name, Environment.MachineName);
                 })
                 .AddWindsorTranslatorProvider(container)
                 .AddFromXmlFile("Configuration.xml")

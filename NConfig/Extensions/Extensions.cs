@@ -9,19 +9,6 @@ namespace NConfig.Extensions
 {
     public static class Extensions
     {
-        public static string FormatString(this KeyValuePair<string, string> source)
-        {
-            return source.Key + "\\" + source.Value;
-        }
-
-        public static void ForEach<T>(this IEnumerable<T> source, Action<T> action)
-        {
-            foreach (T item in source)
-            {
-                action(item);
-            }
-        }
-
         public static void AddRange<T>(this IList<T> source, IEnumerable<T> range)
         {
             foreach (T item in range)
