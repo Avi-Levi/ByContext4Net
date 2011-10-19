@@ -4,13 +4,13 @@
   <Module PersistentId="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69" ModuleId="NConfig.XML" />
   <Module PersistentId="366E0B67-A944-492E-9464-9EAE4C670083" ModuleId="NConfig.WCF" />
   <Module PersistentId="3D1FF3BB-8997-4684-9CAA-6C37374A570F" ModuleId="Client" />
-  <Module PersistentId="508E7531-7F1F-4D8E-977B-78C10D5E9D2E" ModuleId="NConfig.Testing" />
   <Module PersistentId="02EBB01A-DE5E-4940-8A06-F600B0A4778B" ModuleId="Common" />
   <Module PersistentId="A372D577-2635-47D3-8B83-FDD2A530EB28" ModuleId="Server" />
-  <Module PersistentId="4D00B710-D131-4008-9365-7285AE99FB84" ModuleId="SampleTests" />
   <Module PersistentId="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" ModuleId="NConfig.Tests" />
   <Module PersistentId="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="mscorlib" />
   <Module PersistentId="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B" ModuleId="GetStartedSample" />
   <Module PersistentId="3FB9A77D-775C-4E6E-8AE9-DD9CA42E7E3B" ModuleId="Sample.Tests" />
   <Module PersistentId="System.Xml.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Xml.Linq" />
+  <Module PersistentId="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="mscorlib_1" />
+  <Module PersistentId="Castle.Windsor, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc" ModuleId="Castle.Windsor" />
 </Modules>

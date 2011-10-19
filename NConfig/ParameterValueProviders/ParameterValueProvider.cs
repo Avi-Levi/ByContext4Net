@@ -4,6 +4,7 @@ using System.Linq;
 using NConfig.Extensions;
 using NConfig.Filters;
 using NConfig.ResultBuilder;
+using NConfig.ValueProviders;
 
 namespace NConfig.ParameterValueProviders
 {

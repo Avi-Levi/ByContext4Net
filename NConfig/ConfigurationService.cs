@@ -49,16 +49,17 @@ namespace NConfig
                 throw new GetSectionException(sectionType, ex);
             }
         }
-        public TSection GetSection<TSection>(Type sectionType) where TSection : class
-        {
-            return (TSection)this.GetSection(sectionType);
-        }
         public IConfigurationService WithReference(string subjectName, string subjectValue)
         {
             IDictionary<string, string> result = this.RuntimeContext.Clone();
             result.Add(subjectName, subjectValue);
             return new ConfigurationService(result, this.SectionsProviders);
         }
+        public TSection GetSection<TSection>(Type sectionType) where TSection : class
+        {
+            return (TSection) this.GetSection(sectionType);
+        }
+
         #endregion IConfigurationService members
     }
 }
