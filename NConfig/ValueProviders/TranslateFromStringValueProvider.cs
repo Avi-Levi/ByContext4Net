@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using NConfig.Configuration;
 using NConfig.Model;
 using NConfig.StringToValueTranslator;
 
