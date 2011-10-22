@@ -3,7 +3,7 @@
 namespace NConfig.Filters
 {
     /// <summary>
-    /// Used to filter items according to the runtime context.
+    /// Used to filter items according to a given runtime context.
     /// </summary>
     public interface IFilterPolicy
     {

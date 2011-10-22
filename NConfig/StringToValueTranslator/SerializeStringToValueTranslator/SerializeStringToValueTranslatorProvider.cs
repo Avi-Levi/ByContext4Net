@@ -30,15 +30,13 @@ namespace NConfig.StringToValueTranslator.SerializeStringToValueTranslator
             {
                 if (type.IsEnum)
                 {
-                    Type enumTranslatorType = typeof(EnumTranslator<>).MakeGenericType(type);
-                    IStringToValueTranslator trsnslator = (IStringToValueTranslator)Activator.CreateInstance(enumTranslatorType);
+                    var enumTranslatorType = typeof(EnumTranslator<>).MakeGenericType(type);
+                    var trsnslator = (IStringToValueTranslator)Activator.CreateInstance(enumTranslatorType);
                     return trsnslator;
                 }
                 else
                 {
-                    throw new TypeNotSupportedException(string.Format(
-                        "A raw value translator was not registered for type {0},you must first register value translator using 'ValueParsers'" +
-                        " property on the 'Configure' object.", type.FullName));
+                    throw new TypeTranslatorNotRegisteredException("Serialize String To Value", type);
                 }
             }
 

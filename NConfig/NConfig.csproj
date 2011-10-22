@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="ConfigurationDataProviders\IConfigurationDataProvider.cs" />
     <Compile Include="Exceptions\NConfigException.cs" />
+    <Compile Include="Exceptions\TypeTranslatorNotRegisteredException.cs" />
     <Compile Include="IHaveFilterReference.cs" />
     <Compile Include="ParameterValueProviders\IParameterValueProvider.cs" />
     <Compile Include="ResultBuilder\IResultBuilder.cs" />
@@ -59,7 +60,6 @@
     <Compile Include="Extensions\ConfigureExtensions.cs" />
     <Compile Include="ModelBinders\IModelBinder.cs" />
     <Compile Include="Extensions\HaveFilterReferenceExtensions.cs" />
-    <Compile Include="Exceptions\TypeNotSupportedException.cs" />
     <Compile Include="Filters\FilterPolicy.cs" />
     <Compile Include="Filters\IFilterPolicy.cs" />
     <Compile Include="Filters\Rules\WithSpecificOrNoReferenceToSubjectRule.cs" />

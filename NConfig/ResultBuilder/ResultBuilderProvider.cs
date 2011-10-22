@@ -31,7 +31,7 @@ namespace NConfig.ResultBuilder
                 builderType = typeof(SingleValueResultBuilder<>).MakeGenericType(resultType);
             }
 
-            IResultBuilder instance = (IResultBuilder)Activator.CreateInstance(builderType);
+            var instance = (IResultBuilder)Activator.CreateInstance(builderType);
 
             return instance;
         }

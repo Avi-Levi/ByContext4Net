@@ -56,34 +56,31 @@ namespace NConfig.StringToValueTranslator
             }
             else
             {
-                throw new TypeNotSupportedException(string.Format(
-                    "A translator was not registered for open generic type," +
-                    "you must first register an open generic translator using 'OpenGenericValueParserTypes' property on the 'Configure' object."
-                    , type.GetGenericTypeDefinition().FullName));
+                throw new TypeTranslatorNotRegisteredException("OpenGenericType", type);
             }
         }
 
         private IStringToValueTranslator BuildTranslatorForGenericType(Type type)
         {
-            Type openGenericTranslatorType = this.OpenGenericTranslatorsTypes[type.GetGenericTypeDefinition()];
+            var openGenericTranslatorType = this.OpenGenericTranslatorsTypes[type.GetGenericTypeDefinition()];
 
-            Type[] genericArguments = type.GetGenericArguments();
+            var genericArguments = type.GetGenericArguments();
 
-            Type translatorType = openGenericTranslatorType.MakeGenericType(genericArguments);
+            var translatorType = openGenericTranslatorType.MakeGenericType(genericArguments);
 
             var argumentsTranslatorTypes = genericArguments.Select(arg => typeof(BaseStringToValueTranslator<>).MakeGenericType(arg)).ToArray();
 
-            ConstructorInfo ci = translatorType.GetConstructor(argumentsTranslatorTypes);
+            var ci = translatorType.GetConstructor(argumentsTranslatorTypes);
 
             if (ci == null)
             {
-                throw new TypeNotSupportedException(string.Format("an open generic translator must have a constructor that accepts value " +
+                throw new InvalidOperationException(string.Format("an open generic translator must have a constructor that accepts value " +
                     "translators in the same order and number as the translator's generic arguments definision.", openGenericTranslatorType.FullName));
             }
 
-            IEnumerable<IStringToValueTranslator> genericArgumentsTranslators = genericArguments.Select(argType => this.Inner.Get(argType));
+            var genericArgumentsTranslators = genericArguments.Select(argType => this.Inner.Get(argType));
 
-            IStringToValueTranslator translator = (IStringToValueTranslator)ci.Invoke(genericArgumentsTranslators.ToArray());
+            var translator = (IStringToValueTranslator)ci.Invoke(genericArgumentsTranslators.ToArray());
 
             return translator;
         }

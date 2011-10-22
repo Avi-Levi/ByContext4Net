@@ -2,6 +2,9 @@
 
 namespace NConfig.Exceptions
 {
+    /// <summary>
+    /// Thrown by the <see cref="ConfigurationService"/> when an <see cref="ConfigurationService.GetSection"/> failed.
+    /// </summary>
     public class GetSectionException : NConfigException
     {
         public GetSectionException(Type sectionType, Exception inner): 

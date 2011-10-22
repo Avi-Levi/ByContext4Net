@@ -3,7 +3,7 @@
 namespace NConfig.Filters.Rules
 {
     /// <summary>
-    /// Used to filter items according to the runtime context and the current context item.
+    /// Filter items according to a given runtime context and current context item.
     /// </summary>
     public interface IFilterRule
     {

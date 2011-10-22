@@ -12,9 +12,7 @@
     public interface IValueProvider : IHaveFilterReference
     {
         /// <summary>
-        /// <value>
-        /// A configuration parameter value.
-        /// </value>
+        /// Return a configuration parameter value.
         /// </summary>
         object Get();
     }

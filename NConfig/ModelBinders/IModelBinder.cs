@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace NConfig.ModelBinders
 {
     /// <summary>
-    /// Used to bind configuration parameters values to a given section type.
+    /// Binds configuration parameters values to a given section instance.
     /// </summary>
     public interface IModelBinder
     {
