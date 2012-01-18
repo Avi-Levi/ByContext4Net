@@ -59,6 +59,12 @@ namespace NConfig
             result.Add(subjectName, subjectValue);
             return new ConfigurationService(result, this.SectionsProviders);
         }
+
+        public void AddReference(string subjectName, string subjectValue)
+        {
+            this.RuntimeContext.Add(subjectName,subjectValue);
+        }
+
         #endregion IConfigurationService members
     }
 }

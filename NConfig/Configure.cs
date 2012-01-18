@@ -19,6 +19,7 @@ namespace NConfig
 
             this.FilterPolicies = new Dictionary<string, IFilterPolicy>();
             this.ConfigurationDataProviders = new List<IConfigurationDataProvider>();
+            this.RuntimeContext = new Dictionary<string, string>();
             this.InitTranslatorProviders();
 
             this.SetSingleValueDefaultFilterPolicy();

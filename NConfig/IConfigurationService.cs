@@ -34,5 +34,6 @@ namespace NConfig
         /// <returns>A configuration section of type <paramref name="sectionType"/>.</returns>
         TSection GetSection<TSection>(Type sectionType) where TSection : class;
         IConfigurationService WithReference(string subjectName, string subjectValue);
+        void AddReference(string subjectName, string subjectValue);
     }
 }
