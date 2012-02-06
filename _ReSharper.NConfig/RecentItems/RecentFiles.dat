@@ -18,7 +18,6 @@
     <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/d:Configuration/f:ServicesConfig.cs" caret="104" fromTop="5" />
     <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/f:Program.cs" caret="0" fromTop="0" />
     <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:StringToValueTranslator/f:OpenGenericStringToValueTranslatorProviderDecorator.cs" caret="1352" fromTop="21" />
-    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Rules/f:WithSpecificOrNoReferenceToSubjectRule.cs" caret="0" fromTop="0" />
     <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/f:FilterPolicy.cs" caret="459" fromTop="14" />
     <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ValueProviders/f:IValueProvider.cs" caret="362" fromTop="8" />
     <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/f:IFilterPolicy.cs" caret="143" fromTop="6" />
@@ -29,7 +28,8 @@
     <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/f:Filter.cs" caret="254" fromTop="10" />
     <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ConfigurationDataProviders/f:ParameterToParameterValueProviderConverter.cs" caret="901" fromTop="14" />
     <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ParameterValueProviders/f:ParameterValueProvider.cs" caret="1038" fromTop="21" />
-    <File id="51955F6C-3613-402D-B130-97EB2003E362/f:WindsorTranslatorProvider.cs" caret="1386" fromTop="43" />
+    <File id="51955F6C-3613-402D-B130-97EB2003E362/f:WindsorTranslatorProvider.cs" caret="350" fromTop="13" />
+    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Rules/f:WithSpecificOrNoReferenceToSubjectRule.cs" caret="1028" fromTop="27" />
   </RecentFiles>
   <RecentEdits>
     <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:ConfigurationService.cs" caret="536" fromTop="9" />
