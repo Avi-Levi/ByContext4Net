@@ -46,8 +46,11 @@
   <ItemGroup>
     <Compile Include="ConfigurationDataProviders\IConfigurationDataProvider.cs" />
     <Compile Include="Exceptions\NConfigException.cs" />
-    <Compile Include="Exceptions\TypeTranslatorNotRegisteredException.cs" />
+<<<<<<< HEAD
     <Compile Include="Filters\Filter.cs" />
+=======
+    <Compile Include="Exceptions\TypeTranslatorNotRegisteredException.cs" />
+>>>>>>> 8568f79cda8247429d7a87438befe534e1d4bb05
     <Compile Include="IHaveFilterReference.cs" />
     <Compile Include="ParameterValueProviders\IParameterValueProvider.cs" />
     <Compile Include="ResultBuilder\IResultBuilder.cs" />

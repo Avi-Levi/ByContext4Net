@@ -1,0 +1,218 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:ConfigurationHelper.cs" caret="0" fromTop="0" />
+      <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/f:LoadConfigurationTest.cs" caret="0" fromTop="0" />
+      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/d:Configuration/f:ConfigConstants.cs" caret="1612" fromTop="31" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Model/f:ContextSubjectReference.cs" caret="342" fromTop="16" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:IHaveFilterReference.cs" caret="312" fromTop="11" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ValueProviders/f:TranslateFromStringValueProvider.cs" caret="33" fromTop="0" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ParameterValueProviders/f:ParameterValueProvider.cs" caret="0" fromTop="0" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ValueProviders/f:IValueProvider.cs" caret="473" fromTop="11" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:StringToValueTranslator/f:IStringToValueTranslator.cs" caret="46" fromTop="2" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:StringToValueTranslator/f:IStringToValueTranslatorProvider.cs" caret="115" fromTop="4" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ConfigurationDataProviders/f:SectionToProviderConverter.cs" caret="248" fromTop="9" />
+      <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:ConfigureXmlExtensions.cs" caret="0" fromTop="0" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ConfigurationDataProviders/f:ParameterToParameterValueProviderConverter.cs" caret="935" fromTop="14" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ConfigurationDataProviders/f:IConfigurationDataProvider.cs" caret="467" fromTop="13" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ConfigurationDataProviders/f:ConvertFromSectionDataProvider.cs" caret="810" fromTop="21" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:IConfigurationService.cs" caret="2120" fromTop="36" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Extensions/f:ConfigureExtensions.cs" caret="1472" fromTop="30" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:Configure.cs" caret="3118" fromTop="41" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:SectionProviders/f:SectionProvider.cs" caret="547" fromTop="17" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:ConfigurationService.cs" caret="1190" fromTop="27" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ParameterValueProviders/f:IParameterValueProvider.cs" caret="211" fromTop="9" />
+      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/f:app.config" caret="0" fromTop="0" />
+      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/f:Configuration.xml" caret="2497" fromTop="35" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ResultBuilder/f:SingleValueResultBuilder.cs" caret="0" fromTop="0" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ResultBuilder/f:CollectionResultBuilder.cs" caret="0" fromTop="0" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:StringToValueTranslator/d:SerializeStringToValueTranslator/f:Translators.cs" caret="0" fromTop="0" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:StringToValueTranslator/f:BaseStringToValueTranslator.cs" caret="0" fromTop="0" />
+      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/d:Configuration/f:ServicesConfig.cs" caret="104" fromTop="5" />
+      <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/f:Program.cs" caret="0" fromTop="0" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:StringToValueTranslator/f:OpenGenericStringToValueTranslatorProviderDecorator.cs" caret="1498" fromTop="24" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Configuration.xml" caret="130" fromTop="3" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Program.cs" caret="1295" fromTop="26" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:SampleSection.cs" caret="123" fromTop="6" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Program.cs" caret="1915" fromTop="31" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Program.cs" caret="1310" fromTop="16" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Program.cs" caret="1268" fromTop="22" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Program.cs" caret="1002" fromTop="22" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Program.cs" caret="1307" fromTop="31" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Program.cs" caret="887" fromTop="19" />
+      <File id="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B/f:Program.cs" caret="703" fromTop="16" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:Configure.cs" caret="943" fromTop="17" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:Configure.cs" caret="958" fromTop="15" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/f:FilterPolicy.cs" caret="186" fromTop="7" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:Configure.cs" caret="1510" fromTop="15" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:Configure.cs" caret="1593" fromTop="13" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:Configure.cs" caret="2887" fromTop="20" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:ConfigurationService.cs" caret="1140" fromTop="11" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:ConfigurationService.cs" caret="1740" fromTop="12" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:ConfigurationService.cs" caret="536" fromTop="9" />
+      <File id="02EBB01A-DE5E-4940-8A06-F600B0A4778B/d:Configuration/f:ConfigConstants.cs" caret="1612" fromTop="31" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:IHaveFilterReference.cs" caret="229" fromTop="8" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:IConfigurationService.cs" caret="666" fromTop="14" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ValueProviders/f:TranslateFromStringValueProvider.cs" caret="33" fromTop="0" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ValueProviders/f:IValueProvider.cs" caret="222" fromTop="5" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ValueProviders/f:IValueProvider.cs" caret="526" fromTop="13" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ConfigurationDataProviders/f:IConfigurationDataProvider.cs" caret="467" fromTop="13" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:ConfigurationService.cs" caret="222" fromTop="8" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:ConfigurationService.cs" caret="2255" fromTop="29" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:IConfigurationService.cs" caret="2120" fromTop="36" />
+      <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:Configure.cs" caret="729" fromTop="9" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files\NUnit 2.5.10\bin\net-2.0\lib</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <UnitTestSessions>
+    <Session>
+      <Name>Session #1</Name>
+      <Elements>
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.LoadConfigurationTest" type="NUnitTestFixtureElement" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.LoadConfigurationTest.TestObjectModelConfiguration" ParentId="NConfig.Tests.LoadConfigurationTest" type="NUnitTestElement" TypeName="NConfig.Tests.LoadConfigurationTest" MethodName="TestObjectModelConfiguration" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.LoadConfigurationTest.TestXMLConfiguration_load_from_file" ParentId="NConfig.Tests.LoadConfigurationTest" type="NUnitTestElement" TypeName="NConfig.Tests.LoadConfigurationTest" MethodName="TestXMLConfiguration_load_from_file" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+      </Elements>
+    </Session>
+    <Session>
+      <Name>Session #2</Name>
+      <Elements />
+    </Session>
+    <Session>
+      <Name>Session #3</Name>
+      <Elements>
+        <UnitTestElement Provider="nUnit" Id="Sample.Tests.ConfigurationTest" type="NUnitTestFixtureElement" Project="3FB9A77D-775C-4E6E-8AE9-DD9CA42E7E3B" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.LoadConfigurationTest" type="NUnitTestFixtureElement" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+        <UnitTestElement Provider="nUnit" Id="Sample.Tests.LoggingConfigurationTest" type="NUnitTestFixtureElement" Project="3FB9A77D-775C-4E6E-8AE9-DD9CA42E7E3B" />
+        <UnitTestElement Provider="nUnit" Id="Sample.Tests.LoggingConfigurationTest.login_folder_path_for_login_service_and_applicationServer" ParentId="Sample.Tests.LoggingConfigurationTest" type="NUnitTestElement" TypeName="Sample.Tests.LoggingConfigurationTest" MethodName="login_folder_path_for_login_service_and_applicationServer" Project="3FB9A77D-775C-4E6E-8AE9-DD9CA42E7E3B" />
+        <UnitTestElement Provider="nUnit" Id="Sample.Tests.LoggingConfigurationTest.login_folder_path_for_login_service_and_applicationServer_check_with_other_references" ParentId="Sample.Tests.LoggingConfigurationTest" type="NUnitTestElement" TypeName="Sample.Tests.LoggingConfigurationTest" MethodName="login_folder_path_for_login_service_and_applicationServer_check_with_other_references" Project="3FB9A77D-775C-4E6E-8AE9-DD9CA42E7E3B" />
+        <UnitTestElement Provider="nUnit" Id="Sample.Tests.LoggingConfigurationTest.LoginServiceAdapter_and_machine2" ParentId="Sample.Tests.LoggingConfigurationTest" type="NUnitTestElement" TypeName="Sample.Tests.LoggingConfigurationTest" MethodName="LoginServiceAdapter_and_machine2" Project="3FB9A77D-775C-4E6E-8AE9-DD9CA42E7E3B" />
+        <UnitTestElement Provider="nUnit" Id="Sample.Tests.LoggingConfigurationTest.ProductsService_and_machine2" ParentId="Sample.Tests.LoggingConfigurationTest" type="NUnitTestElement" TypeName="Sample.Tests.LoggingConfigurationTest" MethodName="ProductsService_and_machine2" Project="3FB9A77D-775C-4E6E-8AE9-DD9CA42E7E3B" />
+        <UnitTestElement Provider="nUnit" Id="Sample.Tests.LoggingConfigurationTest.ProductsServiceAdapter_and_machine2" ParentId="Sample.Tests.LoggingConfigurationTest" type="NUnitTestElement" TypeName="Sample.Tests.LoggingConfigurationTest" MethodName="ProductsServiceAdapter_and_machine2" Project="3FB9A77D-775C-4E6E-8AE9-DD9CA42E7E3B" />
+        <UnitTestElement Provider="nUnit" Id="Sample.Tests.ConfigurationTest.ServiceContractConfig_for_ILoginService" ParentId="Sample.Tests.ConfigurationTest" type="NUnitTestElement" TypeName="Sample.Tests.ConfigurationTest" MethodName="ServiceContractConfig_for_ILoginService" Project="3FB9A77D-775C-4E6E-8AE9-DD9CA42E7E3B" />
+        <UnitTestElement Provider="nUnit" Id="Sample.Tests.ConfigurationTest.ServiceContractConfig_for_IProductsService" ParentId="Sample.Tests.ConfigurationTest" type="NUnitTestElement" TypeName="Sample.Tests.ConfigurationTest" MethodName="ServiceContractConfig_for_IProductsService" Project="3FB9A77D-775C-4E6E-8AE9-DD9CA42E7E3B" />
+        <UnitTestElement Provider="nUnit" Id="Sample.Tests.ConfigurationTest.ServicesConfig" ParentId="Sample.Tests.ConfigurationTest" type="NUnitTestElement" TypeName="Sample.Tests.ConfigurationTest" MethodName="ServicesConfig" Project="3FB9A77D-775C-4E6E-8AE9-DD9CA42E7E3B" />
+        <UnitTestElement Provider="nUnit" Id="Sample.Tests.ConfigurationTest.SingleServiceConfig" ParentId="Sample.Tests.ConfigurationTest" type="NUnitTestElement" TypeName="Sample.Tests.ConfigurationTest" MethodName="SingleServiceConfig" Project="3FB9A77D-775C-4E6E-8AE9-DD9CA42E7E3B" />
+        <UnitTestElement Provider="nUnit" Id="Sample.Tests.LoggingConfigurationTest.some_secure_path_on_production_client_machine" ParentId="Sample.Tests.LoggingConfigurationTest" type="NUnitTestElement" TypeName="Sample.Tests.LoggingConfigurationTest" MethodName="some_secure_path_on_production_client_machine" Project="3FB9A77D-775C-4E6E-8AE9-DD9CA42E7E3B" />
+        <UnitTestElement Provider="nUnit" Id="Sample.Tests.LoggingConfigurationTest.some_secure_path_on_production_client_machine_with_some_log_owner" ParentId="Sample.Tests.LoggingConfigurationTest" type="NUnitTestElement" TypeName="Sample.Tests.LoggingConfigurationTest" MethodName="some_secure_path_on_production_client_machine_with_some_log_owner" Project="3FB9A77D-775C-4E6E-8AE9-DD9CA42E7E3B" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.LoadConfigurationTest.TestObjectModelConfiguration" ParentId="NConfig.Tests.LoadConfigurationTest" type="NUnitTestElement" TypeName="NConfig.Tests.LoadConfigurationTest" MethodName="TestObjectModelConfiguration" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+        <UnitTestElement Provider="nUnit" Id="NConfig.Tests.LoadConfigurationTest.TestXMLConfiguration_load_from_file" ParentId="NConfig.Tests.LoadConfigurationTest" type="NUnitTestElement" TypeName="NConfig.Tests.LoadConfigurationTest" MethodName="TestXMLConfiguration_load_from_file" Project="214DC7EA-BC3B-41A7-A03A-2F6033B416A7" />
+      </Elements>
+    </Session>
+  </UnitTestSessions>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="CSharpCodeCompletionContext">
+      <Item value="TestFixture" priority="26" />
+      <Item value="Xml" priority="27" />
+      <Item value="private" priority="31" />
+      <Item value="string" priority="126" />
+      <Item value="this" priority="95" />
+      <Item value="var" priority="159" />
+      <Item value="Path`0" priority="31" />
+      <Item value="configureAction" priority="31" />
+      <Item value="ctx" priority="31" />
+      <Item value="ISomeService`0" priority="63" />
+      <Item value="return" priority="31" />
+      <Item value="public" priority="31" />
+      <Item value="prop" priority="95" />
+      <Item value="IEnumerable" priority="30" />
+      <Item value="int" priority="30" />
+      <Item value="SampleSection`0" priority="63" />
+      <Item value="Console`0" priority="95" />
+      <Item value="if" priority="31" />
+      <Item value="keyInfo" priority="31" />
+      <Item value="switch" priority="63" />
+      <Item value="case" priority="31" />
+      <Item value="break" priority="31" />
+      <Item value="default" priority="31" />
+      <Item value="configService" priority="31" />
+      <Item value="section" priority="31" />
+      <Item value="foreach" priority="26" />
+      <Item value="item" priority="31" />
+      <Item value="Environment`0" priority="31" />
+      <Item value="while" priority="31" />
+      <Item value="Queryable`0" priority="31" />
+      <Item value="WithSpecificOrNoReferenceToSubjectRule" priority="28" />
+      <Item value="&lt;remarks&gt;&lt;/remarks&gt;" priority="129" />
+      <Item value="&lt;typeparamref name=&quot;&quot;/&gt;" priority="51" />
+      <Item value="&lt;code&gt;&lt;/code&gt;" priority="25" />
+      <Item value="&lt;see cref=&quot;&quot;/&gt;" priority="25" />
+      <Item value="subjectName" priority="31" />
+      <Item value="subjectValue" priority="31" />
+      <Item value="new" priority="31" />
+      <Item value="Dictionary&lt;string,string&gt;" priority="28" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.Directory">
+      <Item value="Exists`0" priority="22" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.Path">
+      <Item value="GetFullPath`0" priority="22" />
+      <Item value="GetDirectoryName`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Common.FlatFileLogger">
+      <Item value="_absolutePath" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NConfig.Configure">
+      <Item value="With`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NConfig.Configure">
+      <Item value="RuntimeContext`0" priority="26" />
+      <Item value="AddFromXmlFile`0" priority="22" />
+      <Item value="RuntimeContext" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IDictionary`2">
+      <Item value="Add`0" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NConfig.Model.Section">
+      <Item value="Create`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine`0" priority="53" />
+      <Item value="ReadKey`0" priority="26" />
+      <Item value="ReadLine`0" priority="22" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NConfig.IConfigurationService">
+      <Item value="GetSection`1" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:GetStartedSample.SampleSection">
+      <Item value="SomeString" priority="53" />
+      <Item value="List" priority="22" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="ToList`1" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Environment">
+      <Item value="NewLine" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Empty" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Doc Comment tags">
+      <Item value="&lt;remarks&gt;&lt;/remarks&gt;" priority="24" />
+      <Item value="&lt;typeparamref name=&quot;&quot;/&gt;" priority="9" />
+      <Item value="&lt;paramref name=&quot;&quot;/&gt;" priority="4" />
+      <Item value="&lt;code&gt;&lt;/code&gt;" priority="4" />
+      <Item value="&lt;see cref=&quot;&quot;/&gt;" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NConfig.ConfigurationService">
+      <Item value="RuntimeContext" priority="26" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>
