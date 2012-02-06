@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="ConfigurationDataProviders\IConfigurationDataProvider.cs" />
     <Compile Include="Exceptions\NConfigException.cs" />
+    <Compile Include="Filters\Filter.cs" />
     <Compile Include="IHaveFilterReference.cs" />
     <Compile Include="ParameterValueProviders\IParameterValueProvider.cs" />
     <Compile Include="ResultBuilder\IResultBuilder.cs" />
