@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using NConfig.Configuration;
 using System.IO;
 using System.Xml.Linq;
 using NConfig.Model;

@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
-using NConfig.Configuration;
 
 namespace NConfig.Model
 {
     [DataContract]
-    public class ParameterValue : IHaveFilterReference
+    public class ParameterValue
     {
         public override bool Equals(object obj)
         {

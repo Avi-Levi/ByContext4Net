@@ -8,7 +8,17 @@ namespace NConfig.StringToValueTranslator.SerializeStringToValueTranslator
     {
         public SerializeStringToValueTranslatorProvider()
         {
-            this.Init();
+            this.Translators = new Dictionary<Type, IStringToValueTranslator>
+                                   {
+                                       {typeof (Int32), new Int32Translator()},
+                                       {typeof (long), new LongTranslator()},
+                                       {typeof (string), new StringTranslator()},
+                                       {typeof (bool), new BooleanTranslator()},
+                                       {typeof (double), new DoubleTranslator()},
+                                       {typeof (char), new CharTranslator()},
+                                       {typeof (Type), new TypeTranslator()},
+                                       {typeof (Uri), new UriTranslator()}
+                                   };
         }
 
         public const string ProviderKey = "SerializeRawString";
@@ -20,33 +30,17 @@ namespace NConfig.StringToValueTranslator.SerializeStringToValueTranslator
             {
                 if (type.IsEnum)
                 {
-                    Type enumTranslatorType = typeof(EnumTranslator<>).MakeGenericType(type);
-                    IStringToValueTranslator trsnslator = (IStringToValueTranslator)Activator.CreateInstance(enumTranslatorType);
+                    var enumTranslatorType = typeof(EnumTranslator<>).MakeGenericType(type);
+                    var trsnslator = (IStringToValueTranslator)Activator.CreateInstance(enumTranslatorType);
                     return trsnslator;
                 }
                 else
                 {
-                    throw new TypeNotSupportedException(string.Format(
-                        "A raw value translator was not registered for type {0},you must first register value translator using 'ValueParsers'" +
-                        " property on the 'Configure' object.", type.FullName));
+                    throw new TypeTranslatorNotRegisteredException("Serialize String To Value", type);
                 }
             }
 
             return this.Translators[type];
-        }
-
-        private void Init()
-        {
-            this.Translators = new Dictionary<Type, IStringToValueTranslator>();
-
-            this.Translators.Add(typeof(Int32), new Int32Translator());
-            this.Translators.Add(typeof(long), new LongTranslator());
-            this.Translators.Add(typeof(string), new StringTranslator());
-            this.Translators.Add(typeof(bool), new BooleanTranslator());
-            this.Translators.Add(typeof(double), new DoubleTranslator());
-            this.Translators.Add(typeof(char), new CharTranslator());
-            this.Translators.Add(typeof(Type), new TypeTranslator());
-            this.Translators.Add(typeof(Uri), new UriTranslator());
         }
     }
 }

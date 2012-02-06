@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using NConfig.Extensions;
 
-namespace NConfig.Configuration
+namespace NConfig
 {
     public class ConfigurationHelper
     {
@@ -43,9 +43,9 @@ namespace NConfig.Configuration
                 {
                     return getIfNameNotATypeName(name);
                 }
-                catch
+                catch(Exception ex)
                 {
-                    throw new ConfigurationPropertyException(name, propertyName, typeof(T));
+                    throw new ConfigurationPropertyException(name, propertyName, typeof(T), ex);
                 }
             }
         }

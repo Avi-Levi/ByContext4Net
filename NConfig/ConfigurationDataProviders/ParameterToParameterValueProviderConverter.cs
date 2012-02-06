@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using NConfig.Configuration;
 using NConfig.Filters;
 using NConfig.Model;
 using NConfig.ParameterValueProviders;
@@ -18,25 +17,31 @@ namespace NConfig.ConfigurationDataProviders
 
         public IParameterValueProvider Convert(Parameter parameter, Configure configure)
         {
-            Type parameterType = Type.GetType(parameter.TypeName, true);
+            var parameterType = Type.GetType(parameter.TypeName, true);
 
-            IFilterPolicy policy = this.GetFilterPolicy(parameter, parameterType, configure);
+            var policy = this.GetFilterPolicy(parameter, parameterType, configure);
 
-            bool required = this._helper.GetConfigurationProperty<Parameter, bool>(parameter, x => x.Required, () => true, x => bool.Parse(x));
+            var required = this.GetRequired(parameter);
 
-            Type parameterValueType = this.DetermineParameterValueType(parameterType);
+            var parameterValueType = this.DetermineParameterValueType(parameterType);
 
-            IStringToValueTranslatorProvider translatorProvider = this.GetTranslatorProvider(parameter, configure);
-
-            var translator = translatorProvider.Get(parameterValueType);
+            var translator = this.GetTranslator(parameter, parameterValueType, configure);
 
             IValueProvider[] valueProviders = parameter.Values.Select(x => new TranslateFromStringValueProvider(translator, x)).ToArray();
 
-            IResultBuilder resultBuilder = new ResultBuilderProvider().Get(parameterType);
+            var resultBuilder = new ResultBuilderProvider().Get(parameterType);
 
-            IParameterValueProvider parameterValueProvider = new ParameterValueProvider(valueProviders, policy, resultBuilder, required, parameter.Name);
+            IParameterValueProvider parameterValueProvider = new ParameterValueProvider
+                (valueProviders, policy, resultBuilder, required, parameter.Name);
 
             return parameterValueProvider;
+        }
+
+        private bool GetRequired(Parameter parameter)
+        {
+            bool required = this._helper.GetConfigurationProperty<Parameter, bool>
+                (parameter, x => x.Required, () => true,bool.Parse);
+            return required;
         }
 
         private IFilterPolicy GetFilterPolicy(Parameter parameter, Type parameterType, Configure configure)
@@ -60,13 +65,13 @@ namespace NConfig.ConfigurationDataProviders
             return filterPolicy;
         }
 
-        private IStringToValueTranslatorProvider GetTranslatorProvider(Parameter parameter, Configure configure)
+        private IStringToValueTranslator GetTranslator(Parameter parameter, Type parameterValueType, Configure configure)
         {
-            IStringToValueTranslatorProvider translatorProvider =
-                this._helper.GetConfigurationProperty<Parameter, IStringToValueTranslatorProvider>
-                (parameter,x=>x.Translator,() => configure.TranslatorProviders[configure.DefaultRawValueTranslatorName],x => configure.TranslatorProviders[x]);
+            var translatorProvider = this._helper.GetConfigurationProperty<Parameter, IStringToValueTranslatorProvider>
+                (parameter,x=>x.Translator,() => configure.TranslatorProviders[configure.DefaultRawValueTranslatorName],
+                x => configure.TranslatorProviders[x]);
 
-            return translatorProvider;
+            return translatorProvider.Get(parameterValueType);
         }
 
         private Type DetermineParameterValueType(Type parameterType)

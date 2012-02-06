@@ -6,6 +6,9 @@
     /// For now, implemented by <see cref="TranslateFromStringValueProvider"/> and provides an extension point to enable providing values in different ways.
     /// </remarks>
     /// </summary>
+    /// Also used as an extension point for providing values in different ways.
+    /// </remarks>
+    /// </summary>
     public interface IValueProvider : IHaveFilterReference
     {
         /// <summary>

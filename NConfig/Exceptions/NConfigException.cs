@@ -2,6 +2,9 @@
 
 namespace NConfig.Exceptions
 {
+    /// <summary>
+    /// A base type for all library's exceptions.
+    /// </summary>
     public abstract class NConfigException : Exception
     {
         protected NConfigException(string message, Exception inner)
