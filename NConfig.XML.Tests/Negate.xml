@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Section TypeName="NConfig.XML.Tests.TestSection,NConfig.XML.Tests">
+    <Parameter Name="Value1">
+      <Values>
+        <Value Value="ValueA">
+          <TextMatch Subject="A" Value="1"/>
+        </Value>
+        <Value Value="ValueB">
+          <TextMatch Subject="A" Value="2" Negate="True"/>
+        </Value>
+        <Value Value="ValueC">
+          <TextMatch Subject="A" Value="2"/>
+        </Value>
+      </Values>
+    </Parameter>
+  </Section>
+  </Configuration>

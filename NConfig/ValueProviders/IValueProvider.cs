@@ -9,7 +9,7 @@
     /// Also used as an extension point for providing values in different ways.
     /// </remarks>
     /// </summary>
-    public interface IValueProvider : IHaveFilterReference
+    public interface IValueProvider : IHaveFilterConditions
     {
         /// <summary>
         /// Returns a configuration value.

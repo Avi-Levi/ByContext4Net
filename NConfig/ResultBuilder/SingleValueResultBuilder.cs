@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace NConfig.ResultBuilder
@@ -7,6 +8,11 @@ namespace NConfig.ResultBuilder
     {
         public object Build(IEnumerable<object> input)
         {
+            if(input.Count() != 1)
+            {
+                throw new Exception("Invalid values count, expected 1, actual " + input.Count().ToString());
+            }
+
             return (TItem)input.Single();
         }
     }

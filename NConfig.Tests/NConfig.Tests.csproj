@@ -45,7 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions.cs" />
-    <Compile Include="FilterTest.cs" />
+    <Compile Include="Filter\ContextWithOneItem.cs" />
+    <Compile Include="Filter\ContextWithTwoItems.cs" />
+    <Compile Include="Filter\Item.cs" />
     <Compile Include="LoadConfigurationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestEnum.cs" />

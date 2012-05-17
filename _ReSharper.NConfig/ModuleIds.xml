@@ -11,4 +11,5 @@
   <Module PersistentId="DC7D015F-D54D-4885-921F-5EF3E7AC1F2B" ModuleId="GetStartedSample" />
   <Module PersistentId="3FB9A77D-775C-4E6E-8AE9-DD9CA42E7E3B" ModuleId="Sample.Tests" />
   <Module PersistentId="System.Xml.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Xml.Linq" />
+  <Module PersistentId="66734166-065A-4D0C-8505-C563205D6408" ModuleId="NConfig.XML.Tests" />
 </Modules>

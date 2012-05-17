@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using NConfig.ConfigurationDataProviders;
-using NConfig.Filters;
+using NConfig.Filters.Policy;
 using NConfig.Model;
 using NConfig.ModelBinders;
 using NConfig.RuntimeContextProviders;

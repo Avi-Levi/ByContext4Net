@@ -2,10 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using NConfig.Filters;
+using NConfig.Filters.Conditions;
+using NConfig.Filters.Policy;
 using NConfig.Model;
 using NConfig.ParameterValueProviders;
-using NConfig.ResultBuilder;
 using NConfig.StringToValueTranslator;
 using NConfig.ValueProviders;
 
@@ -27,14 +27,32 @@ namespace NConfig.ConfigurationDataProviders
 
             var translator = this.GetTranslator(parameter, parameterValueType, configure);
 
-            IValueProvider[] valueProviders = parameter.Values.Select(x => new TranslateFromStringValueProvider(translator, x)).ToArray();
+            IEnumerable<IValueProvider> valueProviders = this.BuildValueProviders(parameter.Values,translator,configure);
 
-            var resultBuilder = new ResultBuilderProvider().Get(parameterType);
+            var resultBuilder = configure.ResultBuilderProvider.Get(parameterType);
 
             IParameterValueProvider parameterValueProvider = new ParameterValueProvider
-                (valueProviders, policy, resultBuilder, required, parameter.Name);
+                (valueProviders, policy, resultBuilder,configure.FilterConditionsEvaluator, required, parameter.Name);
 
             return parameterValueProvider;
+        }
+
+        private IEnumerable<IValueProvider> BuildValueProviders(IEnumerable<ParameterValue> values, IStringToValueTranslator translator, Configure configure)
+        {
+            foreach (var parameterValue in values)
+            {
+                IEnumerable<IFilterCondition> filterConditions = this.TranslateFilterConditions(parameterValue.FilterConditions, configure);
+                yield return new TranslateFromStringValueProvider(translator, parameterValue.Value, filterConditions.ToArray());
+            }
+        }
+
+        private IEnumerable<IFilterCondition> TranslateFilterConditions(IEnumerable<FilterCondition> filterConditions, Configure configure)
+        {
+            foreach(var filterCondition in filterConditions)
+            {
+                IFilterConditionFactory factory = this._helper.GetConfigurationProperty(filterCondition, x => x.ConditionName, () => configure.FilterConditionFactories[configure.DefaultFilterConditionName], x => configure.FilterConditionFactories[x]);
+                yield return factory.Create(filterCondition.Properties);
+            }
         }
 
         private bool GetRequired(Parameter parameter)
@@ -50,7 +68,7 @@ namespace NConfig.ConfigurationDataProviders
                 (parameter,x=>x.PolicyName,
                 () =>
                 {
-                    if (parameterType.IsAssignableFrom(typeof(IEnumerable)))
+                    if (configure.ResultBuilderProvider.IsTypeIsSupportedCollection(parameterType))
                     {
                         return configure.FilterPolicies[Configure.DefaultCollectionFilterPolicyName];
                     }

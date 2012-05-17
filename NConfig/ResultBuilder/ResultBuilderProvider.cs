@@ -18,6 +18,18 @@ namespace NConfig.ResultBuilder
 
         private IDictionary<Type, Type> ResultBuildersRegistry { get; set; }
 
+        public bool IsTypeIsSupportedCollection(Type type)
+        {
+            if (type.IsGenericType)
+            {
+                return this.ResultBuildersRegistry.ContainsKey(type.GetGenericTypeDefinition());
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public IResultBuilder Get(Type resultType)
         {
             Type builderType = null;

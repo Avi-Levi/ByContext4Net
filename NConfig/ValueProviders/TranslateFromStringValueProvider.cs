@@ -1,25 +1,26 @@
 ﻿using System.Collections.Generic;
-using NConfig.Model;
+using NConfig.Filters.Conditions;
 using NConfig.StringToValueTranslator;
 
 namespace NConfig.ValueProviders
 {
     public class TranslateFromStringValueProvider : IValueProvider
     {
-        public TranslateFromStringValueProvider(IStringToValueTranslator translator, ParameterValue source)
+        public TranslateFromStringValueProvider(IStringToValueTranslator translator, string value, IFilterCondition[] filterConditions)
         {
             this.Translator = translator;
-            this.Source = source;
+            this.Value = value;
+            this.FilterConditions = filterConditions;
         }
 
-        private ParameterValue Source { get; set; }
+        private string Value { get; set; }
+        public IEnumerable<IFilterCondition> FilterConditions { get; set; }
+        
         private IStringToValueTranslator Translator { get; set; }
 
         public object Get()
         {
-            return this.Translator.Translate(this.Source.Value);
+            return this.Translator.Translate(this.Value);
         }
-
-        public IList<ContextSubjectReference> References { get { return this.Source.References; } }
     }
 }

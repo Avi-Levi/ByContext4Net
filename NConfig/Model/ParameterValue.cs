@@ -27,7 +27,7 @@ namespace NConfig.Model
         private ParameterValue(string value)
         {
             this.Value = value;
-            this.References = new List<ContextSubjectReference>();
+            this.FilterConditions = new List<FilterCondition>();
         }
         public static ParameterValue Create(string value)
         {
@@ -36,6 +36,6 @@ namespace NConfig.Model
         [DataMember]
         public string Value { get; private set; }
         [DataMember]
-        public IList<ContextSubjectReference> References { get; private set; }
+        public IList<FilterCondition> FilterConditions { get; private set; }
     }
 }

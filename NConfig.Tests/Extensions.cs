@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 using NConfig.Extensions;
+using NConfig.Filters;
+using NConfig.Filters.Conditions;
+using NConfig.Filters.Conditions.TextMatch;
 using NConfig.Model;
 
 namespace NConfig.Tests
@@ -41,9 +45,13 @@ namespace NConfig.Tests
             return source;
         }
 
-        public static ParameterValue WithReference(this ParameterValue source, string subjectName, string subjectValue)
+        public static ParameterValue WithTextMatchReference(this ParameterValue source, string subjectName, string subjectValue)
         {
-            source.References.Add(ContextSubjectReference.Create(subjectName, subjectValue));
+            source.FilterConditions.Add(FilterCondition.Create(TextMatchCondition.Name,new Dictionary<string, string>
+                                                                                           {
+                                                                                               {"Subject", subjectName},
+                                                                                               {"Value", subjectValue}
+                                                                                           } ));
             return source;
         }
     }

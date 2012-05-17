@@ -4,7 +4,7 @@
     <Parameter Name="LogLevel">
       <Values>
         <Value Value="Trace">
-          <Reference Subject="MachineName" Value="ClientMachine1"/>
+          <TextMatch Subject="MachineName" Value="ClientMachine1"/>
         </Value>
         <Value Value="Error"/>
       </Values>
@@ -12,18 +12,18 @@
     <Parameter Name="LogFilePath">
       <Values>
         <Value Value=".\logs\log.txt">
-          <Reference Subject="AppType" Value="onlineClient"/>
+          <TextMatch Subject="AppType" Value="onlineClient"/>
         </Value>
         <Value Value=".\logs\SomeSecuredPath\log.txt">
-          <Reference Subject="AppType" Value="onlineClient"/>
-          <Reference Subject="Environment" Value="prod"/>
+          <TextMatch Subject="AppType" Value="onlineClient"/>
+          <TextMatch Subject="Environment" Value="prod"/>
         </Value>
         <Value Value=".\logs\login.txt">
-          <Reference Subject="LogOwner" Value="Server.Services.LoginService"/>
-          <Reference Subject="AppType" Value="applicationServer"/>
+          <TextMatch Subject="LogOwner" Value="Server.Services.LoginService"/>
+          <TextMatch Subject="AppType" Value="applicationServer"/>
         </Value>
         <Value Value=".\logs\all.txt">
-          <Reference Subject="AppType" Value="applicationServer"/>
+          <TextMatch Subject="AppType" Value="applicationServer"/>
         </Value>
       </Values>
     </Parameter>
@@ -40,10 +40,10 @@
     <Parameter Name="Address">
       <Values>
         <Value Value="net.tcp://localhost:20/login">
-          <Reference Subject="ServiceContract" Value="Common.Contracts.ILoginService"/>
+          <TextMatch Subject="ServiceContract" Value="Common.Contracts.ILoginService"/>
         </Value>
         <Value Value="net.tcp://localhost:21/products">
-          <Reference Subject="ServiceContract" Value="Common.Contracts.IProductsService"/>
+          <TextMatch Subject="ServiceContract" Value="Common.Contracts.IProductsService"/>
         </Value>
       </Values>
     </Parameter>
@@ -64,7 +64,7 @@
     <Parameter Name="MaxReceivedMessageSize" Required="False">
       <Values>
         <Value Value="3145728">
-          <Reference Subject="ServiceContract" Value="Common.Contracts.IProductsService"/>
+          <TextMatch Subject="ServiceContract" Value="Common.Contracts.IProductsService"/>
         </Value>
       </Values>
     </Parameter>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml.Linq;
 using NConfig.Model;
 
@@ -87,12 +88,12 @@ namespace NConfig.XML
         {
             ParameterValue parameterValue = ParameterValue.Create(valueNode.Attribute("Value").Value);
 
-            foreach (var referenceNode in valueNode.Elements("Reference"))
+            foreach (var referenceNode in valueNode.Elements())
             {
-                string subject = referenceNode.Attribute("Subject").Value;
-                string value = referenceNode.Attribute("Value").Value;
+                string name = referenceNode.Name.LocalName;
+                var attributes = referenceNode.Attributes().ToDictionary(x => x.Name.LocalName, x => x.Value);
 
-                parameterValue.References.Add(ContextSubjectReference.Create(subject, value)); 
+                parameterValue.FilterConditions.Add(FilterCondition.Create(name, attributes)); 
             }
 
             return parameterValue;
