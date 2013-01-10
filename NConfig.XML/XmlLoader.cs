@@ -9,6 +9,16 @@ namespace NConfig.XML
 {
     public class XmlLoader
     {
+        private string ParameterName = "Parameter";
+        private string SectionName = "Section";
+        private string ParameterNameAttribute = "Name";
+        private string RequiredAttribute = "Required";
+        private string TranslatorAttribute = "Translator";
+        private string ValuesNodeName = "Values";
+        private string ValueNodeName = "Value";
+        private const string TypeNameAttribute = "TypeName";
+        private const string ModelBinderName = "ModelBinderName";
+
         #region public methods
         public IEnumerable<Section> LoadFile(string fileName)
         {
@@ -36,12 +46,77 @@ namespace NConfig.XML
 
             return this.LoadSectionsFromDocument(doc);
         }
+        public string ToXml(IEnumerable<Section> sections)
+        {
+            XDocument doc = new XDocument();
+
+            doc.Add(new XElement("Configuration"));
+            
+            foreach(var section in sections)
+            {
+                XNode sectionNode = this.BuildNodeFromSection(section);
+                doc.Root.Add(sectionNode);
+            }
+
+            return doc.ToString();
+        }
         #endregion public methods
 
-        #region private methods
+        #region build xml
+        private XNode BuildNodeFromSection(Section section)
+        {
+            XElement sectionNode = new XElement(SectionName);
+            sectionNode.SetAttributeValueOrThrow(TypeNameAttribute, section.TypeName);
+            sectionNode.SetAttributeValueIfNotNullOrEmpty(ModelBinderName, section.ModelBinder);
+
+            foreach (var parameter in section.Parameters)
+            {
+                XNode parameterNode = this.BuildNodeFromParameter(parameter);
+                sectionNode.Add(parameterNode);
+            }
+            return sectionNode;
+        }
+        private XNode BuildNodeFromParameter(KeyValuePair<string, Parameter> parameter)
+        {
+            XElement parameterNode = new XElement(ParameterName);
+            parameterNode.SetAttributeValueOrThrow(ParameterNameAttribute, parameter.Value.Name);
+
+            parameterNode.SetAttributeValueIfNotNullOrEmpty(RequiredAttribute, parameter.Value.Required);
+            parameterNode.SetAttributeValueIfNotNullOrEmpty(TranslatorAttribute, parameter.Value.Translator);
+
+            XElement valuesNode = new XElement(ValuesNodeName);
+            parameterNode.Add(valuesNode);
+
+            foreach (var value in parameter.Value.Values)
+            {
+                XNode valueNode = this.BuildNodeFromValue(value);
+                valuesNode.Add(valueNode);
+            }
+
+            return parameterNode;
+        }
+        private XNode BuildNodeFromValue(ParameterValue value)
+        {
+            XElement valueNode = new XElement(ValueNodeName);
+            valueNode.SetAttributeValueOrThrow(ValueNodeName, value.Value);
+            foreach (var condition in value.FilterConditions)
+            {
+                XElement conditionNode = new XElement(condition.ConditionName);
+
+                foreach (var property in condition.Properties)
+                {
+                    conditionNode.SetAttributeValueOrThrow(property.Key, property.Value);
+                }
+                valueNode.Add(conditionNode);
+            }
+            return valueNode;
+        }
+        #endregion build xml
+
+        #region load from xml
         private IEnumerable<Section> LoadSectionsFromDocument(XDocument doc)
         {
-            foreach (var sectionNode in doc.Root.Elements("Section"))
+            foreach (var sectionNode in doc.Root.Elements(SectionName))
             {
                 yield return this.BuildSectionFromNode(sectionNode);
             }
@@ -49,9 +124,10 @@ namespace NConfig.XML
         private Section BuildSectionFromNode(XElement sectionNode)
         {
             Section section = Section.Create();
-            section.TypeName = sectionNode.GetAttributeValueOrThrow("TypeName");
+            section.TypeName = sectionNode.GetAttributeValueOrThrow(TypeNameAttribute);
+            section.ModelBinder = sectionNode.GetAttributeValueOrNull(ModelBinderName);
 
-            foreach (var parameterNode in sectionNode.Elements("Parameter"))
+            foreach (var parameterNode in sectionNode.Elements(ParameterName))
             {
                 Parameter parameter = this.BuildParameterFromNode(parameterNode);
                 section.Parameters.Add(parameter.Name, parameter);
@@ -63,11 +139,11 @@ namespace NConfig.XML
         {
             Parameter parameter = Parameter.Create();
 
-            parameter.Name = parameterNode.GetAttributeValueOrThrow("Name");
-            parameter.TypeName = parameterNode.GetAttributeValueOrNull("TypeName");
-            parameter.Translator = parameterNode.GetAttributeValueOrNull("Translator");
-            parameter.Required = parameterNode.GetAttributeValueOrNull("Required");
-            parameter.Values = this.BuildValuesFromNode(parameterNode.Element("Values"));
+            parameter.Name = parameterNode.GetAttributeValueOrThrow(ParameterNameAttribute);
+            parameter.TypeName = parameterNode.GetAttributeValueOrNull(TypeNameAttribute);
+            parameter.Translator = parameterNode.GetAttributeValueOrNull(TranslatorAttribute);
+            parameter.Required = parameterNode.GetAttributeValueOrNull(RequiredAttribute);
+            parameter.Values = this.BuildValuesFromNode(parameterNode.Element(ValuesNodeName));
 
             return parameter;
         }
@@ -76,7 +152,7 @@ namespace NConfig.XML
         {
             List<ParameterValue> result = new List<ParameterValue>();
 
-            foreach (var valueNode in valuesNode.Elements("Value"))
+            foreach (var valueNode in valuesNode.Elements(ValueNodeName))
             {
                 ParameterValue parameterValue = this.BuildParameterValueFromNode(valueNode);
 
@@ -86,18 +162,18 @@ namespace NConfig.XML
         }
         private ParameterValue BuildParameterValueFromNode(XElement valueNode)
         {
-            ParameterValue parameterValue = ParameterValue.Create(valueNode.Attribute("Value").Value);
+            ParameterValue parameterValue = ParameterValue.Create(valueNode.Attribute(ValueNodeName).Value);
 
-            foreach (var referenceNode in valueNode.Elements())
+            foreach (var conditionNode in valueNode.Elements())
             {
-                string name = referenceNode.Name.LocalName;
-                var attributes = referenceNode.Attributes().ToDictionary(x => x.Name.LocalName, x => x.Value);
+                string name = conditionNode.Name.LocalName;
+                var attributes = conditionNode.Attributes().ToDictionary(x => x.Name.LocalName, x => x.Value);
 
                 parameterValue.FilterConditions.Add(FilterCondition.Create(name, attributes)); 
             }
 
             return parameterValue;
         }
-        #endregion private methods
+        #endregion load from xml
     }
 }

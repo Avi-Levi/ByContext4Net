@@ -7,7 +7,7 @@ namespace NConfig
 {
     public static class ConfigureXmlExtensions
     {
-        public static Configure AddFromXmlFile(this Configure source, string fileName)
+        public static INConfigSettings AddFromXmlFile(this INConfigSettings source, string fileName)
         {
             source.AddConfigurationDataProvider(new ConvertFromSectionDataProvider(()=>
                 new XmlLoader().LoadFile(fileName), source));
@@ -15,7 +15,7 @@ namespace NConfig
             return source;
         }
 
-        public static Configure AddFromRawXml(this Configure source, string rawXml)
+        public static INConfigSettings AddFromRawXml(this INConfigSettings source, string rawXml)
         {
             source.AddConfigurationDataProvider(new ConvertFromSectionDataProvider(()=>
                 new XmlLoader().ReadXml(rawXml), source));
@@ -42,6 +42,24 @@ namespace NConfig
             }
 
             return result;
+        }
+        public static void SetAttributeValueIfNotNullOrEmpty(this XElement source, string attributeName, string value)
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                source.SetAttributeValue(attributeName, value);
+            }
+        }
+        public static void SetAttributeValueOrThrow(this XElement source, string attributeName, string value)
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                source.SetAttributeValue(attributeName, value);
+            }
+            else
+            {
+                throw new ArgumentException(string.Format("Property {0} cannot be null ", attributeName));
+            }
         }
     }
 }

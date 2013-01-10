@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Configuration>
+﻿<Configuration>
   <Section TypeName="NConfig.XML.Tests.TestSection,NConfig.XML.Tests">
     <Parameter Name="Value1">
       <Values>

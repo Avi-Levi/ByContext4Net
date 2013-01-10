@@ -7,13 +7,13 @@ namespace NConfig.ConfigurationDataProviders
 {
     public class ConvertFromSectionDataProvider : IConfigurationDataProvider
     {
-        public ConvertFromSectionDataProvider(Func<IEnumerable<Section>> getMehtod, Configure configure)
+        public ConvertFromSectionDataProvider(Func<IEnumerable<Section>> getMehtod, INConfigSettings settings)
         {
             this.GetMehtod = getMehtod;
-            this.Configure = configure;
+            this.Settings = settings;
         }
 
-        private Configure Configure { get; set; }
+        private INConfigSettings Settings { get; set; }
         private Func<IEnumerable<Section>> GetMehtod { get; set; }
 
         public IDictionary<string, ISectionProvider> Get()
@@ -26,7 +26,7 @@ namespace NConfig.ConfigurationDataProviders
                 Type sectionType = Type.GetType(section.TypeName, false);
                 if (sectionType != null)
                 {
-                    result.Add(sectionType.FullName, converter.Convert(section, this.Configure));
+                    result.Add(sectionType.FullName, converter.Convert(section, this.Settings));
                 }
             }
             return result;

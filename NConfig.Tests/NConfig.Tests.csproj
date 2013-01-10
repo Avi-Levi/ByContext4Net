@@ -50,8 +50,10 @@
     <Compile Include="Filter\Item.cs" />
     <Compile Include="LoadConfigurationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SectionToProviderConverterTests.cs" />
+    <Compile Include="SimpleTestSection.cs" />
     <Compile Include="TestEnum.cs" />
-    <Compile Include="TestSection.cs" />
+    <Compile Include="ComplexTestSection.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NConfig.Windsor\NConfig.Windsor.csproj">

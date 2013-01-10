@@ -20,22 +20,22 @@ namespace NConfig.Tests
                 .Register(Component.For<IService>().Instance(new ServiceImpl(2)).Named("2"));
             
 
-            Section section = Section.Create().FromType<TestSection>()
-                .AddParameter(Parameter.Create().FromExpression<TestSection, int>(x => x.Num)
+            Section section = Section.Create().FromType<ComplexTestSection>()
+                .AddParameter(Parameter.Create().FromExpression<ComplexTestSection, int>(x => x.Num)
                     .AddValue(ParameterValue.Create("1")
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
                     .AddValue(ParameterValue.Create("2")
                         .WithTextMatchReference("environment", "production")
                         .WithTextMatchReference("appType", "onlineClient")))
-                .AddParameter(Parameter.Create().FromExpression<TestSection, string>(x => x.Name)
+                .AddParameter(Parameter.Create().FromExpression<ComplexTestSection, string>(x => x.Name)
                     .AddValue(ParameterValue.Create("name 1")
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
                     .AddValue(ParameterValue.Create("name 2")
                         .WithTextMatchReference("environment", "production")
                         .WithTextMatchReference("appType", "onlineClient")))
-                .AddParameter(Parameter.Create().FromExpression<TestSection, IList<int>>(x => x.Numbers)
+                .AddParameter(Parameter.Create().FromExpression<ComplexTestSection, IList<int>>(x => x.Numbers)
                     .AddValue(ParameterValue.Create("1")
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
@@ -48,7 +48,7 @@ namespace NConfig.Tests
                     .AddValue(ParameterValue.Create("2")
                         .WithTextMatchReference("environment", "production")
                         .WithTextMatchReference("appType", "onlineClient")))
-                .AddParameter(Parameter.Create().FromExpression<TestSection, IEnumerable<int>>(x => x.EnumerableNumbers)
+                .AddParameter(Parameter.Create().FromExpression<ComplexTestSection, IEnumerable<int>>(x => x.EnumerableNumbers)
                     .AddValue(ParameterValue.Create("1")
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
@@ -61,11 +61,11 @@ namespace NConfig.Tests
                     .AddValue(ParameterValue.Create("2")
                         .WithTextMatchReference("environment", "production")
                         .WithTextMatchReference("appType", "onlineClient")))
-                .AddParameter(Parameter.Create().FromExpression<TestSection, TestEnum>(x => x.EnumValue)
+                .AddParameter(Parameter.Create().FromExpression<ComplexTestSection, TestEnum>(x => x.EnumValue)
                     .AddValue(ParameterValue.Create("Value1")
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer")))
-                .AddParameter(Parameter.Create().FromExpression<TestSection, IDictionary<int, string>>(x => x.Dictionary)
+                .AddParameter(Parameter.Create().FromExpression<ComplexTestSection, IDictionary<int, string>>(x => x.Dictionary)
                     .AddValue(ParameterValue.Create("1:one")
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
@@ -78,11 +78,11 @@ namespace NConfig.Tests
                     .AddValue(ParameterValue.Create("4:four")
                         .WithTextMatchReference("environment", "production")
                         .WithTextMatchReference("appType", "onlineClient")))
-                .AddParameter(Parameter.Create().FromExpression<TestSection, IService>(x => x.SVC).WithTranslator("Windsor")
+                .AddParameter(Parameter.Create().FromExpression<ComplexTestSection, IService>(x => x.SVC).WithTranslator("Windsor")
                     .AddValue(ParameterValue.Create(string.Empty)
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer")))
-                .AddParameter(Parameter.Create().FromExpression<TestSection, IEnumerable<IService>>(x => x.SVCs).WithTranslator("Windsor")
+                .AddParameter(Parameter.Create().FromExpression<ComplexTestSection, IEnumerable<IService>>(x => x.SVCs).WithTranslator("Windsor")
                     .AddValue(ParameterValue.Create("1")
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
@@ -101,7 +101,7 @@ namespace NConfig.Tests
                 .AddSection(section)
             );
 
-            var testSection = svc.GetSection<TestSection>();
+            var testSection = svc.GetSection<ComplexTestSection>();
             Assert.IsNotNull(testSection);
             Assert.IsNotNull(testSection.Name);
             Assert.IsNotNull(testSection.Num);
@@ -136,7 +136,7 @@ namespace NConfig.Tests
                 );
 
 
-            var section = svc.GetSection<TestSection>();
+            var section = svc.GetSection<ComplexTestSection>();
             Assert.IsNotNull(section);
             Assert.IsNotNull(section.Name);
             Assert.IsNotNull(section.Num);

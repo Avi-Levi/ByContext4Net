@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigurationDataProviders\IConfigurationDataProvider.cs" />
+    <Compile Include="Exceptions\SessionToProviderConvertionFailed.cs" />
+    <Compile Include="Exceptions\InvalidParameterConfiguration.cs" />
     <Compile Include="Exceptions\NConfigException.cs" />
     <Compile Include="Exceptions\TypeTranslatorNotRegisteredException.cs" />
     <Compile Include="Filters\Evaluation\ConditionEvaluation.cs" />
@@ -61,6 +63,8 @@
     <Compile Include="Filters\Conditions\IFilterCondition.cs" />
     <Compile Include="IFilterConditionFactory.cs" />
     <Compile Include="IHaveFilterConditions.cs" />
+    <Compile Include="INConfigSettings.cs" />
+    <Compile Include="NConfigSettings.cs" />
     <Compile Include="ParameterValueProviders\IParameterValueProvider.cs" />
     <Compile Include="ResultBuilder\IResultBuilder.cs" />
     <Compile Include="RuntimeContextProviders\AppConfigRuntimeContextProvider.cs" />
@@ -71,7 +75,7 @@
     <Compile Include="Configure.cs" />
     <Compile Include="Exceptions\GetSectionException.cs" />
     <Compile Include="Exceptions\ConfigurationPropertyException.cs" />
-    <Compile Include="Extensions\ConfigureExtensions.cs" />
+    <Compile Include="Extensions\NConfigSettingsExtensions.cs" />
     <Compile Include="ModelBinders\IModelBinder.cs" />
     <Compile Include="Filters\Policy\IFilterPolicy.cs" />
     <Compile Include="ConfigurationHelper.cs" />

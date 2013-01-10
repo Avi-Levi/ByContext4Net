@@ -1,57 +1,66 @@
 ﻿<RecentFiles>
   <RecentFiles>
-    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Evaluation/f:ConditionEvaluationContext.cs" caret="719" fromTop="17" />
-    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Extensions/f:Extensions.cs" caret="1662" fromTop="30" />
-    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Extensions/f:ConfigureExtensions.cs" caret="2124" fromTop="24" />
-    <File id="A372D577-2635-47D3-8B83-FDD2A530EB28/f:Configuration.xml" caret="2755" fromTop="49" />
-    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:ConfigureXmlExtensions.cs" caret="15" fromTop="1" />
-    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Model/f:FilterCondition.cs" caret="410" fromTop="14" />
-    <File id="66734166-065A-4D0C-8505-C563205D6408/f:TestSection.cs" caret="97" fromTop="4" />
-    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:SectionProviders/f:SectionProvider.cs" caret="212" fromTop="8" />
-    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ConfigurationDataProviders/f:ConvertFromSectionDataProvider.cs" caret="785" fromTop="21" />
-    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ConfigurationDataProviders/f:SectionToProviderConverter.cs" caret="461" fromTop="15" />
-    <File id="66734166-065A-4D0C-8505-C563205D6408/f:Negate.xml" caret="411" fromTop="11" />
-    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ConfigurationDataProviders/f:ParameterToParameterValueProviderConverter.cs" caret="1880" fromTop="17" />
-    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:StringToValueTranslator/d:SerializeStringToValueTranslator/f:Translators.cs" caret="1497" fromTop="24" />
-    <File id="66734166-065A-4D0C-8505-C563205D6408/f:NegateTest.cs" caret="930" fromTop="22" />
-    <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/d:Filter/f:ContextWithOneItem.cs" caret="1210" fromTop="32" />
-    <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/f:TestConfiguration.xml" caret="0" fromTop="0" />
-    <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/f:LoadConfigurationTest.cs" caret="8165" fromTop="28" />
     <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Evaluation/f:ConditionEvaluation.cs" caret="576" fromTop="14" />
-    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:XmlLoader.cs" caret="656" fromTop="18" />
     <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Conditions/d:TextMatch/f:TextMatchConditionFactory.cs" caret="539" fromTop="14" />
     <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Evaluation/f:ItemEvaluation.cs" caret="187" fromTop="5" />
     <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/d:Filter/f:Item.cs" caret="453" fromTop="15" />
-    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Conditions/d:TextMatch/f:TextMatchCondition.cs" caret="331" fromTop="10" />
     <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/d:Filter/f:ContextWithTwoItems.cs" caret="7327" fromTop="30" />
-    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Policy/f:BestMatchFilterPolicy.cs" caret="719" fromTop="17" />
-    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Policy/f:SelectAllRelevantFilterPolicy.cs" caret="743" fromTop="21" />
     <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ParameterValueProviders/f:ParameterValueProvider.cs" caret="1415" fromTop="15" />
     <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Evaluation/f:FilterConditionsEvaluator.cs" caret="1263" fromTop="10" />
+    <File id="51955F6C-3613-402D-B130-97EB2003E362/f:WindsorTranslatorProvider.cs" caret="163" fromTop="5" />
+    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:StringToValueTranslator/f:IStringToValueTranslatorProvider.cs" caret="442" fromTop="12" />
+    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:StringToValueTranslator/f:BaseStringToValueTranslator.cs" caret="72" fromTop="2" />
+    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:StringToValueTranslator/d:SerializeStringToValueTranslator/f:Translators.cs" caret="131" fromTop="4" />
+    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Extensions/f:ConfigureExtensions.cs" caret="2019" fromTop="26" />
+    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ConfigurationDataProviders/f:ParameterToParameterValueProviderConverter.cs" caret="3403" fromTop="26" />
+    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Policy/f:IFilterPolicy.cs" caret="141" fromTop="5" />
+    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Policy/f:BestMatchFilterPolicy.cs" caret="1282" fromTop="31" />
+    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Policy/f:SelectAllRelevantFilterPolicy.cs" caret="917" fromTop="27" />
+    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Model/f:Parameter.cs" caret="762" fromTop="26" />
+    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Conditions/d:TextMatch/f:TextMatchCondition.cs" caret="140" fromTop="4" />
+    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Conditions/f:IFilterCondition.cs" caret="454" fromTop="16" />
+    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/f:Configure.cs" caret="4083" fromTop="26" />
+    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Model/f:FilterCondition.cs" caret="410" fromTop="14" />
+    <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/f:LoadConfigurationTest.cs" caret="8110" fromTop="29" />
+    <File id="66734166-065A-4D0C-8505-C563205D6408/f:NegateTest.cs" caret="121" fromTop="7" />
+    <File id="66734166-065A-4D0C-8505-C563205D6408/f:Negate.xml" caret="505" fromTop="16" />
+    <File id="3FB9A77D-775C-4E6E-8AE9-DD9CA42E7E3B/f:ConfigurationTest.cs" caret="1137" fromTop="30" />
+    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:ConfigurationDataProviders/f:ConvertFromSectionDataProvider.cs" caret="900" fromTop="25" />
+    <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/f:TestConfiguration.xml" caret="0" fromTop="0" />
+    <File id="66734166-065A-4D0C-8505-C563205D6408/f:ExportXmlTest.cs" caret="583" fromTop="20" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:ConfigureXmlExtensions.cs" caret="1622" fromTop="45" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:XmlLoader.cs" caret="1975" fromTop="35" />
   </RecentFiles>
   <RecentEdits>
-    <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/d:Filter/f:ContextWithTwoItems.cs" caret="13895" fromTop="47" />
-    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Policy/f:BestMatchFilterPolicy.cs" caret="706" fromTop="10" />
-    <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/f:TestConfiguration.xml" caret="67" fromTop="2" />
-    <File id="66734166-065A-4D0C-8505-C563205D6408/f:TestSection.cs" caret="97" fromTop="4" />
-    <File id="66734166-065A-4D0C-8505-C563205D6408/f:Negate.xml" caret="546" fromTop="15" />
-    <File id="66734166-065A-4D0C-8505-C563205D6408/f:Negate.xml" caret="205" fromTop="5" />
-    <File id="66734166-065A-4D0C-8505-C563205D6408/f:Negate.xml" caret="360" fromTop="9" />
-    <File id="66734166-065A-4D0C-8505-C563205D6408/f:NegateTest.cs" caret="44" fromTop="2" />
-    <File id="66734166-065A-4D0C-8505-C563205D6408/f:NegateTest.cs" caret="922" fromTop="30" />
-    <File id="66734166-065A-4D0C-8505-C563205D6408/f:NegateTest.cs" caret="922" fromTop="21" />
-    <File id="66734166-065A-4D0C-8505-C563205D6408/f:NegateTest.cs" caret="911" fromTop="13" />
-    <File id="66734166-065A-4D0C-8505-C563205D6408/f:NegateTest.cs" caret="911" fromTop="20" />
-    <File id="66734166-065A-4D0C-8505-C563205D6408/f:Negate.xml" caret="494" fromTop="14" />
-    <File id="66734166-065A-4D0C-8505-C563205D6408/f:NegateTest.cs" caret="922" fromTop="21" />
-    <File id="66734166-065A-4D0C-8505-C563205D6408/f:NegateTest.cs" caret="641" fromTop="16" />
-    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Conditions/d:TextMatch/f:TextMatchConditionFactory.cs" caret="516" fromTop="11" />
-    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Evaluation/f:FilterConditionsEvaluator.cs" caret="2131" fromTop="30" />
-    <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/d:Filter/f:ContextWithOneItem.cs" caret="53" fromTop="1" />
     <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/d:Filter/f:ContextWithTwoItems.cs" caret="6417" fromTop="23" />
     <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/d:Filter/f:ContextWithTwoItems.cs" caret="6812" fromTop="21" />
     <File id="214DC7EA-BC3B-41A7-A03A-2F6033B416A7/d:Filter/f:ContextWithTwoItems.cs" caret="7325" fromTop="30" />
     <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Evaluation/f:FilterConditionsEvaluator.cs" caret="1997" fromTop="28" />
     <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Evaluation/f:FilterConditionsEvaluator.cs" caret="1786" fromTop="23" />
+    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Policy/f:SelectAllRelevantFilterPolicy.cs" caret="839" fromTop="27" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:XmlLoader.cs" caret="1904" fromTop="28" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:ConfigureXmlExtensions.cs" caret="1788" fromTop="47" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:ConfigureXmlExtensions.cs" caret="1839" fromTop="44" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:ConfigureXmlExtensions.cs" caret="2188" fromTop="44" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:XmlLoader.cs" caret="2085" fromTop="20" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:XmlLoader.cs" caret="630" fromTop="8" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:XmlLoader.cs" caret="2085" fromTop="37" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:XmlLoader.cs" caret="2085" fromTop="13" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:XmlLoader.cs" caret="5808" fromTop="25" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:XmlLoader.cs" caret="6549" fromTop="42" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:XmlLoader.cs" caret="2085" fromTop="17" />
+    <File id="E03FCBFB-4EE1-4A86-9703-8871AB2BE179/d:Filters/d:Conditions/f:IFilterCondition.cs" caret="454" fromTop="16" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:XmlLoader.cs" caret="6959" fromTop="25" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:XmlLoader.cs" caret="2085" fromTop="23" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:XmlLoader.cs" caret="2122" fromTop="26" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:XmlLoader.cs" caret="4283" fromTop="19" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:XmlLoader.cs" caret="2093" fromTop="20" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:XmlLoader.cs" caret="4837" fromTop="29" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:ConfigureXmlExtensions.cs" caret="1645" fromTop="45" />
+    <File id="66734166-065A-4D0C-8505-C563205D6408/f:NegateTest.cs" caret="22" fromTop="0" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:XmlLoader.cs" caret="2001" fromTop="35" />
+    <File id="66734166-065A-4D0C-8505-C563205D6408/f:Negate.xml" caret="0" fromTop="0" />
+    <File id="66734166-065A-4D0C-8505-C563205D6408/f:ExportXmlTest.cs" caret="560" fromTop="17" />
+    <File id="C44ACC8C-5434-4663-A1F5-20FB4CBE2E69/f:XmlLoader.cs" caret="1772" fromTop="29" />
   </RecentEdits>
 </RecentFiles>

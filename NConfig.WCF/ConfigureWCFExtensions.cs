@@ -5,7 +5,7 @@ namespace NConfig.WCF
 {
     public static class ConfigureWCFExtensions
     {
-        public static Configure AddFromRemoteWCFService(this Configure source)
+        public static INConfigSettings AddFromRemoteWCFService(this INConfigSettings source)
         {
             source.AddConfigurationDataProvider(new ConvertFromSectionDataProvider(() =>
                 {

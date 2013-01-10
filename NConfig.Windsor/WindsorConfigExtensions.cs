@@ -5,12 +5,12 @@ namespace NConfig
 {
     public static class WindsorConfigExtensions
     {
-        public static Configure AddWindsorTranslatorProvider(this Configure source, IWindsorContainer container)
+        public static INConfigSettings AddWindsorTranslatorProvider(this INConfigSettings source, IWindsorContainer container)
         {
             source.AddTranslatorProvider(WindsorTranslatorProvider.ProviderKey, new WindsorTranslatorProvider(container));
             return source;
         }
-        public static Configure AddWindsorTranslatorProvider(this Configure source)
+        public static INConfigSettings AddWindsorTranslatorProvider(this INConfigSettings source)
         {
             return source.AddWindsorTranslatorProvider(new WindsorContainer());
         }

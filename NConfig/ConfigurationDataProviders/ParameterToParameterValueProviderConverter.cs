@@ -15,42 +15,42 @@ namespace NConfig.ConfigurationDataProviders
     {
         private readonly ConfigurationHelper _helper = new ConfigurationHelper();
 
-        public IParameterValueProvider Convert(Parameter parameter, Configure configure)
+        public IParameterValueProvider Convert(Parameter parameter, INConfigSettings settings)
         {
             var parameterType = Type.GetType(parameter.TypeName, true);
 
-            var policy = this.GetFilterPolicy(parameter, parameterType, configure);
+            var policy = this.GetFilterPolicy(parameter, parameterType, settings);
 
             var required = this.GetRequired(parameter);
 
             var parameterValueType = this.DetermineParameterValueType(parameterType);
 
-            var translator = this.GetTranslator(parameter, parameterValueType, configure);
+            var translator = this.GetTranslator(parameter, parameterValueType, settings);
 
-            IEnumerable<IValueProvider> valueProviders = this.BuildValueProviders(parameter.Values,translator,configure);
+            IEnumerable<IValueProvider> valueProviders = this.BuildValueProviders(parameter.Values,translator,settings);
 
-            var resultBuilder = configure.ResultBuilderProvider.Get(parameterType);
+            var resultBuilder = settings.ResultBuilderProvider.Get(parameterType);
 
             IParameterValueProvider parameterValueProvider = new ParameterValueProvider
-                (valueProviders, policy, resultBuilder,configure.FilterConditionsEvaluator, required, parameter.Name);
+                (valueProviders, policy, resultBuilder,settings.FilterConditionsEvaluator, required, parameter.Name);
 
             return parameterValueProvider;
         }
 
-        private IEnumerable<IValueProvider> BuildValueProviders(IEnumerable<ParameterValue> values, IStringToValueTranslator translator, Configure configure)
+        private IEnumerable<IValueProvider> BuildValueProviders(IEnumerable<ParameterValue> values, IStringToValueTranslator translator, INConfigSettings settings)
         {
             foreach (var parameterValue in values)
             {
-                IEnumerable<IFilterCondition> filterConditions = this.TranslateFilterConditions(parameterValue.FilterConditions, configure);
+                IEnumerable<IFilterCondition> filterConditions = this.TranslateFilterConditions(parameterValue.FilterConditions, settings);
                 yield return new TranslateFromStringValueProvider(translator, parameterValue.Value, filterConditions.ToArray());
             }
         }
 
-        private IEnumerable<IFilterCondition> TranslateFilterConditions(IEnumerable<FilterCondition> filterConditions, Configure configure)
+        private IEnumerable<IFilterCondition> TranslateFilterConditions(IEnumerable<FilterCondition> filterConditions, INConfigSettings settings)
         {
             foreach(var filterCondition in filterConditions)
             {
-                IFilterConditionFactory factory = this._helper.GetConfigurationProperty(filterCondition, x => x.ConditionName, () => configure.FilterConditionFactories[configure.DefaultFilterConditionName], x => configure.FilterConditionFactories[x]);
+                IFilterConditionFactory factory = this._helper.GetConfigurationProperty(filterCondition, x => x.ConditionName, () => settings.FilterConditionFactories[settings.DefaultFilterConditionName], x => settings.FilterConditionFactories[x]);
                 yield return factory.Create(filterCondition.Properties);
             }
         }
@@ -62,32 +62,32 @@ namespace NConfig.ConfigurationDataProviders
             return required;
         }
 
-        private IFilterPolicy GetFilterPolicy(Parameter parameter, Type parameterType, Configure configure)
+        private IFilterPolicy GetFilterPolicy(Parameter parameter, Type parameterType, INConfigSettings settings)
         {
             IFilterPolicy filterPolicy = this._helper.GetConfigurationProperty<Parameter, IFilterPolicy>
                 (parameter,x=>x.PolicyName,
                 () =>
                 {
-                    if (configure.ResultBuilderProvider.IsTypeIsSupportedCollection(parameterType))
+                    if (settings.ResultBuilderProvider.IsTypeIsSupportedCollection(parameterType))
                     {
-                        return configure.FilterPolicies[Configure.DefaultCollectionFilterPolicyName];
+                        return settings.FilterPolicies[Configure.DefaultCollectionFilterPolicyName];
                     }
                     else
                     {
-                        return configure.FilterPolicies[Configure.DefaultSingleValueFilterPolicyName];
+                        return settings.FilterPolicies[Configure.DefaultSingleValueFilterPolicyName];
                     }
                 }
                     ,
-                x => configure.FilterPolicies[x]);
+                x => settings.FilterPolicies[x]);
 
             return filterPolicy;
         }
 
-        private IStringToValueTranslator GetTranslator(Parameter parameter, Type parameterValueType, Configure configure)
+        private IStringToValueTranslator GetTranslator(Parameter parameter, Type parameterValueType, INConfigSettings settings)
         {
             var translatorProvider = this._helper.GetConfigurationProperty<Parameter, IStringToValueTranslatorProvider>
-                (parameter,x=>x.Translator,() => configure.TranslatorProviders[configure.DefaultRawValueTranslatorName],
-                x => configure.TranslatorProviders[x]);
+                (parameter,x=>x.Translator,() => settings.TranslatorProviders[settings.DefaultRawValueTranslatorName],
+                x => settings.TranslatorProviders[x]);
 
             return translatorProvider.Get(parameterValueType);
         }

@@ -4,7 +4,7 @@ namespace NConfig.StringToValueTranslator.SerializeStringToValueTranslator
 {
     public static class SerializeStringToValueExtensions
     {
-        public static Configure AddSerializeRawStringTranslator<T>(this Configure source, Func<string, T> translateMethod)
+        public static INConfigSettings AddSerializeRawStringTranslator<T>(this INConfigSettings source, Func<string, T> translateMethod)
         {
             SerializeStringToValueTranslatorProvider provider = GetProvider(source);
 
@@ -14,7 +14,7 @@ namespace NConfig.StringToValueTranslator.SerializeStringToValueTranslator
             return source;
         }
 
-        private static SerializeStringToValueTranslatorProvider GetProvider(Configure source)
+        private static SerializeStringToValueTranslatorProvider GetProvider(INConfigSettings source)
         {
             return source.GetTranslatorProvider<SerializeStringToValueTranslatorProvider>(SerializeStringToValueTranslatorProvider.ProviderKey);
         }
