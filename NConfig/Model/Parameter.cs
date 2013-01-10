@@ -11,7 +11,7 @@ namespace NConfig.Model
     [DataContract]
     public class Parameter
     {
-        private Parameter()
+        public Parameter()
         {
             this.Values = new List<ParameterValue>();
         }
@@ -29,10 +29,5 @@ namespace NConfig.Model
 
         [DataMember]
         public IList<ParameterValue> Values { get; set; }
-
-        public static Parameter Create()
-        {
-            return new Parameter();
-        }
     }
 }

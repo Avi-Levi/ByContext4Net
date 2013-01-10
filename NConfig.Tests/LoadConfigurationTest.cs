@@ -21,72 +21,72 @@ namespace NConfig.Tests
             
 
             Section section = Section.Create().FromType<ComplexTestSection>()
-                .AddParameter(Parameter.Create().FromExpression<ComplexTestSection, int>(x => x.Num)
-                    .AddValue(ParameterValue.Create("1")
+                .AddParameter(new Parameter().FromExpression<ComplexTestSection, int>(x => x.Num)
+                    .AddValue(new ParameterValue{Value = "1"}
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
-                    .AddValue(ParameterValue.Create("2")
+                    .AddValue(new ParameterValue{Value = "2"}
                         .WithTextMatchReference("environment", "production")
                         .WithTextMatchReference("appType", "onlineClient")))
-                .AddParameter(Parameter.Create().FromExpression<ComplexTestSection, string>(x => x.Name)
-                    .AddValue(ParameterValue.Create("name 1")
+                .AddParameter(new Parameter().FromExpression<ComplexTestSection, string>(x => x.Name)
+                    .AddValue(new ParameterValue{Value = "name 1"}
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
-                    .AddValue(ParameterValue.Create("name 2")
+                    .AddValue(new ParameterValue{Value = "name 2"}
                         .WithTextMatchReference("environment", "production")
                         .WithTextMatchReference("appType", "onlineClient")))
-                .AddParameter(Parameter.Create().FromExpression<ComplexTestSection, IList<int>>(x => x.Numbers)
-                    .AddValue(ParameterValue.Create("1")
+                .AddParameter(new Parameter().FromExpression<ComplexTestSection, IList<int>>(x => x.Numbers)
+                    .AddValue(new ParameterValue{Value = "1"}
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
-                    .AddValue(ParameterValue.Create("2")
+                    .AddValue(new ParameterValue{Value = "2"}
                         .WithTextMatchReference("environment", "production")
                         .WithTextMatchReference("appType", "onlineClient"))
-                    .AddValue(ParameterValue.Create("1")
+                    .AddValue(new ParameterValue{Value = "1"}
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
-                    .AddValue(ParameterValue.Create("2")
+                    .AddValue(new ParameterValue{Value = "2"}
                         .WithTextMatchReference("environment", "production")
                         .WithTextMatchReference("appType", "onlineClient")))
-                .AddParameter(Parameter.Create().FromExpression<ComplexTestSection, IEnumerable<int>>(x => x.EnumerableNumbers)
-                    .AddValue(ParameterValue.Create("1")
+                .AddParameter(new Parameter().FromExpression<ComplexTestSection, IEnumerable<int>>(x => x.EnumerableNumbers)
+                    .AddValue(new ParameterValue{Value = "1"}
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
-                    .AddValue(ParameterValue.Create("2")
+                    .AddValue(new ParameterValue{Value = "2"}
                         .WithTextMatchReference("environment", "production")
                         .WithTextMatchReference("appType", "onlineClient"))
-                    .AddValue(ParameterValue.Create("1")
+                    .AddValue(new ParameterValue{Value = "1"}
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
-                    .AddValue(ParameterValue.Create("2")
+                    .AddValue(new ParameterValue{Value = "2"}
                         .WithTextMatchReference("environment", "production")
                         .WithTextMatchReference("appType", "onlineClient")))
-                .AddParameter(Parameter.Create().FromExpression<ComplexTestSection, TestEnum>(x => x.EnumValue)
-                    .AddValue(ParameterValue.Create("Value1")
+                .AddParameter(new Parameter().FromExpression<ComplexTestSection, TestEnum>(x => x.EnumValue)
+                    .AddValue(new ParameterValue{Value = "Value1"}
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer")))
-                .AddParameter(Parameter.Create().FromExpression<ComplexTestSection, IDictionary<int, string>>(x => x.Dictionary)
-                    .AddValue(ParameterValue.Create("1:one")
+                .AddParameter(new Parameter().FromExpression<ComplexTestSection, IDictionary<int, string>>(x => x.Dictionary)
+                    .AddValue(new ParameterValue{Value = "1:one"}
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
-                    .AddValue(ParameterValue.Create("2:two")
+                    .AddValue(new ParameterValue{Value = "2:two"}
                         .WithTextMatchReference("environment", "production")
                         .WithTextMatchReference("appType", "onlineClient"))
-                    .AddValue(ParameterValue.Create("3:three")
+                    .AddValue(new ParameterValue{Value = "3:three"}
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
-                    .AddValue(ParameterValue.Create("4:four")
+                    .AddValue(new ParameterValue{Value = "4:four"}
                         .WithTextMatchReference("environment", "production")
                         .WithTextMatchReference("appType", "onlineClient")))
-                .AddParameter(Parameter.Create().FromExpression<ComplexTestSection, IService>(x => x.SVC).WithTranslator("Windsor")
-                    .AddValue(ParameterValue.Create(string.Empty)
+                .AddParameter(new Parameter().FromExpression<ComplexTestSection, IService>(x => x.SVC).WithTranslator("Windsor")
+                    .AddValue(new ParameterValue{Value = string.Empty}
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer")))
-                .AddParameter(Parameter.Create().FromExpression<ComplexTestSection, IEnumerable<IService>>(x => x.SVCs).WithTranslator("Windsor")
-                    .AddValue(ParameterValue.Create("1")
+                .AddParameter(new Parameter().FromExpression<ComplexTestSection, IEnumerable<IService>>(x => x.SVCs).WithTranslator("Windsor")
+                    .AddValue(new ParameterValue{Value = "1"}
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
-                    .AddValue(ParameterValue.Create("2")
+                    .AddValue(new ParameterValue { Value = "2" }
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
                         );
