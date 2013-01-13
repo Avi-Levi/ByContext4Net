@@ -126,9 +126,11 @@ namespace NConfig.XML
 
         private Section BuildSectionFromNode(XElement sectionNode)
         {
-            Section section = Section.Create();
-            section.TypeName = sectionNode.GetAttributeValueOrThrow(TypeNameAttribute);
-            section.ModelBinder = sectionNode.GetAttributeValueOrNull(ModelBinderName);
+            Section section = new Section
+                {
+                    TypeName = sectionNode.GetAttributeValueOrThrow(TypeNameAttribute),
+                    ModelBinder = sectionNode.GetAttributeValueOrNull(ModelBinderName)
+                };
 
             foreach (XElement parameterNode in sectionNode.Elements(ParameterName))
             {

@@ -20,7 +20,7 @@ namespace NConfig.Tests
                 .Register(Component.For<IService>().Instance(new ServiceImpl(2)).Named("2"));
             
 
-            Section section = Section.Create().FromType<ComplexTestSection>()
+            Section section = new Section().FromType<ComplexTestSection>()
                 .AddParameter(new Parameter().FromExpression<ComplexTestSection, int>(x => x.Num)
                     .AddValue(new ParameterValue{Value = "1"}
                         .WithTextMatchReference("environment", "development")

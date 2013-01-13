@@ -12,11 +12,11 @@ namespace NConfig.Tests
         [Test]
         public void ConvertSection()
         {
-            Section section = Section.Create();
-            section.TypeName = typeof (SimpleTestSection).AssemblyQualifiedName;
-            section.ModelBinder = null;
-            section.Parameters = new Dictionary<string, Parameter>();
-
+            Section section = new Section
+                {
+                    TypeName = typeof (SimpleTestSection).AssemblyQualifiedName,
+                    ModelBinder = null,
+                };
             var strPropParam = new Parameter
                 {
                     Name = "StrProp",

@@ -6,14 +6,9 @@ namespace NConfig.Model
     [DataContract]
     public class Section
     {
-        private Section()
+        public Section()
         {
             this.Parameters = new Dictionary<string, Parameter>();
-        }
-
-        public static Section Create()
-        {
-            return new Section();
         }
 
         [DataMember]
@@ -21,6 +16,6 @@ namespace NConfig.Model
         [DataMember]
         public string ModelBinder { get; set; }
         [DataMember]
-        public IDictionary<string, Parameter> Parameters { get; set; }
+        public IDictionary<string, Parameter> Parameters { get; private set; }
     }
 }
