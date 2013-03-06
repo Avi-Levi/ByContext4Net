@@ -44,6 +44,7 @@
     <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\ConvertSectionException.cs" />
     <Compile Include="ConfigurationDataProviders\IConfigurationDataProvider.cs" />
     <Compile Include="Exceptions\SessionToProviderConvertionFailed.cs" />
     <Compile Include="Exceptions\InvalidParameterConfiguration.cs" />

@@ -89,9 +89,7 @@ D:\Source\NConfig\Client\bin\Debug\NConfig.XML.dll
 D:\Source\NConfig\Client\bin\Debug\Common.pdb
 D:\Source\NConfig\Client\bin\Debug\NConfig.WCF.pdb
 D:\Source\NConfig\Client\bin\Debug\NConfig.pdb
-D:\Source\NConfig\Client\bin\Debug\Castle.Core.pdb
 D:\Source\NConfig\Client\bin\Debug\Castle.Core.xml
-D:\Source\NConfig\Client\bin\Debug\Castle.Windsor.pdb
 D:\Source\NConfig\Client\bin\Debug\Castle.Windsor.xml
 D:\Source\NConfig\Client\bin\Debug\NConfig.XML.pdb
 D:\Source\NConfig\Client\obj\x86\Debug\Client.csprojResolveAssemblyReference.cache
@@ -100,3 +98,5 @@ D:\Source\NConfig\Client\obj\x86\Debug\Client.Properties.Resources.resources
 D:\Source\NConfig\Client\obj\x86\Debug\Client.Views.Product.ProductView.resources
 D:\Source\NConfig\Client\obj\x86\Debug\Client.Shell.resources
 D:\Source\NConfig\Client\obj\x86\Debug\Client.csproj.GenerateResource.Cache
+D:\Source\NConfig\Client\bin\Debug\Castle.Core.pdb
+D:\Source\NConfig\Client\bin\Debug\Castle.Windsor.pdb

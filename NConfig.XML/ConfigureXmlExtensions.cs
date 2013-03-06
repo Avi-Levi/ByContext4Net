@@ -24,12 +24,12 @@ namespace NConfig
 
         public static string GetAttributeValueOrNull(this XElement source, string attributeName)
         {
-            if (source.Attribute(attributeName) != null)
+            var result = source.GetAttributeValueOrNullByExactName(attributeName);
+            if (result == null)
             {
-                return source.Attribute(attributeName).Value;
+                result = source.GetAttributeValueOrNullByExactName(attributeName.ToLower());
             }
-
-            return null;
+            return result;
         }
 
         public static string GetAttributeValueOrThrow(this XElement source, string attributeName)
@@ -60,6 +60,16 @@ namespace NConfig
             {
                 throw new ArgumentException(string.Format("Property {0} cannot be null ", attributeName));
             }
+        }
+
+        private static string GetAttributeValueOrNullByExactName(this XElement source, string attributeName)
+        {
+            if (source.Attribute(attributeName) != null)
+            {
+                return source.Attribute(attributeName).Value;
+            }
+
+            return null;
         }
     }
 }

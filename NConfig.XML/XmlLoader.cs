@@ -170,7 +170,7 @@ namespace NConfig.XML
         {
             var parameterValue = new ParameterValue
                 {
-                    Value = valueNode.Attribute(ValueNodeName).Value
+                    Value = valueNode.GetAttributeValueOrThrow(ValueNodeName)
                 };
 
             foreach (XElement conditionNode in valueNode.Elements())

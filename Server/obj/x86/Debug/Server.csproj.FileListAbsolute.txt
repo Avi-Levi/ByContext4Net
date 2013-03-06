@@ -96,11 +96,11 @@ D:\Source\NConfig\Server\bin\Debug\NConfig.WCF.pdb
 D:\Source\NConfig\Server\bin\Debug\NConfig.Windsor.pdb
 D:\Source\NConfig\Server\bin\Debug\NConfig.XML.pdb
 D:\Source\NConfig\Server\bin\Debug\NConfig.pdb
-D:\Source\NConfig\Server\bin\Debug\Castle.Core.pdb
-D:\Source\NConfig\Server\bin\Debug\Castle.Core.xml
-D:\Source\NConfig\Server\bin\Debug\Castle.Windsor.pdb
-D:\Source\NConfig\Server\bin\Debug\Castle.Windsor.xml
 D:\Source\NConfig\Server\obj\x86\Debug\Server.csprojResolveAssemblyReference.cache
 D:\Source\NConfig\Server\obj\x86\Debug\Server.Host.resources
 D:\Source\NConfig\Server\obj\x86\Debug\Server.Properties.Resources.resources
 D:\Source\NConfig\Server\obj\x86\Debug\Server.csproj.GenerateResource.Cache
+D:\Source\NConfig\Server\bin\Debug\Castle.Core.xml
+D:\Source\NConfig\Server\bin\Debug\Castle.Windsor.xml
+D:\Source\NConfig\Server\bin\Debug\Castle.Core.pdb
+D:\Source\NConfig\Server\bin\Debug\Castle.Windsor.pdb

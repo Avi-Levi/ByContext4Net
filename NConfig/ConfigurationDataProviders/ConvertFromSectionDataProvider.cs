@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using NConfig.Exceptions;
 using NConfig.Model;
 using NConfig.SectionProviders;
 
@@ -23,10 +24,17 @@ namespace NConfig.ConfigurationDataProviders
 
             foreach (var section in this.GetMehtod())
             {
-                Type sectionType = Type.GetType(section.TypeName, false);
-                if (sectionType != null)
+                try
                 {
-                    result.Add(sectionType.FullName, converter.Convert(section, this.Settings));
+                    Type sectionType = Type.GetType(section.TypeName, false);
+                    if (sectionType != null)
+                    {
+                        result.Add(sectionType.FullName, converter.Convert(section, this.Settings));
+                    }
+                }
+                catch (Exception e)
+                {
+                    throw new ConvertSectionException(section,e);
                 }
             }
             return result;

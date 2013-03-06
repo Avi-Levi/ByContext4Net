@@ -56,7 +56,19 @@ namespace NConfig
         public IConfigurationService WithReference(string subjectName, string subjectValue)
         {
             IDictionary<string, string> result = this.RuntimeContext.Clone();
-            result.Add(subjectName, subjectValue);
+            result[subjectName] = subjectValue;
+
+            return new ConfigurationService(result, this.SectionsProviders);
+        }
+
+        public IConfigurationService WithReferences(params KeyValuePair<string,string>[]  references)
+        {
+            IDictionary<string, string> result = this.RuntimeContext.Clone();
+            foreach (var refItem in references)
+            {
+                result[refItem.Key] = refItem.Value;
+            }
+
             return new ConfigurationService(result, this.SectionsProviders);
         }
 

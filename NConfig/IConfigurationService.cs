@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace NConfig
 {
@@ -54,7 +55,7 @@ namespace NConfig
         TSection GetSection<TSection>(Type sectionType) where TSection : class;
 
         /// <summary>
-        /// Returns a new instance of <see cref="IConfigurationService"/> with the given context subject reference.
+        /// Returns a new instance of <see cref="IConfigurationService"/> with the given context subject reference, added to the existing context, overriding existing keys.
         /// <remarks>
         /// Intended to be used when a subject's value is not known at <see cref="IConfigurationService"/>'s creation time.
         /// </remarks>
@@ -63,6 +64,17 @@ namespace NConfig
         /// <param name="subjectValue">The reference's value.</param>
         /// <returns>New instance of <see cref="IConfigurationService"/> with the given context subject reference.</returns>
         IConfigurationService WithReference(string subjectName, string subjectValue);
+
+        /// <summary>
+        /// Returns a new instance of <see cref="IConfigurationService"/> with the given context references, added to the existing context, overriding existing keys.
+        /// <remarks>
+        /// Intended to be used when a subject's value is not known at <see cref="IConfigurationService"/>'s creation time.
+        /// </remarks>
+        /// </summary>
+        /// <param name="references">a collection of context references</param>
+        /// <returns>New instance of <see cref="IConfigurationService"/> with the given context subject reference.</returns>
+        IConfigurationService WithReferences(params KeyValuePair<string, string>[] references);
+        
         void AddReference(string subjectName, string subjectValue);
     }
 }
