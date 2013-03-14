@@ -20,5 +20,6 @@ namespace NConfig
         IDictionary<string, IFilterPolicy> FilterPolicies { get; }
         IFilterConditionsEvaluator FilterConditionsEvaluator { get; set; }
         ResultBuilderProvider ResultBuilderProvider { get; }
+        bool ThrowIfParameterMemberMissing { get; set; }
     }
 }

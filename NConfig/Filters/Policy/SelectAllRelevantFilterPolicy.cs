@@ -6,7 +6,7 @@ namespace NConfig.Filters.Policy
 {
     public class SelectAllRelevantFilterPolicy : IFilterPolicy
     {
-        public IEnumerable<ItemEvaluation> Filter(IEnumerable<ItemEvaluation> evaluatedItems)
+        public ItemEvaluation[] Filter(IEnumerable<ItemEvaluation> evaluatedItems)
         {
             return evaluatedItems.Where(IsRelevant).ToArray();
         }
@@ -27,10 +27,19 @@ namespace NConfig.Filters.Policy
 
         private bool IsRelevantToSubject(IGrouping<string, ConditionEvaluation> group)
         {
-            if (group.Any(x => x.RelationToContext == RelationToContextEnum.False))
+            var groupedByIsNegated = @group.GroupBy(x => x.Condition.Negate).ToArray();
+            var negatedConditions = groupedByIsNegated.SingleOrDefault(x => x.Key);
+            if (negatedConditions != null && negatedConditions.Any(x => x.RelationToContext == RelationToContextEnum.False))
             {
-                return group.Any(x => x.RelationToContext == RelationToContextEnum.True);
+                return false;
             }
+
+            var notNegatedConditions = groupedByIsNegated.SingleOrDefault(x => !x.Key);
+            if (notNegatedConditions != null && notNegatedConditions.Any(x => x.RelationToContext == RelationToContextEnum.False))
+            {
+                return notNegatedConditions.Any(x => x.RelationToContext == RelationToContextEnum.True);
+            }
+
             return true;
         }
     }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using NConfig.Filters.Conditions;
+using NConfig.Filters.Filter;
 using NConfig.Filters.Policy;
 using NConfig.Model;
 using NConfig.ParameterValueProviders;
@@ -32,7 +33,7 @@ namespace NConfig.ConfigurationDataProviders
             var resultBuilder = settings.ResultBuilderProvider.Get(parameterType);
 
             IParameterValueProvider parameterValueProvider = new ParameterValueProvider
-                (valueProviders, policy, resultBuilder,settings.FilterConditionsEvaluator, required, parameter.Name);
+                (valueProviders, resultBuilder, new Filter(policy, settings.FilterConditionsEvaluator), required, parameter.Name);
 
             return parameterValueProvider;
         }

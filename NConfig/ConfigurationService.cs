@@ -40,7 +40,7 @@ namespace NConfig
                 ISectionProvider provider = null;
                 if(!this.SectionsProviders.TryGetValue(sectionType.FullName, out provider))
                 {
-                    throw new InvalidOperationException("No configuration data was provided for section.");
+                    throw new SectionProviderConfigurationMissingException(sectionType);
                 }
                 return provider.Get(this.RuntimeContext);
             }
@@ -61,7 +61,7 @@ namespace NConfig
             return new ConfigurationService(result, this.SectionsProviders);
         }
 
-        public IConfigurationService WithReferences(params KeyValuePair<string,string>[]  references)
+        public IConfigurationService WithReferences(IDictionary<string, string> references)
         {
             IDictionary<string, string> result = this.RuntimeContext.Clone();
             foreach (var refItem in references)
@@ -74,7 +74,7 @@ namespace NConfig
 
         public void AddReference(string subjectName, string subjectValue)
         {
-            this.RuntimeContext.Add(subjectName,subjectValue);
+            this.RuntimeContext[subjectName] = subjectValue;
         }
 
         #endregion IConfigurationService members

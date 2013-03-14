@@ -20,9 +20,9 @@ namespace NConfig.SectionProviders
         public object Get(IDictionary<string, string> runtimeContext)
         {
             var values = this.ParameterValuesProviders
-                .Select(x => new { name = x.Key, value = x.Value.Get(runtimeContext) })
-                .Where(x => x.value != null);
-                
+                             .Select(x => new { name = x.Key, value = x.Value.Get(runtimeContext) })
+                             .Where(x => x.value != null);
+
             IDictionary<string, object> valuesDictionary = values.ToDictionary(x => x.name, x => x.value);
 
             return this.ModelBinder.Bind(this.SectionType, valuesDictionary);

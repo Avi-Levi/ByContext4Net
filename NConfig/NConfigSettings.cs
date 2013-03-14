@@ -29,6 +29,7 @@ namespace NConfig
             this.SetDefaultRawValueTranslatorName();
             this.SetDefaultFilterConditionName();
 
+            this.ThrowIfParameterMemberMissing = false;
         }
         public IDictionary<string, string> RuntimeContext { get; set; }
         public IList<IConfigurationDataProvider> ConfigurationDataProviders { get; private set; }
@@ -41,6 +42,7 @@ namespace NConfig
         public IDictionary<string, IFilterPolicy> FilterPolicies { get; private set; }
         public IFilterConditionsEvaluator FilterConditionsEvaluator { get; set; }
         public ResultBuilderProvider ResultBuilderProvider { get; private set; }
+        public bool ThrowIfParameterMemberMissing { get; set; }
 
         #region private methods
 

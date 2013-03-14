@@ -7,7 +7,7 @@ namespace NConfig.Filters.Conditions.TextMatch
         public static readonly string Name = "TextMatch";
 
         public string Subject { get; private set; }
-        private string Value { get; set; }
+        public string Value { get; set; }
         public bool Negate { get; private set; }
 
         public override string ToString()

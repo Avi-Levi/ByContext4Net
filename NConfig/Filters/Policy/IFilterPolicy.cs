@@ -5,6 +5,6 @@ namespace NConfig.Filters.Policy
 {
     public interface IFilterPolicy
     {
-        IEnumerable<ItemEvaluation> Filter(IEnumerable<ItemEvaluation> evaluatedItems);
+        ItemEvaluation[] Filter(IEnumerable<ItemEvaluation> evaluatedItems);
     }
 }

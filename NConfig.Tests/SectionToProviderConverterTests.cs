@@ -14,7 +14,7 @@ namespace NConfig.Tests
         {
             Section section = new Section
                 {
-                    TypeName = typeof (SimpleTestSection).AssemblyQualifiedName,
+                    TypeName = typeof (SimpleSection).AssemblyQualifiedName,
                     ModelBinder = null,
                 };
             var strPropParam = new Parameter
@@ -45,9 +45,9 @@ namespace NConfig.Tests
 
             var sectionInstance = sectionProvider.Get(new Dictionary<string, string>());
 
-            Assert.IsInstanceOf<SimpleTestSection>(sectionInstance);
-            Assert.AreEqual(11, ((SimpleTestSection)sectionInstance).IntProp);
-            Assert.AreEqual("aa", ((SimpleTestSection)sectionInstance).StrProp);
+            Assert.IsInstanceOf<SimpleSection>(sectionInstance);
+            Assert.AreEqual(11, ((SimpleSection)sectionInstance).IntProp);
+            Assert.AreEqual("aa", ((SimpleSection)sectionInstance).StrProp);
         }
     }
 }

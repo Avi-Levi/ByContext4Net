@@ -46,6 +46,8 @@
   <ItemGroup>
     <Compile Include="Exceptions\ConvertSectionException.cs" />
     <Compile Include="ConfigurationDataProviders\IConfigurationDataProvider.cs" />
+    <Compile Include="Exceptions\MemberNotFouldForParameter.cs" />
+    <Compile Include="Exceptions\SectionProviderConfigurationMissingException.cs" />
     <Compile Include="Exceptions\SessionToProviderConvertionFailed.cs" />
     <Compile Include="Exceptions\InvalidParameterConfiguration.cs" />
     <Compile Include="Exceptions\NConfigException.cs" />
@@ -56,8 +58,9 @@
     <Compile Include="Filters\Evaluation\FilterConditionsEvaluator.cs" />
     <Compile Include="Filters\Evaluation\IFilterConditionsEvaluator.cs" />
     <Compile Include="Filters\Evaluation\ItemEvaluation.cs" />
+    <Compile Include="Filters\Filter\IFilter.cs" />
     <Compile Include="Filters\Policy\BestMatchFilterPolicy.cs" />
-    <Compile Include="Exceptions\ItemsWithConflictingMatchingScoreException.cs" />
+    <Compile Include="Exceptions\ItemsWithConflictingHighestScoreException.cs" />
     <Compile Include="Filters\Evaluation\ItemWithScore.cs" />
     <Compile Include="Filters\Policy\SelectAllRelevantFilterPolicy.cs" />
     <Compile Include="Filters\Conditions\TextMatch\TextMatchCondition.cs" />

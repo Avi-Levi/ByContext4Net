@@ -152,13 +152,5 @@ namespace NConfig.Tests
             Assert.AreEqual(2, section.SVC.Get());
             Assert.AreEqual(1, section.SVCs.First().Get());
         }
-
-        [Test]
-        public void TestFile()
-        {
-            Configure.With(cfg =>
-                cfg.AddFromXmlFile("IntegrationConfiguration.config")
-                );
-        }
     }
 }

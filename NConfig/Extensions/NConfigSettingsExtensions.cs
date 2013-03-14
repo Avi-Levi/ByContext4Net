@@ -18,7 +18,7 @@ namespace NConfig
         }
         public static INConfigSettings AddSection(this INConfigSettings source, Section section)
         {
-            source.ConfigurationDataProviders.Add(new ConvertFromSectionDataProvider(() => new Section[1] { section },source));
+            source.ConfigurationDataProviders.Add(new ConvertFromSectionDataProvider(() => new [] { section },source));
             return source;
         }
         public static INConfigSettings ModelBinder(this INConfigSettings source, IModelBinder binder)

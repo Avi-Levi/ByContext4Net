@@ -27,7 +27,7 @@ namespace NConfig
             var result = source.GetAttributeValueOrNullByExactName(attributeName);
             if (result == null)
             {
-                result = source.GetAttributeValueOrNullByExactName(attributeName.ToLower());
+                result = source.GetAttributeValueOrNullByExactName(attributeName);
             }
             return result;
         }

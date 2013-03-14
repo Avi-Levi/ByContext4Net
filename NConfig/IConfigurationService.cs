@@ -73,7 +73,7 @@ namespace NConfig
         /// </summary>
         /// <param name="references">a collection of context references</param>
         /// <returns>New instance of <see cref="IConfigurationService"/> with the given context subject reference.</returns>
-        IConfigurationService WithReferences(params KeyValuePair<string, string>[] references);
+        IConfigurationService WithReferences(IDictionary<string, string> references);
         
         void AddReference(string subjectName, string subjectValue);
     }

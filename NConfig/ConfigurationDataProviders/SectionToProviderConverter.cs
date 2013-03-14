@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 using NConfig.Exceptions;
 using NConfig.Model;
@@ -31,14 +32,17 @@ namespace NConfig.ConfigurationDataProviders
 
         private void BuildParametersProviders(Section section, INConfigSettings settings, SectionProvider provider, Type sectionType)
         {
+            var properties = sectionType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
             foreach (Parameter parameter in section.Parameters.Values)
             {
-                var parameterPropertyInfo = sectionType.GetProperty(parameter.Name, BindingFlags.Public | BindingFlags.Instance);
+                var parameterPropertyInfo = properties.SingleOrDefault(x => x.Name.ToLower() == parameter.Name.ToLower());
 
-                if (parameterPropertyInfo != null)
+                if (parameterPropertyInfo == null && settings.ThrowIfParameterMemberMissing)
                 {
-                    this.BuildParameterProvider(settings, provider, parameter, parameterPropertyInfo);
+                    throw new MemberNotFouldForParameter(parameter);
                 }
+
+                this.BuildParameterProvider(settings, provider, parameter, parameterPropertyInfo);
             }
         }
 
@@ -54,7 +58,7 @@ namespace NConfig.ConfigurationDataProviders
             }
 
             var valueProvider = new ParameterToParameterValueProviderConverter().Convert(parameter, settings);
-            provider.ParameterValuesProviders.Add(parameter.Name, valueProvider);
+            provider.ParameterValuesProviders.Add(parameterPropertyInfo.Name, valueProvider);
         }
 
         private IModelBinder GetModelBinderForSection(Section section, INConfigSettings settings)

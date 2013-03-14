@@ -7,11 +7,18 @@ namespace NConfig.Filters.Policy
 {
     public class BestMatchFilterPolicy : IFilterPolicy
     {
-        public IEnumerable<ItemEvaluation> Filter(IEnumerable<ItemEvaluation> evaluatedItems)
+        public ItemEvaluation[] Filter(IEnumerable<ItemEvaluation> evaluatedItems)
         {
-            IEnumerable<ItemEvaluation> relevantItems = this.SelectOnlyRelevantItems(evaluatedItems);
+            return this.FilterBestMatch(evaluatedItems).ToArray();
+        }
 
-            return this.SelectBestMatchItem(relevantItems);
+        private IEnumerable<ItemEvaluation> FilterBestMatch(IEnumerable<ItemEvaluation> evaluatedItems)
+        {
+            ItemEvaluation[] relevantItems = this.SelectOnlyRelevantItems(evaluatedItems).ToArray();
+            if (relevantItems.Any())
+            {
+                yield return this.SelectBestMatchItem(relevantItems);
+            }
         }
 
         private IEnumerable<ItemEvaluation> SelectOnlyRelevantItems(IEnumerable<ItemEvaluation> evaluatedItems)
@@ -19,32 +26,40 @@ namespace NConfig.Filters.Policy
             return new SelectAllRelevantFilterPolicy().Filter(evaluatedItems);
         }
 
-        private IEnumerable<ItemEvaluation> SelectBestMatchItem(IEnumerable<ItemEvaluation> evaluatedItems)
+        private ItemEvaluation SelectBestMatchItem(ItemEvaluation[] evaluatedItems)
         {
             var itemsWithCalculatedScore = CalculateScore(evaluatedItems);
 
-            VerifyNoItemsWithSameScore(itemsWithCalculatedScore);
+            var highestScore = itemsWithCalculatedScore.Max(x => x.Score);
 
-            if (itemsWithCalculatedScore.Any())
-            {
-                var highestScore = itemsWithCalculatedScore.Max(x => x.Score);
+            var itemWithHighestScores = itemsWithCalculatedScore.Where(x => x.Score == highestScore).ToArray();
 
-                return new[] { itemsWithCalculatedScore.Single(x => x.Score == highestScore).Item };
-            }
-            else
+            ItemEvaluation? defaultItem;
+            if (itemWithHighestScores.Count() > 1)
             {
-                return new ItemEvaluation[]{};
+                if (this.TrySelectDefault(itemsWithCalculatedScore, out defaultItem))
+                {
+                    return defaultItem.Value;
+                }
+                else
+                {
+                    throw new ItemsWithConflictingHighestScoreException(itemsWithConflictingScore: itemWithHighestScores, allItems: itemsWithCalculatedScore, highestScore: highestScore);
+                }
             }
+
+            return itemWithHighestScores.Single().Item;
         }
 
-        private void VerifyNoItemsWithSameScore(ItemWithScore[] itemsWithCalculatedScore)
+        private bool TrySelectDefault(ItemWithScore[] itemsWithCalculatedScore, out ItemEvaluation? defaultItem)
         {
-            var itemsGroupedByScore = itemsWithCalculatedScore.GroupBy(x => x.Score);
-            var itemsWithSameScore = itemsGroupedByScore.Where(x => x.Count() != 1);
-            if (itemsWithSameScore.Any())
+            var itemsWithNoReferences = itemsWithCalculatedScore.Where(x => !x.Item.ConditionsEvaluation.Any());
+            if (itemsWithNoReferences.Count() != 1)
             {
-                throw new ItemsWithConflictingMatchingScoreException(itemsWithSameScore.Select(x => x.Key));
+                defaultItem = null;
+                return false;
             }
+            defaultItem = itemsWithNoReferences.Single().Item;
+            return true;
         }
 
         private ItemWithScore[] CalculateScore(IEnumerable<ItemEvaluation> evaluatedItems)

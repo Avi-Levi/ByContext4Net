@@ -38,12 +38,7 @@ namespace NConfig.Filters.Evaluation
                     evaluationResult = !evaluationResult;
                 }
 
-                if (evaluationResult)
-                {
-                    return RelationToContextEnum.True;
-                }
-
-                return RelationToContextEnum.False;
+                return evaluationResult ? RelationToContextEnum.True : RelationToContextEnum.False;
             }
 
             return RelationToContextEnum.Neutral;
