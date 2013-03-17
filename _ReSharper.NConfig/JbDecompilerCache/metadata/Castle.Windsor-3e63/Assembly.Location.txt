@@ -1,1 +1,0 @@
-﻿E:\Work\Sources\nconfig\lib\Castle\Castle.Windsor.dll
