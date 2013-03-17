@@ -1,1 +1,13 @@
+= NConfig
+
+NConfig is a .NET library that takes application configuration to a whole new level.
+
+== Installing NConfig
+
+```` Install-Package NConfig
+
+== Motivation
+
+
+
 A configuration values management library for .NET
