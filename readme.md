@@ -1,12 +1,15 @@
-= NConfig
+NConfig
+===============
 
 NConfig is a .NET library that takes application configuration to a whole new level.
 
-== Installing NConfig
+Installing NConfig
+------------------
 
     Install-Package NConfig
 
-== Motivation
+Motivation
+----------
 
 - Do you have multiple projects that all have their own configuration files?
 
