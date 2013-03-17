@@ -1,7 +1,7 @@
 NConfig
 ===============
 
-NConfig is a .NET library that takes application configuration to a whole new level.
+NConfig is an extensible .NET library, that makes application configuration for multiple environments as simple as possible.
 
 Installing NConfig
 ------------------
