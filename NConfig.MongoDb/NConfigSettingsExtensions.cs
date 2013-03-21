@@ -4,7 +4,7 @@ using MongoDB.Driver;
 using NConfig.ConfigurationDataProviders;
 using NConfig.Model;
 
-namespace NConfig.MongoDb
+namespace NConfig
 {
     public static class NConfigSettingsExtensions
     {
