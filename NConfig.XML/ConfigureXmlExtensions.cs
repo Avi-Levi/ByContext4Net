@@ -24,12 +24,7 @@ namespace NConfig
 
         public static string GetAttributeValueOrNull(this XElement source, string attributeName)
         {
-            var result = source.GetAttributeValueOrNullByExactName(attributeName);
-            if (result == null)
-            {
-                result = source.GetAttributeValueOrNullByExactName(attributeName);
-            }
-            return result;
+            return source.GetAttributeValueOrNullByExactName(attributeName);
         }
 
         public static string GetAttributeValueOrThrow(this XElement source, string attributeName)
