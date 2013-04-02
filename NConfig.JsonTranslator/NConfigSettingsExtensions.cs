@@ -1,4 +1,6 @@
-﻿namespace NConfig.JsonTranslator
+﻿using NConfig.JsonTranslators;
+
+namespace NConfig
 {
     public static class NConfigSettingsExtensions
     {

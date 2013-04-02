@@ -1,7 +1,7 @@
 ﻿using System;
 using NConfig.StringToValueTranslator;
 
-namespace NConfig.JsonTranslator
+namespace NConfig.JsonTranslators
 {
     class JsonTranslatorProvider : IStringToValueTranslatorProvider
     {

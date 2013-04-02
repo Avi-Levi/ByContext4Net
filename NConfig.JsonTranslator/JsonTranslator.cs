@@ -2,9 +2,9 @@
 using NConfig.StringToValueTranslator;
 using Newtonsoft.Json.Linq;
 
-namespace NConfig.JsonTranslator
+namespace NConfig.JsonTranslators
 {
-    class JsonTranslator : IStringToValueTranslator
+    public class JsonTranslator : IStringToValueTranslator
     {
         private readonly Type _objectType;
 
