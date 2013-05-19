@@ -10,7 +10,14 @@ namespace NConfig.XML
     public class XmlLoader
     {
         private const string TypeNameAttribute = "TypeName";
-        private const string ModelBinderName = "ModelBinderName";
+        private const string ModelBinderFactoryName = "ModelBinderFactoryName";
+        private const string ParameterName = "Parameter";
+        private const string ParameterNameAttribute = "Name";
+        private const string RequiredAttribute = "Required";
+        private const string SectionName = "Section";
+        private const string TranslatorAttribute = "Translator";
+        private const string ValueNodeName = "Value";
+        private const string ValuesNodeName = "Values";
 
         #region public methods
 
@@ -65,7 +72,7 @@ namespace NConfig.XML
         {
             var sectionNode = new XElement(SectionName);
             sectionNode.SetAttributeValueOrThrow(TypeNameAttribute, section.TypeName);
-            sectionNode.SetAttributeValueIfNotNullOrEmpty(ModelBinderName, section.ModelBinder);
+            sectionNode.SetAttributeValueIfNotNullOrEmpty(ModelBinderFactoryName, section.ModelBinderFactory);
 
             foreach (var parameter in section.Parameters)
             {
@@ -129,7 +136,7 @@ namespace NConfig.XML
             Section section = new Section
                 {
                     TypeName = sectionNode.GetAttributeValueOrThrow(TypeNameAttribute),
-                    ModelBinder = sectionNode.GetAttributeValueOrNull(ModelBinderName)
+                    ModelBinderFactory = sectionNode.GetAttributeValueOrNull(ModelBinderFactoryName)
                 };
 
             foreach (XElement parameterNode in sectionNode.Elements(ParameterName))
@@ -186,13 +193,5 @@ namespace NConfig.XML
         }
 
         #endregion load from xml
-
-        private string ParameterName = "Parameter";
-        private string ParameterNameAttribute = "Name";
-        private string RequiredAttribute = "Required";
-        private string SectionName = "Section";
-        private string TranslatorAttribute = "Translator";
-        private string ValueNodeName = "Value";
-        private string ValuesNodeName = "Values";
     }
 }

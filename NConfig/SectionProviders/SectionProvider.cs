@@ -21,11 +21,14 @@ namespace NConfig.SectionProviders
         {
             var values = this.ParameterValuesProviders
                              .Select(x => new { name = x.Key, value = x.Value.Get(runtimeContext) })
-                             .Where(x => x.value != null);
+                             .Where(x => x.value != null)
+                             .ToDictionary(x => x.name, x => x.value);;
 
-            IDictionary<string, object> valuesDictionary = values.ToDictionary(x => x.name, x => x.value);
+            object instance = Activator.CreateInstance(this.SectionType, true);
 
-            return this.ModelBinder.Bind(this.SectionType, valuesDictionary);
+            this.ModelBinder.Bind(instance, values);
+
+            return instance;
         }
     }
 }

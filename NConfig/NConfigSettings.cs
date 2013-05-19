@@ -14,7 +14,7 @@ namespace NConfig
     {
         public NConfigSettings()
         {
-            this.ModelBinder = new DefaultModelBinder();
+            this.ModelBinderFactory = new DynamicMethodModelBinderFactory();
             this.FilterConditionsEvaluator = new FilterConditionsEvaluator();
             this.ResultBuilderProvider = new ResultBuilderProvider();
 
@@ -38,7 +38,7 @@ namespace NConfig
         public string DefaultRawValueTranslatorName { get; set; }
         public string DefaultFilterConditionName { get; set; }
 
-        public IModelBinder ModelBinder { get; set; }
+        public IModelBinderFactory ModelBinderFactory { get; set; }
         public IDictionary<string, IFilterPolicy> FilterPolicies { get; private set; }
         public IFilterConditionsEvaluator FilterConditionsEvaluator { get; set; }
         public ResultBuilderProvider ResultBuilderProvider { get; private set; }

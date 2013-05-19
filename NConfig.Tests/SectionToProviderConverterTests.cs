@@ -15,7 +15,7 @@ namespace NConfig.Tests
             Section section = new Section
                 {
                     TypeName = typeof (SimpleSection).AssemblyQualifiedName,
-                    ModelBinder = null,
+                    ModelBinderFactory = null,
                 };
             var strPropParam = new Parameter
                 {

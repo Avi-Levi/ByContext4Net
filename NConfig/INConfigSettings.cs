@@ -16,7 +16,7 @@ namespace NConfig
         IDictionary<string, IFilterConditionFactory> FilterConditionFactories { get; }
         string DefaultRawValueTranslatorName { get; set; }
         string DefaultFilterConditionName { get; set; }
-        IModelBinder ModelBinder { get; set; }
+        IModelBinderFactory ModelBinderFactory { get; set; }
         IDictionary<string, IFilterPolicy> FilterPolicies { get; }
         IFilterConditionsEvaluator FilterConditionsEvaluator { get; set; }
         ResultBuilderProvider ResultBuilderProvider { get; }

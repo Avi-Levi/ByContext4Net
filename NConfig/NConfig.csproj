@@ -58,6 +58,7 @@
     <Compile Include="Filters\Evaluation\FilterConditionsEvaluator.cs" />
     <Compile Include="Filters\Evaluation\IFilterConditionsEvaluator.cs" />
     <Compile Include="Filters\Evaluation\ItemEvaluation.cs" />
+    <Compile Include="Filters\Filter\Filter.cs" />
     <Compile Include="Filters\Filter\IFilter.cs" />
     <Compile Include="Filters\Policy\BestMatchFilterPolicy.cs" />
     <Compile Include="Exceptions\ItemsWithConflictingHighestScoreException.cs" />
@@ -68,6 +69,10 @@
     <Compile Include="IFilterConditionFactory.cs" />
     <Compile Include="IHaveFilterConditions.cs" />
     <Compile Include="INConfigSettings.cs" />
+    <Compile Include="ModelBinders\DefaultModelBinderFactory.cs" />
+    <Compile Include="ModelBinders\DynamicMethodModelBinder.cs" />
+    <Compile Include="ModelBinders\DynamicMethodModelBinderFactory.cs" />
+    <Compile Include="ModelBinders\IModelBinderFactory.cs" />
     <Compile Include="NConfigSettings.cs" />
     <Compile Include="ParameterValueProviders\IParameterValueProvider.cs" />
     <Compile Include="ResultBuilder\IResultBuilder.cs" />

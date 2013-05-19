@@ -1,22 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Reflection;
 
 namespace NConfig.ModelBinders
 {
     public class DefaultModelBinder : IModelBinder
     {
-        public object Bind(Type modelType, IDictionary<string, object> parametersInfo)
-        {
-            object result = Activator.CreateInstance(modelType);
+        private readonly IDictionary<string, PropertyInfo> _propertyInfos;
 
+        public DefaultModelBinder(IDictionary<string, PropertyInfo> propertyInfos)
+        {
+            _propertyInfos = propertyInfos;
+        }
+
+        public void Bind(object instance, IDictionary<string, object> parametersInfo)
+        {
             foreach (var param in parametersInfo)
             {
-                var paramPI = modelType.GetProperty(param.Key, BindingFlags.Public | BindingFlags.Instance);
-                paramPI.SetValue(result, param.Value, null);
+                this._propertyInfos[param.Key].SetValue(instance, param.Value, null);
             }
-
-            return result;
         }
     }
 }

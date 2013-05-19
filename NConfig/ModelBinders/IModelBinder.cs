@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace NConfig.ModelBinders
 {
@@ -8,10 +7,6 @@ namespace NConfig.ModelBinders
     /// </summary>
     public interface IModelBinder
     {
-        /// <summary>
-        /// Binds the given parameters values to the given <paramref name="modelType"/>
-        /// </summary>
-        /// <returns>An instance of the given <paramref name="modelType"/> type, populated with the given <paramref name="parametersInfo"/></returns>
-        object Bind(Type modelType, IDictionary<string, object> parametersInfo);
+        void Bind(object instance, IDictionary<string, object> parametersInfo);
     }
 }

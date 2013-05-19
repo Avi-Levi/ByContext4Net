@@ -49,6 +49,7 @@
     <Compile Include="Filter\ContextWithTwoItems.cs" />
     <Compile Include="Filter\Item.cs" />
     <Compile Include="LoadConfigurationTest.cs" />
+    <Compile Include="ModelBinderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SectionToProviderConverterTests.cs" />
     <Compile Include="SimpleSection.cs" />

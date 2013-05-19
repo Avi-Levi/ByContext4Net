@@ -21,9 +21,9 @@ namespace NConfig
             source.ConfigurationDataProviders.Add(new ConvertFromSectionDataProvider(() => new [] { section },source));
             return source;
         }
-        public static INConfigSettings ModelBinder(this INConfigSettings source, IModelBinder binder)
+        public static INConfigSettings ModelBinderFactory(this INConfigSettings source, IModelBinderFactory binderFactory)
         {
-            source.ModelBinder = binder;
+            source.ModelBinderFactory = binderFactory;
             return source;
         }
         public static INConfigSettings RuntimeContext(this INConfigSettings source,

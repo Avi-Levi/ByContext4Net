@@ -16,7 +16,7 @@ namespace NConfig.ConfigurationDataProviders
             {
                 Type sectionType = Type.GetType(section.TypeName, true);
 
-                var binder = this.GetModelBinderForSection(section, settings);
+                var binder = this.GetModelBinderForSection(sectionType, section, settings);
 
                 var provider = new SectionProvider { SectionType = sectionType, ModelBinder = binder };
 
@@ -61,12 +61,12 @@ namespace NConfig.ConfigurationDataProviders
             provider.ParameterValuesProviders.Add(parameterPropertyInfo.Name, valueProvider);
         }
 
-        private IModelBinder GetModelBinderForSection(Section section, INConfigSettings settings)
+        private IModelBinder GetModelBinderForSection(Type sectionType, Section section, INConfigSettings settings)
         {
-            var binder = new ConfigurationHelper()
-                .GetConfigurationProperty<Section, IModelBinder>(section, x => x.ModelBinder, settings.ModelBinder,
-                                                                 x => settings.ModelBinder);
-            return binder;
+            var factory = new ConfigurationHelper()
+                .GetConfigurationProperty<Section, IModelBinderFactory>(section, x => x.ModelBinderFactory, settings.ModelBinderFactory,
+                                                                 x => settings.ModelBinderFactory);
+            return factory.Create(sectionType);
         }
     }
 }

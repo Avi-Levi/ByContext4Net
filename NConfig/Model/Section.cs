@@ -14,7 +14,7 @@ namespace NConfig.Model
         [DataMember]
         public string TypeName { get; set; }
         [DataMember]
-        public string ModelBinder { get; set; }
+        public string ModelBinderFactory { get; set; }
         [DataMember]
         public IDictionary<string, Parameter> Parameters { get; private set; }
     }
