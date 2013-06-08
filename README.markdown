@@ -1,13 +1,20 @@
 ## what is byContext?
-     byContext is a data container, that provides the application with data, filtered according to the application's runtime context (deployment environment e.g dev\production, specific machine etc..) 
-     while completely abstracting the filtering logic from application code, all the application has to do is notify byContext about the application's runtime context.
-without requiring any special application code.
+     byContext is a data container, that provides the application with 
+	 data, filtered according to the application's runtime context 
+	 (deployment environment e.g dev\production, specific machine etc..) while completely 
+	 abstracting the filtering logic from application code, 
+	 all the application has to do is notify byContext about the application's runtime context.
  
 ## why is byContext useful?
-     have you ever wanted to configure a different log level depending of the deployment context (dev\staging\production) of the application? 
+     have you ever wanted to configure a different log level depending of the deployment context 
+	 (dev\staging\production) of the application? 
      how about different timeout setting per service?
-     byConext is extensible and can easily be integrated with a DI container to provide different service implementations according to the application's runtime context e.g using a stub access control service at development time.
-     when your product needs to be highly configurable and you don't want to write ad-hoc code to manage the variation of configuration data, byContext can save you.
+	 byConext provides you with this functionality in the simplest way.
+     byConext is extensible and can easily be integrated with a DI container to provide 
+	 different service implementations according to the application's runtime context e.g using 
+	 a stub access control service at development time.
+     when your product needs to be highly configurable and you don't want to write ad-hoc code 
+	 to manage the variation of configuration data, byContext can save you.
 
 ### simple possible thing
 
