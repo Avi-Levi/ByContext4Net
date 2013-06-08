@@ -45,11 +45,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NConfig.XML\ByContext.XML.csproj">
+    <ProjectReference Include="..\ByContext.XML\ByContext.XML.csproj">
       <Project>{C44ACC8C-5434-4663-A1F5-20FB4CBE2E69}</Project>
       <Name>ByContext.XML</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NConfig\ByContext.csproj">
+    <ProjectReference Include="..\ByContext\ByContext.csproj">
       <Project>{E03FCBFB-4EE1-4A86-9703-8871AB2BE179}</Project>
       <Name>ByContext</Name>
     </ProjectReference>

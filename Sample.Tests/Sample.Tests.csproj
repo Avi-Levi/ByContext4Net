@@ -50,6 +50,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ByContext.Windsor\ByContext.Windsor.csproj">
+      <Project>{51955F6C-3613-402D-B130-97EB2003E362}</Project>
+      <Name>ByContext.Windsor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ByContext.XML\ByContext.XML.csproj">
+      <Project>{C44ACC8C-5434-4663-A1F5-20FB4CBE2E69}</Project>
+      <Name>ByContext.XML</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ByContext\ByContext.csproj">
+      <Project>{E03FCBFB-4EE1-4A86-9703-8871AB2BE179}</Project>
+      <Name>ByContext</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Client\Client.csproj">
       <Project>{3D1FF3BB-8997-4684-9CAA-6C37374A570F}</Project>
       <Name>Client</Name>
@@ -57,18 +69,6 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{02EBB01A-DE5E-4940-8A06-F600B0A4778B}</Project>
       <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NConfig.Windsor\ByContext.Windsor.csproj">
-      <Project>{51955F6C-3613-402D-B130-97EB2003E362}</Project>
-      <Name>ByContext.Windsor</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NConfig.XML\ByContext.XML.csproj">
-      <Project>{C44ACC8C-5434-4663-A1F5-20FB4CBE2E69}</Project>
-      <Name>ByContext.XML</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NConfig\ByContext.csproj">
-      <Project>{E03FCBFB-4EE1-4A86-9703-8871AB2BE179}</Project>
-      <Name>ByContext</Name>
     </ProjectReference>
     <ProjectReference Include="..\Server\Server.csproj">
       <Project>{A372D577-2635-47D3-8B83-FDD2A530EB28}</Project>

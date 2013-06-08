@@ -98,25 +98,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{02EBB01A-DE5E-4940-8A06-F600B0A4778B}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NConfig.WCF\ByContext.WCF.csproj">
+    <ProjectReference Include="..\ByContext.WCF\ByContext.WCF.csproj">
       <Project>{366E0B67-A944-492E-9464-9EAE4C670083}</Project>
       <Name>ByContext.WCF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NConfig.Windsor\ByContext.Windsor.csproj">
+    <ProjectReference Include="..\ByContext.Windsor\ByContext.Windsor.csproj">
       <Project>{51955F6C-3613-402D-B130-97EB2003E362}</Project>
       <Name>ByContext.Windsor</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NConfig.XML\ByContext.XML.csproj">
+    <ProjectReference Include="..\ByContext.XML\ByContext.XML.csproj">
       <Project>{C44ACC8C-5434-4663-A1F5-20FB4CBE2E69}</Project>
       <Name>ByContext.XML</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NConfig\ByContext.csproj">
+    <ProjectReference Include="..\ByContext\ByContext.csproj">
       <Project>{E03FCBFB-4EE1-4A86-9703-8871AB2BE179}</Project>
       <Name>ByContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{02EBB01A-DE5E-4940-8A06-F600B0A4778B}</Project>
+      <Name>Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

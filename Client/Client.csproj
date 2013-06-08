@@ -116,17 +116,17 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{02EBB01A-DE5E-4940-8A06-F600B0A4778B}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NConfig.WCF\ByContext.WCF.csproj">
+    <ProjectReference Include="..\ByContext.WCF\ByContext.WCF.csproj">
       <Project>{366E0B67-A944-492E-9464-9EAE4C670083}</Project>
       <Name>ByContext.WCF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NConfig\ByContext.csproj">
+    <ProjectReference Include="..\ByContext\ByContext.csproj">
       <Project>{E03FCBFB-4EE1-4A86-9703-8871AB2BE179}</Project>
       <Name>ByContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{02EBB01A-DE5E-4940-8A06-F600B0A4778B}</Project>
+      <Name>Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
