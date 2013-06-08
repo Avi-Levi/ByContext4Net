@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Xml.Linq;
-using NConfig.ConfigurationDataProviders;
-using NConfig.XML;
+using ByContext.ConfigurationDataProviders;
+using ByContext.XML;
 
-namespace NConfig
+namespace ByContext
 {
-    public static class ConfigureXmlExtensions
+    public static class ByContextSettingsXmlExtensions
     {
-        public static INConfigSettings AddFromXmlFile(this INConfigSettings source, string fileName)
+        public static IByContextSettings AddFromXmlFile(this IByContextSettings source, string fileName)
         {
             source.AddConfigurationDataProvider(new ConvertFromSectionDataProvider(()=>
                 new XmlLoader().LoadFile(fileName), source));
@@ -15,7 +15,7 @@ namespace NConfig
             return source;
         }
 
-        public static INConfigSettings AddFromRawXml(this INConfigSettings source, string rawXml)
+        public static IByContextSettings AddFromRawXml(this IByContextSettings source, string rawXml)
         {
             source.AddConfigurationDataProvider(new ConvertFromSectionDataProvider(()=>
                 new XmlLoader().ReadXml(rawXml), source));

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NConfig.RuntimeContextProviders
+namespace ByContext.RuntimeContextProviders
 {
     /// <summary>
     /// Provides the application's runtime context.

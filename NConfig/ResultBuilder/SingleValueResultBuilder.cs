@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NConfig.ResultBuilder
+namespace ByContext.ResultBuilder
 {
     public class SingleValueResultBuilder<TItem> : IResultBuilder
     {

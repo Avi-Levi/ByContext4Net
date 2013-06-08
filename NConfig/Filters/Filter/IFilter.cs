@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NConfig.Filters.Filter
+namespace ByContext.Filters.Filter
 {
     public interface IFilter
     {

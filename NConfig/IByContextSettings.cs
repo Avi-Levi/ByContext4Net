@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
-using NConfig.ConfigurationDataProviders;
-using NConfig.Filters.Evaluation;
-using NConfig.Filters.Policy;
-using NConfig.ModelBinders;
-using NConfig.ResultBuilder;
-using NConfig.StringToValueTranslator;
+using ByContext.ConfigurationDataProviders;
+using ByContext.Filters.Evaluation;
+using ByContext.Filters.Policy;
+using ByContext.ModelBinders;
+using ByContext.ResultBuilder;
+using ByContext.StringToValueTranslator;
 
-namespace NConfig
+namespace ByContext
 {
-    public interface INConfigSettings
+    public interface IByContextSettings
     {
         IDictionary<string, string> RuntimeContext { get; set; }
         IList<IConfigurationDataProvider> ConfigurationDataProviders { get; }

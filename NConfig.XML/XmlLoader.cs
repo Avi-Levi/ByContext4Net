@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
-using NConfig.Model;
+using ByContext.Model;
 
-namespace NConfig.XML
+namespace ByContext.XML
 {
     public class XmlLoader
     {

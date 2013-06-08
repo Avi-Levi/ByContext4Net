@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace NConfig.Model
+namespace ByContext.Model
 {
     [DataContract]
     public class FilterCondition

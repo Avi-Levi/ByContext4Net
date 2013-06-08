@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using NConfig.Exceptions;
+using ByContext.Exceptions;
 
-namespace NConfig.StringToValueTranslator.SerializeStringToValueTranslator
+namespace ByContext.StringToValueTranslator.SerializeStringToValueTranslator
 {
     public class SerializeStringToValueTranslatorProvider : IStringToValueTranslatorProvider
     {

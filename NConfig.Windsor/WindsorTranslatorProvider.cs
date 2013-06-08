@@ -1,8 +1,8 @@
 ﻿using System;
+using ByContext.StringToValueTranslator;
 using Castle.Windsor;
-using NConfig.StringToValueTranslator;
 
-namespace NConfig.Windsor
+namespace ByContext.Windsor
 {
     public class WindsorTranslatorProvider : IStringToValueTranslatorProvider
     {

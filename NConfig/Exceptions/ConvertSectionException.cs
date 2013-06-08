@@ -1,9 +1,9 @@
 ﻿using System;
-using NConfig.Model;
+using ByContext.Model;
 
-namespace NConfig.Exceptions
+namespace ByContext.Exceptions
 {
-    public class ConvertSectionException : NConfigException
+    public class ConvertSectionException : ByContextException
     {
         public Section Section { get; private set; }
 

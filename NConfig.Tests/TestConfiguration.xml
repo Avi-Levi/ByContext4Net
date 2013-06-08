@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Configuration>
-  <Section TypeName="NConfig.Tests.ComplexTestSection,NConfig.Tests">
+  <Section TypeName="ByContext.Tests.ComplexTestSection,ByContext.Tests">
     <Parameter Name="Num">
       <Values>
         <Value Value="1">

@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
-using NConfig.Filters.Evaluation;
+using ByContext.Filters.Evaluation;
 
-namespace NConfig.Filters.Policy
+namespace ByContext.Filters.Policy
 {
     public class SelectAllRelevantFilterPolicy : IFilterPolicy
     {

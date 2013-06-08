@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Castle.Windsor;
-using NConfig;
+using ByContext;
 using Common;
 using Castle.MicroKernel.Registration;
 using Client.Views.Login;

@@ -1,10 +1,10 @@
 ﻿using System;
-using NConfig.Exceptions;
 using System.Linq.Expressions;
 using System.Reflection;
-using NConfig.Extensions;
+using ByContext.Exceptions;
+using ByContext.Extensions;
 
-namespace NConfig
+namespace ByContext
 {
     public class ConfigurationHelper
     {

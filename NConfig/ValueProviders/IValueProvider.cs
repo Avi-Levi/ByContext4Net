@@ -1,4 +1,4 @@
-﻿namespace NConfig.ValueProviders
+﻿namespace ByContext.ValueProviders
 {
     /// <summary>
     /// Represents an object that can provide a parameter's value.

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 
-namespace NConfig.ModelBinders
+namespace ByContext.ModelBinders
 {
     public class DynamicMethodModelBinderFactory : IModelBinderFactory
     {

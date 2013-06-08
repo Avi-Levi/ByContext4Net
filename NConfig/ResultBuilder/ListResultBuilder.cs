@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace NConfig.ResultBuilder
+namespace ByContext.ResultBuilder
 {
     public class ListResultBuilder<TItem> : BaseCollectionResultBuilder<IList<TItem>, TItem>
     {

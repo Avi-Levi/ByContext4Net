@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NConfig.StringToValueTranslator.SerializeStringToValueTranslator
+namespace ByContext.StringToValueTranslator.SerializeStringToValueTranslator
 {
     public class Int32Translator : BaseStringToValueTranslator<Int32>
     {

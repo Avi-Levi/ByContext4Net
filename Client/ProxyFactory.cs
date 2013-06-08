@@ -1,5 +1,5 @@
 ﻿using Common;
-using NConfig;
+using ByContext;
 using System.ServiceModel.Channels;
 using System.ServiceModel;
 
@@ -7,12 +7,12 @@ namespace Client
 {
     public class ProxyFactory
     {
-        public ProxyFactory(IConfigurationService configSvc)
+        public ProxyFactory(IByContext configSvc)
         {
             this.ConfigService = configSvc;
         }
 
-        private IConfigurationService ConfigService { get; set; }
+        private IByContext ConfigService { get; set; }
 
         public TContract Get<TContract>() where TContract : class
         {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NConfig.ParameterValueProviders
+namespace ByContext.ParameterValueProviders
 {
     /// <summary>
     /// Provides a configuration parameter value that is relevant to a certain runtime context.

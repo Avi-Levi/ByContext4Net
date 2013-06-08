@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using NConfig.Filters.Conditions;
-using NConfig.StringToValueTranslator;
+using ByContext.Filters.Conditions;
+using ByContext.StringToValueTranslator;
 
-namespace NConfig.ValueProviders
+namespace ByContext.ValueProviders
 {
     public class TranslateFromStringValueProvider : IValueProvider
     {

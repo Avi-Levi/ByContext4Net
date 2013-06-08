@@ -2,21 +2,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using NConfig.Filters.Conditions;
-using NConfig.Filters.Filter;
-using NConfig.Filters.Policy;
-using NConfig.Model;
-using NConfig.ParameterValueProviders;
-using NConfig.StringToValueTranslator;
-using NConfig.ValueProviders;
+using ByContext.Filters.Conditions;
+using ByContext.Filters.Filter;
+using ByContext.Filters.Policy;
+using ByContext.Model;
+using ByContext.ParameterValueProviders;
+using ByContext.StringToValueTranslator;
+using ByContext.ValueProviders;
 
-namespace NConfig.ConfigurationDataProviders
+namespace ByContext.ConfigurationDataProviders
 {
     public class ParameterToParameterValueProviderConverter
     {
         private readonly ConfigurationHelper _helper = new ConfigurationHelper();
 
-        public IParameterValueProvider Convert(Parameter parameter, INConfigSettings settings)
+        public IParameterValueProvider Convert(Parameter parameter, IByContextSettings settings)
         {
             var parameterType = Type.GetType(parameter.TypeName, true);
 
@@ -38,7 +38,7 @@ namespace NConfig.ConfigurationDataProviders
             return parameterValueProvider;
         }
 
-        private IEnumerable<IValueProvider> BuildValueProviders(IEnumerable<ParameterValue> values, IStringToValueTranslator translator, INConfigSettings settings)
+        private IEnumerable<IValueProvider> BuildValueProviders(IEnumerable<ParameterValue> values, IStringToValueTranslator translator, IByContextSettings settings)
         {
             foreach (var parameterValue in values)
             {
@@ -47,7 +47,7 @@ namespace NConfig.ConfigurationDataProviders
             }
         }
 
-        private IEnumerable<IFilterCondition> TranslateFilterConditions(IEnumerable<FilterCondition> filterConditions, INConfigSettings settings)
+        private IEnumerable<IFilterCondition> TranslateFilterConditions(IEnumerable<FilterCondition> filterConditions, IByContextSettings settings)
         {
             foreach(var filterCondition in filterConditions)
             {
@@ -63,7 +63,7 @@ namespace NConfig.ConfigurationDataProviders
             return required;
         }
 
-        private IFilterPolicy GetFilterPolicy(Parameter parameter, Type parameterType, INConfigSettings settings)
+        private IFilterPolicy GetFilterPolicy(Parameter parameter, Type parameterType, IByContextSettings settings)
         {
             IFilterPolicy filterPolicy = this._helper.GetConfigurationProperty<Parameter, IFilterPolicy>
                 (parameter,x=>x.PolicyName,
@@ -84,7 +84,7 @@ namespace NConfig.ConfigurationDataProviders
             return filterPolicy;
         }
 
-        private IStringToValueTranslator GetTranslator(Parameter parameter, Type parameterValueType, INConfigSettings settings)
+        private IStringToValueTranslator GetTranslator(Parameter parameter, Type parameterValueType, IByContextSettings settings)
         {
             var translatorProvider = this._helper.GetConfigurationProperty<Parameter, IStringToValueTranslatorProvider>
                 (parameter,x=>x.Translator,() => settings.TranslatorProviders[settings.DefaultRawValueTranslatorName],

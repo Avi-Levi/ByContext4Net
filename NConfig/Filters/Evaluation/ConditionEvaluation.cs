@@ -1,6 +1,6 @@
-using NConfig.Filters.Conditions;
+using ByContext.Filters.Conditions;
 
-namespace NConfig.Filters.Evaluation
+namespace ByContext.Filters.Evaluation
 {
     public struct ConditionEvaluation
     {

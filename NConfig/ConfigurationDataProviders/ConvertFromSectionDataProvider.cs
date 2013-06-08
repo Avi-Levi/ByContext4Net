@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using NConfig.Exceptions;
-using NConfig.Model;
-using NConfig.SectionProviders;
+using ByContext.Exceptions;
+using ByContext.Model;
+using ByContext.SectionProviders;
 
-namespace NConfig.ConfigurationDataProviders
+namespace ByContext.ConfigurationDataProviders
 {
     public class ConvertFromSectionDataProvider : IConfigurationDataProvider
     {
-        public ConvertFromSectionDataProvider(Func<IEnumerable<Section>> getMehtod, INConfigSettings settings)
+        public ConvertFromSectionDataProvider(Func<IEnumerable<Section>> getMehtod, IByContextSettings settings)
         {
             this.GetMehtod = getMehtod;
             this.Settings = settings;
         }
 
-        private INConfigSettings Settings { get; set; }
+        private IByContextSettings Settings { get; set; }
         private Func<IEnumerable<Section>> GetMehtod { get; set; }
 
         public IDictionary<string, ISectionProvider> Get()

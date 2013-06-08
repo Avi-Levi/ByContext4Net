@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NConfig.Filters.Evaluation
+namespace ByContext.Filters.Evaluation
 {
     public interface IFilterConditionsEvaluator
     {

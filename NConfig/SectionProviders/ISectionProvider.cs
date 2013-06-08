@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NConfig.SectionProviders
+namespace ByContext.SectionProviders
 {
     /// <summary>
     /// Provides an initialized instance of a configuration section.

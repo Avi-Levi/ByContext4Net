@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NConfig.ModelBinders
+namespace ByContext.ModelBinders
 {
     /// <summary>
     /// Binds configuration parameters values to a given section instance.

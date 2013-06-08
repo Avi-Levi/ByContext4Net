@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using NConfig.ConfigurationDataProviders;
-using NConfig.Model;
-using NConfig.SectionProviders;
+using ByContext.ConfigurationDataProviders;
+using ByContext.Model;
+using ByContext.SectionProviders;
 using NUnit.Framework;
 
-namespace NConfig.Tests
+namespace ByContext.Tests
 {
     [TestFixture]
     public class SectionToProviderConverterTests
@@ -41,7 +41,7 @@ namespace NConfig.Tests
             section.Parameters.Add(strPropParam.Name, strPropParam);
             section.Parameters.Add(intPropParam.Name, intPropParam);
 
-            var sectionProvider = new SectionToProviderConverter().Convert(section, new NConfigSettings());
+            var sectionProvider = new SectionToProviderConverter().Convert(section, new ByContextSettings());
 
             var sectionInstance = sectionProvider.Get(new Dictionary<string, string>());
 

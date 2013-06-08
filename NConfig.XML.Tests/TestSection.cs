@@ -1,4 +1,4 @@
-﻿namespace NConfig.XML.Tests
+﻿namespace ByContext.XML.Tests
 {
     public class TestSection
     {

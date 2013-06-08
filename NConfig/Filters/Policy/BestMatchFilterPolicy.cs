@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using NConfig.Exceptions;
-using NConfig.Filters.Evaluation;
+using ByContext.Exceptions;
+using ByContext.Filters.Evaluation;
 
-namespace NConfig.Filters.Policy
+namespace ByContext.Filters.Policy
 {
     public class BestMatchFilterPolicy : IFilterPolicy
     {

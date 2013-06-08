@@ -8,8 +8,8 @@
     <ProjectGuid>{E03FCBFB-4EE1-4A86-9703-8871AB2BE179}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NConfig</RootNamespace>
-    <AssemblyName>NConfig</AssemblyName>
+    <RootNamespace>ByContext</RootNamespace>
+    <AssemblyName>ByContext</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>
@@ -46,11 +46,11 @@
   <ItemGroup>
     <Compile Include="Exceptions\ConvertSectionException.cs" />
     <Compile Include="ConfigurationDataProviders\IConfigurationDataProvider.cs" />
-    <Compile Include="Exceptions\MemberNotFouldForParameter.cs" />
+    <Compile Include="Exceptions\MemberNotFoundForParameter.cs" />
     <Compile Include="Exceptions\SectionProviderConfigurationMissingException.cs" />
     <Compile Include="Exceptions\SessionToProviderConvertionFailed.cs" />
     <Compile Include="Exceptions\InvalidParameterConfiguration.cs" />
-    <Compile Include="Exceptions\NConfigException.cs" />
+    <Compile Include="Exceptions\ByContextException.cs" />
     <Compile Include="Exceptions\TypeTranslatorNotRegisteredException.cs" />
     <Compile Include="Filters\Evaluation\ConditionEvaluation.cs" />
     <Compile Include="Filters\Evaluation\ConditionEvaluationContext.cs" />
@@ -68,12 +68,12 @@
     <Compile Include="Filters\Conditions\IFilterCondition.cs" />
     <Compile Include="IFilterConditionFactory.cs" />
     <Compile Include="IHaveFilterConditions.cs" />
-    <Compile Include="INConfigSettings.cs" />
+    <Compile Include="IByContextSettings.cs" />
     <Compile Include="ModelBinders\DefaultModelBinderFactory.cs" />
     <Compile Include="ModelBinders\DynamicMethodModelBinder.cs" />
     <Compile Include="ModelBinders\DynamicMethodModelBinderFactory.cs" />
     <Compile Include="ModelBinders\IModelBinderFactory.cs" />
-    <Compile Include="NConfigSettings.cs" />
+    <Compile Include="ByContextSettings.cs" />
     <Compile Include="ParameterValueProviders\IParameterValueProvider.cs" />
     <Compile Include="ResultBuilder\IResultBuilder.cs" />
     <Compile Include="RuntimeContextProviders\AppConfigRuntimeContextProvider.cs" />
@@ -84,14 +84,14 @@
     <Compile Include="Configure.cs" />
     <Compile Include="Exceptions\GetSectionException.cs" />
     <Compile Include="Exceptions\ConfigurationPropertyException.cs" />
-    <Compile Include="Extensions\NConfigSettingsExtensions.cs" />
+    <Compile Include="Extensions\ByContextSettingsExtensions.cs" />
     <Compile Include="ModelBinders\IModelBinder.cs" />
     <Compile Include="Filters\Policy\IFilterPolicy.cs" />
     <Compile Include="ConfigurationHelper.cs" />
     <Compile Include="ConfigurationDataProviders\ConvertFromSectionDataProvider.cs" />
-    <Compile Include="ConfigurationService.cs" />
+    <Compile Include="ByContext.cs" />
     <Compile Include="Extensions\Extensions.cs" />
-    <Compile Include="IConfigurationService.cs" />
+    <Compile Include="IByContext.cs" />
     <Compile Include="ModelBinders\DefaultModelBinder.cs" />
     <Compile Include="RuntimeContextProviders\IRuntimeContextProvider.cs" />
     <Compile Include="ConfigurationDataProviders\ParameterToParameterValueProviderConverter.cs" />

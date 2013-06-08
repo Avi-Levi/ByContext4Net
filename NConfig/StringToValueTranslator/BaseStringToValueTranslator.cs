@@ -1,4 +1,4 @@
-﻿namespace NConfig.StringToValueTranslator
+﻿namespace ByContext.StringToValueTranslator
 {
     public abstract class BaseStringToValueTranslator<T> : IStringToValueTranslator
     {

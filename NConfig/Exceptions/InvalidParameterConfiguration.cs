@@ -1,6 +1,6 @@
-﻿namespace NConfig.Exceptions
+﻿namespace ByContext.Exceptions
 {
-    public class InvalidParameterConfiguration : NConfigException
+    public class InvalidParameterConfiguration : ByContextException
     {
         public InvalidParameterConfiguration(string message) : base(message) { }
     }

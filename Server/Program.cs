@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
-using NConfig;
+using ByContext;
 using Common;
 using Castle.Windsor;
 using Castle.MicroKernel.Registration;
-using NConfig.XML;
+using ByContext.XML;
 using Server.Services;
 using Server.Data;
 using System.ServiceModel.Description;
@@ -28,9 +28,9 @@ namespace Server
             Application.Run(container.Resolve<Host>());
         }
 
-        private static IConfigurationService BuildConfigService(WindsorContainer container)
+        private static IByContext BuildConfigService(WindsorContainer container)
         {
-            IConfigurationService configSvc = Configure.With(cfg=>
+            IByContext configSvc = Configure.With(cfg=>
                 cfg.RuntimeContext(ctx =>
                 {
                     ctx.Add(Subjects.Environment.Name, Subjects.Environment.Dev);
@@ -58,8 +58,8 @@ namespace Server
             container.Register(Component.For<ProductsDAL>());
             container.Register(Component.For<IServiceBehavior>().ImplementedBy<DI_InstanceProviderExtension>().Named("DI"));
 
-            IConfigurationService configSvc = BuildConfigService(container);
-            container.Register(Component.For<IConfigurationService>().Instance(configSvc));
+            IByContext configSvc = BuildConfigService(container);
+            container.Register(Component.For<IByContext>().Instance(configSvc));
 
             container.Register(Component.For<IWindsorContainer>().Instance(container));
 

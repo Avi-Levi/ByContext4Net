@@ -2,19 +2,19 @@
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using Common;
-using NConfig;
+using ByContext;
 
 namespace Server.WCF
 {
     public class ConfigServiceHost : ServiceHost
     {
-        public ConfigServiceHost(Type serviceType, IConfigurationService configService, params Uri[] baseAddresses)
+        public ConfigServiceHost(Type serviceType, IByContext configService, params Uri[] baseAddresses)
             : base(serviceType, baseAddresses)
         {
             this.ConfigService = configService;
         }
 
-        private IConfigurationService ConfigService { get; set; }
+        private IByContext ConfigService { get; set; }
         protected override void OnOpening()
         {
             foreach(var implementedContract in this.ImplementedContracts)

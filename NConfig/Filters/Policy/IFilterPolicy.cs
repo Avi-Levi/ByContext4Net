@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using NConfig.Filters.Evaluation;
+using ByContext.Filters.Evaluation;
 
-namespace NConfig.Filters.Policy
+namespace ByContext.Filters.Policy
 {
     public interface IFilterPolicy
     {

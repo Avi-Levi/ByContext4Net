@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace NConfig.Exceptions
+namespace ByContext.Exceptions
 {
-    public class SectionProviderConfigurationMissingException : NConfigException
+    public class SectionProviderConfigurationMissingException : ByContextException
     {
         public Type SectionType { get; private set; }
 

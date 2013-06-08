@@ -1,9 +1,9 @@
 ﻿using System;
-using NConfig.Model;
+using ByContext.Model;
 
-namespace NConfig.Exceptions
+namespace ByContext.Exceptions
 {
-    public class SessionToProviderConvertionFailed : NConfigException
+    public class SessionToProviderConvertionFailed : ByContextException
     {
         public Section Section { get; private set; }
 

@@ -1,5 +1,5 @@
 ﻿<Configuration>
-  <Section TypeName="NConfig.XML.Tests.TestSection,NConfig.XML.Tests">
+  <Section TypeName="ByContext.XML.Tests.TestSection,ByContext.XML.Tests">
     <Parameter Name="Value1">
       <Values>
         <Value Value="ValueA">

@@ -1,4 +1,4 @@
-﻿namespace NConfig.Filters.Evaluation
+﻿namespace ByContext.Filters.Evaluation
 {
     public struct ItemEvaluation
     {

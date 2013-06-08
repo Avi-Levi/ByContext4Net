@@ -1,7 +1,7 @@
-﻿using NConfig.Model;
+﻿using ByContext.Model;
 using NUnit.Framework;
 
-namespace NConfig.Tests
+namespace ByContext.Tests
 {
     [TestFixture]
     public class StringCaseSensitivity
@@ -25,7 +25,7 @@ namespace NConfig.Tests
                     .AddValue(new ParameterValue {Value = "str"}))
                 ;
 
-            IConfigurationService svc = Configure.With(cfg =>
+            IByContext svc = Configure.With(cfg =>
                 {
                     cfg.ThrowIfParameterMemberMissing = true;
                     cfg.AddSection(section);

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NConfig.RuntimeContextProviders
+namespace ByContext.RuntimeContextProviders
 {
     public class AppConfigRuntimeContextProvider : IRuntimeContextProvider
     {

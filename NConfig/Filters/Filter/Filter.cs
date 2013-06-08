@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using NConfig.Filters.Evaluation;
-using NConfig.Filters.Policy;
+using ByContext.Filters.Evaluation;
+using ByContext.Filters.Policy;
 
-namespace NConfig.Filters.Filter
+namespace ByContext.Filters.Filter
 {
     public class Filter : IFilter
     {

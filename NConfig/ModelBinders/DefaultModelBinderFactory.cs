@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Reflection;
 
-namespace NConfig.ModelBinders
+namespace ByContext.ModelBinders
 {
     public class DefaultModelBinderFactory : IModelBinderFactory
     {

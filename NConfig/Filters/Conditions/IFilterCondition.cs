@@ -1,6 +1,6 @@
-using NConfig.Filters.Evaluation;
+using ByContext.Filters.Evaluation;
 
-namespace NConfig.Filters.Conditions
+namespace ByContext.Filters.Conditions
 {
     /// <summary>
     /// represents a filter condition.

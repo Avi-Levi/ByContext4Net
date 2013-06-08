@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace NConfig.Model
+namespace ByContext.Model
 {
     /// <summary>
     /// Represents data item, which we want to have a different value

@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\ConfigConstants.cs" />
-    <Compile Include="Configuration\ConfigurationServiceExtensions.cs" />
+    <Compile Include="Configuration\ByContextExtensions.cs" />
     <Compile Include="Contracts\ILoginService.cs" />
     <Compile Include="Contracts\IProductsService.cs" />
     <Compile Include="Logger.cs" />
@@ -60,9 +60,9 @@
     <Compile Include="UserDetails.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NConfig\NConfig.csproj">
+    <ProjectReference Include="..\NConfig\ByContext.csproj">
       <Project>{E03FCBFB-4EE1-4A86-9703-8871AB2BE179}</Project>
-      <Name>NConfig</Name>
+      <Name>ByContext</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

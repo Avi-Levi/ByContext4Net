@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using NConfig.Exceptions;
-using NConfig.Filters.Conditions.TextMatch;
-using NConfig.Filters.Evaluation;
-using NConfig.Filters.Policy;
+using ByContext.Exceptions;
+using ByContext.Filters.Conditions.TextMatch;
+using ByContext.Filters.Evaluation;
+using ByContext.Filters.Policy;
 using NUnit.Framework;
 
-namespace NConfig.Tests.Filter
+namespace ByContext.Tests.Filter
 {
     [TestFixture]
     public class ContextWithTwoItems

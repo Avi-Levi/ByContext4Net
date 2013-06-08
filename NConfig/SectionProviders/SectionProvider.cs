@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using NConfig.ModelBinders;
-using NConfig.ParameterValueProviders;
+using ByContext.ModelBinders;
+using ByContext.ParameterValueProviders;
 
-namespace NConfig.SectionProviders
+namespace ByContext.SectionProviders
 {
     public class SectionProvider : ISectionProvider
     {

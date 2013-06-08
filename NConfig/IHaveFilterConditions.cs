@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using NConfig.Filters.Conditions;
+using ByContext.Filters.Conditions;
 
-namespace NConfig
+namespace ByContext
 {
     /// <summary>
     /// Represents an object that has references to certain context subjects.

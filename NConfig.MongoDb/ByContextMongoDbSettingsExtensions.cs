@@ -1,14 +1,14 @@
 ﻿using System.Linq;
+using ByContext.ConfigurationDataProviders;
+using ByContext.Model;
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
-using NConfig.ConfigurationDataProviders;
-using NConfig.Model;
 
-namespace NConfig
+namespace ByContext
 {
-    public static class NConfigSettingsExtensions
+    public static class ByContextMongoDbSettingsExtensions
     {
-        public static INConfigSettings AddFromCollection(this INConfigSettings settings,
+        public static IByContextSettings AddFromCollection(this IByContextSettings settings,
                                                          MongoCollection<Section> collection)
         {
             if (!BsonClassMap.IsClassMapRegistered(typeof(Section)))

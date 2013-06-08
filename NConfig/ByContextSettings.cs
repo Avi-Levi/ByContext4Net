@@ -1,18 +1,18 @@
 ﻿using System.Collections.Generic;
-using NConfig.ConfigurationDataProviders;
-using NConfig.Filters.Conditions.TextMatch;
-using NConfig.Filters.Evaluation;
-using NConfig.Filters.Policy;
-using NConfig.ModelBinders;
-using NConfig.ResultBuilder;
-using NConfig.StringToValueTranslator;
-using NConfig.StringToValueTranslator.SerializeStringToValueTranslator;
+using ByContext.ConfigurationDataProviders;
+using ByContext.Filters.Conditions.TextMatch;
+using ByContext.Filters.Evaluation;
+using ByContext.Filters.Policy;
+using ByContext.ModelBinders;
+using ByContext.ResultBuilder;
+using ByContext.StringToValueTranslator;
+using ByContext.StringToValueTranslator.SerializeStringToValueTranslator;
 
-namespace NConfig
+namespace ByContext
 {
-    public class NConfigSettings : INConfigSettings
+    public class ByContextSettings : IByContextSettings
     {
-        public NConfigSettings()
+        public ByContextSettings()
         {
             this.ModelBinderFactory = new DynamicMethodModelBinderFactory();
             this.FilterConditionsEvaluator = new FilterConditionsEvaluator();

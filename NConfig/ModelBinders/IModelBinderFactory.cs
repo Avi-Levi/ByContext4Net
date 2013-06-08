@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NConfig.ModelBinders
+namespace ByContext.ModelBinders
 {
     public interface IModelBinderFactory
     {

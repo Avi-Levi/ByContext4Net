@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using NConfig.Model;
+using ByContext.Model;
 using NUnit.Framework;
 
-namespace NConfig.XML.Tests
+namespace ByContext.XML.Tests
 {
     [TestFixture]
     public class ExportXmlTest

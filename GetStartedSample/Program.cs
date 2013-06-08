@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NConfig;
-using NConfig.Model;
+using ByContext;
+using ByContext.Model;
 
 namespace GetStartedSample
 {

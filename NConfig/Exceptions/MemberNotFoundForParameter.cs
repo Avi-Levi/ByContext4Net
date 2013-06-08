@@ -1,12 +1,12 @@
-﻿using NConfig.Model;
+﻿using ByContext.Model;
 
-namespace NConfig.Exceptions
+namespace ByContext.Exceptions
 {
-    public class MemberNotFouldForParameter : NConfigException
+    public class MemberNotFoundForParameter : ByContextException
     {
         public Parameter Parameter { get; private set; }
 
-        public MemberNotFouldForParameter(Parameter parameter)
+        public MemberNotFoundForParameter(Parameter parameter)
             : base(string.Format("A matching member was not found for parameter with name: {0}", parameter.Name))
         {
             Parameter = parameter;

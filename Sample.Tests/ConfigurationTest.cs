@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using Common.Contracts;
-using NConfig;
+using ByContext;
 using Common;
 using System.ServiceModel;
 using NUnit.Framework;

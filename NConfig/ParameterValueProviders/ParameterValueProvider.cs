@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using NConfig.Extensions;
-using NConfig.Filters.Filter;
-using NConfig.ResultBuilder;
-using NConfig.ValueProviders;
+using ByContext.Filters.Filter;
+using ByContext.ResultBuilder;
+using ByContext.ValueProviders;
+using ByContext.Extensions;
 
-namespace NConfig.ParameterValueProviders
+namespace ByContext.ParameterValueProviders
 {
     public class ParameterValueProvider : IParameterValueProvider
     {

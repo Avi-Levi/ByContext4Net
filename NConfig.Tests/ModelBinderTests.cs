@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using NConfig.ModelBinders;
+using ByContext.ModelBinders;
 using NUnit.Framework;
 
-namespace NConfig.Tests
+namespace ByContext.Tests
 {
     [TestFixture]
     public class ModelBinderTests

@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using ByContext.Model;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
-using NConfig.Model;
 using NUnit.Framework;
-using Parameter = NConfig.Model.Parameter;
+using Parameter = ByContext.Model.Parameter;
 
-namespace NConfig.Tests
+namespace ByContext.Tests
 {
     [TestFixture]
     public class LoadConfigurationTest
@@ -21,21 +21,21 @@ namespace NConfig.Tests
             
 
             Section section = new Section().FromType<ComplexTestSection>()
-                .AddParameter(new Parameter().FromExpression<ComplexTestSection, int>(x => x.Num)
+                .AddParameter(new Model.Parameter().FromExpression<ComplexTestSection, int>(x => x.Num)
                     .AddValue(new ParameterValue{Value = "1"}
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
                     .AddValue(new ParameterValue{Value = "2"}
                         .WithTextMatchReference("environment", "production")
                         .WithTextMatchReference("appType", "onlineClient")))
-                .AddParameter(new Parameter().FromExpression<ComplexTestSection, string>(x => x.Name)
+                .AddParameter(new Model.Parameter().FromExpression<ComplexTestSection, string>(x => x.Name)
                     .AddValue(new ParameterValue{Value = "name 1"}
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
                     .AddValue(new ParameterValue{Value = "name 2"}
                         .WithTextMatchReference("environment", "production")
                         .WithTextMatchReference("appType", "onlineClient")))
-                .AddParameter(new Parameter().FromExpression<ComplexTestSection, IList<int>>(x => x.Numbers)
+                .AddParameter(new Model.Parameter().FromExpression<ComplexTestSection, IList<int>>(x => x.Numbers)
                     .AddValue(new ParameterValue{Value = "1"}
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
@@ -48,7 +48,7 @@ namespace NConfig.Tests
                     .AddValue(new ParameterValue{Value = "2"}
                         .WithTextMatchReference("environment", "production")
                         .WithTextMatchReference("appType", "onlineClient")))
-                .AddParameter(new Parameter().FromExpression<ComplexTestSection, IEnumerable<int>>(x => x.EnumerableNumbers)
+                .AddParameter(new Model.Parameter().FromExpression<ComplexTestSection, IEnumerable<int>>(x => x.EnumerableNumbers)
                     .AddValue(new ParameterValue{Value = "1"}
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
@@ -61,11 +61,11 @@ namespace NConfig.Tests
                     .AddValue(new ParameterValue{Value = "2"}
                         .WithTextMatchReference("environment", "production")
                         .WithTextMatchReference("appType", "onlineClient")))
-                .AddParameter(new Parameter().FromExpression<ComplexTestSection, TestEnum>(x => x.EnumValue)
+                .AddParameter(new Model.Parameter().FromExpression<ComplexTestSection, TestEnum>(x => x.EnumValue)
                     .AddValue(new ParameterValue{Value = "Value1"}
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer")))
-                .AddParameter(new Parameter().FromExpression<ComplexTestSection, IDictionary<int, string>>(x => x.Dictionary)
+                .AddParameter(new Model.Parameter().FromExpression<ComplexTestSection, IDictionary<int, string>>(x => x.Dictionary)
                     .AddValue(new ParameterValue{Value = "1:one"}
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
@@ -78,11 +78,11 @@ namespace NConfig.Tests
                     .AddValue(new ParameterValue{Value = "4:four"}
                         .WithTextMatchReference("environment", "production")
                         .WithTextMatchReference("appType", "onlineClient")))
-                .AddParameter(new Parameter().FromExpression<ComplexTestSection, IService>(x => x.SVC).WithTranslator("Windsor")
+                .AddParameter(new Model.Parameter().FromExpression<ComplexTestSection, IService>(x => x.SVC).WithTranslator("Windsor")
                     .AddValue(new ParameterValue{Value = string.Empty}
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer")))
-                .AddParameter(new Parameter().FromExpression<ComplexTestSection, IEnumerable<IService>>(x => x.SVCs).WithTranslator("Windsor")
+                .AddParameter(new Model.Parameter().FromExpression<ComplexTestSection, IEnumerable<IService>>(x => x.SVCs).WithTranslator("Windsor")
                     .AddValue(new ParameterValue{Value = "1"}
                         .WithTextMatchReference("environment", "development")
                         .WithTextMatchReference("appType", "onlineServer"))
@@ -91,7 +91,7 @@ namespace NConfig.Tests
                         .WithTextMatchReference("appType", "onlineServer"))
                         );
 
-            IConfigurationService svc = Configure.With(cfg=>
+            IByContext svc = Configure.With(cfg=>
                 cfg.RuntimeContext((context) =>
                 {
                     context.Add("environment", "development");
@@ -124,7 +124,7 @@ namespace NConfig.Tests
                 .Register(Castle.MicroKernel.Registration.Component.For<IService>().Instance(new ServiceImpl(1)).Named("1"))
                 .Register(Castle.MicroKernel.Registration.Component.For<IService>().Instance(new ServiceImpl(2)).Named("2"));
 
-            IConfigurationService svc =
+            IByContext svc =
             Configure.With(cfg=>
                 cfg.RuntimeContext((context) =>
                 {

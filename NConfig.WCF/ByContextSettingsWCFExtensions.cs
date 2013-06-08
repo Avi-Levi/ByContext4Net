@@ -1,11 +1,11 @@
 ﻿using System.ServiceModel;
-using NConfig.ConfigurationDataProviders;
+using ByContext.ConfigurationDataProviders;
 
-namespace NConfig.WCF
+namespace ByContext.WCF
 {
-    public static class ConfigureWCFExtensions
+    public static class ByContextSettingsWCFExtensions
     {
-        public static INConfigSettings AddFromRemoteWCFService(this INConfigSettings source)
+        public static IByContextSettings AddFromRemoteWCFService(this IByContextSettings source)
         {
             source.AddConfigurationDataProvider(new ConvertFromSectionDataProvider(() =>
                 {

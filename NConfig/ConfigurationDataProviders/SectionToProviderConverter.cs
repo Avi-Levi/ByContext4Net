@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-using NConfig.Exceptions;
-using NConfig.Model;
-using NConfig.ModelBinders;
-using NConfig.SectionProviders;
+using ByContext.Exceptions;
+using ByContext.Model;
+using ByContext.ModelBinders;
+using ByContext.SectionProviders;
 
-namespace NConfig.ConfigurationDataProviders
+namespace ByContext.ConfigurationDataProviders
 {
     public class SectionToProviderConverter
     {
-        public ISectionProvider Convert(Section section, INConfigSettings settings)
+        public ISectionProvider Convert(Section section, IByContextSettings settings)
         {
             try
             {
@@ -30,23 +30,28 @@ namespace NConfig.ConfigurationDataProviders
             }
         }
 
-        private void BuildParametersProviders(Section section, INConfigSettings settings, SectionProvider provider, Type sectionType)
+        private void BuildParametersProviders(Section section, IByContextSettings settings, SectionProvider provider, Type sectionType)
         {
             var properties = sectionType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
             foreach (Parameter parameter in section.Parameters.Values)
             {
                 var parameterPropertyInfo = properties.SingleOrDefault(x => x.Name.ToLower() == parameter.Name.ToLower());
 
-                if (parameterPropertyInfo == null && settings.ThrowIfParameterMemberMissing)
+                if (parameterPropertyInfo == null)
                 {
-                    throw new MemberNotFouldForParameter(parameter);
+                    if(settings.ThrowIfParameterMemberMissing)
+                    {
+                        throw new MemberNotFoundForParameter(parameter);
+                    }
                 }
-
-                this.BuildParameterProvider(settings, provider, parameter, parameterPropertyInfo);
+                else
+                {
+                    this.BuildParameterProvider(settings, provider, parameter, parameterPropertyInfo);
+                }
             }
         }
 
-        private void BuildParameterProvider(INConfigSettings settings, SectionProvider provider, Parameter parameter, PropertyInfo parameterPropertyInfo)
+        private void BuildParameterProvider(IByContextSettings settings, SectionProvider provider, Parameter parameter, PropertyInfo parameterPropertyInfo)
         {
             if (string.IsNullOrEmpty(parameter.TypeName))
             {
@@ -61,7 +66,7 @@ namespace NConfig.ConfigurationDataProviders
             provider.ParameterValuesProviders.Add(parameterPropertyInfo.Name, valueProvider);
         }
 
-        private IModelBinder GetModelBinderForSection(Type sectionType, Section section, INConfigSettings settings)
+        private IModelBinder GetModelBinderForSection(Type sectionType, Section section, IByContextSettings settings)
         {
             var factory = new ConfigurationHelper()
                 .GetConfigurationProperty<Section, IModelBinderFactory>(section, x => x.ModelBinderFactory, settings.ModelBinderFactory,

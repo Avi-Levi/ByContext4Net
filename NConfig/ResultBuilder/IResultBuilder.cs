@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NConfig.ResultBuilder
+namespace ByContext.ResultBuilder
 {
     /// <summary>
     /// Used to build the final instance of the configuration parameter out of the values relevant for the runtime context.

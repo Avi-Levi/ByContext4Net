@@ -1,7 +1,7 @@
 ﻿using System.ServiceModel;
-using NConfig.Model;
+using ByContext.Model;
 
-namespace NConfig.WCF
+namespace ByContext.WCF
 {
     [ServiceContract]
     public interface IConfigurationDataService

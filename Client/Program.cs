@@ -6,10 +6,10 @@ using Client.Views.Login;
 using Castle.Windsor;
 using Castle.MicroKernel.Registration;
 using Client.Views.Shell;
-using NConfig;
+using ByContext;
 using Common;
 using Client.Views.Product;
-using NConfig.WCF;
+using ByContext.WCF;
 
 namespace Client
 {
@@ -43,16 +43,16 @@ namespace Client
             container.Register(Component.For<ProxyFactory>());
             container.Register(Component.For<LoggerFactory>());
 
-            IConfigurationService configSvc = BuildConfigurationService();
-            container.Register(Component.For<IConfigurationService>().Instance(configSvc));
+            IByContext svc = BuildByContext();
+            container.Register(Component.For<IByContext>().Instance(svc));
 
             container.Register(Component.For<IWindsorContainer>().Instance(container));
 
             return container;
         }
-        private static IConfigurationService BuildConfigurationService()
+        private static IByContext BuildByContext()
         {
-            IConfigurationService configSvc = Configure.With(cfg=>
+            IByContext configSvc = Configure.With(cfg=>
                 cfg.RuntimeContext(ctx =>
                 {
                     ctx.Add(Subjects.Environment.Name, Subjects.Environment.Dev);

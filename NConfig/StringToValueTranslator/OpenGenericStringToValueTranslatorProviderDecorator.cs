@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using NConfig.Exceptions;
+using ByContext.Exceptions;
 
-namespace NConfig.StringToValueTranslator
+namespace ByContext.StringToValueTranslator
 {
     public class OpenGenericStringToValueTranslatorProviderDecorator : IStringToValueTranslatorProvider
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace NConfig.ResultBuilder
+namespace ByContext.ResultBuilder
 {
     public class DictionaryResultBuilder<TKey, TValue> : BaseCollectionResultBuilder<IDictionary<TKey, TValue>,
         KeyValuePair<TKey, TValue>>

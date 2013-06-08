@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using NConfig.Exceptions;
-using NConfig.Extensions;
-using NConfig.SectionProviders;
+using ByContext.Exceptions;
+using ByContext.SectionProviders;
+using ByContext.Extensions;
 
-namespace NConfig
+namespace ByContext
 {
-    public class ConfigurationService : IConfigurationService
+    public class ByContext : IByContext
     {
-        public ConfigurationService(
+        public ByContext(
             IDictionary<string, string> runtimeContext,
             IDictionary<string, ISectionProvider> sectionsProviders)
         {
@@ -21,7 +21,7 @@ namespace NConfig
         private IDictionary<string, ISectionProvider> SectionsProviders { get; set; }
         #endregion properties
 
-        #region IConfigurationService members
+        #region IByContext members
         public TSection GetSection<TSection>() where TSection : class
         {
             try
@@ -53,15 +53,15 @@ namespace NConfig
         {
             return (TSection)this.GetSection(sectionType);
         }
-        public IConfigurationService WithReference(string subjectName, string subjectValue)
+        public IByContext WithReference(string subjectName, string subjectValue)
         {
             IDictionary<string, string> result = this.RuntimeContext.Clone();
             result[subjectName] = subjectValue;
 
-            return new ConfigurationService(result, this.SectionsProviders);
+            return new ByContext(result, this.SectionsProviders);
         }
 
-        public IConfigurationService WithReferences(IDictionary<string, string> references)
+        public IByContext WithReferences(IDictionary<string, string> references)
         {
             IDictionary<string, string> result = this.RuntimeContext.Clone();
             foreach (var refItem in references)
@@ -69,7 +69,7 @@ namespace NConfig
                 result[refItem.Key] = refItem.Value;
             }
 
-            return new ConfigurationService(result, this.SectionsProviders);
+            return new ByContext(result, this.SectionsProviders);
         }
 
         public void AddReference(string subjectName, string subjectValue)
@@ -77,6 +77,6 @@ namespace NConfig
             this.RuntimeContext[subjectName] = subjectValue;
         }
 
-        #endregion IConfigurationService members
+        #endregion IByContext members
     }
 }

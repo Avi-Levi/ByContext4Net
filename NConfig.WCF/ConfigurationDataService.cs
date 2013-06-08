@@ -1,8 +1,8 @@
 ﻿using System.Linq;
-using NConfig.Model;
-using NConfig.XML;
+using ByContext.Model;
+using ByContext.XML;
 
-namespace NConfig.WCF
+namespace ByContext.WCF
 {
     public class ConfigurationDataService : IConfigurationDataService 
     {

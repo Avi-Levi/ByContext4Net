@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NConfig.ModelBinders
+namespace ByContext.ModelBinders
 {
     public class DynamicMethodModelBinder : IModelBinder
     {

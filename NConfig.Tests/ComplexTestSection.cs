@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NConfig.Tests
+namespace ByContext.Tests
 {
     public class ComplexTestSection
     {

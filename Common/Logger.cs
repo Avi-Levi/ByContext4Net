@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using NConfig;
+using ByContext;
 
 namespace Common
 {
@@ -37,16 +37,16 @@ namespace Common
 
     public class LoggerFactory
     {
-        public LoggerFactory(IConfigurationService configurationService)
+        public LoggerFactory(IByContext byContext)
         {
-            this.ConfigurationService = configurationService;
+            this.ByContext = byContext;
         }
 
-        private IConfigurationService ConfigurationService { get; set; }
+        private IByContext ByContext { get; set; }
 
         public ILogger Create(Type owner)
         {
-            var config = this.ConfigurationService.
+            var config = this.ByContext.
                 WithLogOwnerRef(owner).GetSection<LoggingConfiguration>();
 
             return new FlatFileLogger(config);

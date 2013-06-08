@@ -1,8 +1,8 @@
-using NConfig.Filters.Evaluation;
+using ByContext.Filters.Evaluation;
 
-namespace NConfig.Exceptions
+namespace ByContext.Exceptions
 {
-    public class ItemsWithConflictingHighestScoreException : NConfigException
+    public class ItemsWithConflictingHighestScoreException : ByContextException
     {
         public ItemWithScore[] ItemsWithConflictingScore { get; private set; }
         public ItemWithScore[] AllItems { get; private set; }

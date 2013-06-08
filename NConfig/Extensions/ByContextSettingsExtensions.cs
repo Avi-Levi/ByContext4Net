@@ -1,50 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
-using NConfig.ConfigurationDataProviders;
-using NConfig.Filters.Policy;
-using NConfig.Model;
-using NConfig.ModelBinders;
-using NConfig.RuntimeContextProviders;
-using NConfig.StringToValueTranslator;
+using ByContext.ConfigurationDataProviders;
+using ByContext.Filters.Policy;
+using ByContext.Model;
+using ByContext.ModelBinders;
+using ByContext.RuntimeContextProviders;
+using ByContext.StringToValueTranslator;
 
-namespace NConfig
+namespace ByContext
 {
-    public static class NConfigSettingsExtensions
+    public static class ByContextSettingsExtensions
     {
-        public static INConfigSettings AddConfigurationDataProvider(this INConfigSettings source, IConfigurationDataProvider provider)
+        public static IByContextSettings AddConfigurationDataProvider(this IByContextSettings source, IConfigurationDataProvider provider)
         {
             source.ConfigurationDataProviders.Add(provider);
             return source;
         }
-        public static INConfigSettings AddSection(this INConfigSettings source, Section section)
+        public static IByContextSettings AddSection(this IByContextSettings source, Section section)
         {
             source.ConfigurationDataProviders.Add(new ConvertFromSectionDataProvider(() => new [] { section },source));
             return source;
         }
-        public static INConfigSettings ModelBinderFactory(this INConfigSettings source, IModelBinderFactory binderFactory)
+        public static IByContextSettings ModelBinderFactory(this IByContextSettings source, IModelBinderFactory binderFactory)
         {
             source.ModelBinderFactory = binderFactory;
             return source;
         }
-        public static INConfigSettings RuntimeContext(this INConfigSettings source,
+        public static IByContextSettings RuntimeContext(this IByContextSettings source,
             IRuntimeContextProvider provider)
         {
             source.RuntimeContext = provider.Get();
             return source;
         }
-        public static INConfigSettings RuntimeContext(this INConfigSettings source,Func<IDictionary<string, string>> getContext)
+        public static IByContextSettings RuntimeContext(this IByContextSettings source,Func<IDictionary<string, string>> getContext)
         {
             source.RuntimeContext = getContext();
             return source;
         }
-        public static INConfigSettings RuntimeContext(this INConfigSettings source,
+        public static IByContextSettings RuntimeContext(this IByContextSettings source,
             Action<IDictionary<string, string>> setRuntimeContext)
         {
             source.RuntimeContext = new Dictionary<string, string>();
             setRuntimeContext(source.RuntimeContext);
             return source;
         }
-        public static INConfigSettings SingleValueDefaultFilterPolicy(this INConfigSettings source, IFilterPolicy policy)
+        public static IByContextSettings SingleValueDefaultFilterPolicy(this IByContextSettings source, IFilterPolicy policy)
         {
             source.FilterPolicies.Remove(Configure.DefaultSingleValueFilterPolicyName);
             source.FilterPolicies.Add(Configure.DefaultSingleValueFilterPolicyName, policy);
@@ -53,13 +53,13 @@ namespace NConfig
         }
         
         #region TranslatorProvider
-        public static INConfigSettings AddTranslatorProvider(this INConfigSettings source, string name, IStringToValueTranslatorProvider provider)
+        public static IByContextSettings AddTranslatorProvider(this IByContextSettings source, string name, IStringToValueTranslatorProvider provider)
         {
             source.TranslatorProviders.Add(name, new OpenGenericStringToValueTranslatorProviderDecorator(provider));
 
             return source;
         }
-        public static TProvider GetTranslatorProvider<TProvider>(this INConfigSettings source, string name)
+        public static TProvider GetTranslatorProvider<TProvider>(this IByContextSettings source, string name)
             where TProvider : IStringToValueTranslatorProvider
         {
             var provider = source.TranslatorProviders[name];

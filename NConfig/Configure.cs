@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using NConfig.SectionProviders;
+using ByContext.SectionProviders;
 
-namespace NConfig
+namespace ByContext
 {
     public class Configure
     {
@@ -14,15 +14,15 @@ namespace NConfig
         {
         }
 
-        public static IConfigurationService With(Action<INConfigSettings> configureAction)
+        public static IByContext With(Action<IByContextSettings> configureAction)
         {
-            var settings = new NConfigSettings();
+            var settings = new ByContextSettings();
 
             configureAction(settings);
 
             IDictionary<string, ISectionProvider> providers = settings.ConfigurationDataProviders.SelectMany(x => x.Get()).ToDictionary(x => x.Key, x => x.Value);
 
-            return new ConfigurationService(settings.RuntimeContext, providers);
+            return new ByContext(settings.RuntimeContext, providers);
         }
     }
 }

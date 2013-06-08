@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NConfig.ResultBuilder
+namespace ByContext.ResultBuilder
 {
     public class ResultBuilderProvider
     {

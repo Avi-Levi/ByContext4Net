@@ -1,24 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace NConfig
+namespace ByContext
 {
     /// <summary>
     /// The configuration service's abstraction.
     /// Used to get configuration sections with values filtered according to the configured runtime context
     /// </summary>
-    public interface IConfigurationService
+    public interface IByContext
     {
         /// <summary>
         /// Returns a configuration section of type <typeparamref name="TSection"/> initialized with values filtered according to the configured runtime context.
         /// </summary>
         /// <typeparam name="TSection">Type of the requested section.</typeparam>
         /// <returns>A configuration section of type <typeparamref name="TSection"/>.</returns>
-        /// IConfigurationService configService = Configure.With(cfg=>...);
+        /// IByContext configService = Configure.With(cfg=>...);
         /// ExampleSection section = configService.GetSection<ExampleSection>();
-        /// </code>
-        /// </example>
-        /// </summary>
         /// <typeparam name="TSection">The type of requested section.</typeparam>
         /// <returns>Section, populated with values configured according to the application's runtime context.</returns>
         TSection GetSection<TSection>() where TSection : class;
@@ -28,7 +25,7 @@ namespace NConfig
         /// </summary>
         /// <param name="sectionType">Type of the requested section.</param>
         /// <returns>A configuration section of type <paramref name="sectionType"/>.</returns>
-        /// IConfigurationService configService = Configure.With(cfg=>...);
+        /// IByContext configService = Configure.With(cfg=>...);
         /// ExampleSection section = configService.GetSection(typeof(ExampleSection));
         /// </code>
         /// </example>
@@ -55,25 +52,25 @@ namespace NConfig
         TSection GetSection<TSection>(Type sectionType) where TSection : class;
 
         /// <summary>
-        /// Returns a new instance of <see cref="IConfigurationService"/> with the given context subject reference, added to the existing context, overriding existing keys.
+        /// Returns a new instance of <see cref="IByContext"/> with the given context subject reference, added to the existing context, overriding existing keys.
         /// <remarks>
-        /// Intended to be used when a subject's value is not known at <see cref="IConfigurationService"/>'s creation time.
+        /// Intended to be used when a subject's value is not known at <see cref="IByContext"/>'s creation time.
         /// </remarks>
         /// </summary>
         /// <param name="subjectName">The name of the referenced context subject.</param>
         /// <param name="subjectValue">The reference's value.</param>
-        /// <returns>New instance of <see cref="IConfigurationService"/> with the given context subject reference.</returns>
-        IConfigurationService WithReference(string subjectName, string subjectValue);
+        /// <returns>New instance of <see cref="IByContext"/> with the given context subject reference.</returns>
+        IByContext WithReference(string subjectName, string subjectValue);
 
         /// <summary>
-        /// Returns a new instance of <see cref="IConfigurationService"/> with the given context references, added to the existing context, overriding existing keys.
+        /// Returns a new instance of <see cref="IByContext"/> with the given context references, added to the existing context, overriding existing keys.
         /// <remarks>
-        /// Intended to be used when a subject's value is not known at <see cref="IConfigurationService"/>'s creation time.
+        /// Intended to be used when a subject's value is not known at <see cref="IByContext"/>'s creation time.
         /// </remarks>
         /// </summary>
         /// <param name="references">a collection of context references</param>
-        /// <returns>New instance of <see cref="IConfigurationService"/> with the given context subject reference.</returns>
-        IConfigurationService WithReferences(IDictionary<string, string> references);
+        /// <returns>New instance of <see cref="IByContext"/> with the given context subject reference.</returns>
+        IByContext WithReferences(IDictionary<string, string> references);
         
         void AddReference(string subjectName, string subjectValue);
     }

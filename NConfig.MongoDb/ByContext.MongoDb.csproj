@@ -8,8 +8,8 @@
     <ProjectGuid>{3E759E7A-9367-4931-AB84-42280E1A3206}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NConfig.MongoDb</RootNamespace>
-    <AssemblyName>NConfig.MongoDb</AssemblyName>
+    <RootNamespace>ByContext.MongoDb</RootNamespace>
+    <AssemblyName>ByContext.MongoDb</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -57,7 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NConfigSettingsExtensions.cs" />
+    <Compile Include="ByContextMongoDbSettingsExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,9 +65,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NConfig\NConfig.csproj">
+    <ProjectReference Include="..\NConfig\ByContext.csproj">
       <Project>{E03FCBFB-4EE1-4A86-9703-8871AB2BE179}</Project>
-      <Name>NConfig</Name>
+      <Name>ByContext</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace NConfig.XML.Tests
+namespace ByContext.XML.Tests
 {
     [TestFixture]
     public class NegateTest
@@ -8,7 +8,7 @@ namespace NConfig.XML.Tests
         [Test]
         public void NegateIsParsed()
         {
-            IConfigurationService svc = Configure.With(cfg =>
+            IByContext svc = Configure.With(cfg =>
                                                        cfg.RuntimeContext((context) =>
                                                                               {
                                                                                   context.Add("A","2");

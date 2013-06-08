@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using NConfig.Extensions;
-using NConfig.Filters;
-using NConfig.Filters.Conditions;
-using NConfig.Filters.Conditions.TextMatch;
-using NConfig.Model;
+using ByContext.Filters.Conditions.TextMatch;
+using ByContext.Model;
+using ByContext.Extensions;
+using ByContext.Filters;
+using ByContext.Filters.Conditions;
 
-namespace NConfig.Tests
+namespace ByContext.Tests
 {
     public static class Extensions
     {

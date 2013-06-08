@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NConfig.StringToValueTranslator
+namespace ByContext.StringToValueTranslator
 {
     public class KeyValuePairTranslator<TKey, TValue> : BaseStringToValueTranslator<KeyValuePair<TKey, TValue>>
     {

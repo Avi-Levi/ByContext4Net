@@ -1,4 +1,4 @@
-﻿namespace NConfig.Tests
+﻿namespace ByContext.Tests
 {
     public class SimpleSection
     {

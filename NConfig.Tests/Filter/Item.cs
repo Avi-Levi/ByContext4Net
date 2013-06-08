@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using NConfig.Filters.Conditions;
+using ByContext.Filters.Conditions;
 
-namespace NConfig.Tests.Filter
+namespace ByContext.Tests.Filter
 {
     public class Item : IHaveFilterConditions
     {

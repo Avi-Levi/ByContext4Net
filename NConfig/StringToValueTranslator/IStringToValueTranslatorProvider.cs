@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NConfig.StringToValueTranslator
+namespace ByContext.StringToValueTranslator
 {
     /// <summary>
     /// provides instances of <see cref="IStringToValueTranslator"/> for a given <see cref="System.Type"/>

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using NConfig.SectionProviders;
+using ByContext.SectionProviders;
 
-namespace NConfig.ConfigurationDataProviders
+namespace ByContext.ConfigurationDataProviders
 {
     /// <summary>
     /// Represents a configuration data source.

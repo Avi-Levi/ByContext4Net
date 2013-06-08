@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace NConfig.Filters.Conditions.TextMatch
+namespace ByContext.Filters.Conditions.TextMatch
 {
     public class TextMatchConditionFactory : IFilterConditionFactory
     {

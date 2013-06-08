@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NConfig.StringToValueTranslator
+namespace ByContext.StringToValueTranslator
 {
     public class DelegateWrapperTranslator<T> : BaseStringToValueTranslator<T>
     {

@@ -3,9 +3,9 @@ using System.Linq;
 using System.ServiceModel;
 using System.ServiceModel.Activation;
 using System.Windows.Forms;
-using NConfig;
-using NConfig.Extensions;
-using NConfig.WCF;
+using ByContext;
+using ByContext.Extensions;
+using ByContext.WCF;
 using Server.Configuration;
 using Server.WCF;
 
@@ -18,7 +18,7 @@ namespace Server
             InitializeComponent();
         }
 
-        public IConfigurationService ConfigService { get; set; }
+        public IByContext ConfigService { get; set; }
 
         private void Host_Load(object sender, EventArgs e)
         {
