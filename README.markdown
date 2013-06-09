@@ -24,18 +24,18 @@
 ```
 string data =
 @"<Configuration>" +
-  "<Section TypeName='SimplestPossibleThing.ExampleModel,SimplestPossibleThing'>" +
-	"<Parameter Name='LogsPath'>" +
-		"<Values>" +
-			"<Value Value='./logs'>" +
-				"<TextMatch Subject='environment' Value='development'/>" +
-			"</Value>" +
-			"<Value Value='d:/somefolder/logs'>" +
-				"<TextMatch Subject='environment' Value='production'/>" +
-			"</Value>" +
-		"</Values>" +
-	"</Parameter>" +
-  "</Section>" +
+ "<Section TypeName='SimplestPossibleThing.ExampleModel,SimplestPossibleThing'>"+
+  "<Parameter Name='LogsPath'>" +
+	"<Values>" +
+		"<Value Value='./logs'>" +
+			"<TextMatch Subject='environment' Value='development'/>" +
+		"</Value>" +
+		"<Value Value='d:/somefolder/logs'>" +
+			"<TextMatch Subject='environment' Value='production'/>" +
+		"</Value>" +
+	"</Values>" +
+  "</Parameter>" +
+ "</Section>" +
 "</Configuration>";
 
 // create byContext instance, loaded with the above xml and 
