@@ -18,6 +18,9 @@
      when your product needs to be highly configurable and you 
 	 don't want to write ad-hoc code to manage the variation of 
 	 configuration data, byContext can save you.
+	 
+## License
+	ByContext is licensed under Apache 2.0
 
 ### simplest possible thing
 

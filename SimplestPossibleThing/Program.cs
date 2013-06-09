@@ -23,10 +23,17 @@ namespace SimplestPossibleThing
                 "</Section>" +
             "</Configuration>";
 
-            // create byContext instance, loaded with the above xml and with runtime context initialized to environment = production
-            var byContext = Configure.With(cfg => cfg.AddFromRawXml(data).RuntimeContext(ctx => ctx.Add("environment", "production")));
+            // create byContext instance, loaded with the above xml and 
+            // with runtime context initialized to environment = production
+            var byContext = Configure.With(
+                cfg => 
+                    cfg.AddFromRawXml(data)
+                    .RuntimeContext(
+                    ctx => 
+                        ctx.Add("environment", "production")));
 
-            // get 'ExampleModel' instance with its  properties initialized with the value most relevant to the app's runtime context
+            // get 'ExampleModel' instance with its  properties initialized 
+            // with the value most relevant to the app's runtime context
             var model = byContext.GetSection<ExampleModel>();
 
             // print 'd:/somefolder/logs'
