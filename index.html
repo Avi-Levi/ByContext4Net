@@ -4,11 +4,11 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Bycontext : A .NET configuration values management library" />
+    <meta name="description" content="ByContext : " />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Bycontext</title>
+    <title>ByContext</title>
   </head>
 
   <body>
@@ -18,8 +18,8 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/Avi-Levi/ByContext">View on GitHub</a>
 
-          <h1 id="project_title">Bycontext</h1>
-          <h2 id="project_tagline">A .NET configuration values management library</h2>
+          <h1 id="project_title">ByContext</h1>
+          <h2 id="project_tagline"></h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/Avi-Levi/ByContext/zipball/master">Download this project as a .zip file</a>
@@ -59,22 +59,22 @@
 </code></pre>
 
 <h3>
-<a name="simple-possible-thing" class="anchor" href="#simple-possible-thing"><span class="octicon octicon-link"></span></a>simple possible thing</h3>
+<a name="simplest-possible-thing" class="anchor" href="#simplest-possible-thing"><span class="octicon octicon-link"></span></a>simplest possible thing</h3>
 
 <pre><code>string data =
 @"&lt;Configuration&gt;" +
-  "&lt;Section TypeName='SimplestPossibleThing.ExampleModel,SimplestPossibleThing'&gt;" +
-    "&lt;Parameter Name='LogsPath'&gt;" +
-        "&lt;Values&gt;" +
-            "&lt;Value Value='./logs'&gt;" +
-                "&lt;TextMatch Subject='environment' Value='development'/&gt;" +
-            "&lt;/Value&gt;" +
-            "&lt;Value Value='d:/somefolder/logs'&gt;" +
-                "&lt;TextMatch Subject='environment' Value='production'/&gt;" +
-            "&lt;/Value&gt;" +
-        "&lt;/Values&gt;" +
-    "&lt;/Parameter&gt;" +
-  "&lt;/Section&gt;" +
+ "&lt;Section TypeName='SimplestPossibleThing.ExampleModel,SimplestPossibleThing'&gt;"+
+  "&lt;Parameter Name='LogsPath'&gt;" +
+    "&lt;Values&gt;" +
+        "&lt;Value Value='./logs'&gt;" +
+            "&lt;TextMatch Subject='environment' Value='development'/&gt;" +
+        "&lt;/Value&gt;" +
+        "&lt;Value Value='d:/somefolder/logs'&gt;" +
+            "&lt;TextMatch Subject='environment' Value='production'/&gt;" +
+        "&lt;/Value&gt;" +
+    "&lt;/Values&gt;" +
+  "&lt;/Parameter&gt;" +
+ "&lt;/Section&gt;" +
 "&lt;/Configuration&gt;";
 
 // create byContext instance, loaded with the above xml and 
@@ -99,7 +99,7 @@ Console.WriteLine(model.LogsPath);
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p class="copyright">Bycontext maintained by <a href="https://github.com/Avi-Levi">Avi-Levi</a></p>
+        <p class="copyright">ByContext maintained by <a href="https://github.com/Avi-Levi">Avi-Levi</a></p>
         <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
