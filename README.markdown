@@ -19,7 +19,7 @@
 	 don't want to write ad-hoc code to manage the variation of 
 	 configuration data, byContext can save you.
 
-### simple possible thing
+### simplest possible thing
 
 ```
 string data =
