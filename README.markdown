@@ -22,7 +22,7 @@
 ## License
 	ByContext is licensed under Apache 2.0
 
-### simplest possible thing
+### Simplest possible thing
 
 ```
 string data =
@@ -57,3 +57,7 @@ var model = byContext.GetSection<ExampleModel>();
 // print 'd:/somefolder/logs'
 Console.WriteLine(model.LogsPath);
 ```
+
+## Documentation and support
+Documentation will be available soon, for the meantime you can take a look at the example application, it is pretty simple.
+and you could also contact me using my [linkedin profile](http://www.linkedin.com/profile/view?id=58818019&goback=%2Enmp_*1_*1_*1_*1_*1_*1_*1_*1_*1_*1&trk=spm_pic) 
