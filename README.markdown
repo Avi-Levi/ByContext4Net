@@ -27,7 +27,7 @@
 ```
 string data =
 @"<Configuration>" +
- "<Section TypeName='SimplestPossibleThing.ExampleModel,SimplestPossibleThing'>"+
+"<Section TypeName='SimplestPossibleThing.ExampleModel,SimplestPossibleThing'>"+
   "<Parameter Name='LogsPath'>" +
 	"<Values>" +
 		"<Value Value='./logs'>" +
@@ -38,7 +38,7 @@ string data =
 		"</Value>" +
 	"</Values>" +
   "</Parameter>" +
- "</Section>" +
+"</Section>" +
 "</Configuration>";
 
 // create byContext instance, loaded with the above xml and 
