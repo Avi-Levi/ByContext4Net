@@ -1,18 +1,4 @@
-﻿// Copyright 2011 Avi Levi
-
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-
-//  http://www.apache.org/licenses/LICENSE-2.0
-
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,12 +28,12 @@ namespace ByContext.ConfigurationDataProviders
 
             var translator = this.GetTranslator(parameter, parameterValueType, settings);
 
-            IEnumerable<IValueProvider> valueProviders = this.BuildValueProviders(parameter.Values,translator,settings);
+            IValueProvider[] valueProviders = this.BuildValueProviders(parameter.Values, translator, settings).ToArray();
 
             var resultBuilder = settings.ResultBuilderProvider.Get(parameterType);
 
             IParameterValueProvider parameterValueProvider = new ParameterValueProvider
-                (valueProviders, resultBuilder, new Filter(policy, settings.FilterConditionsEvaluator), required, parameter.Name);
+                (valueProviders, resultBuilder, new Filter(policy, settings.FilterConditionsEvaluator, settings.LogggerProvider), required, parameter.Name, settings.LogggerProvider);
 
             return parameterValueProvider;
         }
@@ -63,7 +49,7 @@ namespace ByContext.ConfigurationDataProviders
 
         private IEnumerable<IFilterCondition> TranslateFilterConditions(IEnumerable<FilterCondition> filterConditions, IByContextSettings settings)
         {
-            foreach(var filterCondition in filterConditions)
+            foreach (var filterCondition in filterConditions)
             {
                 IFilterConditionFactory factory = this._helper.GetConfigurationProperty(filterCondition, x => x.ConditionName, () => settings.FilterConditionFactories[settings.DefaultFilterConditionName], x => settings.FilterConditionFactories[x]);
                 yield return factory.Create(filterCondition.Properties);
@@ -73,14 +59,14 @@ namespace ByContext.ConfigurationDataProviders
         private bool GetRequired(Parameter parameter)
         {
             bool required = this._helper.GetConfigurationProperty<Parameter, bool>
-                (parameter, x => x.Required, () => true,bool.Parse);
+                (parameter, x => x.Required, () => true, bool.Parse);
             return required;
         }
 
         private IFilterPolicy GetFilterPolicy(Parameter parameter, Type parameterType, IByContextSettings settings)
         {
             IFilterPolicy filterPolicy = this._helper.GetConfigurationProperty<Parameter, IFilterPolicy>
-                (parameter,x=>x.PolicyName,
+                (parameter, x => x.PolicyName,
                 () =>
                 {
                     if (settings.ResultBuilderProvider.IsTypeIsSupportedCollection(parameterType))
@@ -101,7 +87,7 @@ namespace ByContext.ConfigurationDataProviders
         private IStringToValueTranslator GetTranslator(Parameter parameter, Type parameterValueType, IByContextSettings settings)
         {
             var translatorProvider = this._helper.GetConfigurationProperty<Parameter, IStringToValueTranslatorProvider>
-                (parameter,x=>x.Translator,() => settings.TranslatorProviders[settings.DefaultRawValueTranslatorName],
+                (parameter, x => x.Translator, () => settings.TranslatorProviders[settings.DefaultRawValueTranslatorName],
                 x => settings.TranslatorProviders[x]);
 
             return translatorProvider.Get(parameterValueType);

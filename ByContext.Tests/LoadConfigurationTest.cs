@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using ByContext.Logging;
 using ByContext.Model;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
@@ -99,6 +100,7 @@ namespace ByContext.Tests
                 })
                 .AddWindsorTranslatorProvider(container)
                 .AddSection(section)
+                .TraceLogger(LogLevel.Debug)
             );
 
             var testSection = svc.GetSection<ComplexTestSection>();

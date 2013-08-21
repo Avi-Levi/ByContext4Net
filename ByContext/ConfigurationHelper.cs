@@ -16,7 +16,6 @@ using System;
 using System.Linq.Expressions;
 using System.Reflection;
 using ByContext.Exceptions;
-using ByContext.Extensions;
 
 namespace ByContext
 {

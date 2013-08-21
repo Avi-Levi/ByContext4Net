@@ -36,5 +36,10 @@ namespace ByContext.ValueProviders
         {
             return this.Translator.Translate(this.Value);
         }
+
+        public override string ToString()
+        {
+            return this.Value;
+        }
     }
 }

@@ -148,10 +148,10 @@ namespace ByContext.XML
         private Section BuildSectionFromNode(XElement sectionNode)
         {
             Section section = new Section
-                {
-                    TypeName = sectionNode.GetAttributeValueOrThrow(TypeNameAttribute),
-                    ModelBinderFactory = sectionNode.GetAttributeValueOrNull(ModelBinderFactoryName)
-                };
+            {
+                TypeName = sectionNode.GetAttributeValueOrThrow(TypeNameAttribute),
+                ModelBinderFactory = sectionNode.GetAttributeValueOrNull(ModelBinderFactoryName)
+            };
 
             foreach (XElement parameterNode in sectionNode.Elements(ParameterName))
             {
@@ -165,13 +165,13 @@ namespace ByContext.XML
         private Parameter BuildParameterFromNode(XElement parameterNode)
         {
             return new Parameter
-                {
-                    Name = parameterNode.GetAttributeValueOrThrow(ParameterNameAttribute),
-                    TypeName = parameterNode.GetAttributeValueOrNull(TypeNameAttribute),
-                    Translator = parameterNode.GetAttributeValueOrNull(TranslatorAttribute),
-                    Required = parameterNode.GetAttributeValueOrNull(RequiredAttribute),
-                    Values = BuildValuesFromNode(parameterNode.Element(ValuesNodeName)),
-                };
+            {
+                Name = parameterNode.GetAttributeValueOrThrow(ParameterNameAttribute),
+                TypeName = parameterNode.GetAttributeValueOrNull(TypeNameAttribute),
+                Translator = parameterNode.GetAttributeValueOrNull(TranslatorAttribute),
+                Required = parameterNode.GetAttributeValueOrNull(RequiredAttribute),
+                Values = BuildValuesFromNode(parameterNode.Element(ValuesNodeName)),
+            };
         }
 
         private IList<ParameterValue> BuildValuesFromNode(XElement valuesNode)
@@ -190,9 +190,9 @@ namespace ByContext.XML
         private ParameterValue BuildParameterValueFromNode(XElement valueNode)
         {
             var parameterValue = new ParameterValue
-                {
-                    Value = valueNode.GetAttributeValueOrThrow(ValueNodeName)
-                };
+            {
+                Value = valueNode.GetAttributeValueOrThrow(ValueNodeName)
+            };
 
             foreach (XElement conditionNode in valueNode.Elements())
             {
@@ -200,7 +200,11 @@ namespace ByContext.XML
                 Dictionary<string, string> attributes = conditionNode.Attributes()
                                                                      .ToDictionary(x => x.Name.LocalName, x => x.Value);
 
-                parameterValue.FilterConditions.Add(FilterCondition.Create(name, attributes));
+                parameterValue.FilterConditions.Add(new FilterCondition
+                {
+                    ConditionName = name,
+                    Properties = attributes
+                });
             }
 
             return parameterValue;

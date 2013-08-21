@@ -69,6 +69,14 @@
     <Compile Include="IFilterConditionFactory.cs" />
     <Compile Include="IHaveFilterConditions.cs" />
     <Compile Include="IByContextSettings.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\ILoggerProvider.cs" />
+    <Compile Include="Logging\LogHeirarchy.cs" />
+    <Compile Include="Logging\LogLevel.cs" />
+    <Compile Include="Logging\NullLogger.cs" />
+    <Compile Include="Logging\NullLoggerProvider.cs" />
+    <Compile Include="Logging\TraceLogger.cs" />
+    <Compile Include="Logging\TraceLoggerProvider.cs" />
     <Compile Include="ModelBinders\DefaultModelBinderFactory.cs" />
     <Compile Include="ModelBinders\DynamicMethodModelBinder.cs" />
     <Compile Include="ModelBinders\DynamicMethodModelBinderFactory.cs" />

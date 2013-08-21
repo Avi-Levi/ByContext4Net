@@ -12,22 +12,28 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using System.Runtime.Serialization;
 using ByContext.Filters.Evaluation;
 
 namespace ByContext.Filters.Conditions.TextMatch
 {
+    [DataContract]
     public class TextMatchCondition : IFilterCondition
     {
         public static readonly string Name = "TextMatch";
 
+        [DataMember]
         public string Subject { get; private set; }
+        [DataMember]
         public string Value { get; set; }
+        [DataMember]
         public bool Negate { get; private set; }
 
         public override string ToString()
         {
             return this.Subject + " " + this.Value + " " + this.Negate.ToString();
         }
+
         public TextMatchCondition(string subject, string value):this(subject,value,false)
         {}
 

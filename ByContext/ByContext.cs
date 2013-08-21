@@ -16,7 +16,6 @@ using System;
 using System.Collections.Generic;
 using ByContext.Exceptions;
 using ByContext.SectionProviders;
-using ByContext.Extensions;
 
 namespace ByContext
 {

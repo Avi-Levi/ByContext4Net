@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using ByContext.ConfigurationDataProviders;
 using ByContext.Filters.Policy;
+using ByContext.Logging;
 using ByContext.Model;
 using ByContext.ModelBinders;
 using ByContext.RuntimeContextProviders;
@@ -65,6 +66,12 @@ namespace ByContext
 
             return source;
         }
+        public static IByContextSettings TraceLogger(this IByContextSettings source, LogLevel logLevel)
+        {
+            source.LogggerProvider = new TraceLoggerProvider(logLevel);
+            return source;
+        }
+
         
         #region TranslatorProvider
         public static IByContextSettings AddTranslatorProvider(this IByContextSettings source, string name, IStringToValueTranslatorProvider provider)

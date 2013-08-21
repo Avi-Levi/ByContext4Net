@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.ServiceModel;
-using System.ServiceModel.Activation;
 using System.Windows.Forms;
 using ByContext;
-using ByContext.Extensions;
 using ByContext.WCF;
 using Server.Configuration;
 using Server.WCF;

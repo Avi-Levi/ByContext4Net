@@ -1,40 +1,34 @@
-﻿// Copyright 2011 Avi Levi
-
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-
-//  http://www.apache.org/licenses/LICENSE-2.0
-
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Text;
 using ByContext.Filters.Filter;
+using ByContext.Logging;
 using ByContext.ResultBuilder;
 using ByContext.ValueProviders;
-using ByContext.Extensions;
 
 namespace ByContext.ParameterValueProviders
 {
     public class ParameterValueProvider : IParameterValueProvider
     {
-        public ParameterValueProvider(IEnumerable<IValueProvider> items,IResultBuilder resultBuilder, IFilter filter, bool required, string name)
+        private const string TimerLogText = "Filtering and building values duration: ";
+
+        public ParameterValueProvider(IValueProvider[] items, IResultBuilder resultBuilder, IFilter filter, bool required, string name, ILoggerProvider loggerProvider)
         {
             this.Items = items;
             this.ResultBuilder = resultBuilder;
             this.Filter = filter;
             this.Required = required;
             this.Name = name;
+            this.TimerLogger = loggerProvider.GetLogger(LogHeirarchy.Root.Timer.Value, GetType());
+            this.FlowLogger = loggerProvider.GetLogger(LogHeirarchy.Root.Flow.Value, GetType());
         }
 
-        private string Name{ get; set; }
-        private IEnumerable<IValueProvider> Items { get; set; }
+        private ILogger TimerLogger { get; set; }
+        private ILogger FlowLogger { get; set; }
+        private string Name { get; set; }
+        private IValueProvider[] Items { get; set; }
         private IResultBuilder ResultBuilder { get; set; }
         private IFilter Filter { get; set; }
 
@@ -42,7 +36,16 @@ namespace ByContext.ParameterValueProviders
 
         public object Get(IDictionary<string, string> runtimeContext)
         {
-            object[] valuesByPolicy = this.Filter.FilterItems(runtimeContext,this.Items).OfType<IValueProvider>().Select(v => v.Get()).ToArray();
+            this.FlowLogger.Debug(() => string.Format("ParameterValueProvider.Get for parameter with name: {0} and context: {1}", this.Name, runtimeContext.FormatString()));
+            this.FlowLogger.Debug(() => this.LogInputParameters(this.Items));
+
+            var watch = Stopwatch.StartNew();
+
+            object[] valuesByPolicy = this.Filter.FilterItems(runtimeContext, this.Items).OfType<IValueProvider>().Select(v => v.Get()).ToArray();
+
+            watch.Stop();
+
+            this.TimerLogger.Debug(TimerLogText + watch.ElapsedMilliseconds);
 
             if (!valuesByPolicy.Any())
             {
@@ -59,5 +62,22 @@ namespace ByContext.ParameterValueProviders
 
             return this.ResultBuilder.Build(valuesByPolicy);
         }
+
+        private string LogInputParameters(IEnumerable<IHaveFilterConditions> items)
+        {
+            var sb = new StringBuilder();
+
+            sb.Append("filtered items: " + Environment.NewLine);
+
+            foreach (var item in items)
+            {
+                sb.Append("item: " + item.ToString() + Environment.NewLine);
+                sb.Append("Conditions:" + Environment.NewLine);
+                item.FilterConditions.ForEach(condition => sb.Append(condition.ToString() + " | "));
+            }
+
+            return sb.ToString();
+        }
+
     }
 }

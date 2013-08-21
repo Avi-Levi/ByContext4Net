@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using ByContext.ConfigurationDataProviders;
 using ByContext.Filters.Evaluation;
 using ByContext.Filters.Policy;
+using ByContext.Logging;
 using ByContext.ModelBinders;
 using ByContext.ResultBuilder;
 using ByContext.StringToValueTranslator;
@@ -24,6 +25,7 @@ namespace ByContext
 {
     public interface IByContextSettings
     {
+        ILoggerProvider LogggerProvider { get; set; }
         IDictionary<string, string> RuntimeContext { get; set; }
         IList<IConfigurationDataProvider> ConfigurationDataProviders { get; }
         IDictionary<string, IStringToValueTranslatorProvider> TranslatorProviders { get; }

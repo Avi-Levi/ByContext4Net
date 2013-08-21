@@ -17,6 +17,7 @@ using ByContext.ConfigurationDataProviders;
 using ByContext.Filters.Conditions.TextMatch;
 using ByContext.Filters.Evaluation;
 using ByContext.Filters.Policy;
+using ByContext.Logging;
 using ByContext.ModelBinders;
 using ByContext.ResultBuilder;
 using ByContext.StringToValueTranslator;
@@ -31,6 +32,7 @@ namespace ByContext
             this.ModelBinderFactory = new DynamicMethodModelBinderFactory();
             this.FilterConditionsEvaluator = new FilterConditionsEvaluator();
             this.ResultBuilderProvider = new ResultBuilderProvider();
+            this.LogggerProvider = new NullLoggerProvider();
 
             this.FilterPolicies = new Dictionary<string, IFilterPolicy>();
             this.ConfigurationDataProviders = new List<IConfigurationDataProvider>();
@@ -57,6 +59,7 @@ namespace ByContext
         public IFilterConditionsEvaluator FilterConditionsEvaluator { get; set; }
         public ResultBuilderProvider ResultBuilderProvider { get; private set; }
         public bool ThrowIfParameterMemberMissing { get; set; }
+        public ILoggerProvider LogggerProvider { get; set; }
 
         #region private methods
 

@@ -19,7 +19,7 @@ using System.Text;
 using System.Reflection;
 using System.Linq.Expressions;
 
-namespace ByContext.Extensions
+namespace ByContext
 {
     public static class Extensions
     {
@@ -70,6 +70,14 @@ namespace ByContext.Extensions
         {
             PropertyInfo pi = ((PropertyInfo)((MemberExpression)source.Body).Member);
             return pi;
+        }
+
+        public static void ForEach<T>(this IEnumerable<T> source, Action<T> action)
+        {
+            foreach (var item in source)
+            {
+                action(item);
+            }
         }
     }
 }

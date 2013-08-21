@@ -11,30 +11,44 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using ByContext.Filters.Evaluation;
 using ByContext.Filters.Policy;
+using ByContext.Logging;
 
 namespace ByContext.Filters.Filter
 {
     public class Filter : IFilter
     {
-        public Filter(IFilterPolicy policy, IFilterConditionsEvaluator filterConditionsEvaluator)
+        private const string FilteritemsText = "Filter items duration: ";
+
+        public Filter(IFilterPolicy policy, IFilterConditionsEvaluator filterConditionsEvaluator, ILoggerProvider loggerProvider)
         {
-            Policy = policy;
-            FilterConditionsEvaluator = filterConditionsEvaluator;
+            this.Policy = policy;
+            this.FilterConditionsEvaluator = filterConditionsEvaluator;
+            this.TimerLogger = loggerProvider.GetLogger(LogHeirarchy.Root.Timer.Value, GetType());
         }
 
         private IFilterPolicy Policy { get; set; }
         private IFilterConditionsEvaluator FilterConditionsEvaluator { get; set; }
-        
+        private ILogger TimerLogger { get; set; }
+
         public IHaveFilterConditions[] FilterItems(IDictionary<string, string> runtimeContext, IEnumerable<IHaveFilterConditions> items)
         {
+            var watch = Stopwatch.StartNew();
+
             IEnumerable<ItemEvaluation> itemsEvaluationResult = this.FilterConditionsEvaluator.Evaluate(runtimeContext, items);
 
-            return this.Policy.Filter(itemsEvaluationResult).Select(x => x.Item).ToArray();
+            var result = this.Policy.Filter(itemsEvaluationResult).Select(x => x.Item).ToArray();
+
+            watch.Stop();
+
+            this.TimerLogger.Debug(FilteritemsText + watch.ElapsedMilliseconds);
+
+            return result;
         }
+
     }
 }
