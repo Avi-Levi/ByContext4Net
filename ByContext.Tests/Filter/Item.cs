@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using ByContext.Filters.Conditions;
+using ByContext.FilterConditions;
 
 namespace ByContext.Tests.Filter
 {

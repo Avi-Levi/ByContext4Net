@@ -13,9 +13,8 @@
 // limitations under the License.
 
 using System.Runtime.Serialization;
-using ByContext.Filters.Evaluation;
 
-namespace ByContext.Filters.Conditions.TextMatch
+namespace ByContext.FilterConditions.TextMatch
 {
     [DataContract]
     public class TextMatchCondition : IFilterCondition
@@ -44,9 +43,9 @@ namespace ByContext.Filters.Conditions.TextMatch
             Negate = negate;
         }
 
-        public bool Evaluate(ConditionEvaluationContext context)
+        public bool Evaluate(string value)
         {
-            return context.CurrentRuntimeContextItem.Key == Subject && context.CurrentRuntimeContextItem.Value == Value;
+            return value == this.Value;
         }
     }
 }

@@ -76,7 +76,9 @@ namespace ByContext.ConfigurationDataProviders
                 throw new InvalidParameterConfiguration(string.Format("Specified type {0} for parameter {1} is not assignable to the property of type {2}", parameter.TypeName, parameter.Name,parameterPropertyInfo.PropertyType.FullName));
             }
 
-            var valueProvider = new ParameterToParameterValueProviderConverter().Convert(parameter, settings);
+            /*var valueProvider = new ParameterToParameterValueProviderConverter().Convert(parameter, settings);*/
+            var valueProvider = new ParameterToQueryEngineParameterValueProviderConverter().Convert(parameter, settings);
+            
             provider.ParameterValuesProviders.Add(parameterPropertyInfo.Name, valueProvider);
         }
 

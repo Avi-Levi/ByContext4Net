@@ -44,6 +44,7 @@
     <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigurationDataProviders\ParameterToQueryEngineParameterValueProviderConverter.cs" />
     <Compile Include="Exceptions\ConvertSectionException.cs" />
     <Compile Include="ConfigurationDataProviders\IConfigurationDataProvider.cs" />
     <Compile Include="Exceptions\MemberNotFoundForParameter.cs" />
@@ -52,20 +53,17 @@
     <Compile Include="Exceptions\InvalidParameterConfiguration.cs" />
     <Compile Include="Exceptions\ByContextException.cs" />
     <Compile Include="Exceptions\TypeTranslatorNotRegisteredException.cs" />
-    <Compile Include="Filters\Evaluation\ConditionEvaluation.cs" />
-    <Compile Include="Filters\Evaluation\ConditionEvaluationContext.cs" />
-    <Compile Include="Filters\Evaluation\RelationToContextEnum.cs" />
-    <Compile Include="Filters\Evaluation\FilterConditionsEvaluator.cs" />
-    <Compile Include="Filters\Evaluation\IFilterConditionsEvaluator.cs" />
-    <Compile Include="Filters\Evaluation\ItemEvaluation.cs" />
-    <Compile Include="Filters\Filter\Filter.cs" />
-    <Compile Include="Filters\Filter\IFilter.cs" />
-    <Compile Include="Filters\Policy\BestMatchFilterPolicy.cs" />
+    <Compile Include="Query\FilterConditionsPerSubjectQueryContributor.cs" />
+    <Compile Include="Query\IQueryContributor.cs" />
+    <Compile Include="Query\IProbe.cs" />
     <Compile Include="Exceptions\ItemsWithConflictingHighestScoreException.cs" />
-    <Compile Include="Filters\Evaluation\ItemWithScore.cs" />
-    <Compile Include="Filters\Policy\SelectAllRelevantFilterPolicy.cs" />
-    <Compile Include="Filters\Conditions\TextMatch\TextMatchCondition.cs" />
-    <Compile Include="Filters\Conditions\IFilterCondition.cs" />
+    <Compile Include="FilterConditions\TextMatch\TextMatchCondition.cs" />
+    <Compile Include="FilterConditions\IFilterCondition.cs" />
+    <Compile Include="Query\QueryEngine\IQueryEngine.cs" />
+    <Compile Include="Query\QueryEngine\IQueryEngineBuilder.cs" />
+    <Compile Include="Query\Probe.cs" />
+    <Compile Include="Query\QueriableItem.cs" />
+    <Compile Include="Query\QueryEngine\QueryEngine.cs" />
     <Compile Include="IFilterConditionFactory.cs" />
     <Compile Include="IHaveFilterConditions.cs" />
     <Compile Include="IByContextSettings.cs" />
@@ -82,10 +80,13 @@
     <Compile Include="ModelBinders\DynamicMethodModelBinderFactory.cs" />
     <Compile Include="ModelBinders\IModelBinderFactory.cs" />
     <Compile Include="ByContextSettings.cs" />
+    <Compile Include="ParameterValueProviders\QueryEngineParameterValueProvider.cs" />
     <Compile Include="ParameterValueProviders\IParameterValueProvider.cs" />
+    <Compile Include="Query\QueryEngine\QueryEngineBuilder.cs" />
     <Compile Include="ResultBuilder\IResultBuilder.cs" />
     <Compile Include="RuntimeContextProviders\AppConfigRuntimeContextProvider.cs" />
-    <Compile Include="Filters\Conditions\TextMatch\TextMatchConditionFactory.cs" />
+    <Compile Include="FilterConditions\TextMatch\TextMatchConditionFactory.cs" />
+    <Compile Include="ValueProviders\DefaultValueProvider.cs" />
     <Compile Include="ValueProviders\IValueProvider.cs" />
     <Compile Include="StringToValueTranslator\IStringToValueTranslatorProvider.cs" />
     <Compile Include="SectionProviders\ISectionProvider.cs" />
@@ -94,7 +95,6 @@
     <Compile Include="Exceptions\ConfigurationPropertyException.cs" />
     <Compile Include="Extensions\ByContextSettingsExtensions.cs" />
     <Compile Include="ModelBinders\IModelBinder.cs" />
-    <Compile Include="Filters\Policy\IFilterPolicy.cs" />
     <Compile Include="ConfigurationHelper.cs" />
     <Compile Include="ConfigurationDataProviders\ConvertFromSectionDataProvider.cs" />
     <Compile Include="ByContext.cs" />
@@ -102,8 +102,6 @@
     <Compile Include="IByContext.cs" />
     <Compile Include="ModelBinders\DefaultModelBinder.cs" />
     <Compile Include="RuntimeContextProviders\IRuntimeContextProvider.cs" />
-    <Compile Include="ConfigurationDataProviders\ParameterToParameterValueProviderConverter.cs" />
-    <Compile Include="ParameterValueProviders\ParameterValueProvider.cs" />
     <Compile Include="ResultBuilder\BaseCollectionResultBuilder.cs" />
     <Compile Include="ResultBuilder\CollectionResultBuilder.cs" />
     <Compile Include="ResultBuilder\DictionaryResultBuilder.cs" />
@@ -117,6 +115,7 @@
     <Compile Include="StringToValueTranslator\SerializeStringToValueTranslator\SerializeStringToValueExtensions.cs" />
     <Compile Include="StringToValueTranslator\SerializeStringToValueTranslator\SerializeStringToValueTranslatorProvider.cs" />
     <Compile Include="SectionProviders\SectionProvider.cs" />
+    <Compile Include="ValueProviders\IValueProviderBuilder.cs" />
     <Compile Include="ValueProviders\TranslateFromStringValueProvider.cs" />
     <Compile Include="Model\Section.cs" />
     <Compile Include="Model\FilterCondition.cs" />

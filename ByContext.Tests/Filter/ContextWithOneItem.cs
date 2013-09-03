@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿/*using System.Collections.Generic;
 using System.Linq;
 using ByContext.Filters.Conditions.TextMatch;
 using ByContext.Filters.Evaluation;
@@ -192,4 +192,4 @@ namespace ByContext.Tests.Filter
             Assert.IsTrue(result.Any(x => x.Id == 3));
         }
    }
-}
+}*/

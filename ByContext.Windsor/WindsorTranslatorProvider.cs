@@ -25,7 +25,6 @@ namespace ByContext.Windsor
             this.Windsor = windsor;
         }
 
-        private Type TypeToResolve { get; set; }
         private IWindsorContainer Windsor { get; set; }
 
         public const string ProviderKey = "Windsor";

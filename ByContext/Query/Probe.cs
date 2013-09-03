@@ -1,4 +1,4 @@
-// Copyright 2011 Avi Levi
+﻿// Copyright 2011 Avi Levi
 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,12 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace ByContext.Filters.Evaluation
+namespace ByContext.Query
 {
-    public enum RelationToContextEnum
+    public class Probe : IProbe
     {
-        True,
-        False,
-        Neutral,
+        public bool Exclude { get; set; }
+        public int ExplicitPositiveReferencesCount { get; set; }
     }
 }

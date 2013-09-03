@@ -14,19 +14,16 @@
 
 using System.Collections.Generic;
 
-namespace ByContext.Filters.Evaluation
+namespace ByContext.FilterConditions.TextMatch
 {
-    public struct ConditionEvaluationContext
+    public class TextMatchConditionFactory : IFilterConditionFactory
     {
-        public readonly KeyValuePair<string, string> CurrentRuntimeContextItem;
-        public readonly IDictionary<string, string> RuntimeContext;
-        public readonly IEnumerable<IHaveFilterConditions> AllItems;
-
-        public ConditionEvaluationContext(KeyValuePair<string, string> currentRuntimeContextItem, IDictionary<string, string> runtimeContext, IEnumerable<IHaveFilterConditions> allItems)
+        public IFilterCondition Create(Dictionary<string, string> properties)
         {
-            CurrentRuntimeContextItem = currentRuntimeContextItem;
-            RuntimeContext = runtimeContext;
-            AllItems = allItems;
+            var subject = properties["Subject"];
+            var value = properties["Value"];
+            var negate = properties.ContainsKey("Negate") ? bool.Parse(properties["Negate"]) : false;
+            return new TextMatchCondition(subject,value,negate);
         }
     }
 }

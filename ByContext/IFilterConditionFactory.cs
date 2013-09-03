@@ -13,7 +13,7 @@
 // limitations under the License.
 
 using System.Collections.Generic;
-using ByContext.Filters.Conditions;
+using ByContext.FilterConditions;
 
 namespace ByContext
 {

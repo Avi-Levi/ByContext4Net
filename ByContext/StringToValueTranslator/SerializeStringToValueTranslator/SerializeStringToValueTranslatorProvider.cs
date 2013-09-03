@@ -20,6 +20,8 @@ namespace ByContext.StringToValueTranslator.SerializeStringToValueTranslator
 {
     public class SerializeStringToValueTranslatorProvider : IStringToValueTranslatorProvider
     {
+        public const string ProviderKey = "SerializeRawString";
+
         public SerializeStringToValueTranslatorProvider()
         {
             this.Translators = new Dictionary<Type, IStringToValueTranslator>
@@ -35,7 +37,6 @@ namespace ByContext.StringToValueTranslator.SerializeStringToValueTranslator
                                    };
         }
 
-        public const string ProviderKey = "SerializeRawString";
         public IDictionary<Type, IStringToValueTranslator> Translators { get; private set; }
 
         public IStringToValueTranslator Get(Type type)
@@ -45,8 +46,8 @@ namespace ByContext.StringToValueTranslator.SerializeStringToValueTranslator
                 if (type.IsEnum)
                 {
                     var enumTranslatorType = typeof(EnumTranslator<>).MakeGenericType(type);
-                    var trsnslator = (IStringToValueTranslator)Activator.CreateInstance(enumTranslatorType);
-                    return trsnslator;
+                    var translator = (IStringToValueTranslator)Activator.CreateInstance(enumTranslatorType);
+                    this.Translators.Add(type,translator);
                 }
                 else
                 {

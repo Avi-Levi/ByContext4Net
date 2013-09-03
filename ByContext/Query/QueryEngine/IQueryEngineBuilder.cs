@@ -13,12 +13,11 @@
 // limitations under the License.
 
 using System.Collections.Generic;
-using ByContext.Filters.Evaluation;
 
-namespace ByContext.Filters.Policy
+namespace ByContext.Query.QueryEngine
 {
-    public interface IFilterPolicy
+    public interface IQueryEngineBuilder
     {
-        ItemEvaluation[] Filter(IEnumerable<ItemEvaluation> evaluatedItems);
+        IQueryEngine Get(IEnumerable<QueriableItem> queriableItems, bool multipleValuesAllowed);
     }
 }

@@ -13,11 +13,12 @@
 // limitations under the License.
 
 using System.Collections.Generic;
+using ByContext.ValueProviders;
 
-namespace ByContext.Filters.Evaluation
+namespace ByContext.Query.QueryEngine
 {
-    public interface IFilterConditionsEvaluator
+    public interface IQueryEngine
     {
-        IEnumerable<ItemEvaluation> Evaluate(IDictionary<string, string> runtimeContext, IEnumerable<IHaveFilterConditions> items);
+        IValueProvider[] Query(IDictionary<string, string> context);
     }
 }

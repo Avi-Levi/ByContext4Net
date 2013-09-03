@@ -1,4 +1,4 @@
-// Copyright 2011 Avi Levi
+﻿// Copyright 2011 Avi Levi
 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,17 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace ByContext.Filters.Evaluation
-{
-    public struct ItemWithScore
-    {
-        public readonly ItemEvaluation Item;
-        public readonly int Score;
+using ByContext.FilterConditions;
+using ByContext.ValueProviders;
 
-        public ItemWithScore(ItemEvaluation item, int score)
+namespace ByContext.Query
+{
+    public class QueriableItem
+    {
+        public static QueriableItem Create(IValueProvider valueProvider, IFilterCondition[] conditions)
         {
-            Item = item;
-            Score = score;
+            return new QueriableItem
+                {
+                    Conditions = conditions,
+                    ValueProvider = valueProvider
+                };
         }
+
+        public IValueProvider ValueProvider { get; private set; }
+        public IFilterCondition[] Conditions { get; private set; }
     }
 }

@@ -12,17 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace ByContext.Filters.Evaluation
+namespace ByContext.Query
 {
-    public struct ItemEvaluation
+    public interface IProbe
     {
-        public ItemEvaluation(IHaveFilterConditions item, ConditionEvaluation[] conditionsEval)
-        {
-            Item = item;
-            ConditionsEvaluation = conditionsEval;
-        }
-
-        public readonly IHaveFilterConditions Item;
-        public readonly ConditionEvaluation[] ConditionsEvaluation;
+        bool Exclude { get; set; }
+        int ExplicitPositiveReferencesCount { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-// Copyright 2011 Avi Levi
+﻿// Copyright 2011 Avi Levi
 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,18 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System.Collections.Generic;
-
-namespace ByContext.Filters.Conditions.TextMatch
+namespace ByContext.ValueProviders
 {
-    public class TextMatchConditionFactory : IFilterConditionFactory
+    public class DefaultValueProvider : IValueProvider
     {
-        public IFilterCondition Create(Dictionary<string, string> properties)
+        private readonly object _value;
+
+        public DefaultValueProvider(object value)
         {
-            var subject = properties["Subject"];
-            var value = properties["Value"];
-            var negate = properties.ContainsKey("Negate") ? bool.Parse(properties["Negate"]) : false;
-            return new TextMatchCondition(subject,value,negate);
+            _value = value;
+        }
+
+        public object Get()
+        {
+            return this._value;
         }
     }
 }

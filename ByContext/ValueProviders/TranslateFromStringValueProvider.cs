@@ -12,23 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System.Collections.Generic;
-using ByContext.Filters.Conditions;
 using ByContext.StringToValueTranslator;
 
 namespace ByContext.ValueProviders
 {
     public class TranslateFromStringValueProvider : IValueProvider
     {
-        public TranslateFromStringValueProvider(IStringToValueTranslator translator, string value, IFilterCondition[] filterConditions)
+        public TranslateFromStringValueProvider(IStringToValueTranslator translator, string value)
         {
             this.Translator = translator;
             this.Value = value;
-            this.FilterConditions = filterConditions;
         }
 
         private string Value { get; set; }
-        public IEnumerable<IFilterCondition> FilterConditions { get; set; }
         
         private IStringToValueTranslator Translator { get; set; }
 

@@ -1,4 +1,4 @@
-// Copyright 2011 Avi Levi
+﻿// Copyright 2011 Avi Levi
 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,21 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using ByContext.Filters.Evaluation;
+using System.Collections.Generic;
 
-namespace ByContext.Filters.Conditions
+namespace ByContext.Query
 {
-    /// <summary>
-    /// represents a filter condition.
-    /// </summary>
-    public interface IFilterCondition
+    public interface IQueryContributor
     {
-        /// <summary>
-        /// When implemented by a derived class, evaluates the condition.
-        /// </summary>
-        bool Evaluate(ConditionEvaluationContext context);
-
-        string Subject { get; }
-        bool Negate { get;}
+        void Handle(IDictionary<string, string> context, IProbe probe);
     }
 }

@@ -12,21 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using ByContext.Filters.Conditions;
 
-namespace ByContext.Filters.Evaluation
+namespace ByContext.FilterConditions
 {
-    public struct ConditionEvaluation
+    /// <summary>
+    /// represents a filter condition.
+    /// </summary>
+    public interface IFilterCondition
     {
-        public readonly RelationToContextEnum RelationToContext;
-        public readonly ConditionEvaluationContext Context;
-        public readonly IFilterCondition Condition;
+        /// <summary>
+        /// When implemented by a derived class, evaluates the condition.
+        /// </summary>
+        bool Evaluate(string value);
 
-        public ConditionEvaluation(RelationToContextEnum relationToContext, ConditionEvaluationContext context, IFilterCondition condition)
-        {
-            RelationToContext = relationToContext;
-            Context = context;
-            Condition = condition;
-        }
+        string Subject { get; }
+        bool Negate { get;}
     }
 }

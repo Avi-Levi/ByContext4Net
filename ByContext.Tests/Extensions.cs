@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using ByContext.Filters.Conditions.TextMatch;
+using ByContext.FilterConditions.TextMatch;
 using ByContext.Model;
 
 namespace ByContext.Tests

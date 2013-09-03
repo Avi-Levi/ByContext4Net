@@ -15,7 +15,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using ByContext.Exceptions;
 
 namespace ByContext.StringToValueTranslator
@@ -89,7 +88,7 @@ namespace ByContext.StringToValueTranslator
             if (ci == null)
             {
                 throw new InvalidOperationException(string.Format("an open generic translator must have a constructor that accepts value " +
-                    "translators in the same order and number as the translator's generic arguments definision.", openGenericTranslatorType.FullName));
+                    "translators in the same order and number as the translator's generic arguments definision - {0}.", openGenericTranslatorType.FullName));
             }
 
             var genericArgumentsTranslators = genericArguments.Select(argType => this.Inner.Get(argType));

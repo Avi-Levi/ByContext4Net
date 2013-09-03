@@ -15,7 +15,6 @@
 using System;
 using System.Collections.Generic;
 using ByContext.ConfigurationDataProviders;
-using ByContext.Filters.Policy;
 using ByContext.Logging;
 using ByContext.Model;
 using ByContext.ModelBinders;
@@ -57,13 +56,6 @@ namespace ByContext
         {
             source.RuntimeContext = new Dictionary<string, string>();
             setRuntimeContext(source.RuntimeContext);
-            return source;
-        }
-        public static IByContextSettings SingleValueDefaultFilterPolicy(this IByContextSettings source, IFilterPolicy policy)
-        {
-            source.FilterPolicies.Remove(Configure.DefaultSingleValueFilterPolicyName);
-            source.FilterPolicies.Add(Configure.DefaultSingleValueFilterPolicyName, policy);
-
             return source;
         }
         public static IByContextSettings TraceLogger(this IByContextSettings source, LogLevel logLevel)

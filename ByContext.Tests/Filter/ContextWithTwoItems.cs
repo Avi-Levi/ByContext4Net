@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿/*using System.Collections.Generic;
 using System.Linq;
 using ByContext.Exceptions;
 using ByContext.Filters.Conditions.TextMatch;
@@ -402,4 +402,4 @@ namespace ByContext.Tests.Filter
             new BestMatchFilterPolicy().Filter(evaluationResult);
         }
     }
-}
+}*/
