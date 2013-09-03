@@ -21,6 +21,7 @@ using ByContext.Query.QueryEngine;
 using ByContext.ResultBuilder;
 using ByContext.StringToValueTranslator;
 using ByContext.StringToValueTranslator.SerializeStringToValueTranslator;
+using ByContext.ValueProviders.Builder;
 
 namespace ByContext
 {
@@ -33,6 +34,8 @@ namespace ByContext
             this.LogggerProvider = new NullLoggerProvider();
             this.QueryEngineBuilder = new QueryEngineBuilder();
             this.ConfigurationDataProviders = new List<IConfigurationDataProvider>();
+            this.AfterInitListeners = new List<IAfterInitListener>();
+            this.ValueProviderBuilder = new ValueProviderBuilder(this);
             this.RuntimeContext = new Dictionary<string, string>();
             this.InitTranslatorProviders();
             this.InitFilterConditionFactories();
@@ -42,8 +45,11 @@ namespace ByContext
 
             this.ThrowIfParameterMemberMissing = false;
         }
+
         public IDictionary<string, string> RuntimeContext { get; set; }
         public IList<IConfigurationDataProvider> ConfigurationDataProviders { get; private set; }
+        public IValueProviderBuilder ValueProviderBuilder { get; set; }
+        public IList<IAfterInitListener> AfterInitListeners { get; private set; }
         public IDictionary<string, IStringToValueTranslatorProvider> TranslatorProviders { get; private set; }
         public IDictionary<string, IFilterConditionFactory> FilterConditionFactories { get; private set; }
         public string DefaultRawValueTranslatorName { get; set; }

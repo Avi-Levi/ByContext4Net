@@ -36,12 +36,9 @@ namespace ByContext.ConfigurationDataProviders
 
             var required = this.GetRequired(parameter);
 
-            var parameterValueType = this.DetermineParameterValueType(parameterType);
-
-            var translator = this.GetTranslator(parameter, parameterValueType, settings);
 
             bool isParameterSupportedCollection = settings.ResultBuilderProvider.IsTypeIsSupportedCollection(parameterType);
-            var engine = this.BuildQueryEngine(parameter, translator, settings, isParameterSupportedCollection);
+            var engine = this.BuildQueryEngine(parameter, settings, isParameterSupportedCollection);
 
             var resultBuilder = settings.ResultBuilderProvider.Get(parameterType);
 
@@ -51,18 +48,18 @@ namespace ByContext.ConfigurationDataProviders
             return parameterValueProvider;
         }
 
-        private IQueryEngine BuildQueryEngine(Parameter parameter, IStringToValueTranslator translator, IByContextSettings settings, bool isParameterSupportedCollection)
+        private IQueryEngine BuildQueryEngine(Parameter parameter, IByContextSettings settings, bool isParameterSupportedCollection)
         {
-            var queriableItems = this.BuildValueProviders(parameter.Values, translator, settings).Select(x => QueriableItem.Create(x.Item1, x.Item2));
+            var queriableItems = this.BuildValueProviders(parameter, settings).Select(x => QueriableItem.Create(x.Item1, x.Item2));
             return settings.QueryEngineBuilder.Get(queriableItems, isParameterSupportedCollection);
         }
 
-        private IEnumerable<Tuple<IValueProvider,IFilterCondition[]>> BuildValueProviders(IEnumerable<ParameterValue> values, IStringToValueTranslator translator, IByContextSettings settings)
+        private IEnumerable<Tuple<IValueProvider,IFilterCondition[]>> BuildValueProviders(Parameter parameter, IByContextSettings settings)
         {
-            foreach (var parameterValue in values)
+            foreach (var parameterValue in parameter.Values)
             {
                 IEnumerable<IFilterCondition> filterConditions = this.TranslateFilterConditions(parameterValue.FilterConditions, settings);
-                yield return new Tuple<IValueProvider, IFilterCondition[]>(new TranslateFromStringValueProvider(translator, parameterValue.Value),filterConditions.ToArray());
+                yield return new Tuple<IValueProvider, IFilterCondition[]>(settings.ValueProviderBuilder.Build(parameter, parameterValue),filterConditions.ToArray());
             }
         }
 
@@ -79,41 +76,6 @@ namespace ByContext.ConfigurationDataProviders
         {
             var required = this._helper.GetConfigurationProperty(parameter, x => x.Required, () => true, bool.Parse);
             return required;
-        }
-
-        private IStringToValueTranslator GetTranslator(Parameter parameter, Type parameterValueType, IByContextSettings settings)
-        {
-            var translatorProvider = this._helper.GetConfigurationProperty
-                (parameter, x => x.Translator, () => settings.TranslatorProviders[settings.DefaultRawValueTranslatorName],x => settings.TranslatorProviders[x]);
-
-            return translatorProvider.Get(parameterValueType);
-        }
-
-        private Type DetermineParameterValueType(Type parameterType)
-        {
-            // if the parameter is a generic collection.
-            if (parameterType.IsGenericType && typeof(IEnumerable).IsAssignableFrom(parameterType))
-            {
-                Type genericEnumerableType = null;
-                if (typeof(IEnumerable<>).IsAssignableFrom(parameterType.GetGenericTypeDefinition()))
-                {
-                    genericEnumerableType = parameterType;
-                }
-                else
-                {
-                    genericEnumerableType = (from interfaceType in parameterType.GetInterfaces()
-                                             where interfaceType.IsGenericType
-                                             where typeof(IEnumerable<>)
-                                             .IsAssignableFrom(interfaceType.GetGenericTypeDefinition())
-                                             select interfaceType).Single();
-                }
-
-                return genericEnumerableType.GetGenericArguments().Single();
-            }
-            else
-            {
-                return parameterType;
-            }
         }
     }
 }

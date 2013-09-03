@@ -53,6 +53,7 @@
     <Compile Include="Exceptions\InvalidParameterConfiguration.cs" />
     <Compile Include="Exceptions\ByContextException.cs" />
     <Compile Include="Exceptions\TypeTranslatorNotRegisteredException.cs" />
+    <Compile Include="IAfterInitListener.cs" />
     <Compile Include="Query\FilterConditionsPerSubjectQueryContributor.cs" />
     <Compile Include="Query\IQueryContributor.cs" />
     <Compile Include="Query\IProbe.cs" />
@@ -86,7 +87,9 @@
     <Compile Include="ResultBuilder\IResultBuilder.cs" />
     <Compile Include="RuntimeContextProviders\AppConfigRuntimeContextProvider.cs" />
     <Compile Include="FilterConditions\TextMatch\TextMatchConditionFactory.cs" />
-    <Compile Include="ValueProviders\DefaultValueProvider.cs" />
+    <Compile Include="ValueProviders\Builder\Strategies\EagerLoadValueProviderBuilderStrategy.cs" />
+    <Compile Include="ValueProviders\Builder\Strategies\EagerLoadValueProviderDecorator.cs" />
+    <Compile Include="ValueProviders\Builder\ValueProviderBuilder.cs" />
     <Compile Include="ValueProviders\IValueProvider.cs" />
     <Compile Include="StringToValueTranslator\IStringToValueTranslatorProvider.cs" />
     <Compile Include="SectionProviders\ISectionProvider.cs" />
@@ -115,8 +118,9 @@
     <Compile Include="StringToValueTranslator\SerializeStringToValueTranslator\SerializeStringToValueExtensions.cs" />
     <Compile Include="StringToValueTranslator\SerializeStringToValueTranslator\SerializeStringToValueTranslatorProvider.cs" />
     <Compile Include="SectionProviders\SectionProvider.cs" />
-    <Compile Include="ValueProviders\IValueProviderBuilder.cs" />
-    <Compile Include="ValueProviders\TranslateFromStringValueProvider.cs" />
+    <Compile Include="ValueProviders\Builder\IValueProviderBuilder.cs" />
+    <Compile Include="ValueProviders\Builder\Strategies\IValueProviderBuilderStrategy.cs" />
+    <Compile Include="ValueProviders\ValueProvider.cs" />
     <Compile Include="Model\Section.cs" />
     <Compile Include="Model\FilterCondition.cs" />
     <Compile Include="Model\Parameter.cs" />

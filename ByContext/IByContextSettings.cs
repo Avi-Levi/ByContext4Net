@@ -19,6 +19,7 @@ using ByContext.ModelBinders;
 using ByContext.Query.QueryEngine;
 using ByContext.ResultBuilder;
 using ByContext.StringToValueTranslator;
+using ByContext.ValueProviders.Builder;
 
 namespace ByContext
 {
@@ -27,6 +28,8 @@ namespace ByContext
         ILoggerProvider LogggerProvider { get; set; }
         IDictionary<string, string> RuntimeContext { get; set; }
         IList<IConfigurationDataProvider> ConfigurationDataProviders { get; }
+        IValueProviderBuilder ValueProviderBuilder { get; set; }
+        IList<IAfterInitListener> AfterInitListeners { get; }
         IDictionary<string, IStringToValueTranslatorProvider> TranslatorProviders { get; }
         IDictionary<string, IFilterConditionFactory> FilterConditionFactories { get; }
         string DefaultRawValueTranslatorName { get; set; }

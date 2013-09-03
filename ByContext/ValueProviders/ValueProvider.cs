@@ -16,26 +16,25 @@ using ByContext.StringToValueTranslator;
 
 namespace ByContext.ValueProviders
 {
-    public class TranslateFromStringValueProvider : IValueProvider
+    public class ValueProvider : IValueProvider
     {
-        public TranslateFromStringValueProvider(IStringToValueTranslator translator, string value)
-        {
-            this.Translator = translator;
-            this.Value = value;
-        }
+        private readonly IStringToValueTranslator _translator;
+        private readonly string _value;
 
-        private string Value { get; set; }
-        
-        private IStringToValueTranslator Translator { get; set; }
+        public ValueProvider(IStringToValueTranslator translator, string value)
+        {
+            _translator = translator;
+            _value = value;
+        }
 
         public object Get()
         {
-            return this.Translator.Translate(this.Value);
+            return this._translator.Translate(this._value);
         }
 
         public override string ToString()
         {
-            return this.Value;
+            return this._value;
         }
     }
 }
