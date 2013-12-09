@@ -1,8 +1,9 @@
-﻿/*using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using ByContext.Filters.Conditions.TextMatch;
-using ByContext.Filters.Evaluation;
-using ByContext.Filters.Policy;
+using ByContext.FilterConditions;
+using ByContext.FilterConditions.TextMatch;
+using ByContext.Query;
+using ByContext.Query.QueryEngine;
 using NUnit.Framework;
 
 namespace ByContext.Tests.Filter
@@ -18,19 +19,17 @@ namespace ByContext.Tests.Filter
                                   {"A", "2"},
                               };
 
-            var items = new[]
-                            {
-                                new Item(1,new TextMatchCondition("A","1")),
-                                new Item(2,new TextMatchCondition("A","2")),
-                                new Item(3,new TextMatchCondition("A","1")),
-                            };
-            var evaluationResult = new FilterConditionsEvaluator().Evaluate(context, items);
-            var result = new BestMatchFilterPolicy().Filter(evaluationResult).Select(x => x.Item).OfType<Item>();
+            
+            var result = new QueryEngineBuilder().Get(new[] { 
+                QueriableItem.Create(new DefaultValueProvider(1),new IFilterCondition[]{new TextMatchCondition("A","1",false)}), 
+                QueriableItem.Create(new DefaultValueProvider(2),new IFilterCondition[]{new TextMatchCondition("A","2",false)}), 
+                QueriableItem.Create(new DefaultValueProvider(3),new IFilterCondition[]{new TextMatchCondition("A","1",false)}), 
+            }, true)
+        .Query(context).Select(x=>x.Get()).Cast<int>();
 
-            Assert.IsTrue(result.Any(x => x.Id == 2));
+            Assert.IsTrue(result.Any(x => x == 2));
             Assert.IsTrue(result.Count() == 1);
         }
-
         [Test]
         public void SelectSingleItemWithNoReferences()
         {
@@ -39,17 +38,15 @@ namespace ByContext.Tests.Filter
                                   {"A", "2"},
                               };
 
-            var items = new[]
-                            {
-                                new Item(1,new TextMatchCondition("A","1")),
-                                new Item(2),
-                                new Item(3,new TextMatchCondition("A","1")),
-                            };
 
-            var evaluationResult = new FilterConditionsEvaluator().Evaluate(context, items);
-            var result = new BestMatchFilterPolicy().Filter(evaluationResult).Select(x => x.Item).OfType<Item>();
+            var result = new QueryEngineBuilder().Get(new[] { 
+                QueriableItem.Create(new DefaultValueProvider(1),new IFilterCondition[]{new TextMatchCondition("A","1",false)}), 
+                QueriableItem.Create(new DefaultValueProvider(2),new IFilterCondition[]{}), 
+                QueriableItem.Create(new DefaultValueProvider(3),new IFilterCondition[]{new TextMatchCondition("A","1",false)}), 
+            }, true)
+                .Query(context).Select(x => x.Get()).Cast<int>();
 
-            Assert.IsTrue(result.Any(x => x.Id == 2));
+            Assert.IsTrue(result.Any(x => x == 2));
             Assert.IsTrue(result.Count() == 1);
         }
 
@@ -69,11 +66,16 @@ namespace ByContext.Tests.Filter
                                 new Item(4,new TextMatchCondition("A","1")),
                             };
 
-            var evaluationResult = new FilterConditionsEvaluator().Evaluate(context, items);
-            var result = new SelectAllRelevantFilterPolicy().Filter(evaluationResult).Select(x => x.Item).OfType<Item>();
+            var result = new QueryEngineBuilder().Get(new[] { 
+                QueriableItem.Create(new DefaultValueProvider(1),new IFilterCondition[]{new TextMatchCondition("A","1",false)}), 
+                QueriableItem.Create(new DefaultValueProvider(2),new IFilterCondition[]{new TextMatchCondition("A","2",false)}), 
+                QueriableItem.Create(new DefaultValueProvider(3),new IFilterCondition[]{new TextMatchCondition("A","2",false)}), 
+                QueriableItem.Create(new DefaultValueProvider(4),new IFilterCondition[]{new TextMatchCondition("A","1",false)}), 
+            }, true)
+                .Query(context).Select(x => x.Get()).Cast<int>();
 
-            Assert.IsTrue(result.Any(x => x.Id == 2));
-            Assert.IsTrue(result.Any(x => x.Id == 3));
+            Assert.IsTrue(result.Any(x => x == 2));
+            Assert.IsTrue(result.Any(x => x == 3));
             Assert.IsTrue(result.Count() == 2);
         }
 
@@ -93,11 +95,16 @@ namespace ByContext.Tests.Filter
                                 new Item(4,new TextMatchCondition("A","1")),
                             };
 
-            var evaluationResult = new FilterConditionsEvaluator().Evaluate(context, items);
-            var result = new SelectAllRelevantFilterPolicy().Filter(evaluationResult).Select(x => x.Item).OfType<Item>();
+            var result = new QueryEngineBuilder().Get(new[] { 
+                QueriableItem.Create(new DefaultValueProvider(1),new IFilterCondition[]{new TextMatchCondition("A","1",false)}), 
+                QueriableItem.Create(new DefaultValueProvider(2),new IFilterCondition[]{}), 
+                QueriableItem.Create(new DefaultValueProvider(3),new IFilterCondition[]{}), 
+                QueriableItem.Create(new DefaultValueProvider(4),new IFilterCondition[]{new TextMatchCondition("A","1",false)}), 
+            }, true)
+                .Query(context).Select(x => x.Get()).Cast<int>();
 
-            Assert.IsTrue(result.Any(x => x.Id == 2));
-            Assert.IsTrue(result.Any(x => x.Id == 3));
+            Assert.IsTrue(result.Any(x => x == 2));
+            Assert.IsTrue(result.Any(x => x == 3));
             Assert.IsTrue(result.Count() == 2);
         }
 
@@ -109,19 +116,16 @@ namespace ByContext.Tests.Filter
                                   {"A", "2"},
                               };
 
-            var items = new[]
-                            {
-                                new Item(1,new TextMatchCondition("A","1")),
-                                new Item(2,new TextMatchCondition("A","2")),
-                                new Item(3),
-                                new Item(4,new TextMatchCondition("A","1")),
-                            };
+            var result = new QueryEngineBuilder().Get(new[] { 
+                QueriableItem.Create(new DefaultValueProvider(1),new IFilterCondition[]{new TextMatchCondition("A","1",false)}), 
+                QueriableItem.Create(new DefaultValueProvider(2),new IFilterCondition[]{new TextMatchCondition("A","2",false)}), 
+                QueriableItem.Create(new DefaultValueProvider(3),new IFilterCondition[]{}), 
+                QueriableItem.Create(new DefaultValueProvider(4),new IFilterCondition[]{new TextMatchCondition("A","1",false)}), 
+            }, true)
+                .Query(context).Select(x => x.Get()).Cast<int>();
 
-            var evaluationResult = new FilterConditionsEvaluator().Evaluate(context, items);
-            var result = new SelectAllRelevantFilterPolicy().Filter(evaluationResult).Select(x => x.Item).OfType<Item>();
-
-            Assert.IsTrue(result.Any(x => x.Id == 2));
-            Assert.IsTrue(result.Any(x => x.Id == 3));
+            Assert.IsTrue(result.Any(x => x == 2));
+            Assert.IsTrue(result.Any(x => x == 3));
             Assert.IsTrue(result.Count() == 2);
         }
 
@@ -133,15 +137,12 @@ namespace ByContext.Tests.Filter
                                   {"A", "2"},
                               };
 
-            var items = new[]
-                            {
-                                new Item(1,new TextMatchCondition("A","1")),
-                                new Item(2,new TextMatchCondition("A","2",true)),
-                                new Item(3,new TextMatchCondition("A","1")),
-                            };
-
-            var evaluationResult = new FilterConditionsEvaluator().Evaluate(context, items);
-            var result = new SelectAllRelevantFilterPolicy().Filter(evaluationResult).Select(x => x.Item).OfType<Item>();
+            var result = new QueryEngineBuilder().Get(new[] { 
+                QueriableItem.Create(new DefaultValueProvider(1),new IFilterCondition[]{new TextMatchCondition("A","1",false)}), 
+                QueriableItem.Create(new DefaultValueProvider(2),new IFilterCondition[]{new TextMatchCondition("A","2",true)}), 
+                QueriableItem.Create(new DefaultValueProvider(3),new IFilterCondition[]{new TextMatchCondition("A","1",false)}), 
+            }, true)
+                .Query(context).Select(x => x.Get()).Cast<int>();
 
             Assert.IsFalse(result.Any());
         }
@@ -154,19 +155,16 @@ namespace ByContext.Tests.Filter
                                   {"A", "2"},
                               };
 
-            var items = new[]
-                            {
-                                new Item(1,new TextMatchCondition("A","1")),
-                                new Item(2,new TextMatchCondition("A","2",true)),
-                                new Item(3,new TextMatchCondition("A","2")),
-                                new Item(4,new TextMatchCondition("A","1")),
-                            };
-
-            var evaluationResult = new FilterConditionsEvaluator().Evaluate(context, items);
-            var result = new BestMatchFilterPolicy().Filter(evaluationResult).Select(x => x.Item).OfType<Item>();
+            var result = new QueryEngineBuilder().Get(new[] { 
+                QueriableItem.Create(new DefaultValueProvider(1),new IFilterCondition[]{new TextMatchCondition("A","1",false)}), 
+                QueriableItem.Create(new DefaultValueProvider(2),new IFilterCondition[]{new TextMatchCondition("A","2",true)}), 
+                QueriableItem.Create(new DefaultValueProvider(3),new IFilterCondition[]{new TextMatchCondition("A","2",false)}), 
+                QueriableItem.Create(new DefaultValueProvider(4),new IFilterCondition[]{new TextMatchCondition("A","1",false)}), 
+            }, true)
+                .Query(context).Select(x => x.Get()).Cast<int>();
 
             Assert.IsTrue(result.Count() == 1);
-            Assert.IsTrue(result.Any(x => x.Id == 3));
+            Assert.IsTrue(result.Any(x => x == 3));
         }
 
         [Test]
@@ -185,11 +183,17 @@ namespace ByContext.Tests.Filter
                                 new Item(4,new TextMatchCondition("A","1")),
                             };
 
-            var evaluationResult = new FilterConditionsEvaluator().Evaluate(context, items);
-            var result = new BestMatchFilterPolicy().Filter(evaluationResult).Select(x => x.Item).OfType<Item>();
+            var result = new QueryEngineBuilder().Get(new[] { 
+                QueriableItem.Create(new DefaultValueProvider(1),new IFilterCondition[]{new TextMatchCondition("A","1",false)}), 
+                QueriableItem.Create(new DefaultValueProvider(2),new IFilterCondition[]{new TextMatchCondition("A","2",true)}), 
+                QueriableItem.Create(new DefaultValueProvider(3),new IFilterCondition[]{}), 
+                QueriableItem.Create(new DefaultValueProvider(4),new IFilterCondition[]{new TextMatchCondition("A","1",false)}), 
+            }, true)
+                .Query(context).Select(x => x.Get()).Cast<int>();
+
 
             Assert.IsTrue(result.Count() == 1);
-            Assert.IsTrue(result.Any(x => x.Id == 3));
+            Assert.IsTrue(result.Any(x => x == 3));
         }
    }
-}*/
+}

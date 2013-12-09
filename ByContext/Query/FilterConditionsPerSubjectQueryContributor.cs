@@ -23,31 +23,50 @@ namespace ByContext.Query
         public string Subject { get; set; }
         public void Handle(IDictionary<string, string> context, IProbe probe)
         {
+            probe.ReferencesCount++;
             if (context.ContainsKey(this.Subject))
             {
-                bool hasExplicitNoneNegatingNegativeReferences = false;
-                int explicitPositiveReferencesCountForCurrentSubject=0;
+                probe.Trace("{0} - subject: {1} evaluating...", this.GetType().Name, this.Subject);
+                int explicitNoneNegatingNegativeCount = 0;
+                bool hasExplicitPositiveReferencesForCurrentSubject = false;
                 foreach (var condition in Conditions)
                 {
                     var b = condition.Evaluate(context[this.Subject]);
+                    probe.Trace("{0} - condidtion {1} evaluated to {2}", this.GetType().Name, condition.GetType().Name, b);
+                    // if condition matched
                     if (b)
                     {
                         if (condition.Negate)
                         {
+                            probe.Trace("{0} excluded value because condidtion {1} evaluated to true and was negated", this.GetType().Name, condition.GetType().Name, b);
                             probe.Exclude = true;
                             break;
                         }
-                        probe.ExplicitPositiveReferencesCount++;
-                        explicitPositiveReferencesCountForCurrentSubject++;
+                        else
+                        {
+                            probe.ExplicitPositiveReferencesCount++;
+                            hasExplicitPositiveReferencesForCurrentSubject = true;
+                        }
                     }
+                    // if condition did not match
                     else
                     {
-                        hasExplicitNoneNegatingNegativeReferences = true;
+                        if (condition.Negate)
+                        {
+                            probe.Trace("{0} - added explicit positive reference, because condidtion {1} evaluated to false and was negated", this.GetType().Name, condition.GetType().Name, b);
+                            probe.ExplicitPositiveReferencesCount++;
+                            hasExplicitPositiveReferencesForCurrentSubject = true;
+                        }
+                        else
+                        {
+                            explicitNoneNegatingNegativeCount++;
+                        }
                     }
                 }
-                if (explicitPositiveReferencesCountForCurrentSubject == 0)
+                if (explicitNoneNegatingNegativeCount > 0 && !hasExplicitPositiveReferencesForCurrentSubject)
                 {
-                    probe.Exclude = hasExplicitNoneNegatingNegativeReferences;
+                    probe.Trace("excluded value bacause it has no explicit positive references count and {0} explicit none nagating negative references", explicitNoneNegatingNegativeCount);
+                    probe.Exclude = true;
                 }
             }
         }

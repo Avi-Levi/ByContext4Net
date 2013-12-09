@@ -19,10 +19,8 @@ namespace Sample.Tests
                     {
                         ctx.Add(Subjects.Environment.Name, Subjects.Environment.Dev);
                         ctx.Add(Subjects.AppType.Name, Subjects.AppType.OnlineClient);
-                        ctx.Add(Subjects.MachineName.Name,
-                        Subjects.MachineName.ClientMachine2);
-                        ctx.Add(Subjects.LogOwner.Name,
-                        typeof (LoginServiceAdapter).FullName);
+                        ctx.Add(Subjects.MachineName.Name,Subjects.MachineName.ClientMachine2);
+                        ctx.Add(Subjects.LogOwner.Name,typeof (LoginServiceAdapter).FullName);
                     })
                     .AddFromXmlFile("Configuration.xml"));
 

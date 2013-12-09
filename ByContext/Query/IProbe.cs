@@ -17,6 +17,8 @@ namespace ByContext.Query
     public interface IProbe
     {
         bool Exclude { get; set; }
+        int ReferencesCount { get; set; }
         int ExplicitPositiveReferencesCount { get; set; }
+        void Trace(string message, params object[] args);
     }
 }

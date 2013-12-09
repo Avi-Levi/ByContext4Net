@@ -12,16 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using System;
+using ByContext.Query;
 using ByContext.ValueProviders;
 
 namespace ByContext.Exceptions
 {
     public class ItemsWithConflictingHighestScoreException : ByContextException
     {
-        public IValueProvider[] ItemsWithConflictingScore { get; private set; }
+        public Tuple<IValueProvider, IProbe>[] ItemsWithConflictingScore { get; private set; }
         public int HighestScore { get; private set; }
 
-        public ItemsWithConflictingHighestScoreException(IValueProvider[] itemsWithConflictingScore, int highestScore)
+        public ItemsWithConflictingHighestScoreException(Tuple<IValueProvider, IProbe>[] itemsWithConflictingScore, int highestScore)
             : base(string.Format(
                 "items with conflicting highest score of {0} exists, cannot determine default", highestScore))
         {

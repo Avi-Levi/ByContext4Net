@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ByContext.Exceptions;
+using ByContext.Logging;
 using ByContext.ValueProviders;
 
 namespace ByContext.Query.QueryEngine
@@ -47,14 +48,13 @@ namespace ByContext.Query.QueryEngine
             if (queryResults.Count > 1)
             {
                 int max = queryResults.Max(x => x.Item2.ExplicitPositiveReferencesCount);
-                var itemsWithHighestScore =
-                    queryResults.Where(x => x.Item2.ExplicitPositiveReferencesCount == max).Select(x => x.Item1).ToArray();
+                var itemsWithHighestScore = queryResults.Where(x => x.Item2.ExplicitPositiveReferencesCount == max).ToArray();
                 if (itemsWithHighestScore.Length > 1)
                 {
-                    return TrySelectDefault(queryResults, itemsWithHighestScore, max);
+                    return TrySelectDefault(itemsWithHighestScore, max);
                 }
 
-                return itemsWithHighestScore.Select(x => x).ToArray();
+                return itemsWithHighestScore.Select(x => x.Item1).ToArray();
             }
             return EmptyResults;
         }
@@ -82,12 +82,12 @@ namespace ByContext.Query.QueryEngine
             return queryResults;
         }
 
-        private IValueProvider[] TrySelectDefault(IEnumerable<Tuple<IValueProvider, IProbe>> queryResults, IValueProvider[] itemsWithHighestScore, int max)
+        private IValueProvider[] TrySelectDefault(Tuple<IValueProvider, IProbe>[] itemsWithHighestScore, int max)
         {
-            var defaultValueProvider = queryResults.Where(x=>x.Item2.ExplicitPositiveReferencesCount == 0).Select(x=>x.Item1).SingleOrDefault();
-            if (defaultValueProvider != null)
+            var defaultValueProviders = itemsWithHighestScore.Where(x => x.Item2.ExplicitPositiveReferencesCount == 0 && x.Item2.ReferencesCount == 0).Select(x => x.Item1).ToArray();
+            if (defaultValueProviders.Count() == 1)
             {
-                return new[] { defaultValueProvider};
+                return new[] { defaultValueProviders.Single()};
             }
             throw new ItemsWithConflictingHighestScoreException(itemsWithHighestScore, max);
         }
