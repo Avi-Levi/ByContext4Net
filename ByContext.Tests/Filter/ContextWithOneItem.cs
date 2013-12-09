@@ -58,14 +58,6 @@ namespace ByContext.Tests.Filter
                                   {"A", "2"},
                               };
 
-            var items = new[]
-                            {
-                                new Item(1,new TextMatchCondition("A","1")),
-                                new Item(2,new TextMatchCondition("A","2")),
-                                new Item(3,new TextMatchCondition("A","2")),
-                                new Item(4,new TextMatchCondition("A","1")),
-                            };
-
             var result = new QueryEngineBuilder().Get(new[] { 
                 QueriableItem.Create(new DefaultValueProvider(1),new IFilterCondition[]{new TextMatchCondition("A","1",false)}), 
                 QueriableItem.Create(new DefaultValueProvider(2),new IFilterCondition[]{new TextMatchCondition("A","2",false)}), 
@@ -86,14 +78,6 @@ namespace ByContext.Tests.Filter
                               {
                                   {"A", "2"},
                               };
-
-            var items = new[]
-                            {
-                                new Item(1,new TextMatchCondition("A","1")),
-                                new Item(2),
-                                new Item(3),
-                                new Item(4,new TextMatchCondition("A","1")),
-                            };
 
             var result = new QueryEngineBuilder().Get(new[] { 
                 QueriableItem.Create(new DefaultValueProvider(1),new IFilterCondition[]{new TextMatchCondition("A","1",false)}), 
@@ -174,14 +158,6 @@ namespace ByContext.Tests.Filter
                               {
                                   {"A", "2"},
                               };
-
-            var items = new[]
-                            {
-                                new Item(1,new TextMatchCondition("A","1")),
-                                new Item(2,new TextMatchCondition("A","2",true)),
-                                new Item(3),
-                                new Item(4,new TextMatchCondition("A","1")),
-                            };
 
             var result = new QueryEngineBuilder().Get(new[] { 
                 QueriableItem.Create(new DefaultValueProvider(1),new IFilterCondition[]{new TextMatchCondition("A","1",false)}), 
