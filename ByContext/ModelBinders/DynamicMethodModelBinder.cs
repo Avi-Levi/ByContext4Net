@@ -14,6 +14,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ByContext.ModelBinders
 {
@@ -30,7 +31,16 @@ namespace ByContext.ModelBinders
         {
             foreach (var pi in parametersInfo)
             {
-                this._injectors[pi.Key](instance, pi.Value);
+                Action<object, object> injector;
+                if (this._injectors.TryGetValue(pi.Key, out injector))
+                {
+                    this._injectors[pi.Key](instance, pi.Value);
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Format("couldn't find injector for parameter {0}, available injectors: {1}", pi.Key, string.Concat(this._injectors.Keys.Select(x=> x + "-"))));
+                }
+
             }
         }
     }
