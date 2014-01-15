@@ -13,6 +13,7 @@
 // limitations under the License.
 
 using System;
+using System.Linq;
 using ByContext.Query;
 using ByContext.ValueProviders;
 
@@ -25,7 +26,7 @@ namespace ByContext.Exceptions
 
         public ItemsWithConflictingHighestScoreException(Tuple<IValueProvider, IProbe>[] itemsWithConflictingScore, int highestScore)
             : base(string.Format(
-                "items with conflicting highest score of {0} exists, cannot determine default", highestScore))
+                "items: {0} with conflicting highest score of {1} exists, cannot determine default", string.Concat(itemsWithConflictingScore.Select(x=>x.Item1.ToString())), highestScore))
         {
             ItemsWithConflictingScore = itemsWithConflictingScore;
             HighestScore = highestScore;
