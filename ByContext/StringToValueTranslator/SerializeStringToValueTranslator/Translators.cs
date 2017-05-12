@@ -81,4 +81,11 @@ namespace ByContext.StringToValueTranslator.SerializeStringToValueTranslator
             return new Uri(value);
         }
     }
+    public class TimeSpanTranslator : BaseStringToValueTranslator<TimeSpan>
+    {
+        public override TimeSpan TranslateFromString(string value)
+        {
+            return TimeSpan.Parse(value);
+        }
+    }
 }

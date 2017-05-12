@@ -33,7 +33,8 @@ namespace ByContext.StringToValueTranslator.SerializeStringToValueTranslator
                                        {typeof (double), new DoubleTranslator()},
                                        {typeof (char), new CharTranslator()},
                                        {typeof (Type), new TypeTranslator()},
-                                       {typeof (Uri), new UriTranslator()}
+                                       {typeof (Uri), new UriTranslator()},
+                                       {typeof(TimeSpan), new TimeSpanTranslator()}
                                    };
         }
 
